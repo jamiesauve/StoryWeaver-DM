@@ -1,35 +1,29 @@
 import React from 'react'
-import _ from 'lodash'
+import styled from 'styled-components'
 
-import ThemeBox from './Components/ThemeBox'
-import tracks from './assets/tracks'
+import MainWindow from './Containers/MainWindow'
+import Sidebar from './Containers/Sidebar'
 
-import './App.css';
+const This = styled.div`
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+
+  align-content: flex-start;
+
+  background-color: #333;
+  color: #ddd;
+`
 
 
 function App() {
-  const copyTrack = (location) => {
-    const url = location.startsWith(`url:`)
-    ? location.substring(4)
-    : `https://michaelghelfi.bandcamp.com/track/${location}`
-    
-    const command = `;;play ${url}`
-
-    navigator.clipboard.writeText(command)
-  }
-
   return (
-    <div className="App">
-      {_.map(tracks, (category, categoryName) => (
-        <ThemeBox
-          copyTrack={copyTrack}
-          key={categoryName}
-          label={categoryName}
-          labelColor={category.labelColor}
-          tracks={category.trackObjects}
-        />
-      ))}
-    </div>
+    <This className="App">
+      <Sidebar />
+      <MainWindow />
+    </This>
   );
 }
 

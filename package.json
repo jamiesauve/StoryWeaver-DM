@@ -1,6 +1,6 @@
 {
   "main": "public/electron.js",
-  "name": "ambience-helper",
+  "name": "dnd-helper",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,11 +19,11 @@
   },
   "homepage": "./",
   "scripts": {
-    "start": "rescripts start",
+    "start": "PORT=4203 rescripts start",
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:4203 && electron .\"",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn build",
     "electron-pack": "electron-builder build -mw"
@@ -61,7 +61,7 @@
   },
   "build": {
     "appId": "com.my-website.my-app",
-    "productName": "Ambience",
+    "productName": "D&D Helper",
     "copyright": "Copyright © 2019 ${author}",
     "mac": {
       "icon": "./assets.icons.icns",

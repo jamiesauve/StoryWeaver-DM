@@ -4,7 +4,7 @@ export default {
     trackObjects: [
       {
         label: 'Slow Dread',
-        location: 'gloomy-cave',
+        location: 'https://michaelghelfi.bandcamp.com/track/gloomy-cave',
         tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
       },
       {
@@ -14,14 +14,14 @@ export default {
       },
       {
         label: 'Puzzle Room',
-        location: 'temple-of-the-knowledge',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
         tags: [
           'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
         ]
       },
       {
         label: 'Taiko Drums - steady (1:11)',
-        location: 'url:https://www.youtube.com/watch?v=KenLU_OtXsc',
+        location: 'https://www.youtube.com/watch?v=KenLU_OtXsc',
         tags: ['puzzle', 'calm', 'thunder', 'interesting'],
       },
     ],
@@ -31,27 +31,27 @@ export default {
     trackObjects: [
       {
         label: 'Music: Serious (1:00)',
-        location: 'url:https://www.youtube.com/watch?v=yIMy3pOeo34',
+        location: 'https://www.youtube.com/watch?v=yIMy3pOeo34',
         tags: ['skyrim', 'battle', 'serious'],
       },
       {
         label: 'Music: Serious mix (0:44)',
-        location: 'url:https://www.youtube.com/watch?v=KEerqdg5f_8',
+        location: 'https://www.youtube.com/watch?v=KEerqdg5f_8',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
       },
       {
         label: 'Music: Intense Mix (0:52)',
-        location: 'url:https://www.youtube.com/watch?v=w0sUw735gRw',
+        location: 'https://www.youtube.com/watch?v=w0sUw735gRw',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
       },
       {
         label: 'Taiko Drums - clacks (1:00)',
-        location: 'url:https://www.youtube.com/watch?v=1nq8G4BT7-w ',
+        location: 'https://www.youtube.com/watch?v=1nq8G4BT7-w ',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
       },
       {
         label: 'Viking Drums - steady (1:00)',
-        location: 'url:https://www.youtube.com/watch?v=47UqaBordWE',
+        location: 'https://www.youtube.com/watch?v=47UqaBordWE',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
       },
     ],
@@ -61,17 +61,17 @@ export default {
     trackObjects: [
       {
         label: 'Cicadas',
-        location: 'campfire-at-dusk',
+        location: 'https://michaelghelfi.bandcamp.com/track/campfire-at-dusk',
         tags: ['campfire', 'cicadas', 'evening', 'peaceful'],
       },
       {
         label: 'Crickets',
-        location: 'savannah-night-camp',
+        location: 'https://michaelghelfi.bandcamp.com/track/savannah-night-camp',
         tags: ['campfire', 'crickets', 'birds', 'peaceful'],
       },
       {
         label: 'Swamp',
-        location: 'swamp-campfire',
+        location: 'https://michaelghelfi.bandcamp.com/track/swamp-campfire',
         tags: ['campfire', 'crickets', 'flies'],
       },
     ]
@@ -81,17 +81,17 @@ export default {
     trackObjects: [
       {
         label: 'Quiet Day 1',
-        location: 'url:https://www.youtube.com/watch?v=HqdjZSYNV8M',
+        location: 'https://www.youtube.com/watch?v=HqdjZSYNV8M',
         tags: ['birds', 'day', 'peaceful'],
       },
       {
         label: 'Quiet Day 2',
-        location: 'url:https://www.youtube.com/watch?v=66UCZF3NlRo',
+        location: 'https://www.youtube.com/watch?v=66UCZF3NlRo',
         tags: ['birds', 'day', 'peaceful'],
       },
       {
         label: 'Quiet Day 2',
-        location: 'url:https://www.youtube.com/watch?v=ty_Pq__TU_0',
+        location: 'https://www.youtube.com/watch?v=ty_Pq__TU_0',
         tags: ['birds', 'day', 'peaceful'],
       },
       
@@ -102,17 +102,17 @@ export default {
     trackObjects: [
       {
         label: 'Quiet Night 1 (4:03)',
-        location: 'url:https://www.youtube.com/watch?v=MdZv1YVE6_w&vl=en',
+        location: 'https://www.youtube.com/watch?v=MdZv1YVE6_w&vl=en',
         tags: ['quiet', 'peaceful', 'night', 'crickets'],
       },
       {
         label: 'Quiet Night 2',
-        location: 'url:https://www.youtube.com/watch?v=_FJIH0Yi2Mk',
+        location: 'https://www.youtube.com/watch?v=_FJIH0Yi2Mk',
         tags: ['quiet', 'peaceful', 'night', 'crickets'],
       },
       {
         label: 'Music: Night (1:00)',
-        location: 'url:https://www.youtube.com/watch?v=aK4JSwhdcdE',
+        location: 'https://www.youtube.com/watch?v=aK4JSwhdcdE',
         tags: ['skyrim', 'battle', 'serious'],
       },
     ],
@@ -123,7 +123,7 @@ export default {
     trackObjects: [
       {
         label: 'Moonlight',
-        location: 'temple-of-the-moon',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-moon',
         tags: ['moonlight', 'night', 'birds', 'magic', 'peaceful'],
       },
     ]
@@ -133,12 +133,12 @@ export default {
     trackObjects: [
       {
         label: 'Rain',
-        location: 'realistic-rain',
+        location: 'https://michaelghelfi.bandcamp.com/track/realistic-rain',
         tags: ['rain',],
       },
       {
         label: 'Wind',
-        location: 'stormy-highlands',
+        location: 'https://michaelghelfi.bandcamp.com/track/stormy-highlands',
         tags: ['wind', 'storm'],
       },
     ]
@@ -148,12 +148,12 @@ export default {
     trackObjects: [
       {
         label: 'Music: Mix 1 (0:58)',
-        location: 'url:https://www.youtube.com/watch?v=S4ADbLPLmN8',
+        location: 'https://www.youtube.com/watch?v=S4ADbLPLmN8',
         tags: ['hooves', 'horseback', 'birdsong', 'walk'],
       },
       {
         label: 'Music: Mix 2 (0:58)',
-        location: 'url:https://www.youtube.com/watch?v=A8qMyBWZNw0',
+        location: 'https://www.youtube.com/watch?v=A8qMyBWZNw0',
         tags: ['hooves', 'horseback', 'birdsong', 'walk'],
       },
     ]
@@ -163,7 +163,7 @@ export default {
     trackObjects: [
       {
         label: 'Horseback - Light Forest',
-        location: 'horseback',
+        location: 'https://michaelghelfi.bandcamp.com/track/horseback',
         tags: ['hooves', 'horseback', 'birdsong', 'walk'],
       },
     ]
@@ -173,7 +173,7 @@ export default {
     trackObjects: [
       {
         label: 'Black Market',
-        location: 'black-market-2',
+        location: 'https://michaelghelfi.bandcamp.com/track/black-market-2',
         tags: ['market', 'people',],
       },
     ],
@@ -183,12 +183,12 @@ export default {
     trackObjects: [
       {
         label: 'Desert Chase (1:03)',
-        location: 'url:https://www.youtube.com/watch?v=L65k0_Y-LPY',
+        location: 'https://www.youtube.com/watch?v=L65k0_Y-LPY',
         tags: ['Skyworld', 'wyvern', 'desert'], 
       },
       {
         label: 'El Dorado (0:59)',
-        location: 'url:https://www.youtube.com/watch?v=RSrqK0tU0uc',
+        location: 'https://www.youtube.com/watch?v=RSrqK0tU0uc',
         tags: ['El Dorado', '',],
       },
     ],
@@ -198,12 +198,12 @@ export default {
     trackObjects: [
       {
         label: 'Ruins - Torches',
-        location: 'temple-of-the-fire',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-fire',
         tags: ['ruins', 'fire', 'quiet', 'peaceful'],
       },
       {
         label: 'Archaeology',
-        location: 'construction-site',
+        location: 'https://michaelghelfi.bandcamp.com/track/construction-site',
         tags: ['ruins', 'working', 'poeple', 'busy'],
       },
     ]
@@ -213,24 +213,24 @@ export default {
     trackObjects: [
       {
         label: 'Cave - inhabited',
-        location: 'torchlit-dungeon',
+        location: 'https://michaelghelfi.bandcamp.com/track/torchlit-dungeon',
         tags: ['cave', 'fire', 'underground', 'magic', 'chains'],
       },
       {
         label: 'Dripping Windy River Cave',
-        location: 'dark-humid-cave',
+        location: 'https://michaelghelfi.bandcamp.com/track/dark-humid-cave',
         tags: [],
       },
       {
         label: 'Crystal Cave',
-        location: 'crystal-cave',
+        location: 'https://michaelghelfi.bandcamp.com/track/crystal-cave',
         tags: [
           'crystal', 'cave', 'underground', 'magical', 'wonder',
         ]
       },
       {
         label: 'Puzzle Room',
-        location: 'temple-of-the-knowledge',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
         tags: [
           'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
         ]
@@ -242,7 +242,7 @@ export default {
     trackObjects: [
       {
         label: 'Sea Cave',
-        location: 'sea-cave',
+        location: 'https://michaelghelfi.bandcamp.com/track/sea-cave',
         tags: ['waves',],
       },
     ]
@@ -252,12 +252,12 @@ export default {
     trackObjects: [
       {
         label: 'Calm Market',
-        location: 'slums',
+        location: 'https://michaelghelfi.bandcamp.com/track/slums',
         tags: ['people', 'market', 'busy', 'dogs'],
       },
       {
         label: 'Sewers',
-        location: 'sewers',
+        location: 'https://michaelghelfi.bandcamp.com/track/sewers',
         tags: ['sewer', ],
       }
     ],
@@ -267,12 +267,12 @@ export default {
     trackObjects: [
       {
         label: 'Music: Tavern (4:28)',
-        location: 'url:https://www.youtube.com/watch?v=hWPPD5ww0eA',
+        location: 'https://www.youtube.com/watch?v=hWPPD5ww0eA',
         tags: ['tavern', 'inn', 'bard', 'music'],
       },
       {
         label: 'Back Alley Tavern',
-        location: 'back-alley-tavern',
+        location: 'https://michaelghelfi.bandcamp.com/track/back-alley-tavern',
         tags: ['tavern',],
       },
     ],
@@ -282,12 +282,12 @@ export default {
     trackObjects: [
       {
         label: 'Swamp',
-        location: 'swamp',
+        location: 'https://michaelghelfi.bandcamp.com/track/swamp',
         tags: ['swamp', 'flies', 'crickets'],
       },
       {
         label: 'Night Swamp - Haunted',
-        location: 'dead-marshes',
+        location: 'https://michaelghelfi.bandcamp.com/track/dead-marshes',
         tags: ['swamp', 'flies', 'magic', 'crickets', 'tense'],
       },
     ],
@@ -297,7 +297,7 @@ export default {
     trackObjects: [
       {
         label: 'Daytime Forest',
-        location: 'daytime-forest',
+        location: 'https://michaelghelfi.bandcamp.com/track/daytime-forest',
         tags: ['leaves', 'stream',],
       },
       {
@@ -307,7 +307,7 @@ export default {
       },
       {
         label: 'Twisted Forest - Roaring',
-        location: 'darkest-forest',
+        location: 'https://michaelghelfi.bandcamp.com/track/darkest-forest',
         tags: ['creepy', 'roaring', 'howling', 'forest'],
       },
     ],
@@ -317,17 +317,17 @@ export default {
     trackObjects: [
       {
         label: 'Desert Wind',
-        location: 'desert',
+        location: 'https://michaelghelfi.bandcamp.com/track/desert',
         tags: ['desert', 'wind',],
       },
       {
         label: 'Desert Campfire',
-        location: 'desert-campfire',
+        location: 'https://michaelghelfi.bandcamp.com/track/desert-campfire',
         tags: ['desert', 'wind',],
       },
       {
         label: 'By a Stream',
-        location: 'lively-tundra-2',
+        location: 'https://michaelghelfi.bandcamp.com/track/lively-tundra-2',
         tags: ['stream', 'fire', 'day', 'birds'],
       },
     ],
