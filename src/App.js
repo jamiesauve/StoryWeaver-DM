@@ -9,7 +9,10 @@ import './App.css';
 
 function App() {
   const copyTrack = (location) => {
-    const url = `https://michaelghelfi.bandcamp.com/track/${location}`
+    const url = location.startsWith(`url:`)
+    ? location.substring(4)
+    : `https://michaelghelfi.bandcamp.com/track/${location}`
+    
     const command = `;;play ${url}`
 
     navigator.clipboard.writeText(command)
