@@ -13,6 +13,7 @@ const This = styled.div`
 
   align-content: flex-start;
 
+  font-family: sans-serif;
   background-color: #333;
   color: #ddd;
 `
