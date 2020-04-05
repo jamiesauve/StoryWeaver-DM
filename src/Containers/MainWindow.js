@@ -22,6 +22,8 @@ const MainWindowBody = styled.div `
 display: flex;
 flex-direction: row;
 
+height: 100%;
+
 flex-grow: 1;
 `
 
@@ -42,6 +44,7 @@ const MainWindow = () => {
   return (
     <This>
       <MainWindowHeader
+      className="mainWindowHeader"
         ref={MainWindowHeaderElement}
       >
         <Frame
@@ -53,7 +56,9 @@ const MainWindow = () => {
         </Frame>
       </MainWindowHeader>
       
-      <MainWindowBody>
+      <MainWindowBody
+        className="mainWindowBody"
+      >
         <Frame
           maxHeight={`${mainWindowBodyHeight}px`}
         >

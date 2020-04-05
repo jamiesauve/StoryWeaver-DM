@@ -1,9 +1,13 @@
 import React from 'react'
+import styled from 'styled-components'
 import _ from 'lodash'
 
 import Section from '../Components/Layout/Section'
 
+import ScrollableContainer from '../Components/styled/ScrollableContainer'
+
 import ThemeBox from '../Components/ThemeBox'
+
 import tracks from '../assets/tracks'
 
 const copyTrack = (location) => {    
@@ -16,7 +20,7 @@ const Sounds = () => {
     <Section
       title="Sounds"
     >
-      <div>
+      <ScrollableContainer>
         {_.map(tracks, (category, categoryName) => (
           <ThemeBox
             copyTrack={copyTrack}
@@ -26,7 +30,7 @@ const Sounds = () => {
             tracks={category.trackObjects}
           />
         ))}
-      </div>
+      </ScrollableContainer>
     </Section>
   )
 }
