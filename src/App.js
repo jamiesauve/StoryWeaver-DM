@@ -12,16 +12,20 @@ const This = styled.div`
   flex-direction: row;
 
   align-content: flex-start;
+  
+  background-color: #333;
 
   font-family: sans-serif;
-  background-color: #333;
+  font-size: 16px;
   color: #ddd;
 `
 
 
 function App() {
   return (
-    <This className="App">
+    <This
+      className="App"
+    >
       <Sidebar />
       <MainWindow />
     </This>

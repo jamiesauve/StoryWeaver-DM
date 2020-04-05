@@ -4,9 +4,9 @@ const Pane = styled.div`
   display: flex;
   flex-direction: column;
 
-  flex-grow: 1;
+  height: 100%;
 
-  overflow: scroll;
+  flex-grow: 1;
   
   margin: 5px; 
   padding: 10px;

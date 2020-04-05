@@ -1,12 +1,10 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import _ from 'lodash'
 
 import Frame from '../Components/styled/Frame'
 import Pane from '../Components/styled/Pane'
 
-import ThemeBox from '../Components/ThemeBox'
-import tracks from '../assets/tracks'
+import Sounds from './Sounds'
 
 const This = styled.div`
 width: 75vw;
@@ -27,16 +25,25 @@ flex-direction: row;
 flex-grow: 1;
 `
 
-const copyTrack = (location) => {    
-  const command = `;;play ${location}`
-
-  navigator.clipboard.writeText(command)
-}
-
 const MainWindow = () => {
+  const [headerHeight, setHeaderHeight] = useState(200)
+  const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(200) 
+
+  const MainWindowHeaderElement = useRef('')
+
+  useEffect(() => {
+    // clean this up; wll also need to have the height update on window resize (electron?)
+    setHeaderHeight(MainWindowHeaderElement.current.clientHeight)
+    const appHeight = document.getElementsByClassName('App')[0].clientHeight
+    
+    setMainWindowBodyHeight(appHeight - headerHeight - 32) // margins
+  }, [MainWindowHeaderElement.current])
+
   return (
     <This>
-      <MainWindowHeader>
+      <MainWindowHeader
+        ref={MainWindowHeaderElement}
+      >
         <Frame
           width='100%'
         >
@@ -47,20 +54,11 @@ const MainWindow = () => {
       </MainWindowHeader>
       
       <MainWindowBody>
-        <Frame>
+        <Frame
+          maxHeight={`${mainWindowBodyHeight}px`}
+        >
           <Pane>
-            Sounds
-            {/* <div>
-        {_.map(tracks, (category, categoryName) => (
-          <ThemeBox
-            copyTrack={copyTrack}
-            key={categoryName}
-            label={categoryName}
-            labelColor={category.labelColor}
-            tracks={category.trackObjects}
-          />
-        ))}
-        </div> */}
+            <Sounds />
           </Pane>
         </Frame>
 
