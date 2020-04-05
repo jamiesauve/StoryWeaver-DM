@@ -5,6 +5,7 @@ import Frame from '../Components/styled/Frame'
 import Pane from '../Components/styled/Pane'
 
 import Sounds from './Sounds'
+import Terrain from './Terrain'
 
 const This = styled.div`
 width: 75vw;
@@ -13,10 +14,6 @@ height: 100vh;
 display: flex;
 flex-direction: column;
 `
-
-const MainWindowHeader = styled.div`
-width: 100%;
-`;
 
 const MainWindowBody = styled.div `
 display: flex;
@@ -31,30 +28,27 @@ const MainWindow = () => {
   const [headerHeight, setHeaderHeight] = useState(200)
   const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(200) 
 
-  const MainWindowHeaderElement = useRef('')
+  const TerrainElement = useRef('')
 
   useEffect(() => {
     // clean this up; wll also need to have the height update on window resize (electron?)
-    setHeaderHeight(MainWindowHeaderElement.current.clientHeight)
+    setHeaderHeight(TerrainElement.current.clientHeight)
     const appHeight = document.getElementsByClassName('App')[0].clientHeight
     
     setMainWindowBodyHeight(appHeight - headerHeight - 32) // margins
-  }, [MainWindowHeaderElement.current])
+  }, [TerrainElement.current])
 
   return (
     <This>
-      <MainWindowHeader
-      className="mainWindowHeader"
-        ref={MainWindowHeaderElement}
-      >
-        <Frame
+      <Frame
           width='100%'
         >
           <Pane>
-            Terrain
+            <Terrain 
+              TerrainElement={TerrainElement}
+            />
           </Pane>
-        </Frame>
-      </MainWindowHeader>
+      </Frame>
       
       <MainWindowBody
         className="mainWindowBody"
