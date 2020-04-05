@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
@@ -16,6 +16,8 @@ const copyTrack = (location) => {
 }
 
 const Sounds = () => {
+  const [ expandedTheme, setExpandedTheme ] = useState('')
+
   return (
     <Section
       title="Sounds"
@@ -24,9 +26,11 @@ const Sounds = () => {
         {_.map(tracks, (category, categoryName) => (
           <ThemeBox
             copyTrack={copyTrack}
+            isExpanded={expandedTheme === categoryName}
             key={categoryName}
-            label={categoryName}
-            labelColor={category.labelColor}
+            title={categoryName}
+            titleColor={category.titleColor}
+            setExpandedTheme={setExpandedTheme}
             tracks={category.trackObjects}
           />
         ))}

@@ -1,36 +1,109 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import styled from 'styled-components'
 import _ from 'lodash'
 
-import './ThemeBox.css'
+import SectionTitle from './styled/SectionTitle'
 
-const ThemeBox = props => {
-  useEffect(() => {
-    const title = document.getElementsByClassName(`box-${props.label}`)[0];
-    title.style.color = props.labelColor;
-  }, [
-    props.label,
-    props.labelColor,
-  ]);
+const This = styled.div`
+  margin: 10px;
+  
+  border-radius: ${props => props.isExpanded ? `5px 5px 0 0` : `5px`};
+  box-shadow: 0 0 3px #777;
 
+  align-items: center;
+`
+
+const ThemeTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 7px;
+  background-color: ${props => props.titleColor};
+`
+
+const ThemeBoxBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  background-color: #333;
+`
+
+const TrackTitle = styled.div`
+  padding: 5px 0;
+
+  font-size: 16px;
+
+  text-align: center;
+
+  &:hover {
+    background-color: #444;
+    cursor: pointer;
+  }
+`
+
+const ThemeBox =  props => {
+  const handleClickTitle = () => 
+  {
+    props.isExpanded
+    ? props.setExpandedTheme('')
+    : props.setExpandedTheme(props.title)
+  }
+
+  const handleClickTrack = (location) => {
+    props.copyTrack(location)
+    props.setExpandedTheme('')
+  }
+
+console.log('props', props);
   return (
-    <div className="ThemeBox">
-      <div className={`ThemeBox__label box-${props.label}`}>
-        {props.label}
-      </div>
+    <This
+      className="themeBox"
+      isExpanded={props.isExpanded}
+    >
+      <ThemeTitle
+        className="themeTitle"
+        titleColor={props.titleColor}
+        onClick={handleClickTitle}
+      >
+        <SectionTitle>
+        {props.title}
+        </SectionTitle>
+      </ThemeTitle>
 
-      <div className="ThemeBox__track-list">
-      {_.map(props.tracks, (track) => (
-        <div
-          className="ThemeBox__track"
-          key={`${track.location}-${props.label}`}
-          onClick={() => props.copyTrack(track.location)}
-        >
-          {track.label}
-        </div>
-      ))}
-      </div>
-    </div>
+        {
+          props.isExpanded
+          && <ThemeBoxBody>
+            {_.map(props.tracks, (track) => (
+                <TrackTitle
+                  key={`${track.location}-${props.title}`}
+                  onClick={() => handleClickTrack(track.location)}
+                >
+                  {track.title}
+               </TrackTitle>
+            ))}
+          </ThemeBoxBody>
+        }
+    </This>
   )
 }
 
 export default ThemeBox
+    // <div className="ThemeBox">
+    //   <div className={`ThemeBox__title box-${props.title}`}>
+    //     {props.title}
+    //   </div>
+
+    //   <div className="ThemeBox__track-list">
+    //   {_.map(props.tracks, (track) => (
+    //     <div
+    //       className="ThemeBox__track"
+    //       key={`${track.location}-${props.title}`}
+    //       onClick={() => props.copyTrack(track.location)}
+    //     >
+    //       {track.title}
+    //     </div>
+    //   ))}
+    //   </div>
+    // </div>
