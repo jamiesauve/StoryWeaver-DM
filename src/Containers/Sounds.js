@@ -6,7 +6,8 @@ import Section from '../Components/Layout/Section'
 
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
-import ThemeBox from '../Components/ThemeBox'
+import ThemeBox from '../Components/Sounds/ThemeBox'
+import ToggleExpandedButton from '../Components/Sounds/ToggleExpandedButton'
 
 import tracks from '../assets/tracks'
 
@@ -17,20 +18,29 @@ const copyTrack = (location) => {
 
 const Sounds = () => {
   const [ expandedTheme, setExpandedTheme ] = useState('')
+  const [ areAllCategoriesExpanded, setAreAllCategoriesExpanded ] = useState(false)
 
   return (
     <Section
       title="Sounds"
+      rightItem={
+        <ToggleExpandedButton 
+          areAllCategoriesExpanded={areAllCategoriesExpanded}
+          setAreAllCategoriesExpanded={setAreAllCategoriesExpanded}
+        />
+      }
     >
-      <ScrollableContainer>
+      <ScrollableContainer
+        className="scrollableContainer"
+      >
         {_.map(tracks, (category, categoryName) => (
           <ThemeBox
             copyTrack={copyTrack}
-            isExpanded={expandedTheme === categoryName}
+            isExpanded={areAllCategoriesExpanded ? true : expandedTheme === categoryName}
             key={categoryName}
             title={categoryName}
             titleColor={category.titleColor}
-            setExpandedTheme={setExpandedTheme}
+            setExpandedTheme={areAllCategoriesExpanded ? () => setExpandedTheme('') : setExpandedTheme}
             tracks={category.trackObjects}
           />
         ))}

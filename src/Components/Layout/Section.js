@@ -11,6 +11,10 @@ const This = styled.div`
   height: ${props => props.height ? `${props.height}px` : `100%`}
 `
 
+const ItemTopRight = styled.div`
+  align-self: flex-end;
+`
+
 const Section = (props) => {
   return (
     <This 
@@ -20,6 +24,13 @@ const Section = (props) => {
       <SectionTitle>
         {props.title}
       </SectionTitle>
+      
+      {
+        props.rightItem
+        && <ItemTopRight>
+          {props.rightItem}
+        </ItemTopRight> 
+      }
 
       {props.children}
     </This>

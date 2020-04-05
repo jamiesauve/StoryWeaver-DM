@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import SectionTitle from './styled/SectionTitle'
+import SectionTitle from '../styled/SectionTitle'
 
 const This = styled.div`
-  margin: 10px;
+  margin: 10px 0;
   
   border-radius: ${props => props.isExpanded ? `5px 5px 0 0` : `5px`};
   box-shadow: 0 0 3px #777;
@@ -90,20 +90,3 @@ console.log('props', props);
 }
 
 export default ThemeBox
-    // <div className="ThemeBox">
-    //   <div className={`ThemeBox__title box-${props.title}`}>
-    //     {props.title}
-    //   </div>
-
-    //   <div className="ThemeBox__track-list">
-    //   {_.map(props.tracks, (track) => (
-    //     <div
-    //       className="ThemeBox__track"
-    //       key={`${track.location}-${props.title}`}
-    //       onClick={() => props.copyTrack(track.location)}
-    //     >
-    //       {track.title}
-    //     </div>
-    //   ))}
-    //   </div>
-    // </div>
