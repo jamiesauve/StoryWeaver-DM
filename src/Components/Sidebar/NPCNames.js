@@ -7,7 +7,7 @@ import TextArea from '../styled/TextArea'
 const NPCNames = () => {
   return (
     <Section
-      height={120}
+      height={'120px'}
       title = "NPC Names"
     >
       <TextArea />

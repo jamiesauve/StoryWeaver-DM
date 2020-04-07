@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import Frame from '../Components/styled/Frame'
 import Pane from '../Components/styled/Pane'
 
+import MainWindowHeader from './MainWindowHeader'
 import Sounds from './Sounds'
-import Terrain from './Terrain'
 
 const This = styled.div`
 width: 75vw;
@@ -25,8 +25,8 @@ flex-grow: 1;
 `
 
 const MainWindow = () => {
-  const [headerHeight, setHeaderHeight] = useState(200)
-  const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(200) 
+  const [headerHeight, setHeaderHeight] = useState(0)
+  const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(0) 
 
   const TerrainElement = useRef('')
 
@@ -44,12 +44,12 @@ const MainWindow = () => {
           width='100%'
         >
           <Pane>
-            <Terrain 
+            <MainWindowHeader 
               TerrainElement={TerrainElement}
             />
           </Pane>
       </Frame>
-      
+
       <MainWindowBody
         className="mainWindowBody"
       >
@@ -69,11 +69,11 @@ const MainWindow = () => {
 
         <Frame>
           <Pane>
-            Plants
+            Search Results
           </Pane>
 
           <Pane>
-            Recipes
+            Plants
           </Pane>
         </Frame>
       </MainWindowBody>

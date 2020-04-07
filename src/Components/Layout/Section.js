@@ -8,7 +8,7 @@ const This = styled.div`
   flex-direction: column;
   flex-grow: ${props => props.height ? 0 : 1};
   align-items: center;
-  height: ${props => props.height ? `${props.height}px` : `100%`}
+  height: ${props => props.height ? `${props.height}` : `100%`}
 `
 
 const ItemTopRight = styled.div`
