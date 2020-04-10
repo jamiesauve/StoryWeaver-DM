@@ -16,34 +16,44 @@ const copyTrack = (location) => {
   navigator.clipboard.writeText(command)
 }
 
-const Sounds = () => {
+const Sounds = (props) => {
   const [ expandedTheme, setExpandedTheme ] = useState('')
   const [ areAllCategoriesExpanded, setAreAllCategoriesExpanded ] = useState(false)
 
+  
   return (
     <Section
-      title="Sounds"
-      rightItem={
-        <ToggleExpandedButton 
-          areAllCategoriesExpanded={areAllCategoriesExpanded}
-          setAreAllCategoriesExpanded={setAreAllCategoriesExpanded}
-        />
-      }
+    title="Sounds"
+    rightItem={
+      <ToggleExpandedButton 
+      areAllCategoriesExpanded={areAllCategoriesExpanded}
+      setAreAllCategoriesExpanded={setAreAllCategoriesExpanded}
+      />
+    }
     >
       <ScrollableContainer
         className="scrollableContainer"
-      >
-        {_.map(tracks, (category, categoryName) => (
-          <ThemeBox
-            copyTrack={copyTrack}
-            isExpanded={areAllCategoriesExpanded ? true : expandedTheme === categoryName}
-            key={categoryName}
-            title={categoryName}
-            titleColor={category.titleColor}
-            setExpandedTheme={areAllCategoriesExpanded ? () => setExpandedTheme('') : setExpandedTheme}
-            tracks={category.trackObjects}
-          />
-        ))}
+        >
+        {_.map(tracks, (category, categoryName) => {
+          const filteredTracks = props.activeTerrain 
+            ? _.filter(category.trackObjects, trackObject => _.includes(trackObject.terrain, props.activeTerrain))
+            : category.trackObjects
+
+          console.log(props.activeTerrain)
+          console.log('filtered', filteredTracks) 
+
+          return (
+            <ThemeBox
+              copyTrack={copyTrack}
+              isExpanded={areAllCategoriesExpanded ? true : expandedTheme === categoryName}
+              key={categoryName}
+              title={categoryName}
+              titleColor={category.titleColor}
+              setExpandedTheme={areAllCategoriesExpanded ? () => setExpandedTheme('') : setExpandedTheme}
+              tracks={filteredTracks}
+            />
+          )
+        })}
       </ScrollableContainer>
     </Section>
   )

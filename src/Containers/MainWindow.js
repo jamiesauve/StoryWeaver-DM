@@ -27,16 +27,17 @@ flex-grow: 1;
 const MainWindow = () => {
   const [headerHeight, setHeaderHeight] = useState(0)
   const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(0) 
+  const [activeTerrain, setActiveTerrain] = useState('')
 
-  const TerrainElement = useRef('')
+  const mainWindowHeaderElement = useRef('')
 
   useEffect(() => {
     // clean this up; wll also need to have the height update on window resize (electron?)
-    setHeaderHeight(TerrainElement.current.clientHeight)
+    setHeaderHeight(mainWindowHeaderElement.current.clientHeight)
     const appHeight = document.getElementsByClassName('App')[0].clientHeight
     
     setMainWindowBodyHeight(appHeight - headerHeight - 32) // margins
-  }, [TerrainElement.current])
+  }, [mainWindowHeaderElement.current])
 
   return (
     <This>
@@ -45,7 +46,9 @@ const MainWindow = () => {
         >
           <Pane>
             <MainWindowHeader 
-              TerrainElement={TerrainElement}
+              mainWindowHeaderElement={mainWindowHeaderElement}
+              activeTerrain={activeTerrain}
+              setActiveTerrain={setActiveTerrain}
             />
           </Pane>
       </Frame>
@@ -57,7 +60,9 @@ const MainWindow = () => {
           maxHeight={`${mainWindowBodyHeight}px`}
         >
           <Pane>
-            <Sounds />
+            <Sounds 
+              activeTerrain={activeTerrain}
+            />
           </Pane>
         </Frame>
 

@@ -15,9 +15,12 @@ const This = styled.div`
 
 const MainWindowHeader = (props) => {
   return (
-    <This>
+    <This
+    ref={props.mainWindowHeaderElement}
+    >
       <Terrain 
-        terrainElement={props.terrainElement}
+        activeTerrain={props.activeTerrain}
+        setActiveTerrain={props.setActiveTerrain}
       />
 
       <Search />

@@ -1,31 +1,20 @@
+import {
+  CAVES,
+  COAST,
+  CITY,
+  DESERT,
+  FOREST,
+  MOUNTAINS,
+  PLAINS,
+  SWAMP,
+  VILLAGE,
+  WINTER,
+} from './terrainTypes'
+
+const NOT_WINTER = 'notWinter'
+
 export default {
-  'Creepy': {
-    titleColor: '#000',
-    trackObjects: [
-      {
-        title: 'Slow Dread',
-        location: 'https://michaelghelfi.bandcamp.com/track/gloomy-cave',
-        tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
-      },
-      {
-        title: 'Music: Creepy Fight',
-        location: 'https://www.youtube.com/watch?v=MI2wq39BPFo ',
-        tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
-      },
-      {
-        title: 'Puzzle Room',
-        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
-        tags: [
-          'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
-        ]
-      },
-      {
-        title: 'Taiko Drums - steady (1:11)',
-        location: 'https://www.youtube.com/watch?v=KenLU_OtXsc',
-        tags: ['puzzle', 'calm', 'thunder', 'interesting'],
-      },
-    ],
-  },
+  // Moods - mostly available everywhere
   'Battle': {
     titleColor: "#801",
     trackObjects: [
@@ -33,87 +22,84 @@ export default {
         title: 'Music: Serious (1:00)',
         location: 'https://www.youtube.com/watch?v=yIMy3pOeo34',
         tags: ['skyrim', 'battle', 'serious'],
+        terrain: [],
       },
       {
         title: 'Music: Serious mix (0:44)',
         location: 'https://www.youtube.com/watch?v=KEerqdg5f_8',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
+        terrain: [],
       },
       {
         title: 'Music: Intense Mix (0:52)',
         location: 'https://www.youtube.com/watch?v=w0sUw735gRw',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
+        terrain: [],
       },
       {
         title: 'Taiko Drums - clacks (1:00)',
         location: 'https://www.youtube.com/watch?v=1nq8G4BT7-w ',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
+        terrain: [],
       },
       {
         title: 'Viking Drums - steady (1:00)',
         location: 'https://www.youtube.com/watch?v=47UqaBordWE',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
+        terrain: [],
       },
     ],
   },
-  'Campfire': {
-    titleColor: '#e60',
+  'Exploring': {
+    titleColor: '#357',
     trackObjects: [
       {
-        title: 'Cicadas',
-        location: 'https://michaelghelfi.bandcamp.com/track/campfire-at-dusk',
-        tags: ['campfire', 'cicadas', 'evening', 'peaceful'],
+        title: 'Music: Mix 1 (0:58)',
+        location: 'https://www.youtube.com/watch?v=S4ADbLPLmN8',
+        tags: ['hooves', 'horseback', 'birdsong', 'walk'],
+        terrain: [],
       },
       {
-        title: 'Crickets',
-        location: 'https://michaelghelfi.bandcamp.com/track/savannah-night-camp',
-        tags: ['campfire', 'crickets', 'birds', 'peaceful'],
+        title: 'Music: Mix 2 (0:58)',
+        location: 'https://www.youtube.com/watch?v=A8qMyBWZNw0',
+        tags: ['hooves', 'horseback', 'birdsong', 'walk'],
+        terrain: [],
       },
       {
-        title: 'Swamp',
-        location: 'https://michaelghelfi.bandcamp.com/track/swamp-campfire',
-        tags: ['campfire', 'crickets', 'flies'],
+        title: 'Horseback - Light Forest',
+        location: 'https://michaelghelfi.bandcamp.com/track/horseback',
+        tags: ['hooves', 'horseback', 'birdsong', 'walk'],
+        terrain: [
+          COAST, 
+          FOREST, 
+          MOUNTAINS
+        ]
+        
       },
     ]
   },
-  'Day': {
-    titleColor: '#45e',
+  'Puzzle': {
+    titleColor: "#b0b",
     trackObjects: [
       {
-        title: 'Quiet Day 1',
-        location: 'https://www.youtube.com/watch?v=HqdjZSYNV8M',
-        tags: ['birds', 'day', 'peaceful'],
+        title: 'Suspense, torches',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-fire',
+        tags: ['ruins', 'fire', 'quiet', 'peaceful'],
+        terrain: [],
       },
       {
-        title: 'Quiet Day 2',
-        location: 'https://www.youtube.com/watch?v=66UCZF3NlRo',
-        tags: ['birds', 'day', 'peaceful'],
+        title: 'Puzzle Room (Creepy)',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
+        tags: [
+          'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
+        ],
+        terrain: [],
       },
       {
-        title: 'Quiet Day 2',
-        location: 'https://www.youtube.com/watch?v=ty_Pq__TU_0',
-        tags: ['birds', 'day', 'peaceful'],
-      },
-      
-    ]
-  },  
-  'Night': {
-    titleColor: "#000",
-    trackObjects: [
-      {
-        title: 'Quiet Night 1 (4:03)',
-        location: 'https://www.youtube.com/watch?v=MdZv1YVE6_w&vl=en',
-        tags: ['quiet', 'peaceful', 'night', 'crickets'],
-      },
-      {
-        title: 'Quiet Night 2',
-        location: 'https://www.youtube.com/watch?v=_FJIH0Yi2Mk',
-        tags: ['quiet', 'peaceful', 'night', 'crickets'],
-      },
-      {
-        title: 'Music: Night (1:00)',
-        location: 'https://www.youtube.com/watch?v=aK4JSwhdcdE',
-        tags: ['skyrim', 'battle', 'serious'],
+        title: 'Taiko Drums - steady (1:11)',
+        location: 'https://www.youtube.com/watch?v=KenLU_OtXsc',
+        tags: ['puzzle', 'calm', 'thunder', 'interesting'],
+        terrain: [],
       },
     ],
   },
@@ -124,8 +110,48 @@ export default {
         title: 'Moonlight',
         location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-moon',
         tags: ['moonlight', 'night', 'birds', 'magic', 'peaceful'],
+        terrain: [],
+      },
+      {
+        title: 'Crystal Cave',
+        location: 'https://michaelghelfi.bandcamp.com/track/crystal-cave',
+        tags: [
+          'crystal', 'cave', 'underground', 'magical', 'wonder',
+        ],
+        terrain: [],
       },
     ]
+  },
+  'Creepy': {
+    titleColor: '#000',
+    trackObjects: [
+      {
+        title: 'Suspense, torches',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-fire',
+        tags: ['ruins', 'fire', 'quiet', 'peaceful'],
+        terrain: [],
+      },
+      {
+        title: 'Slow Dread',
+        location: 'https://michaelghelfi.bandcamp.com/track/gloomy-cave',
+        tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
+        terrain: [],
+      },
+      {
+        title: 'Music: Creepy Fight',
+        location: 'https://www.youtube.com/watch?v=MI2wq39BPFo ',
+        tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
+        terrain: [],
+      },
+      {
+        title: 'Puzzle Room',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
+        tags: [
+          'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
+        ],
+        terrain: [],
+      },
+    ],
   },
   'Weather': {
     titleColor: '#559',
@@ -134,78 +160,133 @@ export default {
         title: 'Rain',
         location: 'https://michaelghelfi.bandcamp.com/track/realistic-rain',
         tags: ['rain',],
+        terrain: [NOT_WINTER],
       },
       {
         title: 'Wind',
         location: 'https://michaelghelfi.bandcamp.com/track/stormy-highlands',
         tags: ['wind', 'storm'],
+        terrain: [],
       },
     ]
   },
-  'Exploring': {
-    titleColor: '#357',
+
+  // Environments - specific to terrain type
+  'Tavern/Inn': {
+    titleColor: "#c40",
     trackObjects: [
       {
-        title: 'Music: Mix 1 (0:58)',
-        location: 'https://www.youtube.com/watch?v=S4ADbLPLmN8',
-        tags: ['hooves', 'horseback', 'birdsong', 'walk'],
+        title: 'Music: Tavern (4:28)',
+        location: 'https://www.youtube.com/watch?v=hWPPD5ww0eA',
+        tags: ['tavern', 'inn', 'bard', 'music'],
+        terrain: [
+          CITY,
+          VILLAGE,
+        ]
       },
       {
-        title: 'Music: Mix 2 (0:58)',
-        location: 'https://www.youtube.com/watch?v=A8qMyBWZNw0',
-        tags: ['hooves', 'horseback', 'birdsong', 'walk'],
-      },
-    ]
-  },
-  'Traveling': {
-    titleColor: '#843',
-    trackObjects: [
-      {
-        title: 'Horseback - Light Forest',
-        location: 'https://michaelghelfi.bandcamp.com/track/horseback',
-        tags: ['hooves', 'horseback', 'birdsong', 'walk'],
-      },
-    ]
-  },
-  'Market': {
-    titleColor: "#c33",
-    trackObjects: [
-      {
-        title: 'Black Market',
-        location: 'https://michaelghelfi.bandcamp.com/track/black-market-2',
-        tags: ['market', 'people',],
+        title: 'Shady Tavern',
+        location: 'https://michaelghelfi.bandcamp.com/track/back-alley-tavern',
+        tags: ['tavern',],
+        terrain: [
+          CITY,
+          VILLAGE,
+        ]
       },
     ],
+  },
+  'Campfire': {
+    titleColor: '#e60',
+    trackObjects: [
+      {
+        title: 'Cicadas Campfire',
+        location: 'https://michaelghelfi.bandcamp.com/track/campfire-at-dusk',
+        tags: ['campfire', 'cicadas', 'evening', 'peaceful'],
+        terrain: [NOT_WINTER],
+      },
+      {
+        title: 'Crickets Campfire',
+        location: 'https://michaelghelfi.bandcamp.com/track/savannah-night-camp',
+        tags: ['campfire', 'crickets', 'birds', 'peaceful'],
+        terrain: [NOT_WINTER],
+      },
+      {
+        title: 'Swamp Campfire',
+        location: 'https://michaelghelfi.bandcamp.com/track/swamp-campfire',
+        tags: ['campfire', 'crickets', 'flies'],
+        terrain: [SWAMP],
+      },
+    ]
+  },
+  'Day': {
+    titleColor: '#45e',
+    trackObjects: [
+      {
+        title: 'Quiet Day',
+        location: 'https://www.youtube.com/watch?v=HqdjZSYNV8M',
+        tags: ['birds', 'day', 'peaceful'],
+        terrain: [
+          COAST,
+          FOREST,
+          MOUNTAINS, 
+        ],
+      },
+      {
+        title: 'Quiet Day',
+        location: 'https://www.youtube.com/watch?v=66UCZF3NlRo',
+        tags: ['birds', 'day', 'peaceful'],
+        terrain: [
+          FOREST, 
+          MOUNTAINS, 
+          PLAINS, 
+        ],
+      },      
+    ]
   },  
-  'Special Event': {
-    titleColor: "#f4f",
+  'Night': {
+    titleColor: "#000",
     trackObjects: [
       {
-        title: 'Desert Chase (1:03)',
-        location: 'https://www.youtube.com/watch?v=L65k0_Y-LPY',
-        tags: ['Skyworld', 'wyvern', 'desert'], 
+        title: 'Plains Night (4:03)',
+        location: 'https://www.youtube.com/watch?v=MdZv1YVE6_w&vl=en',
+        tags: ['quiet', 'peaceful', 'night', 'crickets'],
+        terrain: [
+          COAST,
+          DESERT, 
+          MOUNTAINS, 
+          PLAINS, 
+          SWAMP, 
+        ],
       },
       {
-        title: 'El Dorado (0:59)',
-        location: 'https://www.youtube.com/watch?v=RSrqK0tU0uc',
-        tags: ['El Dorado', '',],
+        title: 'Forest Night (10:00)',
+        location: 'https://www.youtube.com/watch?v=_FJIH0Yi2Mk',
+        tags: ['quiet', 'peaceful', 'night', 'crickets'],
+        terrain: [
+          FOREST, 
+          MOUNTAINS,
+          SWAMP, 
+        ],
+      },
+      {
+        title: 'Quiet River',
+        location: 'https://www.youtube.com/watch?v=ty_Pq__TU_0',
+        tags: ['birds', 'day', 'peaceful'],
+        terrain: [
+          DESERT, 
+          FOREST, 
+          MOUNTAINS,
+          PLAINS, 
+          SWAMP, 
+        ],
+      },
+      {
+        title: 'Music: Night (1:00)',
+        location: 'https://www.youtube.com/watch?v=aK4JSwhdcdE',
+        tags: ['skyrim', 'battle', 'serious'],
+        terrain: [],
       },
     ],
-  }, 
-  'Ruins': {
-    titleColor: '#b30',
-    trackObjects: [
-      {
-        title: 'Ruins - Torches',
-        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-fire',
-        tags: ['ruins', 'fire', 'quiet', 'peaceful'],
-      },
-      {
-        title: 'Archaeology',
-        location: 'https://michaelghelfi.bandcamp.com/track/construction-site',
-        tags: ['ruins', 'working', 'poeple', 'busy'],
-      },
-    ]
   },
   'Caves/Underground': {
     titleColor: "#737",
@@ -214,24 +295,27 @@ export default {
         title: 'Cave - inhabited',
         location: 'https://michaelghelfi.bandcamp.com/track/torchlit-dungeon',
         tags: ['cave', 'fire', 'underground', 'magic', 'chains'],
+        terrain: [
+          CAVES,
+        ]
       },
       {
         title: 'Dripping Windy River Cave',
         location: 'https://michaelghelfi.bandcamp.com/track/dark-humid-cave',
-        tags: [],
+        tags: ['dripping', 'windy', 'river', 'squeak'],
+        terrain: [
+          CAVES,
+        ]
       },
       {
         title: 'Crystal Cave',
         location: 'https://michaelghelfi.bandcamp.com/track/crystal-cave',
         tags: [
           'crystal', 'cave', 'underground', 'magical', 'wonder',
-        ]
-      },
-      {
-        title: 'Puzzle Room',
-        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
-        tags: [
-          'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
+        ],
+        terrain: [
+          CAVES,
+          WINTER,
         ]
       },
     ],
@@ -243,6 +327,10 @@ export default {
         title: 'Sea Cave',
         location: 'https://michaelghelfi.bandcamp.com/track/sea-cave',
         tags: ['waves',],
+        terrain: [
+          CAVES,
+          COAST,
+        ]
       },
     ]
   },
@@ -253,26 +341,35 @@ export default {
         title: 'Calm Market',
         location: 'https://michaelghelfi.bandcamp.com/track/slums',
         tags: ['people', 'market', 'busy', 'dogs'],
+        terrain: [
+          CITY,
+          VILLAGE
+        ]
+      },
+      {
+        title: 'Black Market (bubbling)',
+        location: 'https://michaelghelfi.bandcamp.com/track/black-market-2',
+        tags: ['market', 'people',],
+        terrain: [
+          CITY
+        ]
       },
       {
         title: 'Sewers',
         location: 'https://michaelghelfi.bandcamp.com/track/sewers',
-        tags: ['sewer', ],
-      }
-    ],
-  },
-  'Tavern/Inn': {
-    titleColor: "#c40",
-    trackObjects: [
-      {
-        title: 'Music: Tavern (4:28)',
-        location: 'https://www.youtube.com/watch?v=hWPPD5ww0eA',
-        tags: ['tavern', 'inn', 'bard', 'music'],
+        tags: ['sewer', 'dripping', 'caves', 'squeaks'],
+        terrain: [
+          CAVES,
+        ]
       },
       {
-        title: 'Back Alley Tavern',
-        location: 'https://michaelghelfi.bandcamp.com/track/back-alley-tavern',
-        tags: ['tavern',],
+        title: 'Digging',
+        location: 'https://michaelghelfi.bandcamp.com/track/construction-site',
+        tags: ['ruins', 'working', 'poeple', 'busy'],
+        terrain: [
+          CITY,
+          VILLAGE,
+        ]
       },
     ],
   },
@@ -283,11 +380,19 @@ export default {
         title: 'Swamp',
         location: 'https://michaelghelfi.bandcamp.com/track/swamp',
         tags: ['swamp', 'flies', 'crickets'],
+        terrain: [
+          SWAMP
+        ]
       },
       {
         title: 'Night Swamp - Haunted',
         location: 'https://michaelghelfi.bandcamp.com/track/dead-marshes',
         tags: ['swamp', 'flies', 'magic', 'crickets', 'tense'],
+        terrain: [
+          FOREST,
+          MOUNTAINS,
+          SWAMP
+        ]
       },
     ],
   },
@@ -295,19 +400,31 @@ export default {
     titleColor: "green",
     trackObjects: [
       {
-        title: 'Daytime Forest',
+        title: 'Daytime Forest (roars)',
         location: 'https://michaelghelfi.bandcamp.com/track/daytime-forest',
         tags: ['leaves', 'stream',],
+        terrain: [
+          FOREST,
+          MOUNTAINS,
+        ],
       },
       {
         title: 'Horseback - Light Forest',
-        location: 'horseback',
+        location: 'https://michaelghelfi.bandcamp.com/track/horseback',
         tags: ['hooves', 'horseback', 'birdsong', 'walk'],
+        terrain: [
+          FOREST,
+        ]
       },
       {
         title: 'Twisted Forest - Roaring',
         location: 'https://michaelghelfi.bandcamp.com/track/darkest-forest',
         tags: ['creepy', 'roaring', 'howling', 'forest'],
+        terrain: [
+          CAVES,
+          FOREST,
+          SWAMP,
+        ]
       },
     ],
   },
@@ -318,19 +435,54 @@ export default {
         title: 'Desert Wind',
         location: 'https://michaelghelfi.bandcamp.com/track/desert',
         tags: ['desert', 'wind',],
+        terrain: [
+          DESERT,
+          MOUNTAINS,
+          PLAINS,
+          WINTER,
+        ]
       },
       {
         title: 'Desert Campfire',
         location: 'https://michaelghelfi.bandcamp.com/track/desert-campfire',
         tags: ['desert', 'wind',],
+        terrain: [
+          DESERT,
+          MOUNTAINS,
+          PLAINS,
+          WINTER,
+        ]
       },
       {
         title: 'By a Stream',
         location: 'https://michaelghelfi.bandcamp.com/track/lively-tundra-2',
         tags: ['stream', 'fire', 'day', 'birds'],
+        terrain: [
+          COAST,
+          FOREST,
+          PLAINS,
+          MOUNTAINS,
+        ]
       },
     ],
   },
-  
-  
+
+  // Special Events - avilable everywhere
+  'Special Event': {
+    titleColor: "#f4f",
+    trackObjects: [
+      {
+        title: 'Desert Chase (1:03)',
+        location: 'https://www.youtube.com/watch?v=L65k0_Y-LPY',
+        tags: ['Skyworld', 'wyvern', 'desert'],
+        terrain: [],
+      },
+      {
+        title: 'El Dorado (0:59)',
+        location: 'https://www.youtube.com/watch?v=RSrqK0tU0uc',
+        tags: ['El Dorado', '',],
+        terrain: [],
+      },
+    ],
+  }, 
 }

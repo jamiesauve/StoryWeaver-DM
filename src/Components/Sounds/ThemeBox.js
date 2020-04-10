@@ -56,7 +56,6 @@ const ThemeBox =  props => {
     props.setExpandedTheme('')
   }
 
-console.log('props', props);
   return (
     <This
       className="themeBox"
