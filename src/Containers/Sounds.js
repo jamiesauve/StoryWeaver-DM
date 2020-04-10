@@ -14,6 +14,7 @@ const Sounds = (props) => {
   return (
     <Section
       title="Sounds"
+      className="Section"
     >
       <ScrollableContainer
         className="scrollableContainer"

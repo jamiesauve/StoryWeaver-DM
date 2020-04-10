@@ -10,7 +10,7 @@ export const COAST = {
 
 export const CITY = {
   name: 'city',
-  color: '#e5a',
+  color: '#c44',
 }
 
 export const DESERT = {
@@ -20,12 +20,12 @@ export const DESERT = {
 
 export const FOREST = {
   name: 'forest',
-  color: '#0d0',
+  color: '#292',
 }
 
 export const MOUNTAINS = {
   name: 'mountains',
-  color: '#1cd',
+  color: '#589',
 }
 
 export const PLAINS = {
@@ -40,7 +40,7 @@ export const SWAMP = {
 
 export const VILLAGE = {
   name: 'village',
-  color: '#e5a',
+  color: '#a85',
 }
 
 export const WINTER = {

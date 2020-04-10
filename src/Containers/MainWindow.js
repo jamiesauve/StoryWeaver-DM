@@ -15,14 +15,12 @@ display: flex;
 flex-direction: column;
 `
 
-const MainWindowBody = styled.div `
+const MainWindowBody = styled.div`
 display: flex;
 flex-direction: row;
-
-height: 100%;
+justify-content: stretch;
 
 flex-grow: 1;
-flex-shrink: 0;
 `
 
 const MainWindow = () => {
@@ -37,7 +35,7 @@ const MainWindow = () => {
     setHeaderHeight(mainWindowHeaderElement.current.clientHeight)
     const appHeight = document.getElementsByClassName('App')[0].clientHeight
     
-    setMainWindowBodyHeight(appHeight - headerHeight - 32) // margins
+    setMainWindowBodyHeight(appHeight - headerHeight)
   }, [mainWindowHeaderElement.current])
 
   return (
@@ -58,9 +56,14 @@ const MainWindow = () => {
         className="mainWindowBody"
       >
         <Frame
-          maxHeight={`${mainWindowBodyHeight}px`}
+          className="frame"
+          
         >
-          <Pane>
+          <Pane
+            className="pane"
+            // margin, border and padding on pane for both this pane and the MainWindowHeader one
+            height={`${mainWindowBodyHeight - 64}px`} 
+          >
             <Sounds 
               activeTerrain={activeTerrain}
             />

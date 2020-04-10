@@ -59,11 +59,13 @@ const EnvironmentalTrackSection = (props) => {
           ? null
           : (
             <ThemeBox
-              isExpanded={areAllCategoriesExpanded ? true : expandedTheme === terrainType.name}
+              isExpanded={areAllCategoriesExpanded ? true : expandedTheme.toLowerCase() === terrainType.name}
               key={terrainType.name}
-              title={terrainType.name}
+              title={`${terrainType.name.charAt(0).toUpperCase()}${terrainType.name.slice(1)}`} // TODO use name and label as two things for these
               titleColor={terrainType.color}
-              setExpandedTheme={areAllCategoriesExpanded ? () => setExpandedTheme('') : setExpandedTheme}
+              setExpandedTheme={currentTerrainTypes.length === 1
+                ? setAreAllCategoriesExpanded
+                : areAllCategoriesExpanded ? () => setExpandedTheme('') : setExpandedTheme}
               tracks={filteredTracks}
             />
           )

@@ -5,6 +5,7 @@ import _ from 'lodash'
 import ThemeBox from './ThemeBox'
 
 import tracks from '../../assets/specialTracks'
+import ToggleExpandedButton from './ToggleExpandedButton'
 
 const This = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ const Title = styled.div`
 `
 
 const SpecialTrackSection = () => {
-  const [ isExpanded, setIsExpanded ] = useState(true)
+  const [ areAllCategoriesExpanded, setAreAllCategoriesExpanded ] = useState(true)
 
   return (
     <This
@@ -32,11 +33,16 @@ const SpecialTrackSection = () => {
         Special Events
       </Title>
 
+      <ToggleExpandedButton 
+        areAllCategoriesExpanded={areAllCategoriesExpanded}
+        setAreAllCategoriesExpanded={setAreAllCategoriesExpanded}
+      />
+
       <ThemeBox
-        isExpanded={isExpanded}
+        isExpanded={areAllCategoriesExpanded}
         title={"Special Events"}
         titleColor={tracks.titleColor}
-        setExpandedTheme={(theme) => setIsExpanded(Boolean(theme))}
+        setExpandedTheme={setAreAllCategoriesExpanded}
         tracks={tracks.trackObjects}
       />
     </This>
