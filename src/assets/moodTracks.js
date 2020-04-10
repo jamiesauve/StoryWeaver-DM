@@ -1,0 +1,149 @@
+import * as terrainTypes from './terrainTypes'
+
+// Moods - mostly available everywhere
+export default {
+  'Battle': {
+    titleColor: "#a01",
+    trackObjects: [
+      {
+        title: 'Music: Serious (1:00)',
+        location: 'https://www.youtube.com/watch?v=yIMy3pOeo34',
+        tags: ['skyrim', 'battle', 'serious'],
+      },
+      {
+        title: 'Music: Serious mix (0:44)',
+        location: 'https://www.youtube.com/watch?v=KEerqdg5f_8',
+        tags: ['skyrim', 'battle', 'serious', 'mix'],
+      },
+      {
+        title: 'Music: Intense Mix (0:52)',
+        location: 'https://www.youtube.com/watch?v=w0sUw735gRw',
+        tags: ['skyrim', 'battle', 'serious', 'mix'],
+        
+      },
+      {
+        title: 'Taiko Drums - clacks (1:00)',
+        location: 'https://www.youtube.com/watch?v=1nq8G4BT7-w ',
+        tags: ['skyrim', 'battle', 'serious', 'mix'],
+        
+      },
+      {
+        title: 'Viking Drums - steady (1:00)',
+        location: 'https://www.youtube.com/watch?v=47UqaBordWE',
+        tags: ['skyrim', 'battle', 'serious', 'mix'],
+      },
+    ],
+  },
+  'Exploring': {
+    titleColor: '#099',
+    trackObjects: [
+      {
+        title: 'Music: Mix 1 (0:58)',
+        location: 'https://www.youtube.com/watch?v=S4ADbLPLmN8',
+        tags: ['hooves', 'horseback', 'birdsong', 'walk'],
+      },
+      {
+        title: 'Music: Mix 2 (0:58)',
+        location: 'https://www.youtube.com/watch?v=A8qMyBWZNw0',
+        tags: ['hooves', 'horseback', 'birdsong', 'walk'],
+      }
+    ]
+  },
+  'Puzzle': {
+    titleColor: "#d50",
+    trackObjects: [
+      {
+        title: 'Suspense, torches',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-fire',
+        tags: ['ruins', 'fire', 'quiet', 'peaceful'],
+      },
+      {
+        title: 'Puzzle Room (Creepy)',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
+        tags: [
+          'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
+        ],
+      },
+      {
+        title: 'Taiko Drums - steady (1:11)',
+        location: 'https://www.youtube.com/watch?v=KenLU_OtXsc',
+        tags: ['puzzle', 'calm', 'thunder', 'interesting'],
+      },
+    ],
+  },
+  'Magic': {
+    titleColor: '#a4a',
+    trackObjects: [
+      {
+        title: 'Moonlight',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-moon',
+        tags: ['moonlight', 'night', 'birds', 'magic', 'peaceful'],
+      },
+      {
+        title: 'Crystal Cave',
+        location: 'https://michaelghelfi.bandcamp.com/track/crystal-cave',
+        tags: [
+          'crystal', 'cave', 'underground', 'magical', 'wonder',
+        ],
+      },
+    ]
+  },
+  'Creepy': {
+    titleColor: '#448',
+    trackObjects: [
+      {
+        title: 'Suspense, torches',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-fire',
+        tags: ['ruins', 'fire', 'quiet', 'peaceful'],
+      },
+      {
+        title: 'Slow Dread',
+        location: 'https://michaelghelfi.bandcamp.com/track/gloomy-cave',
+        tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
+      },
+      {
+        title: 'Music: Creepy Fight',
+        location: 'https://www.youtube.com/watch?v=MI2wq39BPFo ',
+        tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
+      },
+      {
+        title: 'Puzzle Room',
+        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
+        tags: [
+          'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
+        ],
+      },
+    ],
+  },
+  'Weather': {
+    titleColor: '#45e',
+    trackObjects: [
+      {
+        title: 'Rain',
+        location: 'https://michaelghelfi.bandcamp.com/track/realistic-rain',
+        tags: ['rain',],
+        excludeFrom: [terrainTypes.WINTER.name],
+      },
+      {
+        title: 'Wind',
+        location: 'https://michaelghelfi.bandcamp.com/track/stormy-highlands',
+        tags: ['wind', 'storm'],
+      },
+    ]
+  },
+  'Tavern': {
+    titleColor: '#c43',
+    trackObjects: [
+      {
+        title: 'Music: Tavern (4:28)',
+        location: 'https://www.youtube.com/watch?v=hWPPD5ww0eA',
+        tags: ['tavern', 'inn', 'bard', 'music'],
+      },
+      {
+        title: 'Shady Tavern',
+        location: 'https://michaelghelfi.bandcamp.com/track/back-alley-tavern',
+        tags: ['tavern',],
+      },
+    ],
+  }
+}

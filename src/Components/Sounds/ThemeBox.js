@@ -5,7 +5,7 @@ import _ from 'lodash'
 import SectionTitle from '../styled/SectionTitle'
 
 const This = styled.div`
-  margin: 10px 0;
+  margin-top: 10px;
   
   border-radius: ${props => props.isExpanded ? `5px 5px 0 0` : `5px`};
   box-shadow: 0 0 3px #777;

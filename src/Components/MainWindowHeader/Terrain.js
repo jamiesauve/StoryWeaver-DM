@@ -25,8 +25,8 @@ const terrainOptions = _.concat(
     value: '',
   },
   _.map(terrainTypes, (terrainType) => ({
-    label: `${terrainType.charAt(0).toUpperCase()}${terrainType.slice(1)}`,
-    value: terrainType,
+    label: `${terrainType.name.charAt(0).toUpperCase()}${terrainType.name.slice(1)}`,
+    value: terrainType.name,
   }))
 )
 
