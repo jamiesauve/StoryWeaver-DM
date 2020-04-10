@@ -7,6 +7,8 @@ import Spacer from '../Components/styled/Spacer'
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
 import MoodTrackSection from '../Components/Sounds/MoodTrackSection'
+import EnvironmentTrackSection from '../Components/Sounds/EnvironmentTrackSection'
+import SpecialTrackSection from '../Components/Sounds/SpecialTrackSection'
 
 const Sounds = (props) => {
   return (
@@ -22,11 +24,13 @@ const Sounds = (props) => {
 
           <Spacer />
 
-          {/* <TrackSection 
+          <EnvironmentTrackSection 
             activeTerrain={props.activeTerrain}
-            title="Environments"
-            tracks={tracks.environments}
-          /> */}
+          />
+
+          <Spacer />
+
+          <SpecialTrackSection />
         
       </ScrollableContainer>
     </Section>

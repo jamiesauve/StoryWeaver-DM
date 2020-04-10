@@ -16,7 +16,8 @@ const This = styled.div`
 const MainWindowHeader = (props) => {
   return (
     <This
-    ref={props.mainWindowHeaderElement}
+      className="mainWindowHeader"
+      ref={props.mainWindowHeaderElement}
     >
       <Terrain 
         activeTerrain={props.activeTerrain}

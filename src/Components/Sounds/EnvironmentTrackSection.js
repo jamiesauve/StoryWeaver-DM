@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
 import ThemeBox from './ThemeBox'
 import ToggleExpandedButton from './ToggleExpandedButton'
+
+import * as terrainTypes from '../../assets/terrainTypes'
+import tracks from '../../assets/environmentTracks'
 
 const This = styled.div`
   display: flex;
@@ -20,50 +23,46 @@ const Title = styled.div`
   text-align: center;
 `
 
-const TrackSection = (props) => {
+const EnvironmentalTrackSection = (props) => {
   const [ expandedTheme, setExpandedTheme ] = useState('')
-  const [ areAllCategoriesExpanded, setAreAllCategoriesExpanded ] = useState(false)
+  const [ areAllCategoriesExpanded, setAreAllCategoriesExpanded ] = useState(true)
 
-  const copyTrack = (location) => {    
-    const command = `;;play ${location}`
-    navigator.clipboard.writeText(command)
-  }
+  useEffect(() => {
+    setAreAllCategoriesExpanded(props.activeTerrain)
+  }, [props.activeTerrain])
+
+  const currentTerrainTypes = props.activeTerrain
+    ? [_.find(terrainTypes, {name: props.activeTerrain})]
+    : terrainTypes
 
   return (
     <This
-      className="TrackSection"
+      className="environmentalTrackSection"
     >
-      {
-        props.title && <Title>
-          {props.title}
-        </Title>
-      }
+      <Title>
+        Environments
+      </Title>
+     
       <ToggleExpandedButton 
         areAllCategoriesExpanded={areAllCategoriesExpanded}
         setAreAllCategoriesExpanded={setAreAllCategoriesExpanded}
       />
 
-      {_.map(props.tracks, (category, categoryName) => {
-        const filteredTracks = props.activeTerrain 
-          ? _.filter(category.trackObjects, trackObject => {
+      {_.map(currentTerrainTypes, (terrainType) => {
+        const filteredTracks = _.filter(tracks, trackObject => {
             if (_.isEmpty(trackObject.terrain)) return true;
 
-            return _.includes(trackObject.terrain, props.activeTerrain)
-
+            return _.includes(trackObject.terrain, terrainType.name)
           })
-          : category.trackObjects
-
-        console.log(props.activeTerrain)
 
         return _.isEmpty(filteredTracks)
           ? null
           : (
             <ThemeBox
-              copyTrack={copyTrack}
-              isExpanded={areAllCategoriesExpanded ? true : expandedTheme === categoryName}
-              key={categoryName}
-              title={categoryName}
-              titleColor={category.titleColor}
+              isExpanded={areAllCategoriesExpanded ? true : expandedTheme === terrainType.name}
+              key={terrainType.name}
+              title={terrainType.name}
+              titleColor={terrainType.color}
               setExpandedTheme={areAllCategoriesExpanded ? () => setExpandedTheme('') : setExpandedTheme}
               tracks={filteredTracks}
             />
@@ -74,4 +73,4 @@ const TrackSection = (props) => {
   )
 }
 
-export default TrackSection
+export default EnvironmentalTrackSection

@@ -46,7 +46,13 @@ export default {
         title: 'Music: Mix 2 (0:58)',
         location: 'https://www.youtube.com/watch?v=A8qMyBWZNw0',
         tags: ['hooves', 'horseback', 'birdsong', 'walk'],
-      }
+      },
+      {
+        title: 'Night Music (1:00)',
+        location: 'https://www.youtube.com/watch?v=aK4JSwhdcdE',
+        tags: ['skyrim', 'battle', 'serious'],
+        terrain: [],
+      },
     ]
   },
   'Puzzle': {

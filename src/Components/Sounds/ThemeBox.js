@@ -46,13 +46,19 @@ const TrackTitle = styled.div`
 const ThemeBox =  props => {
   const handleClickTitle = () => 
   {
+    console.log('expanded', props.isExpanded, 'title', props.title)
     props.isExpanded
     ? props.setExpandedTheme('')
     : props.setExpandedTheme(props.title)
   }
 
+  const copyTrack = (location) => {    
+    const command = `;;play ${location}`
+    navigator.clipboard.writeText(command)
+  }
+
   const handleClickTrack = (location) => {
-    props.copyTrack(location)
+    copyTrack(location)
     props.setExpandedTheme('')
   }
 

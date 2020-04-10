@@ -22,6 +22,7 @@ flex-direction: row;
 height: 100%;
 
 flex-grow: 1;
+flex-shrink: 0;
 `
 
 const MainWindow = () => {

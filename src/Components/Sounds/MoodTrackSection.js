@@ -26,13 +26,6 @@ const TrackSection = (props) => {
   const [ expandedTheme, setExpandedTheme ] = useState('')
   const [ areAllCategoriesExpanded, setAreAllCategoriesExpanded ] = useState(false)
 
-  const copyTrack = (location) => {    
-    const command = `;;play ${location}`
-    navigator.clipboard.writeText(command)
-  }
-
-  console.log('props', props)
-
   return (
     <This
       className="TrackSection"
@@ -49,10 +42,7 @@ const TrackSection = (props) => {
       {_.map(tracks, (category, categoryName) => {
         const filteredTracks = props.activeTerrain 
         ? _.filter(category.trackObjects, trackObject => {
-          console.log(trackObject)
           if (_.isEmpty(trackObject.excludeFrom)) return true;
-
-          console.log('exclude', trackObject.excludeFrom, props.activeTerrain)
 
           return !_.includes(trackObject.excludeFrom, props.activeTerrain)
 
@@ -61,7 +51,6 @@ const TrackSection = (props) => {
 
         return (
           <ThemeBox
-            copyTrack={copyTrack}
             isExpanded={areAllCategoriesExpanded ? true : expandedTheme === categoryName}
             key={categoryName}
             title={categoryName}

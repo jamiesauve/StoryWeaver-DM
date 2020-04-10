@@ -1,4 +1,7 @@
-import {
+import _ from 'lodash'
+import * as terrainTypes from './terrainTypes'
+
+const [
   CAVES,
   COAST,
   CITY,
@@ -9,7 +12,7 @@ import {
   SWAMP,
   VILLAGE,
   WINTER,
-} from './terrainTypes'
+] = _.map(terrainTypes, (terrainType) => terrainType.name)
 
 const NOT_WINTER = 'notWinter'
 
@@ -57,12 +60,6 @@ export default [
       PLAINS, 
       SWAMP, 
     ],
-  },
-  {
-    title: 'Music: Night (1:00)',
-    location: 'https://www.youtube.com/watch?v=aK4JSwhdcdE',
-    tags: ['skyrim', 'battle', 'serious'],
-    terrain: [],
   },
   {
     title: 'Cave - inhabited',
@@ -182,7 +179,7 @@ export default [
     terrain: [SWAMP],
   },
   {
-    title: 'Quiet Day',
+    title: 'Quiet Day - Forest',
     location: 'https://www.youtube.com/watch?v=HqdjZSYNV8M',
     tags: ['birds', 'day', 'peaceful'],
     terrain: [
@@ -192,7 +189,7 @@ export default [
     ],
   },
   {
-    title: 'Quiet Day',
+    title: 'Quiet Day - Plains',
     location: 'https://www.youtube.com/watch?v=66UCZF3NlRo',
     tags: ['birds', 'day', 'peaceful'],
     terrain: [
