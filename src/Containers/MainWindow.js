@@ -5,6 +5,7 @@ import Frame from '../Components/styled/Frame'
 import Pane from '../Components/styled/Pane'
 
 import MainWindowHeader from './MainWindowHeader'
+import SearchResults from './SearchResults'
 import Sounds from './Sounds'
 
 import makeSearchCall from '../utils/makeSearchCall'
@@ -95,7 +96,9 @@ const MainWindow = () => {
 
         <Frame>
           <Pane>
-            Search Results: {searchResults.toString()}
+            <SearchResults 
+              searchResults={searchResults}
+            />
           </Pane>
 
           <Pane>

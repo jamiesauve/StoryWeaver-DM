@@ -7,7 +7,8 @@ import Pane from '../styled/Pane'
 
 import SelectInput from '../UI/SelectInput'
 
-import * as terrainTypes from '../../assets/terrainTypes'
+import * as terrainTypes from '../../data/terrainTypes'
+import toCapitalCase from '../../utils/toCapitalCase'
 
 const This = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const terrainOptions = _.concat(
     value: '',
   },
   _.map(terrainTypes, (terrainType) => ({
-    label: `${terrainType.name.charAt(0).toUpperCase()}${terrainType.name.slice(1)}`,
+    label: toCapitalCase(terrainType.name),
     value: terrainType.name,
   }))
 )

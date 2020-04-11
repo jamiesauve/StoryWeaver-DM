@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import ThemeBox from './ThemeBox'
 
-import tracks from '../../assets/specialTracks'
+import tracks from '../../data/specialTracks'
 import ToggleExpandedButton from './ToggleExpandedButton'
 
 const This = styled.div`

@@ -5,7 +5,7 @@ import _ from 'lodash'
 import ThemeBox from './ThemeBox'
 import ToggleExpandedButton from './ToggleExpandedButton'
 
-import tracks from '../../assets/moodTracks'
+import tracks from '../../data/moodTracks'
 
 const This = styled.div`
   display: flex;

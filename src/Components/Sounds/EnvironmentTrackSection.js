@@ -5,8 +5,10 @@ import _ from 'lodash'
 import ThemeBox from './ThemeBox'
 import ToggleExpandedButton from './ToggleExpandedButton'
 
-import * as terrainTypes from '../../assets/terrainTypes'
-import tracks from '../../assets/environmentTracks'
+import * as terrainTypes from '../../data/terrainTypes'
+import tracks from '../../data/environmentTracks'
+
+import toCapitalCase from '../../utils/toCapitalCase'
 
 const This = styled.div`
   display: flex;
@@ -61,7 +63,7 @@ const EnvironmentalTrackSection = (props) => {
             <ThemeBox
               isExpanded={areAllCategoriesExpanded ? true : expandedTheme.toLowerCase() === terrainType.name}
               key={terrainType.name}
-              title={`${terrainType.name.charAt(0).toUpperCase()}${terrainType.name.slice(1)}`} // TODO use name and label as two things for these
+              title={toCapitalCase(terrainType.name)}
               titleColor={terrainType.color}
               setExpandedTheme={currentTerrainTypes.length === 1
                 ? setAreAllCategoriesExpanded

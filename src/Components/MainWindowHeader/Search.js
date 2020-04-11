@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import TextInput from '../UI/TextInput'
 
-import { sanitizeAlphaNumeric } from '../../utils/sanitize'
+import { sanitizeAlphaNumericWithConnectors } from '../../utils/sanitize'
 
 const This = styled.div`
 display: flex;
@@ -26,7 +26,7 @@ const Search = (props) => {
       props.setSearchQuery(input)
       setSearchInput('')
     } else {
-      const sanitizedInput = sanitizeAlphaNumeric(input)
+      const sanitizedInput = sanitizeAlphaNumericWithConnectors(input)
       setSearchInput(sanitizedInput)
     }
   }
