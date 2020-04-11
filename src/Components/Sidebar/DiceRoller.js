@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import generateRoll from '../../utils/generateRoll'
+import { sanitizeNumeric } from '../../utils/sanitize'
 
 const This = styled.div`
   width: 100%;
@@ -48,7 +49,7 @@ const DiceRoller = () => {
   const [lastInput, setLastInput] = useState('')
 
   const handleDiceRollerChange = (e) => {  
-    const input = e.target.value
+    const input = sanitizeNumeric(e.target.value)
 
     setDiceRollerInputValue(input)
 

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState, } from 'react'
 import styled from 'styled-components'
 
 import TextInput from '../UI/TextInput'
+
+import { sanitizeAlphaNumeric } from '../../utils/sanitize'
 
 const This = styled.div`
 display: flex;
@@ -14,6 +16,21 @@ const SearchTitle = styled.div`
 `
 
 const Search = (props) => {
+  const [searchInput, setSearchInput] = useState('')
+
+  const handleSubmitOnSpace = (e) => {
+    const input = e.target.value
+
+    if (input.endsWith(" ") && input.length !== 2) {
+      
+      props.setSearchQuery(input)
+      setSearchInput('')
+    } else {
+      const sanitizedInput = sanitizeAlphaNumeric(input)
+      setSearchInput(sanitizedInput)
+    }
+  }
+
   return (
     <This>
       <SearchTitle>
@@ -21,7 +38,8 @@ const Search = (props) => {
       </SearchTitle>
 
       <TextInput
-        value={'boo'}
+        onChange={handleSubmitOnSpace}
+        value={searchInput}
         width={`44vw`}
       />
     </This>

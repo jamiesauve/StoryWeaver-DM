@@ -7,6 +7,8 @@ import Pane from '../Components/styled/Pane'
 import MainWindowHeader from './MainWindowHeader'
 import Sounds from './Sounds'
 
+import makeSearchCall from '../utils/makeSearchCall'
+
 const This = styled.div`
 width: 75vw;
 height: 100vh;
@@ -27,16 +29,30 @@ const MainWindow = () => {
   const [headerHeight, setHeaderHeight] = useState(0)
   const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(0) 
   const [activeTerrain, setActiveTerrain] = useState('')
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState('')
 
   const mainWindowHeaderElement = useRef('')
 
   useEffect(() => {
-    // clean this up; wll also need to have the height update on window resize (electron?)
+    // TODO clean this up - using a ref for one and getElementsByClassName for the other
     setHeaderHeight(mainWindowHeaderElement.current.clientHeight)
     const appHeight = document.getElementsByClassName('App')[0].clientHeight
     
     setMainWindowBodyHeight(appHeight - headerHeight)
   }, [mainWindowHeaderElement.current])
+
+  useEffect(() => {
+    const runSearch = async (searchQuery) => {
+      if (searchQuery) {
+        const result = await(makeSearchCall(searchQuery))
+
+        setSearchResults(result)
+      }
+    }
+
+    runSearch(searchQuery)
+  }, [searchQuery])
 
   return (
     <This>
@@ -48,6 +64,7 @@ const MainWindow = () => {
               mainWindowHeaderElement={mainWindowHeaderElement}
               activeTerrain={activeTerrain}
               setActiveTerrain={setActiveTerrain}
+              setSearchQuery={setSearchQuery}
             />
           </Pane>
       </Frame>
@@ -78,7 +95,7 @@ const MainWindow = () => {
 
         <Frame>
           <Pane>
-            Search Results
+            Search Results: {searchResults.toString()}
           </Pane>
 
           <Pane>

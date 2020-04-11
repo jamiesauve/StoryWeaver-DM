@@ -11,7 +11,6 @@ const This = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 `
 
 const MainWindowHeader = (props) => {
@@ -25,7 +24,9 @@ const MainWindowHeader = (props) => {
         setActiveTerrain={props.setActiveTerrain}
       />
 
-      <Search />
+      <Search
+        setSearchQuery={props.setSearchQuery}
+      />
     </This>
   )
 }
