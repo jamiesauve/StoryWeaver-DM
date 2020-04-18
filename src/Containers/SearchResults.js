@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import Section from '../Components/Layout/Section'
 
-import displayCards from '../Components/SearchResults'
+import displayCards from '../Components/DisplayCards'
 
 import toCapitalCase from '../utils/toCapitalCase'
 
