@@ -4,7 +4,9 @@ import styled from 'styled-components'
 import Frame from '../Components/styled/Frame'
 import Pane from '../Components/styled/Pane'
 
+import Creatures from './Creatures'
 import MainWindowHeader from './MainWindowHeader'
+import Plants from './Plants'
 import SearchResults from './SearchResults'
 import Sounds from './Sounds'
 
@@ -90,7 +92,9 @@ const MainWindow = () => {
 
         <Frame>
           <Pane>
-            Creatures
+            <Creatures
+              activeTerrain={activeTerrain}
+            />
           </Pane>
         </Frame>
 
@@ -102,7 +106,9 @@ const MainWindow = () => {
           </Pane>
 
           <Pane>
-            Plants
+            <Plants
+              activeTerrain={activeTerrain}
+            />
           </Pane>
         </Frame>
       </MainWindowBody>

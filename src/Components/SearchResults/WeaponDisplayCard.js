@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Cost from './statComponents/Cost'
-import Damage from './statComponents/Damage'
-import Properties from './statComponents/Properties'
-import Range from './statComponents/Range'
-import Special from './statComponents/Special'
+import Cost from '../Stats/Cost'
+import Damage from '../Stats/Damage'
+import Properties from '../Stats/Properties'
+import Range from '../Stats/Range'
+import Special from '../Stats/Special'
 
-import restructureData from './restructure/weapon'
-import Weight from './statComponents/Weight'
+import restructureData from './dataRestructuring/weapon'
+import Weight from '../Stats/Weight'
 
 const This = styled.div`
   display: flex;

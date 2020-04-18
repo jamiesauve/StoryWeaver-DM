@@ -57,6 +57,8 @@ const EnvironmentalTrackSection = (props) => {
             return _.includes(trackObject.terrain, terrainType.name)
           })
 
+        const sortedTracks = _.sortBy(filteredTracks, track => track.title)
+
         return _.isEmpty(filteredTracks)
           ? null
           : (
@@ -68,7 +70,7 @@ const EnvironmentalTrackSection = (props) => {
               setExpandedTheme={currentTerrainTypes.length === 1
                 ? setAreAllCategoriesExpanded
                 : areAllCategoriesExpanded ? () => setExpandedTheme('') : setExpandedTheme}
-              tracks={filteredTracks}
+              tracks={sortedTracks}
             />
           )
 

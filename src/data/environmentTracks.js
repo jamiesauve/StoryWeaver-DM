@@ -239,5 +239,144 @@ export default [
       WINTER,
     ]
   },
+  {
+    title: 'Ruins',
+    location: 'https://michaelghelfi.bandcamp.com/track/ruined-castle-2',
+    tags: ['quiet', 'ruins', 'calm', 'mystery', 'sad', 'desolate'],
+    terrain: [
+      COAST,
+      DESERT,
+      FOREST,
+      MOUNTAINS,
+      PLAINS,
+      WINTER,
+    ]
+  },
+  {
+    title: 'Night Ruins',
+    location: 'https://michaelghelfi.bandcamp.com/track/nightfall-ruins',
+    tags: ['quiet', 'ruins', 'calm', 'mystery', 'night', 'sad'],
+    terrain: [
+      COAST,
+      DESERT,
+      FOREST,
+      MOUNTAINS,
+      PLAINS,
+      SWAMP,
+      WINTER,
+    ]
+  },
+  {
+    title: 'Windy Ocean',
+    location: 'https://michaelghelfi.bandcamp.com/track/windy-coast',
+    tags: ['waves', 'coast', 'wind', 'ocean'],
+    terrain: [
+      COAST,
+    ]
+  },
+  {
+    title: 'Bazaar',
+    location: 'https://michaelghelfi.bandcamp.com/track/bazaar',
+    tags: ['market', 'bazaar', 'busy', 'crowd', 'people', 'children'],
+    terrain: [
+      CITY,
+      VILLAGE,
+    ]
+  },
+  {
+    title: 'Jungle Cove',
+    location: 'https://michaelghelfi.bandcamp.com/track/cove',
+    tags: ['cove', 'water', 'waves', 'animals', 'night'],
+    terrain: [
+      COAST,
+    ]
+  },
+  {
+    title: 'Haunted Coast',
+    location: 'https://michaelghelfi.bandcamp.com/track/on-the-haunted-shore',
+    tags: ['coast', 'heaunted', 'magic', 'night', 'creepy'],
+    terrain: [
+      COAST,
+    ]
+  },
+  {
+    title: 'Blacksmith\'s Forge',
+    location: 'https://michaelghelfi.bandcamp.com/track/blacksmith',
+    tags: ['blacksmith', 'torches', 'forge'],
+    terrain: [
+      CITY,
+      VILLAGE,
+    ]
+  },
+  {
+    title: 'Winter Coast',
+    location: 'https://michaelghelfi.bandcamp.com/track/frozen-coast',
+    tags: ['windy', 'waves', 'creepy'],
+    terrain: [
+      WINTER,
+      COAST,
+    ]
+  },
+  {
+    title: 'Windy Shack',
+    location: 'https://michaelghelfi.bandcamp.com/track/abandoned-shack',
+    tags: ['windy', 'people'],
+    terrain: [
+      COAST,
+      DESERT,
+      FOREST,
+      MOUNTAINS,
+      PLAINS,
+      WINTER,
+    ]
+  },
+  {
+    title: 'Beach',
+    location: 'https://michaelghelfi.bandcamp.com/track/on-the-shore',
+    tags: ['coast', 'beach', 'peaceful', 'windy', 'gulls'],
+    terrain: [
+      COAST,
+    ]
+  },
+  {
+    title: 'Sailing Ship',
+    location: 'https://michaelghelfi.bandcamp.com/track/sailing-ship',
+    tags: ['chains', 'wind', 'creaking', 'windy', 'water'],
+    terrain: [
+      COAST,
+    ]
+  },
+  {
+    title: 'Harbor',
+    location: 'https://michaelghelfi.bandcamp.com/track/harbor',
+    tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'gulls'],
+    terrain: [
+      COAST,
+    ]
+  },
+  {
+    title: 'Ship in Storm',
+    location: 'https://michaelghelfi.bandcamp.com/track/ship-in-storms',
+    tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'storm'],
+    terrain: [
+      COAST,
+    ]
+  },
+  {
+    title: 'Ship\'s Cabin (by land, storm)',
+    location: 'https://www.youtube.com/watch?v=Ft-lJyu_nuY',
+    tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'birds', 'storm'],
+    terrain: [
+      COAST,
+    ]
+  },
+  {
+    title: 'Pirate Cove',
+    location: 'https://www.youtube.com/watch?v=gcPSA3sUilc',
+    tags: ['town', 'harbor', 'music', 'drums', 'loud', 'shouting'],
+    terrain: [
+      COAST,
+    ]
+  },
 ]
   

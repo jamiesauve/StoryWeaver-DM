@@ -2,9 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
+import Section from '../Components/Layout/Section'
+
 import displayCards from '../Components/SearchResults'
 
 import toCapitalCase from '../utils/toCapitalCase'
+
+const This = styled.div``
 
 const SearchResults = (props) => {
   const category = _.get(props, 'searchResults.category', null)
@@ -14,12 +18,17 @@ const SearchResults = (props) => {
   : null
 
   return (
-    <div>
-      {ResultsComponent 
-      && <ResultsComponent 
-        data={props.searchResults.data}
-      />}
-    </div> 
+    <This>
+      <Section
+        title="Search Results"
+      >
+        {ResultsComponent 
+          && <ResultsComponent 
+            data={props.searchResults.data}
+          />
+        }
+      </Section>
+    </This> 
   )
 }
 
