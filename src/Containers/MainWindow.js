@@ -6,7 +6,7 @@ import Pane from '../Components/styled/Pane'
 
 import Creatures from './Creatures'
 import MainWindowHeader from './MainWindowHeader'
-import Plants from './Plants'
+import Alchemy from './Alchemy'
 import SearchResults from './SearchResults'
 import Sounds from './Sounds'
 
@@ -106,7 +106,7 @@ const MainWindow = () => {
           </Pane>
 
           <Pane>
-            <Plants
+            <Alchemy
               activeTerrain={activeTerrain}
             />
           </Pane>

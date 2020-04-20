@@ -7,37 +7,39 @@ import Spacer from '../Components/styled/Spacer'
 
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
-import PlantDisplayCard from '../Components/DisplayCards/PlantDisplayCard'
+import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 
-import plants from '../data/plants'
+import reagents from '../data/reagents'
 
 const This = styled.div``
 
-const Plants = (props) => {
-  const plantsByTerrain = _.filter(plants, plant => 
-    _.isEmpty(plant.terrain)
+const Alchemy = (props) => {
+  const reagentsByTerrain = _.filter(reagents, reagent => 
+    _.isEmpty(reagent.terrain)
     ? true
-    : _.includes(plant.terrain, props.activeTerrain)
+    : _.includes(reagent.terrain, props.activeTerrain)
   )
 
   return (
     <This>
       <Section
-        className="Plants"
-        title="Plants"
+        className="alchemy"
+        title="Alchemy"
       >
         <ScrollableContainer
           className="scrollableContainer"
         >
           {
-            _.map(plantsByTerrain, plant => (
-              <>
-                <PlantDisplayCard
-                  data={plant}
+            _.map(reagentsByTerrain, reagent => (
+              <div
+                key={reagent.name}
+              >
+                <ReagentDisplayCard
+                  data={reagent}
                 />
 
                 <Spacer />
-              </>
+              </div>
             ))
           }
         </ScrollableContainer>
@@ -46,4 +48,4 @@ const Plants = (props) => {
   )
 }
 
-export default Plants
+export default Alchemy

@@ -1,19 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import _ from 'lodash'
 
-import Cost from '../Stats/Cost'
+import Value from '../Stats/Value'
 import Damage from '../Stats/Damage'
-import Properties from '../Stats/Properties'
+import BreadCrumbList from '../Stats/BreadCrumbList'
 import Range from '../Stats/Range'
-import Special from '../Stats/Special'
+import Description from '../Stats/Description'
 
 import restructureData from '../SearchResults/dataRestructuring/weapon'
 import Weight from '../Stats/Weight'
 
-import DisplayCard from '../styled/DisplayCard'
-import DisplayCardRow from '../styled/DisplayCardRow'
-import DisplayCardTitle from '../styled/DisplayCardTitle'
-import DisplayCardTitleDetail from '../styled/DisplayCardTitleDetail'
+import DisplayCard from '../styled/DisplayCard/Card'
+import Row from '../styled/DisplayCard/Row'
+import Title from '../styled/DisplayCard/Title'
+import TitleDetail from '../styled/DisplayCard/TitleDetail'
 
 const This = styled.div``
 
@@ -35,29 +36,27 @@ const WeaponDisplayCard = (props) => {
   return (
     <This>
       <DisplayCard>
-        <DisplayCardRow
+        <Row
           padding="0 0 5px 0"
         >
-          <DisplayCardTitle>
+          <Title>
             {name}
-          </DisplayCardTitle>
+          </Title>
 
-          <DisplayCardTitleDetail>
+          <TitleDetail>
             {type} {combatRange} Weapon
-          </DisplayCardTitleDetail>
+          </TitleDetail>
 
-          <Cost 
+          <Value 
             data={cost} 
           />
 
           <Weight
             data={weight}
           />
-        </DisplayCardRow>
+        </Row>
 
-        <DisplayCardRow
-          justifyContent="space-evenly"
-        > 
+        <Row> 
           <Range
             combatRange={combatRange}
             data={range}
@@ -67,22 +66,25 @@ const WeaponDisplayCard = (props) => {
             data={damage}
           />  
         
-        </DisplayCardRow>
+        </Row>
 
-        <DisplayCardRow
-          justifyContent="center"
+        <Row
+          justifyContent="flex-start"
           padding="0 0 5px 0"
         >
-          <Properties
+          <BreadCrumbList
+            backgroundColor="#fc0"
             data={properties}
           />
 
           {special 
-            && <Special
-              data={special}
+            && !_.isEmpty(special)
+            && <Description
+              backgroundColor="#fbf"
+              text={special}
             />
           }
-        </DisplayCardRow>
+        </Row>
       </DisplayCard>
     </This>
   )

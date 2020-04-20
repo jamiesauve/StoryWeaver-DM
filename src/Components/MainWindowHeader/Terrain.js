@@ -2,9 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Frame from '../styled/Frame'
-import Pane from '../styled/Pane'
-
 import SelectInput from '../UI/SelectInput'
 
 import * as terrainTypes from '../../data/terrainTypes'

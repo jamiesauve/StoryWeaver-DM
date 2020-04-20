@@ -50,16 +50,19 @@ export default [
     terrain: [
       CAVES,
     ],
-    type: [
+    type: "plant",
+    subTypes: [
       "vine",
     ],
     uses: [
+      // can be ingredient, eaten, salve, material component, 
       {
-        ingredient: {
+        type: 'ingredient',
+        creation: {
           type: 'poison',
-          creationName: 'blackroot-poison',
-          creationLabel: 'Blackroot Poison',
-        } 
+          name: 'blackroot-poison',
+          label: 'Blackroot Poison',
+        },
       },
     ],
     value: [

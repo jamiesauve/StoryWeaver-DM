@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import _ from 'lodash'
 
 const This = styled.div`
   margin-left: 10px;
@@ -13,7 +12,7 @@ const This = styled.div`
   color: ${props => props.color};
 `
 
-const Cost = (props) => {
+const Value = (props) => {
   const {
     data,
   } = props
@@ -28,9 +27,9 @@ const Cost = (props) => {
     <This
       color={unitColor}
     >
-      {data.amount}{data.unit}
+      {data.amount}{data.unit}{data.part ? ` per ${data.part}` : ``}
     </This>
   )
 }
 
-export default Cost
+export default Value

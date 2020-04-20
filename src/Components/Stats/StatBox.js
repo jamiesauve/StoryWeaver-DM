@@ -2,13 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const This = styled.div`
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
 
   margin: 2px;
   border: 1px solid #777;
   border-radius: 5px;
   padding: 3px;
+  
+  display: flex;
+  flex-direction: column;
 
   min-width: 30px;
 
@@ -26,6 +28,10 @@ const StatBoxLabel = styled.div`
   text-align: center;
 `
 
+const StatBoxHeading = styled.div`
+  font-weight: bold;
+`
+
 const StatBox = (props) => (
   <This
     backgroundColor={props.backgroundColor}
@@ -35,7 +41,7 @@ const StatBox = (props) => (
     </StatBoxNumber>
 
     <StatBoxLabel>
-      {props.label}
+      {props.labelHeading ? <StatBoxHeading>{props.labelHeading}</StatBoxHeading> : ``}{props.label}
     </StatBoxLabel>
   </This>
 )

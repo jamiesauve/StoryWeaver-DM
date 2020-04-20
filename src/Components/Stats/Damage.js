@@ -6,6 +6,7 @@ import StatBox from './StatBox'
 const This = styled.div`
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
 `
 
 const Damage = (props) => {

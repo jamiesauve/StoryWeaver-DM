@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import _ from 'lodash'
+import React from 'react'
 
 import Section from '../Components/Layout/Section'
 import Spacer from '../Components/styled/Spacer'

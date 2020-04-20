@@ -15,15 +15,18 @@ const SelectInput = (props) => {
         options={props.options}
         styles={{
           backgroundColor: `#333`,
+          menu: (existingStyles => ({
+            ...existingStyles,
+            color: '#444',
+          })),
         }}
         theme={(theme) => ({
           ...theme,
           colors: {
             ...theme.colors,
-            // neutral0: '#111',
             primary: '#444',
-            primary25: '#999',
-            primary50: '#999',
+            primary25: '#eee',
+            primary50: '#aaa',
           }
         })}
         value={props.value}

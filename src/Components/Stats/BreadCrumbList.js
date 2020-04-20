@@ -7,10 +7,13 @@ import StatBox from './StatBox'
 const This = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  flex-shrink: 1;
 `
 
-const Special = (props) => {
+const BreadCrumbList = (props) => {
   const {
+    backgroundColor,
     data,
   } = props
 
@@ -18,12 +21,13 @@ const Special = (props) => {
     <This>
      { _.map(data, property => (
         <StatBox
-          backgroundColor = {`#fbf`}
+          backgroundColor={backgroundColor}
           label={property}
+          key={property}
         />
       ))}
     </This>
   )
 }
 
-export default Special
+export default BreadCrumbList
