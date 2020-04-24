@@ -1,6 +1,8 @@
+import colors from './colors'
+
 export default [{
   categoryName: "Special Events",
-  titleColor: "#f4f",
+  titleColor: colors.specialPink,
   trackObjects: [
     {
       title: 'Desert Chase (1:03)',

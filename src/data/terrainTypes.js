@@ -1,49 +1,51 @@
+import colors from './colors'
+
 export const CAVES = {
   name: 'caves',
-  color: '#737',
+  color: colors.cavesPurple,
 }
 
 export const COAST = {
   name: 'coast',
-  color: '#33d',
+  color: colors.coastBlue,
 }
 
 export const CITY = {
   name: 'city',
-  color: '#c44',
+  color: colors.citySalmon,
 }
 
 export const DESERT = {
   name: 'desert',
-  color: '#d60',
+  color: colors.desertOrange,
 }
 
 export const FOREST = {
   name: 'forest',
-  color: '#292',
+  color: colors.forestGreen,
 }
 
 export const MOUNTAINS = {
   name: 'mountains',
-  color: '#589',
+  color: colors.mountainsTeal,
 }
 
 export const PLAINS = {
   name: 'plains',
-  color: '#da0',
+  color: colors.plainsYellow,
 }
 
 export const SWAMP = {
   name: 'swamp',
-  color: '#575',
+  color: colors.swampGreen,
 }
 
 export const VILLAGE = {
   name: 'village',
-  color: '#a85',
+  color: colors.villageBrown,
 }
 
 export const WINTER = {
   name: 'winter',
-  color: '#fff',
+  color: colors.winterWhite,
 }

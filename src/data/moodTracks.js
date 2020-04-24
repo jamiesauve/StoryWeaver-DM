@@ -1,8 +1,9 @@
 import * as terrainTypes from './terrainTypes'
+import colors from './colors'
 
 export default {
   'Battle': {
-    titleColor: "#a01",
+    titleColor: colors.battleRed,
     trackObjects: [
       {
         title: 'Music: Serious (1:00)',
@@ -34,7 +35,7 @@ export default {
     ],
   },
   'Exploring': {
-    titleColor: '#099',
+    titleColor: colors.exploringTeal,
     trackObjects: [
       {
         title: 'Music: Mix 1 (0:58)',
@@ -55,7 +56,7 @@ export default {
     ]
   },
   'Puzzle': {
-    titleColor: "#d50",
+    titleColor: colors.puzzleOrange,
     trackObjects: [
       {
         title: 'Suspense, torches',
@@ -77,7 +78,7 @@ export default {
     ],
   },
   'Magic': {
-    titleColor: '#a4a',
+    titleColor: colors.magicPink,
     trackObjects: [
       {
         title: 'Moonlight',
@@ -94,7 +95,7 @@ export default {
     ]
   },
   'Creepy': {
-    titleColor: '#448',
+    titleColor: colors.creepyPurple,
     trackObjects: [
       {
         title: 'Suspense, torches',
@@ -121,7 +122,7 @@ export default {
     ],
   },
   'Weather': {
-    titleColor: '#45e',
+    titleColor: colors.weatherBlue,
     trackObjects: [
       {
         title: 'Rain',
@@ -137,7 +138,7 @@ export default {
     ]
   },
   'Tavern': {
-    titleColor: '#c43',
+    titleColor: colors.tavernSalmon,
     trackObjects: [
       {
         title: 'Music: Tavern (4:28)',
