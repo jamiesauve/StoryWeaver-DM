@@ -1,28 +1,35 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
 import Section from '../Components/Layout/Section'
-import ToggleExpandedButton from '../Components/Layout/ToggleExpandedButton'
 
-import Spacer from '../Components/styled/Spacer'
+import Dresser from '../Components/UI/Dresser'
 
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
 import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 
 import reagents from '../data/reagents'
+import colors from '../data/colors'
 
 const This = styled.div``
 
 const Alchemy = (props) => {
-  const [ areAllReagentsExpanded, setAreAllReagentsExpanded ] = useState(false)
-
   const reagentsByTerrain = _.filter(reagents, reagent => 
     _.isEmpty(reagent.terrain)
     ? true
     : _.includes(reagent.terrain, props.activeTerrain)
   )
+
+  const drawers = reagentsByTerrain
+  .map(reagent => ({
+    title: reagent.label,
+    titleColor: colors.forestGreen,
+    content: () => <ReagentDisplayCard
+      data={reagent}
+    />,
+  }))
 
   return (
     <This>
@@ -33,24 +40,11 @@ const Alchemy = (props) => {
         <ScrollableContainer
           className="scrollableContainer"
         >
-          <ToggleExpandedButton 
-            areAllReagentsExpanded={areAllReagentsExpanded}
-            setAreAllReagentsExpanded={setAreAllReagentsExpanded}
+          <Dresser 
+            drawers={drawers}
+            hasToggleAllLink
+            initiallyExpanded={false}
           />
-
-          {
-            _.map(reagentsByTerrain, reagent => (
-              <div
-                key={reagent.name}
-              >
-                <ReagentDisplayCard
-                  data={reagent}
-                />
-
-                <Spacer />
-              </div>
-            ))
-          }
         </ScrollableContainer>
       </Section>
     </This>

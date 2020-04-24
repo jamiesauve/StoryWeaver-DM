@@ -13,7 +13,7 @@ const This = styled.div`
 
 const BreadCrumbList = (props) => {
   const {
-    backgroundColor,
+    color,
     data,
   } = props
 
@@ -21,7 +21,7 @@ const BreadCrumbList = (props) => {
     <This>
      { _.map(data, property => (
         <StatBox
-          backgroundColor={backgroundColor}
+          color={color}
           label={property}
           key={property}
         />

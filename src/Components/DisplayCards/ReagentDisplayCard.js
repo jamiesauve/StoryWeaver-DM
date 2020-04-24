@@ -30,84 +30,82 @@ const ReagentDisplayCard = (props) => {
 
   return (
     <This>
-      <Card>
-        <Row>
-          <Title>
-            {reagent.label}
-          </Title>
+      <Row>
+        <Title>
+          {reagent.label}
+        </Title>
 
-          <TitleDetail>
-            {reagent.type}{reagent.subTypes ? ` (${_.join(reagent.subTypes, ', ')})` : ``}
+        <TitleDetail>
+          {reagent.type}{reagent.subTypes ? ` (${_.join(reagent.subTypes, ', ')})` : ``}
 
-          </TitleDetail>
-            
-          <VerticalList>
-            {_.map(reagent.value, reagentValueItem => (
-              // add comma as needed (or space)
-              <Value
-                data={reagentValueItem}
-                key={reagentValueItem.part}
-              />
-            ))}
-          </VerticalList>
-        </Row>
-
-        <Row>
-          <VerticalList>
-            <Description
-              backgroundColor="#fb6"
-              text={reagent.location}
-              heading="Location"
-            />
-
-            <BreadCrumbList 
-              backgroundColor="#bb6"
-              data={_.map(reagent.terrain, terrainType => toCapitalCase(terrainType))}
-            />
-          </VerticalList>
-        </Row>
-
-        <Row>
-          <Description
-            backgroundColor="#6b6"
-            text={reagent.description}
-            heading="Description"
-          />
-        </Row>
-
-        <Row>
-
-        <StatBox
-          backgroundColor="#bcf"
-          label="Identify DC (Nature)"
-          value={reagent.identifyDC || 5}
-        />
-
-        <StatBox
-          backgroundColor="#bcf"
-          label="Harvest DC (Nature)"
-          value={reagent.harvestDC || 5}
-        />          
+        </TitleDetail>
           
-        </Row>
+        <VerticalList>
+          {_.map(reagent.value, reagentValueItem => (
+            // add comma as needed (or space)
+            <Value
+              data={reagentValueItem}
+              key={reagentValueItem.part}
+            />
+          ))}
+        </VerticalList>
+      </Row>
 
-        <Row>
+      <Row>
+        <VerticalList>
           <Description
-            backgroundColor="#0bb"
-            text={reagent.lore}
-            heading="Lore"
+            color="#fb6"
+            text={reagent.location}
+            heading="Location"
           />
-        </Row>
 
-        <Row>
-          <ReagentUses
-            className="reagentUses"
-            backgroundColor="b6b"
-            data={reagent.uses}
-            heading="Uses"
+          <BreadCrumbList 
+            color="#bb6"
+            data={_.map(reagent.terrain, terrainType => toCapitalCase(terrainType))}
           />
-        </Row>
-      </Card>
+        </VerticalList>
+      </Row>
+
+      <Row>
+        <Description
+          color="#6b6"
+          text={reagent.description}
+          heading="Description"
+        />
+      </Row>
+
+      <Row>
+
+      <StatBox
+        color="#bcf"
+        label="Identify DC (Nature)"
+        value={reagent.identifyDC || 5}
+      />
+
+      <StatBox
+        color="#bcf"
+        label="Harvest DC (Nature)"
+        value={reagent.harvestDC || 5}
+      />          
+        
+      </Row>
+
+      <Row>
+        <Description
+          color="#0bb"
+          text={reagent.lore}
+          heading="Lore"
+        />
+      </Row>
+
+      <Row>
+        <ReagentUses
+          className="reagentUses"
+          color="b6b"
+          data={reagent.uses}
+          heading="Uses"
+        />
+      </Row>
     </This>
   )
 }

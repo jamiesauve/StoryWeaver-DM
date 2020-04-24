@@ -14,8 +14,8 @@ const This = styled.div`
 
   min-width: 30px;
 
-  background: ${props => props.backgroundColor || `#fff`};
-  color: #222;
+  background: #222;
+  color: ${props => props.color || `#fff`};
 `
 
 const StatBoxNumber = styled.div`
@@ -34,7 +34,7 @@ const StatBoxHeading = styled.div`
 
 const StatBox = (props) => (
   <This
-    backgroundColor={props.backgroundColor}
+    color={props.color}
   >
     <StatBoxNumber>
       {props.value}

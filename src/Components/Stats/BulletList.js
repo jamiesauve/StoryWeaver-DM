@@ -15,8 +15,8 @@ const This = styled.div`
 
   min-width: 30px;
 
-  background: ${props => props.backgroundColor || `#fff`};
-  color: #222;
+  background: #222;
+  color: ${props => props.color || `#fff`};
 `
 
 const Heading = styled.div`
@@ -33,14 +33,14 @@ const ListItem = styled.div`
 
 const Description = (props) => {
   const {
-    backgroundColor,
+    color,
     items,
     heading,
   } = props
 
   return (
     <This
-      backgroundColor={backgroundColor}
+      color={color}
     >
       <Heading>{heading}</Heading>
       {_.map(items, item => (

@@ -4,14 +4,14 @@ import BulletList from './BulletList'
 
 const Description = (props) => {
   const {
-    backgroundColor,
+    color,
     text,
     heading,
   } = props
   
   return (
     <BulletList
-      backgroundColor={backgroundColor}
+      color={color}
       heading={heading}
       items={[text]}
     />
