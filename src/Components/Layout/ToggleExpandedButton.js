@@ -11,14 +11,14 @@ const This = styled.div`
 
 const ToggleExpandedButton = (props) => {
   const handleClick = () => {
-    props.setAreAllCategoriesExpanded(!props.areAllCategoriesExpanded)
+    props.setAreAllExpanded(!props.areAllExpanded)
   }
 
   return (
     <This
       onClick={handleClick}
     >
-      {props.areAllCategoriesExpanded ? `collapse all` : `expand all`}
+      {props.areAllExpanded ? `collapse all` : `expand all`}
     </This>
   )
 }

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
 import Section from '../Components/Layout/Section'
+import ToggleExpandedButton from '../Components/Layout/ToggleExpandedButton'
+
 import Spacer from '../Components/styled/Spacer'
 
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
@@ -14,6 +16,8 @@ import reagents from '../data/reagents'
 const This = styled.div``
 
 const Alchemy = (props) => {
+  const [ areAllReagentsExpanded, setAreAllReagentsExpanded ] = useState(false)
+
   const reagentsByTerrain = _.filter(reagents, reagent => 
     _.isEmpty(reagent.terrain)
     ? true
@@ -29,6 +33,11 @@ const Alchemy = (props) => {
         <ScrollableContainer
           className="scrollableContainer"
         >
+          <ToggleExpandedButton 
+            areAllReagentsExpanded={areAllReagentsExpanded}
+            setAreAllReagentsExpanded={setAreAllReagentsExpanded}
+          />
+
           {
             _.map(reagentsByTerrain, reagent => (
               <div

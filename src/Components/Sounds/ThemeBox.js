@@ -46,7 +46,6 @@ const TrackTitle = styled.div`
 const ThemeBox =  props => {
   const handleClickTitle = () => 
   {
-    console.log('expanded', props.isExpanded, 'title', props.title)
     props.isExpanded
     ? props.setExpandedTheme('')
     : props.setExpandedTheme(props.title)

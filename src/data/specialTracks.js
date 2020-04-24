@@ -1,4 +1,5 @@
-export default {
+export default [{
+  categoryName: "Special Events",
   titleColor: "#f4f",
   trackObjects: [
     {
@@ -12,4 +13,4 @@ export default {
       tags: ['El Dorado', '',],
     },
   ],
-}
+}]

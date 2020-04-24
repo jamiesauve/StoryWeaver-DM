@@ -1,6 +1,5 @@
 import * as terrainTypes from './terrainTypes'
 
-// Moods - mostly available everywhere
 export default {
   'Battle': {
     titleColor: "#a01",

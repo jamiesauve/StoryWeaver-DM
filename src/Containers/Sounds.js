@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect, } from 'react'
 
 import Section from '../Components/Layout/Section'
 import Spacer from '../Components/styled/Spacer'
 
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
-import MoodTrackSection from '../Components/Sounds/MoodTrackSection'
-import EnvironmentTrackSection from '../Components/Sounds/EnvironmentTrackSection'
-import SpecialTrackSection from '../Components/Sounds/SpecialTrackSection'
+import TrackSection from '../Components/Sounds/TrackSection'
+
+import getMoodTracks from '../data/getMoodTracks'
+import getEnvironmentTracks from '../data/getEnvironmentTracks'
+import specialTracks from '../data/getSpecialTracks'
 
 const Sounds = (props) => {
+  const [moodTracks, setMoodTracks] = useState(getMoodTracks(props.activeTerrain))
+  const [environmentTracks, setEnvironmentTracks] = useState(getEnvironmentTracks(props.activeTerrain))
+
+  useEffect(() => {
+    setMoodTracks(getMoodTracks(props.activeTerrain))
+    setEnvironmentTracks(getEnvironmentTracks(props.activeTerrain))
+  }, [props.activeTerrain])
+
   return (
     <Section
       title="Sounds"
@@ -18,19 +28,31 @@ const Sounds = (props) => {
       <ScrollableContainer
         className="scrollableContainer"
         >
-          <MoodTrackSection
+          <TrackSection
             activeTerrain={props.activeTerrain}
+            hasToggleAllLink={true}
+            title="Moods"
+            tracks={moodTracks}
           />
 
           <Spacer />
 
-          <EnvironmentTrackSection 
+          <TrackSection
             activeTerrain={props.activeTerrain}
+            hasToggleAllLink={!Boolean(props.activeTerrain)}
+            initiallyExpanded={Boolean(props.activeTerrain)}
+            title="Environment"
+            tracks={environmentTracks}
           />
 
           <Spacer />
 
-          <SpecialTrackSection />
+          <TrackSection
+            activeTerrain={props.activeTerrain}
+            initiallyExpanded
+            title="Special Events"
+            tracks={specialTracks}
+          />
         
       </ScrollableContainer>
     </Section>
