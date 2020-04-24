@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hey!
 
-## Available Scripts
+This is the dnd-helper app. It's aimed at a very specific group of individuals using very specific tools (possibly only me): Game Masters for online-only Dungeons and Dragons 5E games, who use Discord for audio(/video) and the Fredboat app to run ambiences and soundtracks.
 
-In the project directory, you can run:
+It’s an app built for speed and don’t-make-me-think; as a DM you have enough things going on in your head during a game and a good helper app needs to require as little attention as possible. That being said, it doesn’t function exactly as you might expect; here's a quick overview of the features and their quirks.
 
-### `yarn start`
+Dice Roller - this gives you the result of rolling any number of dice with any number of sides. Delimit the numbers with a space, and submit with a space, ie, '3 4 ' would roll 3d4. The spaces are there to avoid having to hunt for keys or push buttons, which requires attention.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+NPC Names - In future, this will be a place to store NPC names for when you need to pull them out of thin air, with an icon to cross them off once you've used them (and possibly another one that throws a modal to record notes as you invent stuff, then saves it automatically for later. But that's v2 stuff).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Notes - this is an easy place to paste the events in the order you plan on them happening (lol good luck) and more details below, so that you can scroll each field as you move through the session and keep an eye on what needs to happen next as well as see more detail about each thing. This is entirely dependent on you structuring your notes that way.
 
-### `yarn test`
+Terrain - this dropdown allows you to choose the current terrain your party is in, and provides you with only the sounds, reagents, and creatures that are appropriate to that terrain.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Search - this uses the open-source dnd5eapi, and allows you [will allow you] to search for weapons, equipment, monsters, and likely a couple of other things I haven't decided yet. To search, you have to match that API's pathname for the item exactly, which is not user-friendly but requires more effort than I want to put in right now to make it user friendly. To use this, put in a category character (chosen arbitrarily by me), followed by the item, ie 'w spear '.
 
-### `yarn build`
+Sounds - this gives you list of tracks. When you click on one, it copies the ';;play' Fredboat command followed by the track URL to your clipboard, so that you can quickly click a track, take it over to Discord, and paste it as a command to Fredboat. This could easily be rewritten to just provide the URL, which could then be pasted in a browser tab - but then it wouldn't play it for your users, and Fredboat doesn't have ads, anyway. Win win.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Search Results - whatever you search for shows up here [older items will scroll down instead of being replaced in future, to be cleared after a certain amount of time or something].
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Reagents - plants, minerals, bits of monster, whatever would commonly show up in the terrain you have selected that might be useful for realistic natural items from the party's surroundings. Great for when you have a druid, ranger, nature cleric, or 'that player'. I also intend this to link to poisons, potions, and other concoctions that users could create from these reagents (again, v2).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+Dev Notes:
+Please excuse the terrible commit messages; when I have no tickets, I forget to commit, and then when I do commit, I forget what I'm commiting, and since this is for fun I can't commit to committing decent commits with commit messages that aren't non-committal.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Also, this is entirely under construction.
