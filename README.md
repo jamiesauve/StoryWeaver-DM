@@ -18,7 +18,7 @@ Sounds - this gives you list of tracks. When you click on one, it copies the ';;
 
 Search Results - whatever you search for shows up here [older items will scroll down instead of being replaced in future, to be cleared after a certain amount of time or something].
 
-Reagents - plants, minerals, bits of monster, whatever would commonly show up in the terrain you have selected that might be useful for realistic natural items from the party's surroundings. Great for when you have a druid, ranger, nature cleric, or 'that player'. I also intend this to link to poisons, potions, and other concoctions that users could create from these reagents (again, v2).
+Alchemy - plants, minerals, bits of monster, whatever would commonly show up in the terrain you have selected that might be useful for realistic natural items from the party's surroundings. Great for when you have a druid, ranger, nature cleric, or 'that player'. I also intend this to link to poisons, potions, and other concoctions that users could create from these reagents (again, v2).
 
 
 Dev Notes:
