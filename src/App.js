@@ -5,6 +5,7 @@ import MainWindow from './Containers/MainWindow'
 import Sidebar from './Containers/Sidebar'
 
 import colors from './data/colors'
+import sizes from './data/sizes'
 
 const This = styled.div`
   width: 100vw;
@@ -18,7 +19,7 @@ const This = styled.div`
   background-color: ${colors.mediumBackground};
 
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: ${sizes.default};
   color: ${colors.lightGrey};
 `
 

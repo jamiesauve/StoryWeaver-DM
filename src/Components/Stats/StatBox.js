@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import colors from '../../data/colors'
+import sizes from '../../data/sizes'
 
 const This = styled.div`
   flex-grow: 1;
@@ -26,7 +27,7 @@ const StatBoxNumber = styled.div`
 `
 
 const StatBoxLabel = styled.div`
-  font-size: 14px;
+  font-size: ${sizes.small};
   text-align: center;
 `
 

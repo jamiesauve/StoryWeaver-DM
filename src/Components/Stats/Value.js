@@ -1,13 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import sizes from '../../data/sizes'
+
 const This = styled.div`
   margin-left: 10px;
   
   display: flex;
   flex-direction: row;
   
-  font-size: 14px;
+  font-size: ${sizes.small};
   font-weight: bold;
   color: ${props => props.color};
 `

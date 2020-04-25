@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
+import sizes from '../../../data/sizes'
+
 const DisplayCardTitleDetail = styled.div`
 margin-left: 10px;
 font-style: italic;
-font-size: 14px;
+font-size: ${sizes.small};
 `
 
 export default DisplayCardTitleDetail

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import colors from '../../data/colors'
+import sizes from '../../data/sizes'
 
 const This = styled.div`
   flex-grow: 1;
@@ -25,11 +26,11 @@ const Heading = styled.div`
   align-self: center;
 
   font-weight: bold;
-  font-size: 14px;
+  font-size: ${sizes.small};
 `
 
 const ListItem = styled.div`
-  font-size: 14px;
+  font-size: ${sizes.small};
   text-align: center;
 `
 
