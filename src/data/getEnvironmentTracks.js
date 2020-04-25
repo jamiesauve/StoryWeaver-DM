@@ -10,11 +10,23 @@ export default (activeTerrain) => {
 
   const restructuredTerrainTypes = _.map(terrainTypes, terrainType => {
     const filteredTracks = _.filter(tracks, trackObject => {
-        if (_.isEmpty(trackObject.terrain)) {
+        if (trackObject.terrain) {
+          if (_.isEmpty(trackObject.terrain)) {
+            return true
+          }
+  
+          const includes = _.includes(trackObject.terrain, activeTerrain ? activeTerrain : terrainType.name)
+          return includes
+        } else if (trackObject.excludeFrom) {
+          if (_.isEmpty(trackObject.excludeFrom)) {
+            return true
+          }
+          
+          const includes = !_.includes(trackObject.excludeFrom, activeTerrain ? activeTerrain : terrainType.name)
+          return includes
+        } else {
           return true
         }
-        const includes = _.includes(trackObject.terrain, activeTerrain ? activeTerrain : terrainType.name)
-        return includes
       })
 
     const sortedTracks = _.sortBy(filteredTracks, track => track.title)
