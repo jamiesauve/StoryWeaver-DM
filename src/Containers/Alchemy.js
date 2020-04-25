@@ -10,6 +10,7 @@ import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
 import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 
+import * as terrainTypes from '../data/terrainTypes'
 import reagents from '../data/reagents'
 import colors from '../data/colors'
 
@@ -25,7 +26,7 @@ const Alchemy = (props) => {
   const drawers = reagentsByTerrain
   .map(reagent => ({
     title: reagent.label,
-    titleColor: colors.forestGreen,
+    titleColor: _.find(terrainTypes, {name: props.activeTerrain}).color,
     content: () => <ReagentDisplayCard
       data={reagent}
     />,

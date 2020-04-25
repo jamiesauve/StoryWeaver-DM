@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import colors from '../../data/colors'
+
 const Pane = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,10 +13,10 @@ const Pane = styled.div`
 
   height: ${props => props.height || `auto`};
 
-  border: solid 1px #777;
+  border: solid 1px ${props => props.borderColor || colors.darkGrey};
   border-radius: 5px;
   
-  background-color: #222;
+  background-color: ${colors.darkBackground};
 
 `
 

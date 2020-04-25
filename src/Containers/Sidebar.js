@@ -9,10 +9,12 @@ import NPCNames from '../Components/Sidebar/NPCNames'
 import SessionEvents from '../Components/Sidebar/SessionEvents'
 import SessionNotes from '../Components/Sidebar/SessionNotes'
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     <Frame>
-      <Pane>
+      <Pane
+        borderColor={props.activeTerrainColor}
+      >
         <DiceRoller />
         <Divider />
         <NPCNames />

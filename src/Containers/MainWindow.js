@@ -28,10 +28,15 @@ justify-content: stretch;
 flex-grow: 1;
 `
 
-const MainWindow = () => {
+const MainWindow = (props) => {
+  const {
+    activeTerrain,
+    activeTerrainColor,
+    setActiveTerrain
+  } = props;
+
   const [headerHeight, setHeaderHeight] = useState(0)
   const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(0) 
-  const [activeTerrain, setActiveTerrain] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState('')
 
@@ -62,7 +67,9 @@ const MainWindow = () => {
       <Frame
           width='100%'
         >
-          <Pane>
+          <Pane
+            borderColor={activeTerrainColor}
+          >
             <MainWindowHeader 
               mainWindowHeaderElement={mainWindowHeaderElement}
               activeTerrain={activeTerrain}
@@ -80,6 +87,7 @@ const MainWindow = () => {
           
         >
           <Pane
+            borderColor={activeTerrainColor}
             className="pane"
             // margin, border and padding on pane for both this pane and the MainWindowHeader one
             height={`${mainWindowBodyHeight - 64}px`} 
@@ -91,7 +99,9 @@ const MainWindow = () => {
         </Frame>
 
         <Frame>
-          <Pane>
+          <Pane
+            borderColor={activeTerrainColor}
+          >
             <Creatures
               activeTerrain={activeTerrain}
             />
@@ -99,13 +109,17 @@ const MainWindow = () => {
         </Frame>
 
         <Frame>
-          <Pane>
+          <Pane
+            borderColor={activeTerrainColor}
+          >
             <SearchResults 
               searchResults={searchResults}
             />
           </Pane>
 
-          <Pane>
+          <Pane
+            borderColor={activeTerrainColor}
+          >
             <Alchemy
               activeTerrain={activeTerrain}
             />
