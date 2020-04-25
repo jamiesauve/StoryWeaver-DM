@@ -21,12 +21,12 @@ const This = styled.div`
 `
 
 const StatBoxNumber = styled.div`
-  font-size: 20px;
+  font-size: 22px;
   text-align: center;
 `
 
 const StatBoxLabel = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
 `
 

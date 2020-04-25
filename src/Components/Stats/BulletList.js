@@ -25,11 +25,11 @@ const Heading = styled.div`
   align-self: center;
 
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
 `
 
 const ListItem = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
 `
 
