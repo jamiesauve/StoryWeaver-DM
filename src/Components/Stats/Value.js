@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import colors from '../../data/colors'
 import sizes from '../../data/sizes'
 
 const This = styled.div`
@@ -20,10 +21,10 @@ const Value = (props) => {
   } = props
 
   const unitColor = data.unit === "gp"
-    ? "#fd0"
+    ? colors.plainsYellow
     : data.unit === "sp"
-      ? "#ddd"
-      : "fdb"
+      ? colors.darkGrey
+      : colors.villageBrown
 
   return (
     <This
