@@ -43,6 +43,7 @@ export default [
     label: "Blackroot",
     name: "blackroot",
     description: `A thin vine that has small dark leaves. The root is small and twisted.`,
+    effects: `If touched with bare skin, the stem and leaves cause redness and itchiness starting within 1 hour and lasting for days.`,
     harvestDC: null,
     identifyDC: 15,
     location: `Predominantly grows underground near lakes and pools. The vine generally grows in places where a small bit of light occurs, sometimes thriving off of the glow provided by phosphorescent moss.`,
@@ -70,6 +71,42 @@ export default [
         amount: 10,
         unit: 'gp',
         part: 'root',
+      }
+    ],
+  },
+  {
+    label: "Torment Toadstool",
+    name: "torment-toadstool",
+    description: `Large blue mushrooms.`,
+    effects: `Those that step on the toadstool causes it to rupture and release a cloud of spores within a 5ft-radius. Those that inhale the spores must make a DC 11 Constitution saving throw or become incapacitated while vomiting for the next minute.`,
+    harvestDC: 10,
+    identifyDC: 13,
+    location: `Found in swamps and wet areas, but not in standing water.`,
+    lore: `Most people are careful not to step on the toadstools. Some villagers harvest the mushrooms to make a particularly earthy tasting ale.`,
+    terrain: [
+      FOREST,
+      SWAMP,
+    ],
+    type: "plant",
+    subTypes: [
+      "mushroom",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, 
+      {
+        type: 'ingredient',
+        creation: {
+          type: 'beverage',
+          name: 'toadstool-ale',
+          label: 'Toadstool Ale',
+        },
+      },
+    ],
+    value: [
+      {
+        amount: 1,
+        unit: 'cp',
+        part: 'cap',
       }
     ],
   }
