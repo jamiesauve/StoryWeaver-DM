@@ -109,6 +109,50 @@ export default [
         part: 'cap',
       }
     ],
+  },
+  {
+    label: "Angakara Tree",
+    name: "angakara",
+    description: `A broad oak-like tree that sprouts many branches and a multitude of light green leaves.`,
+    effects: null,
+    harvestDC: 10,
+    identifyDC: 9,
+    location: `widespread in forests, though not in particularly wet or dry areas.`,
+    lore: `Good wood for making bows. Now much rarer now than it used to be because of overharvesting.`,
+    terrain: [
+      CITY,
+      FOREST,
+      MOUNTAINS,
+      PLAINS,
+      VILLAGE,
+    ],
+    type: "plant",
+    subTypes: [
+      "tree",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, 
+      {
+        type: 'material',
+        creation: {
+          type: 'equipment',
+          name: 'bow',
+          label: 'Bows',
+        },
+      },
+    ],
+    value: [
+      {
+        amount: 1,
+        unit: 'gp',
+        part: 'limb',
+      },
+      {
+        amount: 15,
+        unit: 'gp',
+        part: 'stave',
+      },
+    ],
   }
 ]
 
