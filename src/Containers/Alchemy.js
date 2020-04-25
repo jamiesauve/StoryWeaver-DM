@@ -14,7 +14,14 @@ import * as terrainTypes from '../data/terrainTypes'
 import reagents from '../data/reagents'
 import colors from '../data/colors'
 
-const This = styled.div``
+const This = styled.div`
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+`
 
 const Alchemy = (props) => {
   const reagentsByTerrain = _.filter(reagents, reagent => 
@@ -33,15 +40,18 @@ const Alchemy = (props) => {
   }))
 
   return (
-    <This>
+    <This
+    className="alchemy"
+    >
       <Section
-        className="alchemy"
+        className="section"
         title="Alchemy"
       >
         <ScrollableContainer
           className="scrollableContainer"
         >
           <Dresser 
+            className="dresser"
             drawers={drawers}
             hasToggleAllLink
             initiallyExpanded={false}

@@ -65,10 +65,12 @@ const MainWindow = (props) => {
   return (
     <This>
       <Frame
+          className="frame"
           width='100%'
         >
           <Pane
             borderColor={activeTerrainColor}
+            className="pane"
           >
             <MainWindowHeader 
               mainWindowHeaderElement={mainWindowHeaderElement}
@@ -84,7 +86,6 @@ const MainWindow = (props) => {
       >
         <Frame
           className="frame"
-          
         >
           <Pane
             borderColor={activeTerrainColor}
@@ -98,9 +99,15 @@ const MainWindow = (props) => {
           </Pane>
         </Frame>
 
-        <Frame>
+        <Frame
+          className="frame"
+        >
           <Pane
             borderColor={activeTerrainColor}
+            className="pane"
+            // margin, border and padding on pane for both this pane and the MainWindowHeader one,
+            // minus the border and padding for other pane in this frame
+            height={`${mainWindowBodyHeight - 64}px`}
           >
             <Creatures
               activeTerrain={activeTerrain}
@@ -108,9 +115,15 @@ const MainWindow = (props) => {
           </Pane>
         </Frame>
 
-        <Frame>
+        <Frame
+          className="frame"
+        >
           <Pane
             borderColor={activeTerrainColor}
+            className="pane"
+            // margin, border and padding on pane for both this pane and the MainWindowHeader one,
+            // minus the border and padding for other pane in this frame
+            height={`${((mainWindowBodyHeight - 64) / 2) - 20}px`}
           >
             <SearchResults 
               searchResults={searchResults}
@@ -119,6 +132,8 @@ const MainWindow = (props) => {
 
           <Pane
             borderColor={activeTerrainColor}
+            className="pane"
+            height={`${((mainWindowBodyHeight - 64) / 2) - 20}px`}
           >
             <Alchemy
               activeTerrain={activeTerrain}
