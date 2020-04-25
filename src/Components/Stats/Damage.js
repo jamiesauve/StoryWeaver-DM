@@ -12,6 +12,7 @@ const This = styled.div`
 const Damage = (props) => {
   const {
     base,
+    borderColor,
     type,
     twoHanded,
   } = props.data
@@ -19,14 +20,14 @@ const Damage = (props) => {
   return (
     <This>
       <StatBox
-        backgroundColor = {`#fbc`}
+        borderColor={props.borderColor}
         label={type}
         value={base}
       />
 
       {twoHanded 
         && <StatBox
-        backgroundColor = {`#fbc`}
+        borderColor={props.borderColor}
         label={twoHanded.type}
         value={`(2H) ${twoHanded.base}`}
       />

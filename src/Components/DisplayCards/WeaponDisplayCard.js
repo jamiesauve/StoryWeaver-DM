@@ -16,6 +16,8 @@ import Row from '../styled/DisplayCard/Row'
 import Title from '../styled/DisplayCard/Title'
 import TitleDetail from '../styled/DisplayCard/TitleDetail'
 
+import colors from '../../data/colors'
+
 const This = styled.div``
 
 const WeaponDisplayCard = (props) => {
@@ -58,11 +60,13 @@ const WeaponDisplayCard = (props) => {
 
         <Row> 
           <Range
+            borderColor={colors.weatherBlue}
             combatRange={combatRange}
             data={range}
           />
           
           <Damage 
+            borderColor={colors.battleRed}
             data={damage}
           />  
         
@@ -73,14 +77,14 @@ const WeaponDisplayCard = (props) => {
           padding="0 0 5px 0"
         >
           <BreadCrumbList
-            backgroundColor="#fc0"
+            borderColor={colors.plainsYellow}
             data={properties}
           />
 
           {special 
             && !_.isEmpty(special)
             && <Description
-              backgroundColor="#fbf"
+              borderColor={colors.mountainsTeal}
               text={special}
             />
           }

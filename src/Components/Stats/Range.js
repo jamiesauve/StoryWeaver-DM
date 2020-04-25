@@ -11,6 +11,7 @@ const This = styled.div`
 
 const Range = (props) => {
   const {
+    borderColor,
     combatRange,
     data,
   } = props
@@ -24,14 +25,14 @@ const Range = (props) => {
   return (
     <This>
       <StatBox
-        backgroundColor = {`#bcf`}
+        borderColor={props.borderColor}
         label={combatRange}
         value={combatRange === "Ranged" ? `${ranged.normal}/${ranged.long}` : melee}
       />
 
       {(combatRange === "Melee" && isThrowing) 
         && <StatBox
-          backgroundColor = {`#bcf`}
+          borderColor={props.borderColor}
           label={combatRange === "Ranged" ? "Melee" : "Ranged"}
           value={combatRange === "Melee" ? `${ranged.normal}/${ranged.long}` : melee}
         />
