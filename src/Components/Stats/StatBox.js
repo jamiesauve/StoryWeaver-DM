@@ -36,7 +36,8 @@ const StatBoxHeading = styled.div`
 
 const StatBox = (props) => (
   <This
-    color={props.color}
+    backgroundColor={props.backgroundColor}
+    borderColor={props.borderColor}
   >
     <StatBoxNumber>
       {props.value}

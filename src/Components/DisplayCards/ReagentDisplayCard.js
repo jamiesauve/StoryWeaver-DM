@@ -2,20 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Card from '../styled/DisplayCard/Card'
 import Row from '../styled/DisplayCard/Row'
-import Title from '../styled/DisplayCard/Title'
 import TitleDetail from '../styled/DisplayCard/TitleDetail'
 
 import Description from '../Stats/Description'
 import ReagentUses from '../Stats/ReagentUses'
 import StatBox from '../Stats/StatBox'
 import Value from '../Stats/Value'
-import BreadCrumbList from '../Stats/BreadCrumbList'
+import TerrainBreadCrumbs from '../Alchemy/TerrainBreadCrumbs'
 
-import toCapitalCase from '../../utils/toCapitalCase'
+import colors from '../../data/colors'
 
-const This = styled.div``
+const This = styled.div`
+  padding: 1px;
+`
 
 const VerticalList = styled.div`
   display: flex;
@@ -30,14 +30,12 @@ const ReagentDisplayCard = (props) => {
 
   return (
     <This>
-      <Row>
-        <Title>
-          {reagent.label}
-        </Title>
-
+      <Row
+        justifyContent="center"
+        padding="5px"
+      >
         <TitleDetail>
           {reagent.type}{reagent.subTypes ? ` (${_.join(reagent.subTypes, ', ')})` : ``}
-
         </TitleDetail>
           
         <VerticalList>
@@ -54,21 +52,20 @@ const ReagentDisplayCard = (props) => {
       <Row>
         <VerticalList>
           <Description
-            color="#fb6"
+            borderColor={colors.exploringTeal}
             text={reagent.location}
             heading="Location"
           />
 
-          <BreadCrumbList 
-            color="#bb6"
-            data={_.map(reagent.terrain, terrainType => toCapitalCase(terrainType))}
+          <TerrainBreadCrumbs 
+            data={reagent.terrain}
           />
         </VerticalList>
       </Row>
 
       <Row>
         <Description
-          color="#6b6"
+          borderColor={colors.puzzleOrange}
           text={reagent.description}
           heading="Description"
         />
@@ -77,13 +74,13 @@ const ReagentDisplayCard = (props) => {
       <Row>
 
       <StatBox
-        color="#bcf"
+        borderColor={colors.forestGreen}
         label="Identify DC (Nature)"
         value={reagent.identifyDC || 5}
       />
 
       <StatBox
-        color="#bcf"
+        borderColor={colors.swampGreen}
         label="Harvest DC (Nature)"
         value={reagent.harvestDC || 5}
       />          
@@ -92,7 +89,7 @@ const ReagentDisplayCard = (props) => {
 
       <Row>
         <Description
-          color="#0bb"
+          borderColor={colors.villageBrown}
           text={reagent.lore}
           heading="Lore"
         />
@@ -101,7 +98,7 @@ const ReagentDisplayCard = (props) => {
       <Row>
         <ReagentUses
           className="reagentUses"
-          color="b6b"
+          borderColor={colors.weatherBlue}
           data={reagent.uses}
           heading="Uses"
         />

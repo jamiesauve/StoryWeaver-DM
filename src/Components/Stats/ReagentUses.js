@@ -27,7 +27,7 @@ const ReagentUses = (props) => {
       className="reagentUses"
     >
       <BulletList
-        color="#abc"
+        borderColor={props.borderColor}
         items={getReagentUses(reagentUses)}
         heading="Uses"
       />

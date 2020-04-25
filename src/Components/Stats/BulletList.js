@@ -35,14 +35,14 @@ const ListItem = styled.div`
 
 const Description = (props) => {
   const {
-    color,
+    borderColor,
     items,
     heading,
   } = props
 
   return (
     <This
-      color={color}
+      borderColor={borderColor}
     >
       <Heading>{heading}</Heading>
       {_.map(items, item => (
