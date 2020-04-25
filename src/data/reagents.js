@@ -7,7 +7,10 @@ const [
   CITY,
   DESERT,
   FOREST,
+  FRESHWATER,
+  JUNGLE,
   MOUNTAINS,
+  OCEAN,
   PLAINS,
   SWAMP,
   VILLAGE,
@@ -85,6 +88,7 @@ export default [
     lore: `Most people are careful not to step on the toadstools. Some villagers harvest the mushrooms to make a particularly earthy tasting ale.`,
     terrain: [
       FOREST,
+      JUNGLE,
       SWAMP,
     ],
     type: "plant",
@@ -122,6 +126,7 @@ export default [
     terrain: [
       CITY,
       FOREST,
+      JUNGLE,
       MOUNTAINS,
       PLAINS,
       VILLAGE,
