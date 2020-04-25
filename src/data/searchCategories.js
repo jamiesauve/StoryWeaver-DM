@@ -4,8 +4,8 @@ export default {
     name: 'armor',
   },
   c: {
-    url: 'classes',
-    name: 'class',
+    url: 'conditions',
+    name: 'condition',
   },
   e: {
     url: 'equipment',
@@ -15,14 +15,6 @@ export default {
     url: 'features',
     name: 'feature',
   },
-  h: {
-    url: 'magic-schools',
-    name: 'magicSchool',
-  },
-  l: {
-    url: 'languages',
-    name: 'language',
-  },
   m: {
     url: 'monsters',
     name: 'monster',
@@ -30,10 +22,6 @@ export default {
   p: {
     url: 'pathname',
     name: 'pathname',
-  },
-  q: {
-    url: 'conditions',
-    name: 'condition',
   },
   r: {
     url: 'races',
