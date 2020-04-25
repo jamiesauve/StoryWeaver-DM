@@ -415,4 +415,16 @@ export default [
       VILLAGE,
     ]
   },
+  {
+    title: 'Desert Canyon',
+    location: 'https://michaelghelfi.bandcamp.com/track/desert-canyon-2',
+    tags: ['desert', 'wind', 'birds'],
+    terrain: [
+      COAST,
+      DESERT,
+      FOREST,
+      JUNGLE,
+      MOUNTAINS,
+    ]
+  },
 ]
