@@ -25,9 +25,24 @@ export const FOREST = {
   color: colors.forestGreen,
 }
 
+export const FRESHWATER = {
+  name: 'freshwater',
+  color: colors.freshwaterBlue,
+}
+
+export const JUNGLE = {
+  name: 'jungle',
+  color: colors.jungleGreen,
+}
+
 export const MOUNTAINS = {
   name: 'mountains',
   color: colors.mountainsTeal,
+}
+
+export const OCEAN = {
+  name: 'ocean',
+  color: colors.oceanBlue,
 }
 
 export const PLAINS = {
