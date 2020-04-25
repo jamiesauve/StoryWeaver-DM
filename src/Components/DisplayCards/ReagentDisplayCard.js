@@ -71,13 +71,15 @@ const ReagentDisplayCard = (props) => {
         />
       </Row>
 
-      <Row>
-        <Description
-          borderColor={colors.specialPink}
-          text={reagent.effects}
-          heading="Effects"
-        />
-      </Row>
+      {reagent.effects
+        && <Row>
+          <Description
+            borderColor={colors.specialPink}
+            text={reagent.effects}
+            heading="Effects"
+          />
+        </Row>
+      }
 
       <Row>
 
