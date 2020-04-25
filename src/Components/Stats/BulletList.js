@@ -32,6 +32,7 @@ const Heading = styled.div`
 const ListItem = styled.div`
   font-size: ${sizes.small};
   text-align: center;
+  padding: 5px 0;
 `
 
 const Description = (props) => {
