@@ -7,14 +7,15 @@ const [
   CITY,
   DESERT,
   FOREST,
+  FRESHWATER,
+  JUNGLE,
   MOUNTAINS,
+  OCEAN,
   PLAINS,
   SWAMP,
   VILLAGE,
   WINTER,
 ] = _.map(terrainTypes, (terrainType) => terrainType.name)
-
-const NOT_WINTER = 'notWinter'
 
 export default [
   {
@@ -23,8 +24,9 @@ export default [
     tags: ['hooves', 'horseback', 'birdsong', 'walk'],
     terrain: [
       COAST, 
-      FOREST, 
-      MOUNTAINS
+      FOREST,
+      JUNGLE,
+      MOUNTAINS,
     ]
   },
   {
@@ -45,6 +47,7 @@ export default [
     tags: ['quiet', 'peaceful', 'night', 'crickets'],
     terrain: [
       FOREST, 
+      JUNGLE,
       MOUNTAINS,
       SWAMP, 
     ],
@@ -56,6 +59,7 @@ export default [
     terrain: [
       DESERT, 
       FOREST, 
+      FRESHWATER,
       MOUNTAINS,
       PLAINS, 
       SWAMP, 
@@ -104,6 +108,8 @@ export default [
     terrain: [
       COAST,
       FOREST,
+      FRESHWATER,
+      JUNGLE,
       PLAINS,
       MOUNTAINS,
     ]
@@ -121,13 +127,27 @@ export default [
     title: 'Cicadas Campfire',
     location: 'https://michaelghelfi.bandcamp.com/track/campfire-at-dusk',
     tags: ['campfire', 'cicadas', 'evening', 'peaceful'],
-    terrain: [NOT_WINTER],
+    excludeFrom: [
+      CAVES,
+      CITY,
+      FRESHWATER,
+      OCEAN,
+      VILLAGE,
+      WINTER,
+    ],
   },
   {
     title: 'Crickets Campfire',
     location: 'https://michaelghelfi.bandcamp.com/track/savannah-night-camp',
     tags: ['campfire', 'crickets', 'birds', 'peaceful'],
-    terrain: [NOT_WINTER],
+    excludeFrom: [
+      CAVES,
+      CITY,
+      FRESHWATER,
+      OCEAN,
+      VILLAGE,
+      WINTER,
+    ],
   },
   {
     title: 'Black Market (bubbling)',
@@ -168,6 +188,7 @@ export default [
     tags: ['swamp', 'flies', 'magic', 'crickets', 'tense'],
     terrain: [
       FOREST,
+      JUNGLE,
       MOUNTAINS,
       SWAMP
     ]
@@ -176,7 +197,9 @@ export default [
     title: 'Swamp Campfire',
     location: 'https://michaelghelfi.bandcamp.com/track/swamp-campfire',
     tags: ['campfire', 'crickets', 'flies'],
-    terrain: [SWAMP],
+    terrain: [
+      SWAMP,
+    ],
   },
   {
     title: 'Quiet Day - Forest',
@@ -185,6 +208,7 @@ export default [
     terrain: [
       COAST,
       FOREST,
+      JUNGLE,
       MOUNTAINS, 
     ],
   },
@@ -193,7 +217,8 @@ export default [
     location: 'https://www.youtube.com/watch?v=66UCZF3NlRo',
     tags: ['birds', 'day', 'peaceful'],
     terrain: [
-      FOREST, 
+      FOREST,
+      JUNGLE,
       MOUNTAINS, 
       PLAINS, 
     ],
@@ -204,6 +229,7 @@ export default [
     tags: ['leaves', 'stream',],
     terrain: [
       FOREST,
+      JUNGLE,
       MOUNTAINS,
     ],
   },
@@ -214,6 +240,7 @@ export default [
     terrain: [
       CAVES,
       FOREST,
+      JUNGLE,
       SWAMP,
     ]
   },
@@ -247,6 +274,7 @@ export default [
       COAST,
       DESERT,
       FOREST,
+      JUNGLE,
       MOUNTAINS,
       PLAINS,
       WINTER,
@@ -260,6 +288,7 @@ export default [
       COAST,
       DESERT,
       FOREST,
+      JUNGLE,
       MOUNTAINS,
       PLAINS,
       SWAMP,
@@ -272,6 +301,7 @@ export default [
     tags: ['waves', 'coast', 'wind', 'ocean'],
     terrain: [
       COAST,
+      OCEAN,
     ]
   },
   {
@@ -289,14 +319,16 @@ export default [
     tags: ['cove', 'water', 'waves', 'animals', 'night'],
     terrain: [
       COAST,
+      JUNGLE,
     ]
   },
   {
     title: 'Haunted Coast',
     location: 'https://michaelghelfi.bandcamp.com/track/on-the-haunted-shore',
-    tags: ['coast', 'heaunted', 'magic', 'night', 'creepy'],
+    tags: ['coast', 'haunted', 'magic', 'night', 'creepy'],
     terrain: [
       COAST,
+      OCEAN,
     ]
   },
   {
@@ -315,6 +347,7 @@ export default [
     terrain: [
       WINTER,
       COAST,
+      OCEAN,
     ]
   },
   {
@@ -343,15 +376,17 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/sailing-ship',
     tags: ['chains', 'wind', 'creaking', 'windy', 'water'],
     terrain: [
-      COAST,
+      OCEAN,
     ]
   },
   {
     title: 'Harbor',
-    location: 'https://michaelghelfi.bandcamp.com/track/harbor',
+    location: 'https://michaelghelfi.bandcamp.com/track/harbour',
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'gulls'],
     terrain: [
       COAST,
+      FRESHWATER,
+      OCEAN,
     ]
   },
   {
@@ -360,6 +395,7 @@ export default [
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'storm'],
     terrain: [
       COAST,
+      OCEAN,
     ]
   },
   {
@@ -371,11 +407,12 @@ export default [
     ]
   },
   {
-    title: 'Pirate Cove',
+    title: 'Lively Market',
     location: 'https://www.youtube.com/watch?v=gcPSA3sUilc',
     tags: ['town', 'harbor', 'music', 'drums', 'loud', 'shouting'],
     terrain: [
-      COAST,
+      CITY,
+      VILLAGE,
     ]
   },
 ]
