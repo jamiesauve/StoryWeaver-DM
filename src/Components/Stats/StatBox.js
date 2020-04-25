@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import colors from '../../data/colors'
+
 const This = styled.div`
   flex-grow: 1;
 
   margin: 2px;
-  border: 1px solid #777;
+  border: 1px solid ${props => props.borderColor || colors.darkGrey};
   border-radius: 5px;
   padding: 3px;
   
@@ -14,8 +16,8 @@ const This = styled.div`
 
   min-width: 30px;
 
-  background: #222;
-  color: ${props => props.color || `#fff`};
+  background: ${props => props.backgroundColor || colors.darkBackground};
+  color: ${colors.lightGrey};
 `
 
 const StatBoxNumber = styled.div`

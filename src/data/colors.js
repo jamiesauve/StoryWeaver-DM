@@ -22,4 +22,13 @@ export default {
 
   // special
   specialPink: "#f4f",
+
+  // text
+  lightGrey: "#ddd",
+  darkGrey: "#777",
+
+  // backgrouns
+  darkBackground: "#222",
+  mediumBackground: "#333",
+
 }

@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import generateRoll from '../../utils/generateRoll'
 import { sanitizeNumeric } from '../../utils/sanitize'
 
+import colors from '../../data/colors'
+
 const This = styled.div`
   width: 100%;
 
@@ -39,8 +41,8 @@ const NumberDisplay = styled.div`
   border: 1px solid #777;
   border-radius: 5px;
 
-  background-color: #fff;
-  color: #222;
+  background-color: ${colors.winterWhite};
+  color: ${colors.darkBackground};
 `
 
 const DiceRoller = () => {

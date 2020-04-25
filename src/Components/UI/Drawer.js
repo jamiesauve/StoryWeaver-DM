@@ -3,11 +3,13 @@ import styled from 'styled-components'
 
 import SectionTitle from '../styled/SectionTitle'
 
+import colors from '../../data/colors'
+
 const This = styled.div`
   margin-top: 10px;
   
   border-radius: ${props => props.isOpen ? `5px 5px 0 0` : `5px`};
-  box-shadow: 0 0 3px #777;
+  box-shadow: 0 0 3px ${colors.darkGrey};
 
   align-items: center;
 `
@@ -26,7 +28,7 @@ const DrawerBody = styled.div`
   flex-direction: column;
   align-items: stretch;
 
-  background-color: #333;
+  background-color: ${colors.mediumBackground};
 `
 
 const Drawer =  props => {
@@ -55,7 +57,9 @@ const Drawer =  props => {
 
         {
           props.isOpen
-          && <DrawerBody>
+          && <DrawerBody
+            className="drawerBody"
+          >
             <DrawerContent />
           </DrawerBody>
         }

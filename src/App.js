@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import MainWindow from './Containers/MainWindow'
 import Sidebar from './Containers/Sidebar'
 
+import colors from './data/colors'
+
 const This = styled.div`
   width: 100vw;
   height: 100vh;
@@ -13,11 +15,11 @@ const This = styled.div`
 
   align-content: flex-start;
   
-  background-color: #333;
+  background-color: ${colors.mediumBackground};
 
   font-family: sans-serif;
   font-size: 16px;
-  color: #ddd;
+  color: ${colors.lightGrey};
 `
 
 
