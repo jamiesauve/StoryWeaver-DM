@@ -29,6 +29,29 @@ const Heading = styled.div`
   font-size: ${sizes.small};
 `
 
+const Table = styled.div `
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: row;
+`
+
+const Column = styled.div`
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+`
+
+const ColumnLeftAligner = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+`
+
 const ListItem = styled.div`
   font-size: ${sizes.small};
   text-align: center;
@@ -41,6 +64,8 @@ const BulletList = (props) => {
     items,
     heading,
   } = props
+
+  const [itemsLeft, itemsRight] = _.chunk(items, Math.ceil(items.length / 2))
   
   return (
     <This
@@ -52,11 +77,27 @@ const BulletList = (props) => {
         </Heading>
       }
       
-      {_.map(items, item => (
-        <ListItem key={item}>
-          {item}
-        </ListItem>
-      ))}
+      <Table>
+        <Column>
+          <ColumnLeftAligner>
+            {_.map(itemsLeft, item => (
+              <ListItem key={item}>
+                {item}
+              </ListItem>
+            ))}
+          </ColumnLeftAligner>
+        </Column>
+
+        <Column>
+          <ColumnLeftAligner>
+            {_.map(itemsRight, item => (
+              <ListItem key={item}>
+                {item}
+              </ListItem>
+            ))}
+          </ColumnLeftAligner>
+        </Column>
+      </Table>
     </This>
   )
 }

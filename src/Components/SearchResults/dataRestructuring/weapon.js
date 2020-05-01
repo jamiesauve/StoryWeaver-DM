@@ -2,7 +2,8 @@ import _ from 'lodash'
 
 export default (data) => {
   const restructuredData = {
-    name: data.name, // spear
+    name: data.index, // spear
+    label: data.name, // Spear
     type: data.weapon_category, // simple
     combatRange: data.weapon_range, // melee
 

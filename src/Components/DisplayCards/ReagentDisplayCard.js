@@ -50,17 +50,17 @@ const ReagentDisplayCard = (props) => {
       </Row>
 
       <Row>
-        <VerticalList>
-          <Description
-            borderColor={colors.exploringTeal}
-            text={reagent.location}
-            heading="Location"
-          />
+        <Description
+          borderColor={colors.exploringTeal}
+          text={reagent.location}
+          heading="Location"
+        />    
+      </Row>
 
-          <TerrainBreadCrumbs 
-            data={reagent.terrain}
-          />
-        </VerticalList>
+      <Row>
+        <TerrainBreadCrumbs 
+          data={reagent.terrain}
+        />
       </Row>
 
       <Row>

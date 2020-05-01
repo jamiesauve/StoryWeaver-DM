@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import StatBox from './StatBox'
 
+import colors from '../../data/colors'
+
 const This = styled.div`
   display: flex;
   flex-direction: row;
@@ -20,14 +22,14 @@ const Damage = (props) => {
   return (
     <This>
       <StatBox
-        borderColor={props.borderColor}
+        borderColor={colors.battleRed}
         label={type}
         value={base}
       />
 
       {twoHanded 
         && <StatBox
-        borderColor={props.borderColor}
+        borderColor={colors.battleRed}
         label={twoHanded.type}
         value={`(2H) ${twoHanded.base}`}
       />

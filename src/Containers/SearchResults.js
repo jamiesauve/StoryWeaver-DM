@@ -8,6 +8,7 @@ import ScrollableContainer from '../Components/styled/ScrollableContainer'
 import displayCards from '../Components/DisplayCards'
 
 import toCapitalCase from '../utils/toCapitalCase'
+import CreatureDisplayCard from '../Components/DisplayCards/CreatureDisplayCard'
 
 const This = styled.div`
 flex-grow: 1;
@@ -21,8 +22,10 @@ height: 100%;
 const SearchResults = (props) => {
   const category = _.get(props, 'searchResults.category', null)
 
-  const ResultsComponent = category 
-  ? displayCards[`${toCapitalCase(category)}DisplayCard`]
+  const ResultsComponent = category
+  ? category === "monster" 
+    ? displayCards[`CreatureDisplayCard`]
+    : displayCards[`${toCapitalCase(category)}DisplayCard`]
   : null
 
   return (

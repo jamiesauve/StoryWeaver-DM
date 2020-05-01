@@ -38,6 +38,7 @@ const Search = (props) => {
       </SearchTitle>
 
       <TextInput
+        autoFocus
         onChange={handleSubmitOnSpace}
         value={searchInput}
         width={`44vw`}

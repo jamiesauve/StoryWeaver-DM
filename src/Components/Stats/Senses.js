@@ -4,30 +4,29 @@ import _ from 'lodash'
 
 import StatBox from './StatBox'
 
+import colors from '../../data/colors'
+
 const This = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  flex-shrink: 1;
 `
 
-const BreadCrumbList = (props) => {
+const Senses = (props) => {
   const {
-    borderColor,
-    breadCrumbs,
+    data: senses,
   } = props
 
   return (
     <This>
-     { _.map(breadCrumbs, breadCrumb => (
+      {_.map(senses, sense => (
         <StatBox
-          borderColor={borderColor}
-          label={breadCrumb}
-          key={breadCrumb}
+          borderColor={colors.exploringTeal}
+          label={sense.name}
+          value={`${sense.value}${!_.isNull(sense.unit) ? sense.unit : ``}`}
         />
       ))}
     </This>
   )
 }
 
-export default BreadCrumbList
+export default Senses

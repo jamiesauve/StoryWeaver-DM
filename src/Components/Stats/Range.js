@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import StatBox from './StatBox'
 
+import colors from '../../data/colors'
+
 const This = styled.div`
   display: flex;
   flex-direction: row;
@@ -11,7 +13,6 @@ const This = styled.div`
 
 const Range = (props) => {
   const {
-    borderColor,
     combatRange,
     data,
   } = props
@@ -25,14 +26,14 @@ const Range = (props) => {
   return (
     <This>
       <StatBox
-        borderColor={props.borderColor}
+        borderColor={colors.weatherBlue}
         label={combatRange}
         value={combatRange === "Ranged" ? `${ranged.normal}/${ranged.long}` : melee}
       />
 
       {(combatRange === "Melee" && isThrowing) 
         && <StatBox
-          borderColor={props.borderColor}
+          borderColor={colors.weatherBlue}
           label={combatRange === "Ranged" ? "Melee" : "Ranged"}
           value={combatRange === "Melee" ? `${ranged.normal}/${ranged.long}` : melee}
         />

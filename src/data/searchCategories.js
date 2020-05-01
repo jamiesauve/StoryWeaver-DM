@@ -3,9 +3,9 @@ export default {
     url: 'equipment',
     name: 'armor',
   },
-  c: {
-    url: 'conditions',
-    name: 'condition',
+  c: { // also m
+    url: 'monsters',
+    name: 'creature',
   },
   e: {
     url: 'equipment',
@@ -15,9 +15,9 @@ export default {
     url: 'features',
     name: 'feature',
   },
-  m: {
+  m: { // also c
     url: 'monsters',
-    name: 'monster',
+    name: 'creature',
   },
   p: {
     url: 'pathname',
@@ -42,5 +42,9 @@ export default {
   w: {
     url: 'equipment',
     name: 'weapon',
+  },
+  x: {
+    url: 'conditions',
+    name: 'condition',
   },
 }

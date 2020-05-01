@@ -71,8 +71,8 @@ const DiceRoller = () => {
       <QuickRollTitle>
         Quick Roll 
       </QuickRollTitle>
+      
       <Input
-        autoFocus
         type="text"
         onChange={handleDiceRollerChange}
         value={diceRollerInputValue}

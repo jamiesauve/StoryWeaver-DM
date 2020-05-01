@@ -24,7 +24,7 @@ const WeaponDisplayCard = (props) => {
   const weaponData = restructureData(props.data)
 
   const {
-    name,
+    label,
     type,
     cost,
     combatRange,
@@ -42,7 +42,7 @@ const WeaponDisplayCard = (props) => {
           padding="0 0 5px 0"
         >
           <Title>
-            {name}
+            {label}
           </Title>
 
           <TitleDetail>
@@ -60,13 +60,11 @@ const WeaponDisplayCard = (props) => {
 
         <Row> 
           <Range
-            borderColor={colors.weatherBlue}
             combatRange={combatRange}
             data={range}
           />
           
           <Damage 
-            borderColor={colors.battleRed}
             data={damage}
           />  
         
