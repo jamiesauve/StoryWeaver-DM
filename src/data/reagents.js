@@ -159,7 +159,129 @@ export default [
         part: 'stave',
       },
     ],
+  },
+  {
+    label: "Flameleaf",
+    name: "flameleaf",
+    description: `Tall, elegant, flax-like plant with leaves colored like flames - blue, red, orange, to pale yellow at the tips. Grows a deep red fruit nestled in the middle that glows. `,
+    effects: `Gives off a moderate amount of heat in a 10-foot radius.  Holding a leaf of the plant that was harvested in the last year keeps the holder comfortably warm.`,
+    identifyDC: 7,
+    location: `Found in active volcanoes and on the Plane of Fire.`,
+    lore: `This is one of the only plants cultivated by Azers. Salamanders are known to love the fruit, and will eat it whole. The fruit is edible but spicy enough to kill other creatures in large amounts.`,
+    terrain: [
+      EXOTIC,
+    ],
+    type: "plant",
+    subTypes: [
+      "flax",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+      {
+        type: 'eaten',
+        part: 'fruit',
+        harvestDC: 15,
+        creation: {
+          label: 'Flameleaf Pepper',
+          name: 'flameleaf-pepper',
+          type: 'spice',
+        },
+      },
+      {
+        type: 'gear',
+        part: 'leaf',
+        harvestDC: 5,
+        creation: {
+          label: 'Flameleaf',
+          name: 'flameleaf',
+          gearType: 'item',
+          use: 'Holding a leaf of the plant that was harvested in the last year keeps the holder comfortably warm.',
+        },
+      }, 
+    ],
+    value: [
+      {
+        amount: 200,
+        unit: 'gp',
+        part: 'fruit',
+      },
+      {
+        amount: 20,
+        unit: 'gp',
+        part: 'leaf',
       }
+    ],
+  },
+  {
+    label: "Magma Lily",
+    name: "magma-lily",
+    description: `medium-sized plants with wide, ashen blue leaves and bright yellow flowers blooming up from the middle of the plant. Has long, thin roots.`,
+    effects: `If the flower is smelled, it grants advantage to perception checks using smell for 1d4 hours.`,
+    identifyDC: 5,
+    location: `Found in active volcanoes and on the Plane of Fire.`,
+    lore: `Cultivated by Azers for its beauty. Plants are often tethered so they can be pulled to safety before eruptions.`,
+    terrain: [
+      EXOTIC,
+    ],
+    type: "plant",
+    subTypes: [
+      "aquatic",
+    ],
+    uses: [],
+    value: [],
+  },
+  {
+    label: "Magma Urchin",
+    name: "magma-urchin",
+    description: `Large, spiky, blackened balls that live in lava, with a softer interior.`,
+    effects: `A creature pierced by a Magma Urchin needle is vulnerable to fire damage for 1d4 days.`,
+    identifyDC: 7,
+    location: `Found immersed in lava, attached to rock.`,
+    lore: `These are harvested by Salamanders and sometimes traded to other races.`,
+    terrain: [
+      EXOTIC,
+    ],
+    type: "animal",
+    subTypes: [
+      "shellfish",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+      {
+        type: 'eaten',
+        part: 'interior',
+        harvestDC: 25,
+        creation: {
+          label: 'Magma Urchin',
+          name: 'magma-uchin',
+        },
+      },
+      {
+        type: 'weapon',
+        part: 'spine',
+        harvestDC: 12,
+        creation: {
+          label: 'Magma Urchin Spine',
+          name: 'magma-urchin-spine',
+          weaponType: 'dart',
+          range: '20/60',
+          damage: '1d4 piercing + 1d4 fire',
+        },
+      }, 
+    ],
+    value: [
+      {
+        amount: 10,
+        unit: 'gp',
+        part: 'spine',
+      },
+      {
+        amount: 5,
+        unit: 'sp',
+        part: 'body',
+      }
+    ],
+  },
 ]
 
 
