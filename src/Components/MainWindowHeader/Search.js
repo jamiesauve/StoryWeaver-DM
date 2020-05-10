@@ -6,9 +6,11 @@ import TextInput from '../UI/TextInput'
 import { sanitizeAlphaNumericWithConnectors } from '../../utils/sanitize'
 
 const This = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin: 0 10px;
 `
 
 const SearchTitle = styled.div`
