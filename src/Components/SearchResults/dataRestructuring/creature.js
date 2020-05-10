@@ -38,7 +38,7 @@ export default (data) => {
     },
     actions: _.map(data.actions, action => ({
       name: action.name,
-      description: action.desc,
+      description: action.desc, // TODO: parse this string out and handle in UI
       bonusToHit: action.attack_bonus || null,
     })),
     alignment: data.alignment, // unaligned
@@ -117,6 +117,15 @@ export default (data) => {
         unit,
       }
     }), // { walk: "20 ft.", fly: "80ft."}
+    specialAbilities: _.map(
+      _.get(data, 'special_abilities', []),
+      specialAbility => ({
+        name: specialAbility.name,
+        description: specialAbility.desc,
+        usage: specialAbility.usage || null,
+      })
+    ),
+    spellDC: _.get(data, 'special_abilities[0].spellcasting.dc', null), // TODO: Build out support for spellcasting properly
     subType: data.subType || null, // ?
     type: data.type, // dragon
   }
