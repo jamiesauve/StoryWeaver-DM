@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const ScrollableContainer = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: ${props => props.flexDirection || `column`};
 
 align-items: stretch;
 flex-grow: 1;
