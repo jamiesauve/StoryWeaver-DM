@@ -15,6 +15,7 @@ const [
   SWAMP,
   VILLAGE,
   WINTER,
+  EXOTIC,
 ] = _.map(terrainTypes, (terrainType) => terrainType.name)
 
 const NOT_WINTER = 'notWinter'
@@ -158,7 +159,7 @@ export default [
         part: 'stave',
       },
     ],
-  }
+      }
 ]
 
 

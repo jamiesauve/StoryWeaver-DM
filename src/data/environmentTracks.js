@@ -15,6 +15,7 @@ const [
   SWAMP,
   VILLAGE,
   WINTER,
+  EXOTIC,
 ] = _.map(terrainTypes, (terrainType) => terrainType.name)
 
 export default [
@@ -130,6 +131,7 @@ export default [
     excludeFrom: [
       CAVES,
       CITY,
+      EXOTIC,
       FRESHWATER,
       OCEAN,
       VILLAGE,
@@ -143,6 +145,7 @@ export default [
     excludeFrom: [
       CAVES,
       CITY,
+      EXOTIC,
       FRESHWATER,
       OCEAN,
       VILLAGE,

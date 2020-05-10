@@ -12,6 +12,7 @@ export default {
   cavesPurple: '#737',
   coastBlue: '#33d',
   citySalmon: '#c44',
+  exoticPink: '#c09',
   desertOrange: '#d60',
   forestGreen: '#292',
   freshwaterBlue: '#49d',
@@ -30,7 +31,7 @@ export default {
   lightGrey: "#ddd",
   darkGrey: "#777",
 
-  // backgrouns
+  // backgrounds
   darkBackground: "#222",
   mediumBackground: "#333",
 

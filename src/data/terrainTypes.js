@@ -64,3 +64,8 @@ export const WINTER = {
   name: 'winter',
   color: colors.winterWhite,
 }
+
+export const EXOTIC = {
+  name: 'exotic',
+  color: colors.exoticPink,
+}
