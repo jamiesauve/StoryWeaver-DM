@@ -17,6 +17,10 @@ const ReagentUses = (props) => {
   } = props
 
   const getReagentUses = (reagentUses) => {
+    if (_.isEmpty(reagentUses)) {
+      return ['--']
+    }
+    
     return _.map(reagentUses, reagentUse => {
       if (reagentUse.type === "ingredient") return `Ingredient in ${reagentUse.creation.label} (${reagentUse.creation.type})`
       if (reagentUse.type === "material") return `Material for making ${reagentUse.creation.label} (${reagentUse.creation.type})`

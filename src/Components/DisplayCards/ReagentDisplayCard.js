@@ -100,7 +100,7 @@ const ReagentDisplayCard = (props) => {
       <Row>
         <Description
           borderColor={colors.villageBrown}
-          text={reagent.lore}
+          text={reagent.lore || '--'}
           heading="Lore"
         />
       </Row>
