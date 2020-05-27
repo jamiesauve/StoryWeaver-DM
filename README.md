@@ -25,3 +25,6 @@ Dev Notes:
 Please excuse the terrible commit messages; when I have no tickets, I forget to commit, and then when I do commit, I forget what I'm commiting, and since this is for fun I can't commit to committing decent commits with commit messages that aren't non-committal.
 
 Also, this is entirely under construction.
+
+Build Notes:
+to build this project, clone this repository, then run `npm install` followed by `npm run electron-dev`.
