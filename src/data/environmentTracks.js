@@ -430,4 +430,12 @@ export default [
       MOUNTAINS,
     ]
   },
+  {
+    title: 'Volcano',
+    location: 'https://michaelghelfi.bandcamp.com/track/volcano-temple',
+    tags: ['desert', 'wind', 'birds'],
+    terrain: [
+      EXOTIC,
+    ]
+  },
 ]
