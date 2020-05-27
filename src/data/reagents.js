@@ -39,6 +39,12 @@ const NOT_WINTER = 'notWinter'
  * 4 - high water (field in a wet climate)
  * 5 - standing water (rice field, swamp)
  * 6 - underwater
+ * 
+ * identifyDC: The is the nature roll to know what the plant is. The creature must have a reasonable reason to recognize it to attempt this. 
+ * 
+ * harvestDC: The is the nature roll to harvest the reagent, and reflects the skill necessary to harvest the reagent assuming the creature has
+ * the correct tools to do so. If it is a plant, this will be a general reference, but particular parts of the plant (see the 'uses' section)
+ * may have a different harvestDC.
  */
 
 
