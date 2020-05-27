@@ -63,6 +63,8 @@ export default [
       // can be ingredient, eaten, salve, material component, 
       {
         type: 'ingredient',
+        part: 'root',
+        harvestDC: 13,
         creation: {
           type: 'poison',
           name: 'blackroot-poison',
@@ -281,6 +283,205 @@ export default [
         part: 'body',
       }
     ],
+  },
+  {
+    label: "Adarna",
+    name: "adarna",
+    description: `The stem grows symmetrical pairs of stiff oval leaves. During warmer months the plant blossoms into violet flowers.`,
+    effects: ``,
+    identifyDC: 13,
+    location: `grows on the edges of swamps`,
+    lore: `The large roots of the plant can be ground into a powder, and is the main ingredient in a potion that allows people to see into other realms, often referred to as Sight Beyond.`,
+    terrain: [
+      SWAMP,
+    ],
+    type: "plant",
+    subTypes: [
+      "shrub",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+      {
+        type: 'ingredient',
+        part: 'root',
+        harvestDC: 5,
+        creation: {
+          label: 'Sight Beyond',
+          name: 'sight-beyond',
+        },
+      }, 
+    ],
+    value: [
+      {
+        amount: 2,
+        unit: 'gp',
+        part: 'root',
+      },
+    ],
+  },
+  {
+    label: "Blackcorn",
+    name: "blackcorn",
+    description: `Resembles miniature corn.`,
+    effects: `Bitter taste when raw`, 
+    identifyDC: 15,
+    location: `Grows around swamps and other humid areas`,
+    lore: `It is overly difficult to cultivate and farm, which attributes to the rarity of the plant. The vegetable is prized not for eating, but for making a sweet alcohol called Blackcorn Whiskey that has a strong flavor of plums`,
+    terrain: [
+      SWAMP,
+    ],
+    type: "plant",
+    subTypes: [
+      "singlestem",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+      {
+        type: 'ingredient',
+        part: 'fruit',
+        harvestDC: 2,
+        creation: {
+          label: 'Blackcorn Whiskey',
+          name: 'blackcorn-whiskey',
+        },
+      }, 
+    ],
+    value: [
+      {
+        amount: 10,
+        unit: 'gp',
+        part: 'pound',
+      },
+    ],
+  },
+  {
+    label: "Bloodpurge",
+    name: "bloodpurge",
+    description: `A cluster of broad, waxy leaves, and a single root that trails down into the water. The leaves are a bright green with red capillaries. During the warmer months a bright red flower sprouts from the top. `,
+    effects: ``,
+    identifyDC: 13,
+    location: `Floats on the surface of marshes`,
+    lore: `Drying the plant causes it to turn into a flaky powder, which is often used in a distilled tincture to neutralize minor poisons.`,
+    terrain: [
+      SWAMP,
+    ],
+    type: "plant",
+    subTypes: [
+      "aquatic",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+      {
+        type: 'ingredient',
+        part: 'whole',
+        harvestDC: 5,
+        creation: {
+          label: 'Bloodpurge Tincture',
+          name: 'bloodpurge-tincture',
+        },
+      }, 
+    ],
+    value: [
+      {
+        amount: 2,
+        unit: 'sp',
+        part: 'plant',
+      },
+    ],
+  },
+  {
+    label: "Butterspice Weed",
+    name: "butterspice-weed",
+    description: `A short leafy plant, the top sprouts large yellow flowers upon reaching maturity`,
+    effects: ``,
+    identifyDC: 9,
+    location: `The plant is quite hardy and can grow in a surprisingly wide variety of places.`,
+    lore: `The most renown quality of the plant is that the leaves can be harvested and cured, becoming crumbly brown flakes which can be smoked. It is quite well known among halflings, which often grow it in small patches along with other crops. Those that smoke the weed claim that it has a smooth spicy flavor. `,
+    terrain: [
+      CITY,
+      COAST,
+      FOREST,
+      JUNGLE,
+      MOUNTAINS,
+      SWAMP,
+      PLAINS,
+      VILLAGE,
+
+    ],
+    type: "plant",
+    subTypes: [
+      "mound",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+      {
+        type: 'smoked',
+        part: 'leaf',
+        harvestDC: 2,
+      }, 
+    ],
+    value: [
+      {
+        amount: 1,
+        unit: 'cp',
+        part: 'handful of leaves',
+      },
+    ],
+  },
+  {
+    label: "Guklulla",
+    name: "guklulla",
+    description: `the plant appears to be little more than a pair of large, broad leaves floating on the surface of the stagnant water. During warmer months, a large yellow flower blossoms in the midst of the two leaves.`,
+    effects: `Grinding the root into a paste and applying it to wounds provides not only accelerated healing, but also numbs the affected area.`,
+    identifyDC: 9,
+    location: `Grows in water in swamps`,
+    lore: `Hidden beneath the surface, the plant has an extensive root system that reaches far down into the muck, a massive tangle that catches other debris that is carried along by the slow current. Various species of fish and snakes lay their eggs in the tangle of roots. Orc tribes harvest the Guklulla for the roots, pulling the plants out of the muck, cutting off sections of the roots and throwing them back into the swamp to be harvested again in the future.`,
+    terrain: [
+      SWAMP,
+
+    ],
+    type: "plant",
+    subTypes: [
+      "aquatic",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+      {
+        type: 'salve',
+        part: 'root',
+        harvestDC: 2,
+        creation: {
+          label: 'Guklulla Salve',
+          name: 'guklulla-salve',
+        },
+      }, 
+    ],
+    value: [
+      {
+        amount: 5,
+        unit: 'gp',
+        part: 'root',
+      },
+    ],
+  },
+  {
+    label: "Rattlestalks",
+    name: "rattlestalks",
+    description: `These tall stalks end in a thick bulb with a hard shell.`,
+    effects: ``,
+    identifyDC: 11,
+    location: `Grow out of stagnant water.`,
+    lore: `In the colder months, the stalk withers, and the bulb falls off, to float around until the bulb softens and falls away to disperse the seeds within. The seeds sit freely in the shell, and when shaken make a slight rattle noise, which is unnerving when the wind rushes through a cluster of rattlestalks. Tribes that live in the swamps will often use the unnerving aspect of the rattlestalks to create fear inducing noisemakers.`,
+    terrain: [
+      SWAMP,
+
+    ],
+    type: "plant",
+    subTypes: [
+      "reed",
+    ],
+    uses: [],
+    value: [],
   },
 ]
 
