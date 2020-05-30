@@ -30,7 +30,7 @@ const Value = (props) => {
     <This
       color={unitColor}
     >
-      {data.amount}{data.unit}{data.part ? ` per ${data.part}` : ``}
+      {data.amount}{data.unit}{data.partLabel ? ` per ${data.partLabel}` : ``}
     </This>
   )
 }

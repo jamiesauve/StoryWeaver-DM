@@ -6,7 +6,7 @@ import Row from '../styled/DisplayCard/Row'
 import TitleDetail from '../styled/DisplayCard/TitleDetail'
 
 import Description from '../Stats/Description'
-import ReagentUses from '../Stats/ReagentUses'
+import ReagentUses from '../Stats/ReagentUses/ReagentUses'
 import StatBox from '../Stats/StatBox'
 import Value from '../Stats/Value'
 import TerrainBreadCrumbs from '../Alchemy/TerrainBreadCrumbs'
@@ -43,7 +43,7 @@ const ReagentDisplayCard = (props) => {
             // add comma as needed (or space)
             <Value
               data={reagentValueItem}
-              key={reagentValueItem.part}
+              key={reagentValueItem.partLabel}
             />
           ))}
         </VerticalList>
@@ -110,6 +110,7 @@ const ReagentDisplayCard = (props) => {
           className="reagentUses"
           borderColor={colors.weatherBlue}
           data={reagent.uses}
+          reagentType={reagent.type}
           heading="Uses"
         />
       </Row>

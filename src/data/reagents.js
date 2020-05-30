@@ -69,7 +69,8 @@ export default [
       // can be ingredient, eaten, salve, material component, 
       {
         type: 'ingredient',
-        part: 'root',
+        partLabel: 'Root',
+        partName: 'root',
         harvestDC: 13,
         creation: {
           type: 'poison',
@@ -82,7 +83,8 @@ export default [
       {
         amount: 10,
         unit: 'gp',
-        part: 'root',
+        partLabel: 'Root',
+        partName: 'root'
       }
     ],
   },
@@ -108,6 +110,8 @@ export default [
       // can be ingredient, eaten, salve, material component, 
       {
         type: 'ingredient',
+        partLabel: 'Cap',
+        partName: 'cap',
         creation: {
           type: 'beverage',
           name: 'toadstool-ale',
@@ -119,7 +123,8 @@ export default [
       {
         amount: 1,
         unit: 'cp',
-        part: 'cap',
+        partLabel: 'Cap',
+        partName: 'cap',
       }
     ],
   },
@@ -159,12 +164,14 @@ export default [
       {
         amount: 1,
         unit: 'gp',
-        part: 'limb',
+        partLabel: 'Limb',
+        partName: 'limb',
       },
       {
         amount: 15,
         unit: 'gp',
-        part: 'stave',
+        partLabel: 'Stave',
+        partName: 'stave',
       },
     ],
   },
@@ -187,7 +194,8 @@ export default [
       // can be ingredient, eaten, salve, material component, gear
       {
         type: 'eaten',
-        part: 'fruit',
+        partLabel: 'Fruit',
+        partName: 'fruit',
         harvestDC: 15,
         creation: {
           label: 'Flameleaf Pepper',
@@ -197,13 +205,14 @@ export default [
       },
       {
         type: 'gear',
-        part: 'leaf',
+        partLabel: 'Leaf',
+        partName: 'leaf',
         harvestDC: 5,
         creation: {
           label: 'Flameleaf',
           name: 'flameleaf',
           gearType: 'item',
-          use: 'Holding a leaf of the plant that was harvested in the last year keeps the holder comfortably warm.',
+          use: 'holding a leaf of the plant that was harvested in the last year keeps the holder comfortably warm.',
         },
       }, 
     ],
@@ -211,12 +220,14 @@ export default [
       {
         amount: 200,
         unit: 'gp',
-        part: 'fruit',
+        partLabel: 'Fruit',
+        partName: 'fruit',
       },
       {
         amount: 20,
         unit: 'gp',
-        part: 'leaf',
+        partLabel: 'Leaf',
+        partName: 'leaf',
       }
     ],
   },
@@ -257,7 +268,8 @@ export default [
       // can be ingredient, eaten, salve, material component, gear
       {
         type: 'eaten',
-        part: 'interior',
+        partLabel: 'Interior',
+        partName: 'interior',
         harvestDC: 25,
         creation: {
           label: 'Magma Urchin',
@@ -266,7 +278,8 @@ export default [
       },
       {
         type: 'weapon',
-        part: 'spine',
+        partLabel: 'Spine',
+        partName: 'spine',
         harvestDC: 12,
         creation: {
           label: 'Magma Urchin Spine',
@@ -281,12 +294,14 @@ export default [
       {
         amount: 10,
         unit: 'gp',
-        part: 'spine',
+        partLabel: 'spine',
+        partName: 'spine',
       },
       {
         amount: 5,
         unit: 'sp',
-        part: 'body',
+        partLabel: 'Body',
+        partName: 'body',
       }
     ],
   },
@@ -309,11 +324,13 @@ export default [
       // can be ingredient, eaten, salve, material component, gear
       {
         type: 'ingredient',
-        part: 'root',
+        partLabel: 'Root',
+        partName: 'root',
         harvestDC: 5,
         creation: {
           label: 'Sight Beyond',
           name: 'sight-beyond',
+          type: 'potion',
         },
       }, 
     ],
@@ -321,7 +338,8 @@ export default [
       {
         amount: 2,
         unit: 'gp',
-        part: 'root',
+        partLabel: 'Root',
+        partName: 'root',
       },
     ],
   },
@@ -344,11 +362,13 @@ export default [
       // can be ingredient, eaten, salve, material component, gear
       {
         type: 'ingredient',
-        part: 'fruit',
+        partLabel: 'Fruit',
+        partName: 'fruit',
         harvestDC: 2,
         creation: {
           label: 'Blackcorn Whiskey',
           name: 'blackcorn-whiskey',
+          type: 'beverage',
         },
       }, 
     ],
@@ -356,7 +376,8 @@ export default [
       {
         amount: 10,
         unit: 'gp',
-        part: 'pound',
+        partLabel: 'Pound',
+        partName: 'pound',
       },
     ],
   },
@@ -379,11 +400,13 @@ export default [
       // can be ingredient, eaten, salve, material component, gear
       {
         type: 'ingredient',
-        part: 'whole',
+        partLabel: 'Whole',
+        partName: 'whole',
         harvestDC: 5,
         creation: {
           label: 'Bloodpurge Tincture',
           name: 'bloodpurge-tincture',
+          type: 'potion',
         },
       }, 
     ],
@@ -391,7 +414,8 @@ export default [
       {
         amount: 2,
         unit: 'sp',
-        part: 'plant',
+        partLabel: 'Plant',
+        partName: 'plant',
       },
     ],
   },
@@ -422,7 +446,8 @@ export default [
       // can be ingredient, eaten, salve, material component, gear
       {
         type: 'smoked',
-        part: 'leaf',
+        partLabel: 'Leaf',
+        partName: 'leaf',
         harvestDC: 2,
       }, 
     ],
@@ -430,7 +455,8 @@ export default [
       {
         amount: 1,
         unit: 'cp',
-        part: 'handful of leaves',
+        partLabel: 'Handful of leaves',
+        partName: 'handful of leaves',
       },
     ],
   },
@@ -454,7 +480,8 @@ export default [
       // can be ingredient, eaten, salve, material component, gear
       {
         type: 'salve',
-        part: 'root',
+        partLabel: 'Root',
+        partName: 'root',
         harvestDC: 2,
         creation: {
           label: 'Guklulla Salve',
@@ -466,7 +493,8 @@ export default [
       {
         amount: 5,
         unit: 'gp',
-        part: 'root',
+        partLabel: 'Root',
+        partName: 'root',
       },
     ],
   },
