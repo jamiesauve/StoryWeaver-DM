@@ -119,6 +119,11 @@ export default {
           'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
         ],
       },
+      {
+        title: 'Creepy Dungeon',
+        location: 'https://michaelghelfi.bandcamp.com/track/generic-dungeon-iv',
+        tags: ['dark', 'creepy'],
+      },
     ],
   },
   'Weather': {
