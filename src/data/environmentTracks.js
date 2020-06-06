@@ -438,4 +438,53 @@ export default [
       EXOTIC,
     ]
   },
+  {
+    title: 'Durukhaaz - The Clanging Cavern',
+    location: 'https://michaelghelfi.bandcamp.com/track/deep-forge',
+    tags: ['hammers', 'dwarves', 'durukhaaz', 'city', 'underground'],
+    terrain: [
+      CAVES,
+      EXOTIC,
+    ]
+  },
+  {
+    title: 'Durukhaaz - The Streets',
+    location: 'https://michaelghelfi.bandcamp.com/track/dark-elves-city',
+    tags: ['people', 'durukhaaz', 'city', 'underground', 'screeching'],
+    terrain: [
+      CAVES,
+    ],
+  },
+  {
+    title: 'Durukhaaz - The Merchantry',
+    location: 'https://michaelghelfi.bandcamp.com/track/slums',
+    tags: ['people', 'market', 'busy', 'dogs'],
+    terrain: [
+      CAVES,
+    ]
+  },
+  {
+    title: 'Durukhaaz - The Forests',
+    location: 'https://michaelghelfi.bandcamp.com/track/underground-mushroom-forest-2',
+    tags: ['magic', 'calm', 'mushrooms', 'underground'],
+    terrain: [
+      CAVES,
+    ]
+  },
+  {
+    title: 'Durukhaaz - The Lake',
+    location: 'https://michaelghelfi.bandcamp.com/track/sewers',
+    tags: ['sewer', 'dripping', 'caves', 'squeaks'],
+    terrain: [
+      CAVES,
+    ]
+  },
+  {
+    title: 'Durukhaaz - The Mines',
+    location: 'https://michaelghelfi.bandcamp.com/track/active-mine',
+    tags: ['mining', 'work', 'caves', 'underground'],
+    terrain: [
+      CAVES,
+    ]
+  },
 ]
