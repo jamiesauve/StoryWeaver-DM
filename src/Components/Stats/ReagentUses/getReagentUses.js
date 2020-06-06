@@ -15,7 +15,8 @@ const getReagentUses = (reagentUses, reagentType) => {
       if (reagentUse.type === "weapon") return `The ${reagentUse.partLabel.toLowerCase()} can be made into a ${reagentUse.creation.weaponType}. ${reagentUse.creation.damage ? ` Damage: ${reagentUse.creation.damage}` : ``} ${reagentUse.creation.range ? ` Range: ${reagentUse.creation.range}` : ``}`
       if (reagentUse.type === "smoked") return `The ${reagentUse.partLabel.toLowerCase()} be smoked.`
       if (reagentUse.type === "eaten") return `The ${reagentUse.partLabel.toLowerCase()} be eaten ${reagentUse.creation.type ? ` (${reagentUse.creation.type})` : ``}.`
-      if (reagentUse.type === "gear") return `The ${reagentUse.partLabel.toLowerCase()} can be used as gear: ${reagentUse.creation.use}`
+      if (reagentUse.type === "gear") return `The ${reagentUse.partLabel.toLowerCase()} can be used as gear (${reagentUse.creation.use}).`
+      if (reagentUse.type === "poison") return `The ${reagentUse.partLabel.toLowerCase()} can be used as a poison (${reagentUse.creation.poisonMechanism || ``}).`
     } else {
       if (reagentUse.type === "weapon") return `The ${reagentUse.partLabel.toLowerCase()} can be made into a ${reagentUse.creation.weaponType}. ${reagentUse.creation.damage ? ` Damage: ${reagentUse.creation.damage}` : ``} ${reagentUse.creation.range ? ` Range: ${reagentUse.creation.range}` : ``}`
     }

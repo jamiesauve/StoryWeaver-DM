@@ -1,7 +1,7 @@
 const createIngredientString = (ingredientData) => {
 
 
-  return `${ingredientData.partLabel} (Harvest DC${ingredientData.harvestDC || 2}): Ingredient in ${ingredientData.creation.label} (${ingredientData.creation.type || ``})`
+  return `${ingredientData.partLabel} (Harvest DC${ingredientData.harvestDC || 2}): Ingredient in ${ingredientData.creation.label} (${ingredientData.creation.type || ``}).`
 }
 
 export default createIngredientString;
