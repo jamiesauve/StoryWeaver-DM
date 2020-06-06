@@ -517,6 +517,56 @@ export default [
     uses: [],
     value: [],
   },
+  {
+    label: "Wipplecap",
+    name: "wipplecap",
+    description: `A 1-2 foot tall mushroom. Looks like a rich brown morel.`,
+    effects: `If jarred or knocked over, it releases a cloud of poisonous spores (5-10 foot radius). If inhaled, a creature takes 2d6 poison damage. This damage repeats at the start of each of its turns. If not in the poisoned area anymore, a poisoned creature can make a DC13 Constitution saving throw to reduce the damage by 1d6. This resets if the creature inhales any more spores.`,
+    identifyDC: 11,
+    location: `Dry, especially dark areas`,
+    lore: `Was used as a battlefield poison by the Durukhaaz dwarves to repel the Black Shields when besieged.`,
+    terrain: [
+      CAVES,
+
+    ],
+    type: "plant",
+    subTypes: [
+      "fungus",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+      {
+        type: 'poison',
+        partLabel: 'Spores',
+        partName: 'spores',
+        harvestDC: 17,
+        creation: {
+          label: 'Wipplecap Spores',
+          name: 'wipplecap-spores',
+          poisonMechanism: 'inhaled',
+        },
+      },
+      {
+        type: 'ingredient',
+        partLabel: 'Spores',
+        partName: 'spores',
+        harvestDC: 17,
+        creation: {
+          label: 'Wipplecap Poison',
+          name: 'wipplecap-poison',
+          type: 'poison',
+        },
+      }, 
+    ],
+    value: [
+      {
+        amount: 50,
+        unit: 'gp',
+        partLabel: 'ounce of spores',
+        partName: 'ounce-of-spores',
+      },
+    ],
+  },
 ]
 
 
