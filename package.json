@@ -11,6 +11,7 @@
     "concurrently": "^5.1.0",
     "electron-is-dev": "^1.1.0",
     "grommet": "^2.11.2",
+    "nodemon": "^2.0.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
@@ -19,16 +20,26 @@
     "styled-components": "^5.0.1",
     "wait-on": "^4.0.1"
   },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.13",
+    "@rescripts/rescript-env": "^0.0.11",
+    "electron": "^8.1.1",
+    "electron-builder": "^22.4.1",
+    "electron-devtools-installer": "^2.2.4",
+    "typescript": "^3.8.3"
+  },
   "homepage": "./",
   "scripts": {
-    "start": "PORT=4203 rescripts start",
     "build": "rescripts build",
-    "test": "rescripts test",
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:4203 && electron .\"",
+    "dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:4203 && electron .\"",
+    "electron-pack": "electron-builder build -mw",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn build",
-    "electron-pack": "electron-builder build -mw"
+    "server": "nodemon fileServer/server.js",
+    "start": "concurrently \"PORT=4203 rescripts start\" \"npm run server\"",
+    "test": "rescripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,14 +59,6 @@
   "rescripts": [
     "env"
   ],
-  "devDependencies": {
-    "@rescripts/cli": "^0.0.13",
-    "@rescripts/rescript-env": "^0.0.11",
-    "electron": "^8.1.1",
-    "electron-builder": "^22.4.1",
-    "electron-devtools-installer": "^2.2.4",
-    "typescript": "^3.8.3"
-  },
   "author": {
     "name": "Jamie Sauve",
     "email": "jamiesauve@zohomail.com",
