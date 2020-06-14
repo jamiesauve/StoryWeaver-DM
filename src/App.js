@@ -42,12 +42,6 @@ function App() {
     <This
       className="App"
     >
-      <Sidebar 
-        activeTerrain={activeTerrain}
-        setActiveTerrain={setActiveTerrain}
-        activeTerrainColor={activeTerrainColor}
-      />
-
       <MainWindow 
         activeTerrain={activeTerrain}
         setActiveTerrain={setActiveTerrain}

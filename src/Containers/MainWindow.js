@@ -7,13 +7,14 @@ import Pane from '../Components/styled/Pane'
 import Creatures from './Creatures'
 import MainWindowHeader from './MainWindowHeader'
 import Alchemy from './Alchemy'
+import Notes from './Notes'
 import SearchResults from './SearchResults'
 import Sounds from './Sounds'
 
 import makeSearchCall from '../utils/makeSearchCall'
 
 const This = styled.div`
-width: 75vw;
+width: 100vw;
 height: 100vh;
 
 display: flex;
@@ -84,6 +85,22 @@ const MainWindow = (props) => {
       <MainWindowBody
         className="mainWindowBody"
       >
+        <Frame
+          className="frame"
+        >
+          <Pane
+            borderColor={activeTerrainColor}
+            className="pane"
+            // margin, border and padding on pane for both this pane and the MainWindowHeader one
+            height={`${mainWindowBodyHeight - 64}px`} 
+          >
+            <Notes 
+              activeTerrain={activeTerrain}
+              setActiveTerrain={setActiveTerrain}
+            /> 
+          </Pane> 
+      </Frame>
+
         <Frame
           className="frame"
         >
