@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import ToggleButtonWithLabels from '../UI/ToggleButtonWithLabels'
 
+import locationTypeOptions from '../../data/locationTypeOptions'
+
 const This = styled.div`
   display: flex;
   flex-direction: row;
@@ -15,17 +17,6 @@ const LocationTitle = styled.div`
 `
 
 const LocationType = (props) => {
-
-  const locationTypeOptions = [
-    {
-      label: "Terrain",
-      value: "terrain",
-    },
-    {
-      label: "Place",
-      value: "place",
-    }
-  ]
 
   const toggleButtonStyles = {
     separator: {
