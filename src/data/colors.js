@@ -35,6 +35,7 @@ export default {
   // backgrounds
   darkBackground: "#222",
   mediumBackground: "#333",
+  lightDarkBackground: "#444",
   lightBackGround: "#fff",
   lightBackGroundDimmed: "#eee",
 }

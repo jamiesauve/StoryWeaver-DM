@@ -9,52 +9,75 @@ const This = styled.div`
   flex-direction: row;
   align-items: center;
 
-  background: ${props => props.backgroundColor || colors.lightBackGround};
+  background: ${props => props.inactiveBackgroundColor || colors.lightBackGround};
 
   border-radius: 3px;
-  border: ${props => props.border ? props.border : `none`};
-
-  color: ${props => props.textColor || colors.darkText}
-`
-
-const OptionButton = styled.div`
+  border: ${props => props.hasBorder ? `1px ${props.borderColor} solid` : `none`};
+  `
+  
+  const OptionButton = styled.div`
   flex-grow: 1;
-
+  
   z-index: 0;
   padding: 10px;
-
+  
   text-align: center;
+  color: ${props => props.textColor || colors.darkText};
 
   &:hover {
     background: ${props => props.hoverBackgroundColor || colors.lightBackGroundDimmed}
   }
 
   ${
-    props => props.isActiveOption 
-    ? `font-weight: bold;`
-    : `border-bottom: 1px ${props.innerColor || colors.lightGrey} solid;`
+    props => props.isActiveOption
+    ? `
+      background: ${props.activeBackgroundColor};
+      font-weight: bold;  
+    `
+    : props.hasBorder && `
+      border-radius: 0 0 5px 5px;
+      border-bottom: 1px ${props.borderColor || colors.lightGrey} solid;
+
+      &:not(:first-child) {
+        border-left: 1px${props.borderColor || colors.lightGrey} solid;
+      }
+
+      &:not(:last-child) {
+        border-right: 1px${props.borderColor || colors.lightGrey} solid;
+      }
+    `
   }
 `
 
 const Separator = styled.div`
-  ${props => props.areOptionsFullySeparated || `margin: 5px 0;`}
+  margin: 5px 0;
   padding: 5px 0;
-  width: 1px;
+  width: ${props => props.isVisible ? `1px` : `0`};
   
   align-self: stretch;
 
-  background: ${props => props.innerColor || colors.lightGrey}
+  background: ${props => props.borderColor || colors.lightGrey}
 `
 
 const ToggleButtonWithLabels = (props) => {
-  const generateOptions = (options) => (
-    options.map((option, index) => (
+  const {
+    component: componentStyles = {},
+    option: optionStlyes = {},
+    separator: separatorStyles = {},
+  } = props.styles
+
+  const generateOptions = (options) => {
+
+    return options.map((option, index) => (
       <>
         <OptionButton
+          activeBackgroundColor={componentStyles.activeBackgroundColor}
+          borderColor={componentStyles.borderColor}
+          hasBorder={componentStyles.hasBorder}
+          hoverBackgroundColor={props.options.color}
           isActiveOption={props.activeOption === option.value}
-          innerColor={props.innerColor}
-          hoverBackgroundColor={props.hoverBackgroundColor}
           onClick={(e) => handleClickOption(e, option.value)}
+          textColor={optionStlyes.textColor}
         >
           {option.label}
         </OptionButton>
@@ -62,13 +85,14 @@ const ToggleButtonWithLabels = (props) => {
         {
           index !== (options.length - 1)
           && <Separator 
-            innerColor={props.innerColor}
-            areOptionsFullySeparated={props.areOptionsFullySeparated}
+            borderColor={componentStyles.borderColor}
+            isVisible={separatorStyles.isVisible}
           />
         }
       </>
     ))
-  )
+  }
+  
 
   const handleClickOption = (e, value) => {
     e.preventDefault();
@@ -78,14 +102,18 @@ const ToggleButtonWithLabels = (props) => {
 
   return (
     <This
-      backgroundColor={props.backgroundColor}
-      border={props.border}
+      inactiveBackgroundColor={componentStyles.backgroundColor}
+      hasBorder={componentStyles.hasBorder}
       className="toggleButtonWithLabel"
-      textColor={props.textColor}
+      borderColor={componentStyles.borderColor}
     >
       {generateOptions(props.options)}
     </This>
   )
+}
+
+ToggleButtonWithLabels.defaultProps = {
+  styles: {}
 }
 
 export default ToggleButtonWithLabels

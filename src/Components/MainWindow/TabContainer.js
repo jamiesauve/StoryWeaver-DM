@@ -9,19 +9,28 @@ const This = styled.div`
 `
 
 const TabContainer = (props) => {
+  const toggleButtonStyles = {
+    component: {
+      activeBackgroundColor: colors.darkBackground,
+      backgroundColor: colors.lightDarkBackground,
+      hasBorder: true,
+      borderColor: props.activeTerrainColor || colors.darkGrey,
+    },
+    option: {
+      textColor: colors.lightGrey,
+    },
+    separator: {
+      isVisible: false,
+    },
+  }
 
   return (
     <This>
       <ToggleButtonWithLabels
         activeOption={props.activeTab}
-        areOptionsFullySeparated={true}
-        backgroundColor={colors.darkBackground}
-        border={`1px solid ${colors.darkGrey}`}
-        hoverBackgroundColor={colors.darkGrey}
-        innerColor={colors.darkGrey}
-        setActiveOption={props.setActiveTab}
-        textColor={colors.lightGrey}
         options={props.dummyData}
+        setActiveOption={props.setActiveTab}
+        styles={toggleButtonStyles}
       />
     </This>
   )

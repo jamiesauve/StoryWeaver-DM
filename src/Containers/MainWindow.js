@@ -14,6 +14,8 @@ import Sounds from './Sounds'
 
 import makeSearchCall from '../utils/makeSearchCall'
 
+import colors from '../data/colors'
+
 const This = styled.div`
 width: 100vw;
 height: 100vh;
@@ -46,12 +48,19 @@ const MainWindow = (props) => {
 
   const dummyData = [
     {
+      color: colors.villageBrown,
       label: "Notes",
       value: "notes",
     },
     {
+      color: colors.forestGreen,
       label: "Alchemy",
       value: "alchemy",
+    },
+    {
+      color: colors.forestGreen,
+      label: "Creatures",
+      value: "creatures",
     }
   ]
 
@@ -106,9 +115,9 @@ const MainWindow = (props) => {
           className="frame"
         >
             <TabContainer
-              dummyData={dummyData}
-              dummyData={dummyData}
               activeTab={frame1ActiveTab}
+              activeTerrainColor={activeTerrainColor}
+              dummyData={dummyData}
               setActiveTab={setFrame1ActiveTab}
             />
 

@@ -27,6 +27,12 @@ const LocationType = (props) => {
     }
   ]
 
+  const toggleButtonStyles = {
+    separator: {
+      isVisible: true,
+    }
+  }
+
   return (
     <This
       className="locationType"
@@ -39,6 +45,7 @@ const LocationType = (props) => {
         activeOption={props.activeLocationType}
         setActiveOption={props.setActiveLocationType}
         options={locationTypeOptions}
+        styles={toggleButtonStyles}
       />
     </This>
   )
