@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import LocationType from '../Components/MainWindowHeader/LocationType'
 import Terrain from '../Components/MainWindowHeader/Terrain'
 
 import Search from '../Components/MainWindowHeader/Search'
@@ -19,6 +20,11 @@ const MainWindowHeader = (props) => {
       className="mainWindowHeader"
       ref={props.mainWindowHeaderElement}
     >
+        <LocationType
+          activeLocationType={props.activeLocationType}
+          setActiveLocationType={props.setActiveLocationType}
+        />
+
       <Terrain 
         activeTerrain={props.activeTerrain}
         setActiveTerrain={props.setActiveTerrain}

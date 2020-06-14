@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import Frame from '../Components/styled/Frame'
 import Pane from '../Components/styled/Pane'
 
+import Alchemy from './Alchemy'
 import Creatures from './Creatures'
 import MainWindowHeader from './MainWindowHeader'
-import Alchemy from './Alchemy'
 import Notes from './Notes'
 import SearchResults from './SearchResults'
 import Sounds from './Sounds'
@@ -75,6 +75,8 @@ const MainWindow = (props) => {
           >
             <MainWindowHeader 
               mainWindowHeaderElement={mainWindowHeaderElement}
+              activeLocationType={props.activeLocationType}
+              setActiveLocationType={props.setActiveLocationType}
               activeTerrain={activeTerrain}
               setActiveTerrain={setActiveTerrain}
               setSearchQuery={setSearchQuery}

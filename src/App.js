@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import MainWindow from './Containers/MainWindow'
-import Sidebar from './Containers/Sidebar'
 
 import colors from './data/colors'
 import sizes from './data/sizes'
@@ -28,6 +27,7 @@ const This = styled.div`
 
 function App() {
   const [activeTerrain, setActiveTerrain] = useState('')
+  const [activeLocationType, setActiveLocationType] = useState('terrain')
   const [activeTerrainColor, setActiveTerrainColor] = useState('')
 
   useEffect(() => {
@@ -44,6 +44,8 @@ function App() {
     >
       <MainWindow 
         activeTerrain={activeTerrain}
+        activeLocationType={activeLocationType}
+        setActiveLocationType={setActiveLocationType}
         setActiveTerrain={setActiveTerrain}
         activeTerrainColor={activeTerrainColor}
       />
