@@ -30,9 +30,11 @@ export default {
   // text
   lightGrey: "#ddd",
   darkGrey: "#777",
+  darkText: "#333",
 
   // backgrounds
   darkBackground: "#222",
   mediumBackground: "#333",
-
+  lightBackGround: "#fff",
+  lightBackGroundDimmed: "#eee",
 }
