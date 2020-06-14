@@ -7,8 +7,6 @@ import { sanitizeNumeric } from '../../utils/sanitize'
 import colors from '../../data/colors'
 
 const This = styled.div`
-  width: 100%;
-
   display: flex;
   flex-direction: row;
   align-items: center;
