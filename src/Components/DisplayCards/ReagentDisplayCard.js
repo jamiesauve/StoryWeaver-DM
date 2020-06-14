@@ -9,7 +9,7 @@ import Description from '../Stats/Description'
 import ReagentUses from '../Stats/ReagentUses/ReagentUses'
 import StatBox from '../Stats/StatBox'
 import Value from '../Stats/Value'
-import TerrainBreadCrumbs from '../Alchemy/TerrainBreadCrumbs'
+import TerrainBreadCrumbs from '../Reagents/TerrainBreadCrumbs'
 
 import colors from '../../data/colors'
 

@@ -5,29 +5,34 @@ import Frame from '../Components/styled/Frame'
 import Pane from '../Components/styled/Pane'
 import TabContainer from '../Components/MainWindow/TabContainer'
 
-import Alchemy from './Alchemy'
-import Creatures from './Creatures'
 import MainWindowHeader from './MainWindowHeader'
+
+// Aspects
+import Ambiences from './Ambiences'
+import Creatures from './Creatures'
+// Gameplay
 import Notes from './Notes'
+// NPCs
+import Reagents from './Reagents'
+// Recipes
 import Search from './Search'
-import Sounds from './Sounds'
 
 import colors from '../data/colors'
 
 const This = styled.div`
-width: 100vw;
-height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `
 
 const MainWindowBody = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
 
-flex-grow: 1;
+  flex-grow: 1;
 `
 
 const MainWindow = (props) => {
@@ -50,8 +55,8 @@ const MainWindow = (props) => {
     },
     {
       color: colors.forestGreen,
-      label: "Alchemy",
-      value: "alchemy",
+      label: "Reagents",
+      value: "reagents",
     },
     {
       color: colors.forestGreen,
@@ -71,35 +76,34 @@ const MainWindow = (props) => {
     setMainWindowBodyHeight(appHeight - headerHeight)
   }, [mainWindowHeaderElement.current])
 
-
+  
 
   return (
     <This>
-      <Frame
-          className="frame"
-          width='100%'
-        >
-          <Pane
-            borderColor={activeTerrainColor}
-            className="pane"
-          >
-            <MainWindowHeader 
-              mainWindowHeaderElement={mainWindowHeaderElement}
-              activeLocationType={props.activeLocationType}
-              setActiveLocationType={props.setActiveLocationType}
-              activeTerrain={activeTerrain}
-              setActiveTerrain={setActiveTerrain}
-              setSearchQuery={setSearchQuery}
-            />
-          </Pane>
-      </Frame>
-
-      <MainWindowBody
-        className="mainWindowBody"
-      >
         <Frame
-          className="frame"
+            className="frame"
+            width='100%'
+          >
+            <Pane
+              borderColor={activeTerrainColor}
+              className="pane"
+            >
+              <MainWindowHeader 
+                mainWindowHeaderElement={mainWindowHeaderElement}
+                activeLocationType={props.activeLocationType}
+                setActiveLocationType={props.setActiveLocationType}
+                activeTerrain={activeTerrain}
+                setActiveTerrain={setActiveTerrain}
+              />
+            </Pane>
+        </Frame>
+
+        <MainWindowBody
+          className="mainWindowBody"
         >
+          <Frame
+            className="frame"
+          >
             <TabContainer
               activeTab={frame1ActiveTab}
               activeTerrainColor={activeTerrainColor}
@@ -107,72 +111,71 @@ const MainWindow = (props) => {
               setActiveTab={setFrame1ActiveTab}
             />
 
-          <Pane
-            borderColor={activeTerrainColor}
-            className="pane"
-            // margin, border and padding on pane for both this pane and the MainWindowHeader one
-            height={`${mainWindowBodyHeight - 64}px`} 
+            <Pane
+              borderColor={activeTerrainColor}
+              className="pane"
+              // margin, border and padding on pane for both this pane and the MainWindowHeader one
+              height={`${mainWindowBodyHeight - 64}px`} 
               isBorderTopVisible={false}
-          >
+            >
               {
                 frame1ActiveTab === "notes"
                 ? <Notes 
-              activeTerrain={activeTerrain}
-              setActiveTerrain={setActiveTerrain}
-            /> 
-                :  <Alchemy
+                  activeTerrain={activeTerrain}
+                />
+                :  <Reagents
                   activeTerrain={activeTerrain}
                 />
               }
                
-          </Pane> 
-      </Frame>
-
-        <Frame
-          className="frame"
-        >
-          <Pane
-            borderColor={activeTerrainColor}
-            className="pane"
-            // margin, border and padding on pane for both this pane and the MainWindowHeader one
-            height={`${mainWindowBodyHeight - 64}px`} 
-          >
-            <Sounds 
-              activeTerrain={activeTerrain}
-            />
-          </Pane>
+            </Pane> 
         </Frame>
 
-        <Frame
-          className="frame"
-        >
-          <Pane
-            borderColor={activeTerrainColor}
-            className="pane"
-            // margin, border and padding on pane for both this pane and the MainWindowHeader one,
-            // minus the border and padding for other pane in this frame
-            height={`${mainWindowBodyHeight - 64}px`}
+          <Frame
+            className="frame"
           >
-            <Creatures
-              activeTerrain={activeTerrain}
-            />
-          </Pane>
-        </Frame>
+            <Pane
+              borderColor={activeTerrainColor}
+              className="pane"
+              // margin, border and padding on pane for both this pane and the MainWindowHeader one
+              height={`${mainWindowBodyHeight - 64}px`} 
+            >
+              <Ambiences 
+                activeTerrain={activeTerrain}
+              />
+            </Pane>
+          </Frame>
 
-        <Frame
-          className="frame"
-        >
-          <Pane
-            borderColor={activeTerrainColor}
-            className="pane"
-            // margin, border and padding on pane for both this pane and the MainWindowHeader one,
-            // minus the border and padding for other pane in this frame
+          <Frame
+            className="frame"
+          >
+            <Pane
+              borderColor={activeTerrainColor}
+              className="pane"
+              // margin, border and padding on pane for both this pane and the MainWindowHeader one,
+              // minus the border and padding for other pane in this frame
               height={`${mainWindowBodyHeight - 64}px`}
+            >
+              <Creatures
+                activeTerrain={activeTerrain}
+              />
+            </Pane>
+          </Frame>
+
+          <Frame
+            className="frame"
           >
+            <Pane
+              borderColor={activeTerrainColor}
+              className="pane"
+              // margin, border and padding on pane for both this pane and the MainWindowHeader one,
+              // minus the border and padding for other pane in this frame
+              height={`${mainWindowBodyHeight - 64}px`}
+            >
               <Search />
-          </Pane>
-        </Frame>
-      </MainWindowBody>
+            </Pane>
+          </Frame>
+        </MainWindowBody>
     </This>
   )
 }

@@ -5,13 +5,13 @@ import Spacer from '../Components/styled/Spacer'
 
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
-import TrackSection from '../Components/Sounds/TrackSection'
+import TrackSection from '../Components/Ambiences/TrackSection'
 
 import getMoodTracks from '../data/getMoodTracks'
 import getEnvironmentTracks from '../data/getEnvironmentTracks'
 import specialTracks from '../data/getSpecialTracks'
 
-const Sounds = (props) => {
+const Ambiences = (props) => {
   const [moodTracks, setMoodTracks] = useState(getMoodTracks(props.activeTerrain))
   const [environmentTracks, setEnvironmentTracks] = useState(getEnvironmentTracks(props.activeTerrain))
 
@@ -22,7 +22,7 @@ const Sounds = (props) => {
 
   return (
     <Section
-      title="Sounds"
+      title="Ambiences"
       className="Section"
     >
       <ScrollableContainer
@@ -60,4 +60,4 @@ const Sounds = (props) => {
 }
 
 
-export default Sounds
+export default Ambiences

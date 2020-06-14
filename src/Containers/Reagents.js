@@ -23,7 +23,7 @@ const This = styled.div`
   height: 100%;
 `
 
-const Alchemy = (props) => {
+const Reagents = (props) => {
   const reagentsByTerrain = _.filter(reagents, reagent => 
     _.isEmpty(reagent.terrain)
     ? true
@@ -41,11 +41,11 @@ const Alchemy = (props) => {
 
   return (
     <This
-    className="alchemy"
+    className="reagents"
     >
       <Section
         className="section"
-        title="Alchemy"
+        title="Reagents"
       >
         <ScrollableContainer
           className="scrollableContainer"
@@ -62,4 +62,4 @@ const Alchemy = (props) => {
   )
 }
 
-export default Alchemy
+export default Reagents
