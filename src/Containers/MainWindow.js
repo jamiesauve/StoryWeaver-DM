@@ -172,20 +172,10 @@ const MainWindow = (props) => {
             className="pane"
             // margin, border and padding on pane for both this pane and the MainWindowHeader one,
             // minus the border and padding for other pane in this frame
-            height={`${((mainWindowBodyHeight - 64) / 2) - 20}px`}
+              height={`${mainWindowBodyHeight - 64}px`}
           >
             <SearchResults 
               searchResults={searchResults}
-            />
-          </Pane>
-
-          <Pane
-            borderColor={activeTerrainColor}
-            className="pane"
-            height={`${((mainWindowBodyHeight - 64) / 2) - 20}px`}
-          >
-            <Alchemy
-              activeTerrain={activeTerrain}
             />
           </Pane>
         </Frame>
