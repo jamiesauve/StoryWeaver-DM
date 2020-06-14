@@ -11,10 +11,13 @@ const This = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
 `;
 
 const TerrainTitle = styled.div`
   margin-right: 10px;
+
+  font-weight: bold;
 `
 
 const terrainOptions = _.concat(
@@ -37,7 +40,7 @@ const Terrain = (props) => {
       className="terrain"
     >
       <TerrainTitle>
-        Terrain: 
+        Terrain
       </TerrainTitle>
 
       <SelectInput 

@@ -6,15 +6,18 @@ import TextInput from '../UI/TextInput'
 import { sanitizeAlphaNumericWithConnectors } from '../../utils/sanitize'
 
 const This = styled.div`
+  flex-grow: 1;
+
   display: flex;
   flex-direction: row;
   align-items: center;
 
-  margin: 0 10px;
 `
 
 const SearchTitle = styled.div`
   margin-right: 10px;
+
+  font-weight: bold;
 `
 
 const Search = (props) => {
@@ -34,16 +37,18 @@ const Search = (props) => {
   }
 
   return (
-    <This>
+    <This
+      className="Search"
+    >
       <SearchTitle>
-        Search: 
+        Search
       </SearchTitle>
 
       <TextInput
         autoFocus
         onChange={handleSubmitOnSpace}
+        width={`100%`}
         value={searchInput}
-        width={`44vw`}
       />
     </This>
   )

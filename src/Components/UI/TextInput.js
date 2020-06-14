@@ -22,8 +22,9 @@ const TextInput = (props) => {
   return (
     <This
       width={props.width}
-    >
+      >
       <Input
+        className="input"
         onChange={(e) => console.log('change', e)}
         type="text"
         value={props.value}
