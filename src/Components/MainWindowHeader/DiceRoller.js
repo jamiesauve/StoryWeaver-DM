@@ -19,8 +19,12 @@ const QuickRollTitle = styled.div`
 
 const Input = styled.input`
   width: 90px;
+  padding: 10px;
+  
+  border-radius: 5px;
+  border-bottom: 1px ${colors.winterWhite} solid; // needed to make the input match app styles
+
   text-align: center;
-  padding: 6px;
 `
 
 const LastInputSpan = styled.span`
@@ -31,12 +35,11 @@ const NumberDisplay = styled.div`
   width: 90px;
 
 
-  padding: 5px 10px;
+  padding: 8px 10px;
   margin-left: 5px;
 
   text-align: center;
 
-  border: 1px solid #777;
   border-radius: 5px;
 
   background-color: ${colors.winterWhite};
