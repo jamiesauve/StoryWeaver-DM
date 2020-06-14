@@ -9,36 +9,41 @@ const This = styled.div`
   flex-direction: row;
   align-items: center;
 
-  background: ${colors.lightBackGround};
+  background: ${props => props.backgroundColor || colors.lightBackGround};
 
   border-radius: 3px;
+  border: ${props => props.border ? props.border : `none`};
 
-  color: ${colors.darkText}
+  color: ${props => props.textColor || colors.darkText}
 `
 
 const OptionButton = styled.div`
+  flex-grow: 1;
+
+  z-index: 0;
   padding: 10px;
 
+  text-align: center;
+
   &:hover {
-    background: ${colors.lightBackGroundDimmed}
+    background: ${props => props.hoverBackgroundColor || colors.lightBackGroundDimmed}
   }
 
   ${
-    props => props.isActiveOption
-    && `
-      font-weight: bold;
-    `
+    props => props.isActiveOption 
+    ? `font-weight: bold;`
+    : `border-bottom: 1px ${props.innerColor || colors.lightGrey} solid;`
   }
 `
 
 const Separator = styled.div`
-  margin: 5px 0;
+  ${props => props.areOptionsFullySeparated || `margin: 5px 0;`}
   padding: 5px 0;
   width: 1px;
   
   align-self: stretch;
 
-  background: ${colors.lightGrey}
+  background: ${props => props.innerColor || colors.lightGrey}
 `
 
 const ToggleButtonWithLabels = (props) => {
@@ -47,6 +52,8 @@ const ToggleButtonWithLabels = (props) => {
       <>
         <OptionButton
           isActiveOption={props.activeOption === option.value}
+          innerColor={props.innerColor}
+          hoverBackgroundColor={props.hoverBackgroundColor}
           onClick={(e) => handleClickOption(e, option.value)}
         >
           {option.label}
@@ -54,7 +61,10 @@ const ToggleButtonWithLabels = (props) => {
 
         {
           index !== (options.length - 1)
-          && <Separator />
+          && <Separator 
+            innerColor={props.innerColor}
+            areOptionsFullySeparated={props.areOptionsFullySeparated}
+          />
         }
       </>
     ))
@@ -62,13 +72,16 @@ const ToggleButtonWithLabels = (props) => {
 
   const handleClickOption = (e, value) => {
     e.preventDefault();
-    console.log('clicked', value)
+
     props.setActiveOption(value)
   }
 
   return (
     <This
+      backgroundColor={props.backgroundColor}
+      border={props.border}
       className="toggleButtonWithLabel"
+      textColor={props.textColor}
     >
       {generateOptions(props.options)}
     </This>

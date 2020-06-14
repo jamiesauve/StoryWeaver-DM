@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Frame from '../Components/styled/Frame'
 import Pane from '../Components/styled/Pane'
+import TabContainer from '../Components/MainWindow/TabContainer'
 
 import Alchemy from './Alchemy'
 import Creatures from './Creatures'
@@ -42,6 +43,20 @@ const MainWindow = (props) => {
   const [searchResults, setSearchResults] = useState('')
 
   const mainWindowHeaderElement = useRef('')
+
+  const dummyData = [
+    {
+      label: "Notes",
+      value: "notes",
+    },
+    {
+      label: "Alchemy",
+      value: "alchemy",
+    }
+  ]
+
+  const [frame1ActiveTab, setFrame1ActiveTab] = useState("notes");
+
 
   useEffect(() => {
     // TODO clean this up - using a ref for one and getElementsByClassName for the other
@@ -90,16 +105,31 @@ const MainWindow = (props) => {
         <Frame
           className="frame"
         >
+            <TabContainer
+              dummyData={dummyData}
+              dummyData={dummyData}
+              activeTab={frame1ActiveTab}
+              setActiveTab={setFrame1ActiveTab}
+            />
+
           <Pane
             borderColor={activeTerrainColor}
             className="pane"
             // margin, border and padding on pane for both this pane and the MainWindowHeader one
             height={`${mainWindowBodyHeight - 64}px`} 
+              isBorderTopVisible={false}
           >
-            <Notes 
+              {
+                frame1ActiveTab === "notes"
+                ? <Notes 
               activeTerrain={activeTerrain}
               setActiveTerrain={setActiveTerrain}
             /> 
+                :  <Alchemy
+                  activeTerrain={activeTerrain}
+                />
+              }
+               
           </Pane> 
       </Frame>
 

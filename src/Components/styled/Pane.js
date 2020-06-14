@@ -14,6 +14,8 @@ const Pane = styled.div`
   height: ${props => props.height || `auto`};
 
   border: solid 1px ${props => props.borderColor || colors.darkGrey};
+  ${ props => !props.isBorderTopVisible && `border-top: none;`}
+
   border-radius: 5px;
   
   background-color: ${colors.darkBackground};
