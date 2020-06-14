@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import DiceRoller from '../Components/MainWindowHeader/DiceRoller'
 import LocationType from '../Components/MainWindowHeader/LocationType'
-import Search from '../Components/MainWindowHeader/Search'
 import Terrain from '../Components/MainWindowHeader/Terrain'
 
 const This = styled.div`
@@ -27,6 +26,7 @@ const RightContainer = styled.div`
 
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
 
   & > div {
     margin-left: 20px;
@@ -52,13 +52,10 @@ const MainWindowHeader = (props) => {
           setActiveTerrain={props.setActiveTerrain}
         />
 
-        <DiceRoller />
       </LeftContainer>
 
       <RightContainer>
-        <Search
-          setSearchQuery={props.setSearchQuery}
-        />
+        <DiceRoller />
       </RightContainer>
     </This>
   )

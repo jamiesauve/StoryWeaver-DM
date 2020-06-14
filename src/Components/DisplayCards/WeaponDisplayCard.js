@@ -8,7 +8,7 @@ import BreadCrumbList from '../Stats/BreadCrumbList'
 import Range from '../Stats/Range'
 import Description from '../Stats/Description'
 
-import restructureData from '../SearchResults/dataRestructuring/weapon'
+import restructureData from '../Search/dataRestructuring/weapon'
 import Weight from '../Stats/Weight'
 
 import DisplayCard from '../styled/DisplayCard/Card'

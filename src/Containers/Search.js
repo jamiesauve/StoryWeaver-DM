@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
 import Section from '../Components/Layout/Section'
+import SearchBar from '../Components/Search/SearchBar'
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
 import displayCards from '../Components/DisplayCards'
-
 import toCapitalCase from '../utils/toCapitalCase'
-import CreatureDisplayCard from '../Components/DisplayCards/CreatureDisplayCard'
+
+import makeSearchCall from '../utils/makeSearchCall'
 
 const This = styled.div`
 flex-grow: 1;
@@ -19,8 +20,24 @@ flex-direction: column;
 height: 100%;
 `
 
-const SearchResults = (props) => {
-  const category = _.get(props, 'searchResults.category', null)
+
+const Search = (props) => {
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState('')
+
+  const category = _.get(searchResults, 'category', null)
+
+  useEffect(() => {
+    const runSearch = async (searchQuery) => {
+      if (searchQuery) {
+        const result = await(makeSearchCall(searchQuery))
+
+        setSearchResults(result)
+      }
+    }
+
+    runSearch(searchQuery)
+  }, [searchQuery])
 
   const ResultsComponent = category
   ? category === "monster" 
@@ -33,12 +50,16 @@ const SearchResults = (props) => {
       <Section
         title="Search Results"
       >
+        <SearchBar
+          setSearchQuery={setSearchQuery}
+        />
+
         <ScrollableContainer
           className="scrollableContainer"
         >
           {ResultsComponent 
             && <ResultsComponent 
-              data={props.searchResults.data}
+              data={searchResults.data}
             />
           }
         </ScrollableContainer>
@@ -47,4 +68,4 @@ const SearchResults = (props) => {
   )
 }
 
-export default SearchResults
+export default Search

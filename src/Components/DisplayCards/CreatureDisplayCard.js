@@ -11,7 +11,7 @@ import InlineStat from '../Stats/InlineStat'
 
 import Description from '../Stats/Description'
 
-import restructureData from '../SearchResults/dataRestructuring/creature'
+import restructureData from '../Search/dataRestructuring/creature'
 
 import ScrollableContainer from '../styled/ScrollableContainer'
 import Spacer from '../styled/Spacer'

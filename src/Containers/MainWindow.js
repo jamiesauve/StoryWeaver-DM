@@ -9,10 +9,8 @@ import Alchemy from './Alchemy'
 import Creatures from './Creatures'
 import MainWindowHeader from './MainWindowHeader'
 import Notes from './Notes'
-import SearchResults from './SearchResults'
+import Search from './Search'
 import Sounds from './Sounds'
-
-import makeSearchCall from '../utils/makeSearchCall'
 
 import colors from '../data/colors'
 
@@ -41,8 +39,6 @@ const MainWindow = (props) => {
 
   const [headerHeight, setHeaderHeight] = useState(0)
   const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(0) 
-  const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState('')
 
   const mainWindowHeaderElement = useRef('')
 
@@ -75,17 +71,7 @@ const MainWindow = (props) => {
     setMainWindowBodyHeight(appHeight - headerHeight)
   }, [mainWindowHeaderElement.current])
 
-  useEffect(() => {
-    const runSearch = async (searchQuery) => {
-      if (searchQuery) {
-        const result = await(makeSearchCall(searchQuery))
 
-        setSearchResults(result)
-      }
-    }
-
-    runSearch(searchQuery)
-  }, [searchQuery])
 
   return (
     <This>
@@ -183,9 +169,7 @@ const MainWindow = (props) => {
             // minus the border and padding for other pane in this frame
               height={`${mainWindowBodyHeight - 64}px`}
           >
-            <SearchResults 
-              searchResults={searchResults}
-            />
+              <Search />
           </Pane>
         </Frame>
       </MainWindowBody>
