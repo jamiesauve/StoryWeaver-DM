@@ -81,6 +81,7 @@ const MainWindow = (props) => {
             <Pane
               borderColor={activeTerrainColor}
               className="pane"
+              isBorderTopVisible={true}
             >
               <MainWindowHeader 
                 activeLocationType={props.activeLocationType}
