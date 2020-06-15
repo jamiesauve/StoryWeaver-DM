@@ -39,7 +39,6 @@ const MainWindowHeader = (props) => {
   return (
     <This
       className="mainWindowHeader"
-      ref={props.mainWindowHeaderElement}
     >
       <LeftContainer>
         <LocationType

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import _ from 'lodash'
@@ -35,26 +35,24 @@ const MainWindow = (props) => {
     setActiveTerrain
   } = props;
 
-  const [headerHeight, setHeaderHeight] = useState(0)
-  const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(0) 
-
-  const mainWindowHeaderElement = useRef('')
+  // I think this will update dynamically if it changes. onWindowResize, fire the useEffect? A listener for that?
+  const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(null) 
 
   const [numberOfAspectSlots, setNumberOfAspectSlots] = useState(4)
   const [aspectSlots, setAspectSlots] = useState([])
 
-  useEffect(() => { // can this become a custom hook?
-    // TODO clean this up - using a ref for one and getElementsByClassName for the other
-    setHeaderHeight(mainWindowHeaderElement.current.clientHeight)
-    const appHeight = document.getElementsByClassName('App')[0].clientHeight
+  useEffect(() => {
+    const height = document.getElementsByClassName('mainWindowBody')[0].clientHeight
     
-    setMainWindowBodyHeight(appHeight - headerHeight)
-  }, [mainWindowHeaderElement.current])
+    setMainWindowBodyHeight(height)
+  }, [])
 
   useEffect(() => {
-    const aspectSlots = generateAspectSlots(numberOfAspectSlots, aspects)
-    setAspectSlots(aspectSlots)
-  }, [])
+    if (!_.isNull(mainWindowBodyHeight)) {
+      const aspectSlots = generateAspectSlots(numberOfAspectSlots, aspects)
+      setAspectSlots(aspectSlots)
+    }
+  }, [mainWindowBodyHeight])
 
   const generateAspectSlots = (numberOfAspectSlots, aspects) => {
     const aspectsNestedArray = Array(numberOfAspectSlots)
@@ -85,7 +83,6 @@ const MainWindow = (props) => {
               className="pane"
             >
               <MainWindowHeader 
-                mainWindowHeaderElement={mainWindowHeaderElement}
                 activeLocationType={props.activeLocationType}
                 setActiveLocationType={props.setActiveLocationType}
                 activeTerrain={activeTerrain}
