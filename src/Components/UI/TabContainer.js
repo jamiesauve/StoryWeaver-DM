@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ToggleButtonWithLabels from '../UI/ToggleButtonWithLabels'
+import ToggleButtonWithLabels from './ToggleButtonWithLabels'
 import colors from '../../data/colors'
 
 const This = styled.div`
@@ -28,7 +28,7 @@ const TabContainer = (props) => {
     <This>
       <ToggleButtonWithLabels
         activeOption={props.activeTab}
-        options={props.dummyData}
+        options={props.tabs} // label/value pairs
         setActiveOption={props.setActiveTab}
         styles={toggleButtonStyles}
       />
