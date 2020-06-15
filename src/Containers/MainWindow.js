@@ -1,23 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
-import Frame from '../Components/styled/Frame'
-import Pane from '../Components/styled/Pane'
-import TabContainer from '../Components/MainWindow/TabContainer'
+import _ from 'lodash'
+
+import Frame from '../Components/MainWindow/Frame'
+import Pane from '../Components/MainWindow/Pane'
 
 import MainWindowHeader from './MainWindowHeader'
 
-// Aspects
-import Ambiences from './Ambiences'
-import Creatures from './Creatures'
-// Gameplay
-import Notes from './Notes'
-// NPCs
-import Reagents from './Reagents'
-// Recipes
-import Search from './Search'
+import AspectSlot from '../Components/MainWindow/AspectSlot'
 
-import colors from '../data/colors'
+import aspects from '../utils/getAspectsAsArray'
 
 const This = styled.div`
   width: 100vw;
@@ -47,28 +40,10 @@ const MainWindow = (props) => {
 
   const mainWindowHeaderElement = useRef('')
 
-  const dummyData = [
-    {
-      color: colors.villageBrown,
-      label: "Notes",
-      value: "notes",
-    },
-    {
-      color: colors.forestGreen,
-      label: "Reagents",
-      value: "reagents",
-    },
-    {
-      color: colors.forestGreen,
-      label: "Creatures",
-      value: "creatures",
-    }
-  ]
+  const [numberOfAspectSlots, setNumberOfAspectSlots] = useState(4)
+  const [aspectSlots, setAspectSlots] = useState([])
 
-  const [frame1ActiveTab, setFrame1ActiveTab] = useState("notes");
-
-
-  useEffect(() => {
+  useEffect(() => { // can this become a custom hook?
     // TODO clean this up - using a ref for one and getElementsByClassName for the other
     setHeaderHeight(mainWindowHeaderElement.current.clientHeight)
     const appHeight = document.getElementsByClassName('App')[0].clientHeight
@@ -76,7 +51,28 @@ const MainWindow = (props) => {
     setMainWindowBodyHeight(appHeight - headerHeight)
   }, [mainWindowHeaderElement.current])
 
-  
+  useEffect(() => {
+    const aspectSlots = generateAspectSlots(numberOfAspectSlots, aspects)
+    setAspectSlots(aspectSlots)
+  }, [])
+
+  const generateAspectSlots = (numberOfAspectSlots, aspects) => {
+    const aspectsNestedArray = Array(numberOfAspectSlots)
+      .fill(null)
+      .map(() =>[])
+
+    _.forEach(Object.values(aspects), (aspect, index) => {
+      aspectsNestedArray[index % numberOfAspectSlots].push(aspect)
+    })
+
+    return aspectsNestedArray.map(aspectsArray => (
+      <AspectSlot
+        activeTerrain={activeTerrain}
+        aspects={aspectsArray}
+        mainWindowBodyHeight={mainWindowBodyHeight}
+      />
+    ))
+  }
 
   return (
     <This>
@@ -101,80 +97,7 @@ const MainWindow = (props) => {
         <MainWindowBody
           className="mainWindowBody"
         >
-          <Frame
-            className="frame"
-          >
-            <TabContainer
-              activeTab={frame1ActiveTab}
-              activeTerrainColor={activeTerrainColor}
-              dummyData={dummyData}
-              setActiveTab={setFrame1ActiveTab}
-            />
-
-            <Pane
-              borderColor={activeTerrainColor}
-              className="pane"
-              // margin, border and padding on pane for both this pane and the MainWindowHeader one
-              height={`${mainWindowBodyHeight - 64}px`} 
-              isBorderTopVisible={false}
-            >
-              {
-                frame1ActiveTab === "notes"
-                ? <Notes 
-                  activeTerrain={activeTerrain}
-                />
-                :  <Reagents
-                  activeTerrain={activeTerrain}
-                />
-              }
-               
-            </Pane> 
-        </Frame>
-
-          <Frame
-            className="frame"
-          >
-            <Pane
-              borderColor={activeTerrainColor}
-              className="pane"
-              // margin, border and padding on pane for both this pane and the MainWindowHeader one
-              height={`${mainWindowBodyHeight - 64}px`} 
-            >
-              <Ambiences 
-                activeTerrain={activeTerrain}
-              />
-            </Pane>
-          </Frame>
-
-          <Frame
-            className="frame"
-          >
-            <Pane
-              borderColor={activeTerrainColor}
-              className="pane"
-              // margin, border and padding on pane for both this pane and the MainWindowHeader one,
-              // minus the border and padding for other pane in this frame
-              height={`${mainWindowBodyHeight - 64}px`}
-            >
-              <Creatures
-                activeTerrain={activeTerrain}
-              />
-            </Pane>
-          </Frame>
-
-          <Frame
-            className="frame"
-          >
-            <Pane
-              borderColor={activeTerrainColor}
-              className="pane"
-              // margin, border and padding on pane for both this pane and the MainWindowHeader one,
-              // minus the border and padding for other pane in this frame
-              height={`${mainWindowBodyHeight - 64}px`}
-            >
-              <Search />
-            </Pane>
-          </Frame>
+          {aspectSlots}
         </MainWindowBody>
     </This>
   )
