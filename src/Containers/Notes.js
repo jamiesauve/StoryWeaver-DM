@@ -6,11 +6,18 @@ import Divider from '../Components/styled/Divider'
 import SessionEvents from '../Components/Notes/SessionEvents'
 import SessionDetails from '../Components/Notes/SessionDetails'
 
-const This = styled.div``
+const This = styled.div`
+flex-grow: 1;
+
+display: flex;
+flex-direction: column;
+`
 
 const Notes = (props) => {
   return (
-    <This>
+    <This
+      className="notes"
+    >
       <SessionEvents />
       <Divider />
       <SessionDetails />
