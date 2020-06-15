@@ -14,7 +14,7 @@ const TabContainer = (props) => {
       activeBackgroundColor: colors.darkBackground,
       backgroundColor: colors.lightDarkBackground,
       hasBorder: true,
-      borderColor: props.activeTerrainColor || colors.darkGrey,
+      borderColor: props.borderColor || colors.darkGrey,
     },
     option: {
       textColor: colors.lightGrey,

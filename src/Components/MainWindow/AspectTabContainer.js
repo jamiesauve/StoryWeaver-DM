@@ -22,7 +22,8 @@ const AspectTabContainer = (props) => {
   return (
     <This>
       <TabContainer 
-        activeTab={props.activeAspect}
+        activeTab={props.activeAspect.name}
+        borderColor={props.activeAspect.color}
         tabs={tabOptions}
         setActiveTab={handleSetActiveTab}
       />

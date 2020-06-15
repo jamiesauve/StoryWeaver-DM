@@ -35,7 +35,7 @@ const AspectSlot = (props) => {
                 className="pane"
 
                 aspects={aspects}
-                activeAspect={activeAspect.name}
+                activeAspect={activeAspect}
                 setActiveAspect={setActiveAspect}
               />
 
