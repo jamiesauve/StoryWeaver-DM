@@ -74,7 +74,7 @@ const ToggleButtonWithLabels = (props) => {
           activeBackgroundColor={componentStyles.activeBackgroundColor}
           borderColor={componentStyles.borderColor}
           hasBorder={componentStyles.hasBorder}
-          hoverBackgroundColor={props.options.color}
+          hoverBackgroundColor={option.color}
           isActiveOption={props.activeOption === option.value}
           onClick={(e) => handleClickOption(e, option.value)}
           textColor={optionStlyes.textColor}

@@ -9,6 +9,7 @@ const This = styled.div``
 
 const AspectTabContainer = (props) => {
   const tabOptions = _.map(props.aspects, aspect => ({
+    color: aspect.color,
     label: aspect.label,
     value: aspect.name,
   }))
