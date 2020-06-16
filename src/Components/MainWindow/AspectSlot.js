@@ -18,6 +18,11 @@ const AspectSlot = (props) => {
     setActiveAspectComponent(aspects[0].component)
   }, [])
 
+  useEffect(() => {
+    (!_.isNull(activeAspect))
+    && setActiveAspectComponent(activeAspect.component)
+  }, [activeAspect])
+
   const {
     activeTerrain,
     aspects,
