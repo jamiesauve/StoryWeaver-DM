@@ -13,7 +13,7 @@ import colors from '../data/colors'
 const Aspects = {
   "notes": {
     component: () => Notes,
-    color: colors.villageBrown,
+    color: colors.plainsYellow,
     name: "notes",
     label: "Notes",
   },
