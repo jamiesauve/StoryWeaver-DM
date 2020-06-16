@@ -11,7 +11,6 @@ const This = styled.div`
 const TabContainer = (props) => {
   const toggleButtonStyles = {
     component: {
-      activeBackgroundColor: colors.darkBackground,
       backgroundColor: colors.lightDarkBackground,
       hasBorder: true,
       borderColor: props.borderColor || colors.darkGrey,

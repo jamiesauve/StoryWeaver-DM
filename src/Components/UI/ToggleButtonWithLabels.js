@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../../data/colors'
 
+import shade from '../../utils/shade'
+
 const This = styled.div`
   height: 100%;
 
@@ -9,43 +11,52 @@ const This = styled.div`
   flex-direction: row;
   align-items: center;
 
-  background: ${props => props.inactiveBackgroundColor || colors.lightBackGround};
+  background: ${props => props.backgroundColor || colors.lightBackGround};
 
   border-radius: 3px;
   border: ${props => props.hasBorder ? `1px ${props.borderColor} solid` : `none`};
-  `
+`
   
-  const OptionButton = styled.div`
+const OptionButton = styled.div`
   flex-grow: 1;
   
   z-index: 0;
   padding: 10px;
   
+  background: ${props => props.backgroundColor};
+  
   text-align: center;
   color: ${props => props.textColor || colors.darkText};
 
-  &:hover {
-    background: ${props => props.hoverBackgroundColor || colors.lightBackGroundDimmed}
-  }
-
   ${
     props => props.isActiveOption
-    ? `
-      background: ${props.activeBackgroundColor};
-      font-weight: bold;  
-    `
-    : props.hasBorder && `
-      border-radius: 0 0 5px 5px;
-      border-bottom: 1px ${props.borderColor || colors.lightGrey} solid;
+      ? `
+        font-weight: bold;  
+      `
+      : `
+        &:hover {
+          text-decoration: underline;
+        }
+        
+        ${props.hasBorder 
+          && `
+            border-radius: 0 0 5px 5px;
+            border-bottom: 1px ${props.borderColor || colors.lightGrey} solid;
 
-      &:not(:first-child) {
-        border-left: 1px${props.borderColor || colors.lightGrey} solid;
-      }
+            background: ${shade(props.backgroundColor, -50)};
 
-      &:not(:last-child) {
-        border-right: 1px${props.borderColor || colors.lightGrey} solid;
-      }
-    `
+            color: ${shade(props.textColor || colors.darkText, -40)};
+
+            &:not(:first-child) {
+              border-left: 1px${props.borderColor || colors.lightGrey} solid;
+            }
+
+            &:not(:last-child) {
+              border-right: 1px${props.borderColor || colors.lightGrey} solid;
+            }
+          `
+        }
+      `
   }
 `
 
@@ -71,10 +82,9 @@ const ToggleButtonWithLabels = (props) => {
     return options.map((option, index) => (
       <>
         <OptionButton
-          activeBackgroundColor={componentStyles.activeBackgroundColor}
+          backgroundColor={option.color}
           borderColor={componentStyles.borderColor}
           hasBorder={componentStyles.hasBorder}
-          hoverBackgroundColor={option.color}
           isActiveOption={props.activeOption === option.value}
           onClick={(e) => handleClickOption(e, option.value)}
           textColor={optionStlyes.textColor}
@@ -102,7 +112,7 @@ const ToggleButtonWithLabels = (props) => {
 
   return (
     <This
-      inactiveBackgroundColor={componentStyles.backgroundColor}
+      backgroundColor={componentStyles.backgroundColor}
       hasBorder={componentStyles.hasBorder}
       className="toggleButtonWithLabel"
       borderColor={componentStyles.borderColor}
