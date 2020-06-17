@@ -11,6 +11,8 @@ import getMoodTracks from '../data/getMoodTracks'
 import getEnvironmentTracks from '../data/getEnvironmentTracks'
 import specialTracks from '../data/getSpecialTracks'
 
+import _ from 'lodash'
+
 const Ambiences = (props) => {
   const [moodTracks, setMoodTracks] = useState(getMoodTracks(props.activeLocation))
   const [environmentTracks, setEnvironmentTracks] = useState(getEnvironmentTracks(props.activeLocation))
@@ -30,6 +32,7 @@ const Ambiences = (props) => {
           <TrackSection
             activeLocation={props.activeLocation}
             hasToggleAllLink={true}
+            isInitiallyExpanded={false}
             title="Moods"
             tracks={moodTracks}
           />
@@ -38,8 +41,8 @@ const Ambiences = (props) => {
 
           <TrackSection
             activeLocation={props.activeLocation}
-            hasToggleAllLink={!Boolean(props.activeLocation)}
-            isInitiallyExpanded={Boolean(props.activeLocation)}
+            hasToggleAllLink={!_.isEmpty(props.activeLocation)}
+            isInitiallyExpanded={!_.isEmpty(props.activeLocation)}
             title="Environment"
             tracks={environmentTracks}
           />
