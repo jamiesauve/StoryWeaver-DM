@@ -12,7 +12,6 @@ import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 
 import * as terrainTypes from '../data/terrainTypes'
 import reagents from '../data/reagents'
-import colors from '../data/colors'
 
 const This = styled.div`
   flex-grow: 1;
@@ -23,7 +22,7 @@ const This = styled.div`
   height: 100%;
 `
 
-const Reagents = (props) => {
+const Places = (props) => {
   const reagentsByTerrain = _.filter(reagents, reagent => 
     _.isEmpty(reagent.terrain)
     ? true
@@ -41,11 +40,10 @@ const Reagents = (props) => {
 
   return (
     <This
-    className="reagents"
+    className="places"
     >
       <Section
         className="section"
-        title="Reagents"
       >
         <ScrollableContainer
           className="scrollableContainer"
@@ -62,4 +60,4 @@ const Reagents = (props) => {
   )
 }
 
-export default Reagents
+export default Places
