@@ -11,6 +11,7 @@ import MainWindowHeader from './MainWindowHeader'
 import AspectSlot from '../Components/MainWindow/AspectSlot'
 
 import aspects from '../utils/getAspectsAsArray'
+import * as terrainTypes from '../data/terrainTypes'
 
 const This = styled.div`
   width: 100vw;
@@ -29,17 +30,23 @@ const MainWindowBody = styled.div`
 `
 
 const MainWindow = (props) => {
-  const {
-    activeTerrain,
-    activeTerrainColor,
-    setActiveTerrain
-  } = props;
-
   // I think this will update dynamically if it changes. onWindowResize, fire the useEffect? A listener for that?
   const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(null) 
 
   const [numberOfAspectSlots, setNumberOfAspectSlots] = useState(5)
   const [aspectSlots, setAspectSlots] = useState([])
+
+  const [activeTerrain, setActiveTerrain] = useState('')
+  const [activeLocationType, setActiveLocationType] = useState('any')
+  const [activeTerrainColor, setActiveTerrainColor] = useState('')
+
+  useEffect(() => {
+    const activeTerrainColor = activeTerrain 
+      ? _.find(terrainTypes, {name: activeTerrain}).color
+      : ''
+
+    setActiveTerrainColor(activeTerrainColor)
+  }, [activeTerrain])
 
   useEffect(() => {
     const height = document.getElementsByClassName('mainWindowBody')[0].clientHeight
@@ -84,8 +91,8 @@ const MainWindow = (props) => {
               isBorderTopVisible={true}
             >
               <MainWindowHeader 
-                activeLocationType={props.activeLocationType}
-                setActiveLocationType={props.setActiveLocationType}
+                activeLocationType={activeLocationType}
+                setActiveLocationType={setActiveLocationType}
                 activeTerrain={activeTerrain}
                 setActiveTerrain={setActiveTerrain}
               />
