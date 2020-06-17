@@ -59,8 +59,8 @@ const MainWindow = (props) => {
       .fill(null)
       .map(() =>[])
 
-    _.forEach(Object.values(aspects), (aspect, index) => {
-      aspectsNestedArray[index % numberOfAspectSlots].push(aspect)
+    _.forEach(aspects, aspect => {
+      aspectsNestedArray[aspect.defaultAspectSlot].push(aspect)
     })
 
     return aspectsNestedArray.map(aspectsArray => (
