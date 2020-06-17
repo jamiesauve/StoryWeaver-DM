@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import terrainTypes from './terrainTypes'
 
-const {
+const [
   caves,
   coast,
   city,
@@ -16,7 +16,7 @@ const {
   village,
   winter,
   exotic,
- } = Object.keys(terrainTypes)
+ ] = Object.keys(terrainTypes)
 
 export default [
   {
