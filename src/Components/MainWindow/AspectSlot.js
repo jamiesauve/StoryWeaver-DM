@@ -24,7 +24,7 @@ const AspectSlot = (props) => {
   }, [activeAspect])
 
   const {
-    activeTerrain,
+    activeLocation,
     aspects,
     mainWindowBodyHeight,
   } = props
@@ -55,7 +55,7 @@ const AspectSlot = (props) => {
                 {
                   ActiveAspectComponent !== null
                   && <ActiveAspectComponent 
-                    activeTerrain={activeTerrain}
+                    activeLocation={activeLocation}
                   />
                 }
               </Pane> 

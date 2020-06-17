@@ -5,7 +5,7 @@ import _ from 'lodash'
 import ThemeBox from './ThemeBox'
 import ToggleExpandedButton from '../Layout/ToggleExpandedButton'
 
-import * as terrainTypes from '../../data/terrainTypes'
+import terrainTypes from '../../data/terrainTypes'
 import tracks from '../../data/environmentTracks'
 
 import toCapitalCase from '../../utils/toCapitalCase'
@@ -30,11 +30,11 @@ const EnvironmentalTrackSection = (props) => {
   const [ areAllCategoriesExpanded, setAreAllCategoriesExpanded ] = useState(true)
 
   useEffect(() => {
-    setAreAllCategoriesExpanded(props.activeTerrain)
-  }, [props.activeTerrain])
+    setAreAllCategoriesExpanded(props.activeLocation)
+  }, [props.activeLocation])
 
-  const currentTerrainTypes = props.activeTerrain
-    ? [_.find(terrainTypes, {name: props.activeTerrain})]
+  const currentTerrainTypes = props.activeLocation
+    ? [_.find(terrainTypes, {name: props.activeLocation})]
     : terrainTypes
 
   return (

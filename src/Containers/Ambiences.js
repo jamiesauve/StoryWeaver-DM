@@ -12,13 +12,13 @@ import getEnvironmentTracks from '../data/getEnvironmentTracks'
 import specialTracks from '../data/getSpecialTracks'
 
 const Ambiences = (props) => {
-  const [moodTracks, setMoodTracks] = useState(getMoodTracks(props.activeTerrain))
-  const [environmentTracks, setEnvironmentTracks] = useState(getEnvironmentTracks(props.activeTerrain))
+  const [moodTracks, setMoodTracks] = useState(getMoodTracks(props.activeLocation))
+  const [environmentTracks, setEnvironmentTracks] = useState(getEnvironmentTracks(props.activeLocation))
 
   useEffect(() => {
-    setMoodTracks(getMoodTracks(props.activeTerrain))
-    setEnvironmentTracks(getEnvironmentTracks(props.activeTerrain))
-  }, [props.activeTerrain])
+    setMoodTracks(getMoodTracks(props.activeLocation))
+    setEnvironmentTracks(getEnvironmentTracks(props.activeLocation))
+  }, [props.activeLocation])
 
   return (
     <Section
@@ -28,7 +28,7 @@ const Ambiences = (props) => {
         className="scrollableContainer"
         >
           <TrackSection
-            activeTerrain={props.activeTerrain}
+            activeLocation={props.activeLocation}
             hasToggleAllLink={true}
             title="Moods"
             tracks={moodTracks}
@@ -37,9 +37,9 @@ const Ambiences = (props) => {
           <Spacer />
 
           <TrackSection
-            activeTerrain={props.activeTerrain}
-            hasToggleAllLink={!Boolean(props.activeTerrain)}
-            initiallyExpanded={Boolean(props.activeTerrain)}
+            activeLocation={props.activeLocation}
+            hasToggleAllLink={!Boolean(props.activeLocation)}
+            initiallyExpanded={Boolean(props.activeLocation)}
             title="Environment"
             tracks={environmentTracks}
           />
@@ -47,7 +47,7 @@ const Ambiences = (props) => {
           <Spacer />
 
           <TrackSection
-            activeTerrain={props.activeTerrain}
+            activeLocation={props.activeLocation}
             initiallyExpanded
             title="Special Events"
             tracks={specialTracks}

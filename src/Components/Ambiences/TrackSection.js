@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import _ from 'lodash'
 
 import TrackGroup from './TrackGroup'
 import Dresser from '../UI/Dresser'
@@ -20,13 +21,12 @@ const Title = styled.div`
 `
 
 const TrackSection = (props) => {
-  const drawers = props.tracks
-    .map(category => ({
-      title: category.categoryName,
+  const drawers = _.map(props.tracks, category => ({
+      title: category.categoryLabel,
       titleColor: category.titleColor,
       content: () => <TrackGroup
         tracks={category.trackObjects}
-        activeTerrain={props.activeTerrain}
+        activeLocation={props.activeLocation}
       />,
     }))
 

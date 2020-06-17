@@ -1,21 +1,21 @@
 import _ from 'lodash'
-import * as terrainTypes from './terrainTypes'
+import terrainTypes from './terrainTypes'
 
 const [
-  CAVES,
-  COAST,
-  CITY,
-  DESERT,
-  FOREST,
-  FRESHWATER,
-  JUNGLE,
-  MOUNTAINS,
-  OCEAN,
-  PLAINS,
-  SWAMP,
-  VILLAGE,
-  WINTER,
-  EXOTIC,
+  caves,
+  coast,
+  city,
+  desert,
+  forest,
+  freshwater,
+  jungle,
+  mountains,
+  ocean,
+  plains,
+  swamp,
+  village,
+  winter,
+  exotic,
 ] = _.map(terrainTypes, (terrainType) => terrainType.name)
 
 const NOT_WINTER = 'notWinter'
@@ -59,7 +59,7 @@ export default [
     location: `Predominantly grows underground near lakes and pools. The vine generally grows in places where a small bit of light occurs, sometimes thriving off of the glow provided by phosphorescent moss.`,
     lore: `Drow harvest the root for use in poison.`,
     terrain: [
-      CAVES,
+      caves,
     ],
     type: "plant",
     subTypes: [
@@ -98,9 +98,9 @@ export default [
     location: `Found in swamps and wet areas, but not in standing water.`,
     lore: `Most people are careful not to step on the toadstools. Some villagers harvest the mushrooms to make a particularly earthy tasting ale.`,
     terrain: [
-      FOREST,
-      JUNGLE,
-      SWAMP,
+      forest,
+      jungle,
+      swamp,
     ],
     type: "plant",
     subTypes: [
@@ -138,12 +138,12 @@ export default [
     location: `widespread in forests, though not in particularly wet or dry areas.`,
     lore: `Good wood for making bows. Now much rarer now than it used to be because of overharvesting.`,
     terrain: [
-      CITY,
-      FOREST,
-      JUNGLE,
-      MOUNTAINS,
-      PLAINS,
-      VILLAGE,
+      city,
+      forest,
+      jungle,
+      mountains,
+      plains,
+      village,
     ],
     type: "plant",
     subTypes: [
@@ -184,7 +184,7 @@ export default [
     location: `Found in active volcanoes and on the Plane of Fire.`,
     lore: `This is one of the only plants cultivated by Azers. Salamanders are known to love the fruit, and will eat it whole. The fruit is edible but spicy enough to kill other creatures in large amounts.`,
     terrain: [
-      EXOTIC,
+      exotic,
     ],
     type: "plant",
     subTypes: [
@@ -240,7 +240,7 @@ export default [
     location: `Found in active volcanoes and on the Plane of Fire.`,
     lore: `Cultivated by Azers for its beauty. Plants are often tethered so they can be pulled to safety before eruptions.`,
     terrain: [
-      EXOTIC,
+      exotic,
     ],
     type: "plant",
     subTypes: [
@@ -258,7 +258,7 @@ export default [
     location: `Found immersed in lava, attached to rock.`,
     lore: `These are harvested by Salamanders and sometimes traded to other races.`,
     terrain: [
-      EXOTIC,
+      exotic,
     ],
     type: "animal",
     subTypes: [
@@ -314,7 +314,7 @@ export default [
     location: `grows on the edges of swamps`,
     lore: `The large roots of the plant can be ground into a powder, and is the main ingredient in a potion that allows people to see into other realms, often referred to as Sight Beyond.`,
     terrain: [
-      SWAMP,
+      swamp,
     ],
     type: "plant",
     subTypes: [
@@ -352,7 +352,7 @@ export default [
     location: `Grows around swamps and other humid areas`,
     lore: `It is overly difficult to cultivate and farm, which attributes to the rarity of the plant. The vegetable is prized not for eating, but for making a sweet alcohol called Blackcorn Whiskey that has a strong flavor of plums`,
     terrain: [
-      SWAMP,
+      swamp,
     ],
     type: "plant",
     subTypes: [
@@ -390,7 +390,7 @@ export default [
     location: `Floats on the surface of marshes`,
     lore: `Drying the plant causes it to turn into a flaky powder, which is often used in a distilled tincture to neutralize minor poisons.`,
     terrain: [
-      SWAMP,
+      swamp,
     ],
     type: "plant",
     subTypes: [
@@ -428,14 +428,14 @@ export default [
     location: `The plant is quite hardy and can grow in a surprisingly wide variety of places.`,
     lore: `The most renown quality of the plant is that the leaves can be harvested and cured, becoming crumbly brown flakes which can be smoked. It is quite well known among halflings, which often grow it in small patches along with other crops. Those that smoke the weed claim that it has a smooth spicy flavor. `,
     terrain: [
-      CITY,
-      COAST,
-      FOREST,
-      JUNGLE,
-      MOUNTAINS,
-      SWAMP,
-      PLAINS,
-      VILLAGE,
+      city,
+      coast,
+      forest,
+      jungle,
+      mountains,
+      swamp,
+      plains,
+      village,
 
     ],
     type: "plant",
@@ -469,7 +469,7 @@ export default [
     location: `Grows in water in swamps`,
     lore: `Hidden beneath the surface, the plant has an extensive root system that reaches far down into the muck, a massive tangle that catches other debris that is carried along by the slow current. Various species of fish and snakes lay their eggs in the tangle of roots. Orc tribes harvest the Guklulla for the roots, pulling the plants out of the muck, cutting off sections of the roots and throwing them back into the swamp to be harvested again in the future.`,
     terrain: [
-      SWAMP,
+      swamp,
 
     ],
     type: "plant",
@@ -507,7 +507,7 @@ export default [
     location: `Grow out of stagnant water.`,
     lore: `In the colder months, the stalk withers, and the bulb falls off, to float around until the bulb softens and falls away to disperse the seeds within. The seeds sit freely in the shell, and when shaken make a slight rattle noise, which is unnerving when the wind rushes through a cluster of rattlestalks. Tribes that live in the swamps will often use the unnerving aspect of the rattlestalks to create fear inducing noisemakers.`,
     terrain: [
-      SWAMP,
+      swamp,
 
     ],
     type: "plant",
@@ -526,7 +526,7 @@ export default [
     location: `Dry, especially dark areas`,
     lore: `Was used as a battlefield poison by the Durukhaaz dwarves to repel the Black Shields when besieged.`,
     terrain: [
-      CAVES,
+      caves,
 
     ],
     type: "plant",

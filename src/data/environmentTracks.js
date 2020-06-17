@@ -1,22 +1,22 @@
 import _ from 'lodash'
-import * as terrainTypes from './terrainTypes'
+import terrainTypes from './terrainTypes'
 
-const [
-  CAVES,
-  COAST,
-  CITY,
-  DESERT,
-  FOREST,
-  FRESHWATER,
-  JUNGLE,
-  MOUNTAINS,
-  OCEAN,
-  PLAINS,
-  SWAMP,
-  VILLAGE,
-  WINTER,
-  EXOTIC,
-] = _.map(terrainTypes, (terrainType) => terrainType.name)
+const {
+  caves,
+  coast,
+  city,
+  desert,
+  forest,
+  freshwater,
+  jungle,
+  mountains,
+  ocean,
+  plains,
+  swamp,
+  village,
+  winter,
+  exotic,
+ } = Object.keys(terrainTypes)
 
 export default [
   {
@@ -24,10 +24,10 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/horseback',
     tags: ['hooves', 'horseback', 'birdsong', 'walk'],
     terrain: [
-      COAST, 
-      FOREST,
-      JUNGLE,
-      MOUNTAINS,
+      coast, 
+      forest,
+      jungle,
+      mountains,
     ]
   },
   {
@@ -35,11 +35,11 @@ export default [
     location: 'https://www.youtube.com/watch?v=MdZv1YVE6_w&vl=en',
     tags: ['quiet', 'peaceful', 'night', 'crickets'],
     terrain: [
-      COAST,
-      DESERT, 
-      MOUNTAINS, 
-      PLAINS, 
-      SWAMP, 
+      coast,
+      desert, 
+      mountains, 
+      plains, 
+      swamp, 
     ],
   },
   {
@@ -47,10 +47,10 @@ export default [
     location: 'https://www.youtube.com/watch?v=_FJIH0Yi2Mk',
     tags: ['quiet', 'peaceful', 'night', 'crickets'],
     terrain: [
-      FOREST, 
-      JUNGLE,
-      MOUNTAINS,
-      SWAMP, 
+      forest, 
+      jungle,
+      mountains,
+      swamp, 
     ],
   },
   {
@@ -58,12 +58,12 @@ export default [
     location: 'https://www.youtube.com/watch?v=ty_Pq__TU_0',
     tags: ['birds', 'day', 'peaceful'],
     terrain: [
-      DESERT, 
-      FOREST, 
-      FRESHWATER,
-      MOUNTAINS,
-      PLAINS, 
-      SWAMP, 
+      desert, 
+      forest, 
+      freshwater,
+      mountains,
+      plains, 
+      swamp, 
     ],
   },
   {
@@ -71,7 +71,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/torchlit-dungeon',
     tags: ['cave', 'fire', 'underground', 'magic', 'chains'],
     terrain: [
-      CAVES,
+      caves,
     ]
   },
   {
@@ -79,7 +79,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/dark-humid-cave',
     tags: ['dripping', 'windy', 'river', 'squeak'],
     terrain: [
-      CAVES,
+      caves,
     ]
   },
   {
@@ -89,8 +89,8 @@ export default [
       'crystal', 'cave', 'underground', 'magical', 'wonder',
     ],
     terrain: [
-      CAVES,
-      WINTER,
+      caves,
+      winter,
     ]
   },
   {
@@ -98,8 +98,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/sea-cave',
     tags: ['waves',],
     terrain: [
-      CAVES,
-      COAST,
+      caves,
+      coast,
     ]
   },
   {
@@ -107,12 +107,12 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/lively-tundra-2',
     tags: ['stream', 'fire', 'day', 'birds'],
     terrain: [
-      COAST,
-      FOREST,
-      FRESHWATER,
-      JUNGLE,
-      PLAINS,
-      MOUNTAINS,
+      coast,
+      forest,
+      freshwater,
+      jungle,
+      plains,
+      mountains,
     ]
   },
   {
@@ -120,8 +120,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/slums',
     tags: ['people', 'market', 'busy', 'dogs'],
     terrain: [
-      CITY,
-      VILLAGE
+      city,
+      village
     ]
   },
   {
@@ -129,13 +129,13 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/campfire-at-dusk',
     tags: ['campfire', 'cicadas', 'evening', 'peaceful'],
     excludeFrom: [
-      CAVES,
-      CITY,
-      EXOTIC,
-      FRESHWATER,
-      OCEAN,
-      VILLAGE,
-      WINTER,
+      caves,
+      city,
+      exotic,
+      freshwater,
+      ocean,
+      village,
+      winter,
     ],
   },
   {
@@ -143,13 +143,13 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/savannah-night-camp',
     tags: ['campfire', 'crickets', 'birds', 'peaceful'],
     excludeFrom: [
-      CAVES,
-      CITY,
-      EXOTIC,
-      FRESHWATER,
-      OCEAN,
-      VILLAGE,
-      WINTER,
+      caves,
+      city,
+      exotic,
+      freshwater,
+      ocean,
+      village,
+      winter,
     ],
   },
   {
@@ -157,7 +157,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/black-market-2',
     tags: ['market', 'people',],
     terrain: [
-      CITY
+      city
     ]
   },
   {
@@ -165,7 +165,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/sewers',
     tags: ['sewer', 'dripping', 'caves', 'squeaks'],
     terrain: [
-      CAVES,
+      caves,
     ]
   },
   {
@@ -173,8 +173,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/construction-site',
     tags: ['ruins', 'working', 'poeple', 'busy'],
     terrain: [
-      CITY,
-      VILLAGE,
+      city,
+      village,
     ]
   },
   {
@@ -182,7 +182,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/swamp',
     tags: ['swamp', 'flies', 'crickets'],
     terrain: [
-      SWAMP
+      swamp
     ]
   },
   {
@@ -190,10 +190,10 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/dead-marshes',
     tags: ['swamp', 'flies', 'magic', 'crickets', 'tense'],
     terrain: [
-      FOREST,
-      JUNGLE,
-      MOUNTAINS,
-      SWAMP
+      forest,
+      jungle,
+      mountains,
+      swamp
     ]
   },
   {
@@ -201,7 +201,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/swamp-campfire',
     tags: ['campfire', 'crickets', 'flies'],
     terrain: [
-      SWAMP,
+      swamp,
     ],
   },
   {
@@ -209,10 +209,10 @@ export default [
     location: 'https://www.youtube.com/watch?v=HqdjZSYNV8M',
     tags: ['birds', 'day', 'peaceful'],
     terrain: [
-      COAST,
-      FOREST,
-      JUNGLE,
-      MOUNTAINS, 
+      coast,
+      forest,
+      jungle,
+      mountains, 
     ],
   },
   {
@@ -220,10 +220,10 @@ export default [
     location: 'https://www.youtube.com/watch?v=66UCZF3NlRo',
     tags: ['birds', 'day', 'peaceful'],
     terrain: [
-      FOREST,
-      JUNGLE,
-      MOUNTAINS, 
-      PLAINS, 
+      forest,
+      jungle,
+      mountains, 
+      plains, 
     ],
   }, 
   {
@@ -231,9 +231,9 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/daytime-forest',
     tags: ['leaves', 'stream',],
     terrain: [
-      FOREST,
-      JUNGLE,
-      MOUNTAINS,
+      forest,
+      jungle,
+      mountains,
     ],
   },
   {
@@ -241,10 +241,10 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/darkest-forest',
     tags: ['creepy', 'roaring', 'howling', 'forest'],
     terrain: [
-      CAVES,
-      FOREST,
-      JUNGLE,
-      SWAMP,
+      caves,
+      forest,
+      jungle,
+      swamp,
     ]
   },
   {
@@ -252,10 +252,10 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/desert',
     tags: ['desert', 'wind',],
     terrain: [
-      DESERT,
-      MOUNTAINS,
-      PLAINS,
-      WINTER,
+      desert,
+      mountains,
+      plains,
+      winter,
     ]
   },
   {
@@ -263,10 +263,10 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/desert-campfire',
     tags: ['desert', 'wind',],
     terrain: [
-      DESERT,
-      MOUNTAINS,
-      PLAINS,
-      WINTER,
+      desert,
+      mountains,
+      plains,
+      winter,
     ]
   },
   {
@@ -274,13 +274,13 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/ruined-castle-2',
     tags: ['quiet', 'ruins', 'calm', 'mystery', 'sad', 'desolate'],
     terrain: [
-      COAST,
-      DESERT,
-      FOREST,
-      JUNGLE,
-      MOUNTAINS,
-      PLAINS,
-      WINTER,
+      coast,
+      desert,
+      forest,
+      jungle,
+      mountains,
+      plains,
+      winter,
     ]
   },
   {
@@ -288,14 +288,14 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/nightfall-ruins',
     tags: ['quiet', 'ruins', 'calm', 'mystery', 'night', 'sad'],
     terrain: [
-      COAST,
-      DESERT,
-      FOREST,
-      JUNGLE,
-      MOUNTAINS,
-      PLAINS,
-      SWAMP,
-      WINTER,
+      coast,
+      desert,
+      forest,
+      jungle,
+      mountains,
+      plains,
+      swamp,
+      winter,
     ]
   },
   {
@@ -303,8 +303,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/windy-coast',
     tags: ['waves', 'coast', 'wind', 'ocean'],
     terrain: [
-      COAST,
-      OCEAN,
+      coast,
+      ocean,
     ]
   },
   {
@@ -312,8 +312,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/bazaar',
     tags: ['market', 'bazaar', 'busy', 'crowd', 'people', 'children'],
     terrain: [
-      CITY,
-      VILLAGE,
+      city,
+      village,
     ]
   },
   {
@@ -321,8 +321,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/cove',
     tags: ['cove', 'water', 'waves', 'animals', 'night'],
     terrain: [
-      COAST,
-      JUNGLE,
+      coast,
+      jungle,
     ]
   },
   {
@@ -330,8 +330,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/on-the-haunted-shore',
     tags: ['coast', 'haunted', 'magic', 'night', 'creepy'],
     terrain: [
-      COAST,
-      OCEAN,
+      coast,
+      ocean,
     ]
   },
   {
@@ -339,8 +339,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/blacksmith',
     tags: ['blacksmith', 'torches', 'forge'],
     terrain: [
-      CITY,
-      VILLAGE,
+      city,
+      village,
     ]
   },
   {
@@ -348,9 +348,9 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/frozen-coast',
     tags: ['windy', 'waves', 'creepy'],
     terrain: [
-      WINTER,
-      COAST,
-      OCEAN,
+      winter,
+      coast,
+      ocean,
     ]
   },
   {
@@ -358,12 +358,12 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/abandoned-shack',
     tags: ['windy', 'people'],
     terrain: [
-      COAST,
-      DESERT,
-      FOREST,
-      MOUNTAINS,
-      PLAINS,
-      WINTER,
+      coast,
+      desert,
+      forest,
+      mountains,
+      plains,
+      winter,
     ]
   },
   {
@@ -371,7 +371,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/on-the-shore',
     tags: ['coast', 'beach', 'peaceful', 'windy', 'gulls'],
     terrain: [
-      COAST,
+      coast,
     ]
   },
   {
@@ -379,7 +379,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/sailing-ship',
     tags: ['chains', 'wind', 'creaking', 'windy', 'water'],
     terrain: [
-      OCEAN,
+      ocean,
     ]
   },
   {
@@ -387,9 +387,9 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/harbour',
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'gulls'],
     terrain: [
-      COAST,
-      FRESHWATER,
-      OCEAN,
+      coast,
+      freshwater,
+      ocean,
     ]
   },
   {
@@ -397,8 +397,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/ship-in-storms',
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'storm'],
     terrain: [
-      COAST,
-      OCEAN,
+      coast,
+      ocean,
     ]
   },
   {
@@ -406,7 +406,7 @@ export default [
     location: 'https://www.youtube.com/watch?v=Ft-lJyu_nuY',
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'birds', 'storm'],
     terrain: [
-      COAST,
+      coast,
     ]
   },
   {
@@ -414,8 +414,8 @@ export default [
     location: 'https://www.youtube.com/watch?v=gcPSA3sUilc',
     tags: ['town', 'harbor', 'music', 'drums', 'loud', 'shouting'],
     terrain: [
-      CITY,
-      VILLAGE,
+      city,
+      village,
     ]
   },
   {
@@ -423,11 +423,11 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/desert-canyon-2',
     tags: ['desert', 'wind', 'birds'],
     terrain: [
-      COAST,
-      DESERT,
-      FOREST,
-      JUNGLE,
-      MOUNTAINS,
+      coast,
+      desert,
+      forest,
+      jungle,
+      mountains,
     ]
   },
   {
@@ -435,7 +435,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/volcano-temple',
     tags: ['desert', 'wind', 'birds'],
     terrain: [
-      EXOTIC,
+      exotic,
     ]
   },
   {
@@ -443,8 +443,8 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/deep-forge',
     tags: ['hammers', 'dwarves', 'durukhaaz', 'city', 'underground'],
     terrain: [
-      CAVES,
-      EXOTIC,
+      caves,
+      exotic,
     ]
   },
   {
@@ -452,7 +452,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/dark-elves-city',
     tags: ['people', 'durukhaaz', 'city', 'underground', 'screeching'],
     terrain: [
-      CAVES,
+      caves,
     ],
   },
   {
@@ -460,7 +460,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/slums',
     tags: ['people', 'market', 'busy', 'dogs'],
     terrain: [
-      CAVES,
+      caves,
     ]
   },
   {
@@ -468,7 +468,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/underground-mushroom-forest-2',
     tags: ['magic', 'calm', 'mushrooms', 'underground'],
     terrain: [
-      CAVES,
+      caves,
     ]
   },
   {
@@ -476,7 +476,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/sewers',
     tags: ['sewer', 'dripping', 'caves', 'squeaks'],
     terrain: [
-      CAVES,
+      caves,
     ]
   },
   {
@@ -484,7 +484,7 @@ export default [
     location: 'https://michaelghelfi.bandcamp.com/track/active-mine',
     tags: ['mining', 'work', 'caves', 'underground'],
     terrain: [
-      CAVES,
+      caves,
     ]
   },
 ]

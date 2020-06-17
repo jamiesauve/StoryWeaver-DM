@@ -1,4 +1,4 @@
-import * as terrainTypes from './terrainTypes'
+import terrainTypes from './terrainTypes'
 import colors from './colors'
 
 export default {
@@ -133,7 +133,7 @@ export default {
         title: 'Rain',
         location: 'https://michaelghelfi.bandcamp.com/track/realistic-rain',
         tags: ['rain',],
-        excludeFrom: [terrainTypes.WINTER.name],
+        excludeFrom: [terrainTypes.winter.name],
       },
       {
         title: 'Wind',

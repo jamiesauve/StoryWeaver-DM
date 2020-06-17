@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import * as terrainTypes from '../../data/terrainTypes'
+import terrainTypes from '../../data/terrainTypes'
 
 import toCapitalCase from '../../utils/toCapitalCase'
 

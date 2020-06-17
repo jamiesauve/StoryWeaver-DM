@@ -42,7 +42,7 @@ const TrackGroup =  props => {
           .filter(trackObject => {
             if (_.isEmpty(trackObject.excludeFrom)) return true;
 
-            return !_.includes(trackObject.excludeFrom, props.activeTerrain)
+            return !_.includes(trackObject.excludeFrom, props.activeLocation)
           })
           .map(track => (
               <TrackTitle

@@ -2,7 +2,7 @@ import _ from 'lodash'
 
 import tracks from './moodTracks'
 
-export default (activeTerrain) => _.map(tracks, (track, categoryName) => ({
+export default (activeLocation) => _.map(tracks, (track, categoryLabel) => ({
   ...track,
-  categoryName
+  categoryLabel
 }))

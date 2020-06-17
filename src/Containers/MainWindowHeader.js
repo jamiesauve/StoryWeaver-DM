@@ -3,7 +3,11 @@ import styled from 'styled-components'
 
 import DiceRoller from '../Components/MainWindowHeader/DiceRoller'
 import LocationType from '../Components/MainWindowHeader/LocationType'
-import Terrain from '../Components/MainWindowHeader/Terrain'
+import LocationDropdown from '../Components/MainWindowHeader/LocationDropdown'
+
+import places from '../data/places'
+import terrainTypes from '../data/terrainTypes'
+
 
 const This = styled.div`
   width: 100%;
@@ -36,6 +40,7 @@ const RightContainer = styled.div`
 
 
 const MainWindowHeader = (props) => {
+
   return (
     <This
       className="mainWindowHeader"
@@ -46,10 +51,25 @@ const MainWindowHeader = (props) => {
           setActiveLocationType={props.setActiveLocationType}
         />
 
-        <Terrain 
-          activeTerrain={props.activeTerrain}
-          setActiveTerrain={props.setActiveTerrain}
-        />
+        {
+          props.activeLocationType === "terrain"
+          && <LocationDropdown
+            activeLocation={props.activeLocation}
+            setActiveLocation={props.setActiveLocation}
+            locationOptions={terrainTypes}
+            title="Terrain"
+          />
+        } 
+
+{
+          props.activeLocationType === "place"
+          && <LocationDropdown
+            activeLocation={props.activeLocation}
+            setActiveLocation={props.setActiveLocation}
+            locationOptions={places}
+            title="Place"
+          />
+        } 
 
       </LeftContainer>
 

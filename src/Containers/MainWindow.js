@@ -11,7 +11,6 @@ import MainWindowHeader from './MainWindowHeader'
 import AspectSlot from '../Components/MainWindow/AspectSlot'
 
 import aspects from '../utils/getAspectsAsArray'
-import * as terrainTypes from '../data/terrainTypes'
 
 const This = styled.div`
   width: 100vw;
@@ -36,17 +35,8 @@ const MainWindow = (props) => {
   const [numberOfAspectSlots, setNumberOfAspectSlots] = useState(5)
   const [aspectSlots, setAspectSlots] = useState([])
 
-  const [activeTerrain, setActiveTerrain] = useState('')
   const [activeLocationType, setActiveLocationType] = useState('any')
-  const [activeTerrainColor, setActiveTerrainColor] = useState('')
-
-  useEffect(() => {
-    const activeTerrainColor = activeTerrain 
-      ? _.find(terrainTypes, {name: activeTerrain}).color
-      : ''
-
-    setActiveTerrainColor(activeTerrainColor)
-  }, [activeTerrain])
+  const [activeLocation, setActiveLocation] = useState('')
 
   useEffect(() => {
     const height = document.getElementsByClassName('mainWindowBody')[0].clientHeight
@@ -72,7 +62,7 @@ const MainWindow = (props) => {
 
     return aspectsNestedArray.map(aspectsArray => (
       <AspectSlot
-        activeTerrain={activeTerrain}
+        activeLocation={activeLocation}
         aspects={aspectsArray}
         mainWindowBodyHeight={mainWindowBodyHeight}
       />
@@ -86,15 +76,15 @@ const MainWindow = (props) => {
             width='100%'
           >
             <Pane
-              borderColor={activeTerrainColor}
+              borderColor={_.get(activeLocation, 'color', null)}
               className="pane"
               isBorderTopVisible={true}
             >
               <MainWindowHeader 
                 activeLocationType={activeLocationType}
                 setActiveLocationType={setActiveLocationType}
-                activeTerrain={activeTerrain}
-                setActiveTerrain={setActiveTerrain}
+                activeLocation={activeLocation}
+                setActiveLocation={setActiveLocation}
               />
             </Pane>
         </Frame>

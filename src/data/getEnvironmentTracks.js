@@ -1,12 +1,10 @@
 import _ from 'lodash'
 
-import * as importedTerrainTypes from './terrainTypes'
+import importedTerrainTypes from './terrainTypes'
 import tracks from './environmentTracks'
 
-import toCapitalCase from '../utils/toCapitalCase'
-
-export default (activeTerrain) => {
-  const terrainTypes = activeTerrain ? [_.find(importedTerrainTypes, {name: activeTerrain})] : importedTerrainTypes;
+export default (activeLocation) => {
+  const terrainTypes = activeLocation ? [_.find(importedTerrainTypes, {name: activeLocation})] : importedTerrainTypes;
 
   const restructuredTerrainTypes = _.map(terrainTypes, terrainType => {
     const filteredTracks = _.filter(tracks, trackObject => {
@@ -15,14 +13,14 @@ export default (activeTerrain) => {
             return true
           }
   
-          const includes = _.includes(trackObject.terrain, activeTerrain ? activeTerrain : terrainType.name)
+          const includes = _.includes(trackObject.terrain, activeLocation ? activeLocation : terrainType.name)
           return includes
         } else if (trackObject.excludeFrom) {
           if (_.isEmpty(trackObject.excludeFrom)) {
             return true
           }
           
-          const includes = !_.includes(trackObject.excludeFrom, activeTerrain ? activeTerrain : terrainType.name)
+          const includes = !_.includes(trackObject.excludeFrom, activeLocation ? activeLocation : terrainType.name)
           return includes
         } else {
           return true
@@ -32,7 +30,8 @@ export default (activeTerrain) => {
     const sortedTracks = _.sortBy(filteredTracks, track => track.title)
 
     return {
-      categoryName: toCapitalCase(terrainType.name),
+      categoryLabel: terrainType.label,
+      categoryName: terrainType.name,
       titleColor: terrainType.color,
       trackObjects: sortedTracks,
     }

@@ -10,7 +10,7 @@ import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
 import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 
-import * as terrainTypes from '../data/terrainTypes'
+import terrainTypes from '../data/terrainTypes'
 import reagents from '../data/reagents'
 import colors from '../data/colors'
 
@@ -27,13 +27,13 @@ const Crafting = (props) => {
   const reagentsByTerrain = _.filter(reagents, reagent => 
     _.isEmpty(reagent.terrain)
     ? true
-    : _.includes(reagent.terrain, props.activeTerrain)
+    : _.includes(reagent.terrain, props.activeLocation)
   )
 
   const drawers = reagentsByTerrain
   .map(reagent => ({
     title: reagent.label,
-    titleColor: _.find(terrainTypes, {name: props.activeTerrain}).color,
+    titleColor: _.find(terrainTypes, {name: props.activeLocation}).color,
     content: () => <ReagentDisplayCard
       data={reagent}
     />,
