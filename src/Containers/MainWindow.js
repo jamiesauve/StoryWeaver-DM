@@ -38,7 +38,7 @@ const MainWindow = (props) => {
   // I think this will update dynamically if it changes. onWindowResize, fire the useEffect? A listener for that?
   const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(null) 
 
-  const [numberOfAspectSlots, setNumberOfAspectSlots] = useState(4)
+  const [numberOfAspectSlots, setNumberOfAspectSlots] = useState(5)
   const [aspectSlots, setAspectSlots] = useState([])
 
   useEffect(() => {
