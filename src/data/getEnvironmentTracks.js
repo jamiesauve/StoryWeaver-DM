@@ -4,7 +4,7 @@ import importedTerrainTypes from './terrainTypes'
 import tracks from './environmentTracks'
 
 export default (activeLocation) => {
-  const terrainTypes = activeLocation ? [_.find(importedTerrainTypes, {name: activeLocation})] : importedTerrainTypes;
+  const terrainTypes = !_.isEmpty(activeLocation) ? [activeLocation] : importedTerrainTypes;
 
   const restructuredTerrainTypes = _.map(terrainTypes, terrainType => {
     const filteredTracks = _.filter(tracks, trackObject => {
@@ -13,7 +13,7 @@ export default (activeLocation) => {
             return true
           }
   
-          const includeTrack = _.includes(trackObject.terrain, activeLocation ? activeLocation : terrainType.name)
+          const includeTrack = _.includes(trackObject.terrain, activeLocation.name ? activeLocation.name : terrainType.name)
 
           return includeTrack
         } else if (trackObject.excludeFrom) {
@@ -21,7 +21,7 @@ export default (activeLocation) => {
             return true
           }
           
-          const includeTrack = !_.includes(trackObject.excludeFrom, activeLocation ? activeLocation : terrainType.name)
+          const includeTrack = !_.includes(trackObject.excludeFrom, activeLocation.name ? activeLocation.name : terrainType.name)
 
           return includeTrack
         } else {
