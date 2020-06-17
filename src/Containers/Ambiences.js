@@ -39,7 +39,7 @@ const Ambiences = (props) => {
           <TrackSection
             activeLocation={props.activeLocation}
             hasToggleAllLink={!Boolean(props.activeLocation)}
-            initiallyExpanded={Boolean(props.activeLocation)}
+            isInitiallyExpanded={Boolean(props.activeLocation)}
             title="Environment"
             tracks={environmentTracks}
           />
@@ -48,7 +48,7 @@ const Ambiences = (props) => {
 
           <TrackSection
             activeLocation={props.activeLocation}
-            initiallyExpanded
+            isInitiallyExpanded
             title="Special Events"
             tracks={specialTracks}
           />

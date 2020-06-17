@@ -25,8 +25,8 @@ const TrackSection = (props) => {
       title: category.categoryLabel,
       titleColor: category.titleColor,
       content: () => <TrackGroup
-        tracks={category.trackObjects}
         activeLocation={props.activeLocation}
+        tracks={category.trackObjects}
       />,
     }))
 
@@ -41,7 +41,7 @@ const TrackSection = (props) => {
       <Dresser 
         drawers={drawers}
         hasToggleAllLink={props.hasToggleAllLink}
-        initiallyExpanded={props.initiallyExpanded}
+        isInitiallyExpanded={props.isInitiallyExpanded}
       />
     </This>
   )

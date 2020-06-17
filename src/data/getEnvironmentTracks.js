@@ -13,15 +13,17 @@ export default (activeLocation) => {
             return true
           }
   
-          const includes = _.includes(trackObject.terrain, activeLocation ? activeLocation : terrainType.name)
-          return includes
+          const includeTrack = _.includes(trackObject.terrain, activeLocation ? activeLocation : terrainType.name)
+
+          return includeTrack
         } else if (trackObject.excludeFrom) {
           if (_.isEmpty(trackObject.excludeFrom)) {
             return true
           }
           
-          const includes = !_.includes(trackObject.excludeFrom, activeLocation ? activeLocation : terrainType.name)
-          return includes
+          const includeTrack = !_.includes(trackObject.excludeFrom, activeLocation ? activeLocation : terrainType.name)
+
+          return includeTrack
         } else {
           return true
         }
