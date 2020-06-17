@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ToggleButtonWithLabels from '../UI/ToggleButtonWithLabels'
+import ToggleButtonGroup from '../UI/ToggleButtonGroup'
 
 import locationTypeOptions from '../../data/locationTypeOptions'
 
@@ -32,7 +32,7 @@ const LocationType = (props) => {
         Location Type
       </LocationTitle>
 
-      <ToggleButtonWithLabels
+      <ToggleButtonGroup
         activeOption={props.activeLocationType}
         setActiveOption={props.setActiveLocationType}
         options={locationTypeOptions}

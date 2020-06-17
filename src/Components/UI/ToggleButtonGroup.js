@@ -71,7 +71,7 @@ const Separator = styled.div`
   background: ${props => props.borderColor || colors.lightGrey}
 `
 
-const ToggleButtonWithLabels = (props) => {
+const ToggleButtonGroup = (props) => {
   const {
     component: componentStyles = {},
     option: optionStlyes = {},
@@ -123,11 +123,11 @@ const ToggleButtonWithLabels = (props) => {
   )
 }
 
-ToggleButtonWithLabels.defaultProps = {
+ToggleButtonGroup.defaultProps = {
   styles: {}
 }
 
-export default ToggleButtonWithLabels
+export default ToggleButtonGroup
 
 // activeOption={props.activeLocationType}
 // setActiveOption={props.setActiveLocationType}
