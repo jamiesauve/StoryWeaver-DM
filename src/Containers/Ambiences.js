@@ -22,7 +22,6 @@ const Ambiences = (props) => {
 
   return (
     <Section
-      title="Ambiences"
       className="Section"
     >
       <ScrollableContainer

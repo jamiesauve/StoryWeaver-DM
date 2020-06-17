@@ -17,7 +17,7 @@ const Creatures = (props) => {
   return (
     <This>
       <Section
-        title="Creatures"
+        className="section"
       >
         <ScrollableContainer
           className="scrollableContainer"

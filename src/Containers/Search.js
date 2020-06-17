@@ -48,7 +48,7 @@ const Search = (props) => {
   return (
     <This>
       <Section
-        title="Search Results"
+        className="section"
       >
         <SearchBar
           setSearchQuery={setSearchQuery}
