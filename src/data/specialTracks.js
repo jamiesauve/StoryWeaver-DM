@@ -1,7 +1,7 @@
 import colors from './colors'
 
 export default [{
-  categoryName: "Special Events",
+  categoryLabel: "Special Events",
   titleColor: colors.specialPink,
   trackObjects: [
     {
