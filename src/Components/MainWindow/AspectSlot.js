@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
@@ -6,6 +6,8 @@ import Frame from './Frame'
 import Pane from './Pane'
 
 import AspectTabContainer from './AspectTabContainer'
+
+import { ActiveLocationContext, MainWindowBodyHeightContext } from '../../context/MainWindowContextProvider'
 
 const This = styled.div``
 
@@ -24,10 +26,11 @@ const AspectSlot = (props) => {
   }, [activeAspect])
 
   const {
-    activeLocation,
     aspects,
-    mainWindowBodyHeight,
   } = props
+
+  const activeLocation = useContext(ActiveLocationContext)
+  const mainWindowBodyHeight = useContext(MainWindowBodyHeightContext)
 
   return (
     <This>

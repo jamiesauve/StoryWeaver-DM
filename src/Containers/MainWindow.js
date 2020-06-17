@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, } from 'react'
+
 import styled from 'styled-components'
 
 import _ from 'lodash'
@@ -7,6 +8,8 @@ import Frame from '../Components/MainWindow/Frame'
 import Pane from '../Components/MainWindow/Pane'
 
 import MainWindowHeader from './MainWindowHeader'
+
+import MainWindowContextProvider from '../context/MainWindowContextProvider'
 
 import AspectSlot from '../Components/MainWindow/AspectSlot'
 
@@ -62,15 +65,17 @@ const MainWindow = (props) => {
 
     return aspectsNestedArray.map(aspectsArray => (
       <AspectSlot
-        activeLocation={activeLocation}
         aspects={aspectsArray}
-        mainWindowBodyHeight={mainWindowBodyHeight}
       />
     ))
   }
 
   return (
-    <This>
+    <MainWindowContextProvider
+      activeLocation={activeLocation}
+      mainWindowBodyHeight={mainWindowBodyHeight}
+    >
+      <This>
         <Frame
             className="frame"
             width='100%'
@@ -94,7 +99,8 @@ const MainWindow = (props) => {
         >
           {aspectSlots}
         </MainWindowBody>
-    </This>
+      </This>
+    </MainWindowContextProvider>
   )
 }
 
