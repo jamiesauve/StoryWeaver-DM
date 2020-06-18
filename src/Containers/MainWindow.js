@@ -15,6 +15,8 @@ import AspectSlot from '../Components/MainWindow/AspectSlot'
 
 import aspects from '../utils/getAspectsAsArray'
 
+import useWindowResize from '../hooks/UseWindowResize'
+
 const This = styled.div`
   width: 100vw;
   height: 100vh;
@@ -32,8 +34,7 @@ const MainWindowBody = styled.div`
 `
 
 const MainWindow = (props) => {
-  // I think this will update dynamically if it changes. onWindowResize, fire the useEffect? A listener for that?
-  const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(null) 
+  const mainWindowBodyHeight = useWindowResize() 
 
   const [numberOfAspectSlots, /*setNumberOfAspectSlots*/] = useState(5)
   const [aspectSlots, setAspectSlots] = useState([])
@@ -42,17 +43,12 @@ const MainWindow = (props) => {
   const [activeLocation, setActiveLocation] = useState('')
 
   useEffect(() => {
-    const height = document.getElementsByClassName('mainWindowBody')[0].clientHeight
-    
-    setMainWindowBodyHeight(height)
-  }, [])
-
-  useEffect(() => {
-    if (!_.isNull(mainWindowBodyHeight)) {
+    if (_.isEmpty(aspectSlots) && !_.isNull(mainWindowBodyHeight)) {
       const aspectSlots = generateAspectSlots(numberOfAspectSlots, aspects)
       setAspectSlots(aspectSlots)
     }
   }, [
+    aspectSlots,
     mainWindowBodyHeight,
     numberOfAspectSlots,
   ])
