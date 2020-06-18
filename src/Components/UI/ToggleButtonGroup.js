@@ -2,6 +2,8 @@ import React, { Fragment, } from 'react'
 import styled from 'styled-components'
 import colors from '../../data/colors'
 
+import {Draggable } from 'react-beautiful-dnd'
+
 import shade from '../../utils/shade'
 
 const This = styled.div`
@@ -84,16 +86,40 @@ const ToggleButtonGroup = (props) => {
       <Fragment 
         key = {option.value}
       >
-        <OptionButton
-          backgroundColor={option.color}
-          borderColor={componentStyles.borderColor}
-          hasBorder={componentStyles.hasBorder}
-          isActiveOption={props.activeOption === option.value}
-          onClick={(e) => handleClickOption(e, option.value)}
-          textColor={optionStlyes.textColor}
-        >
-          {option.label}
-        </OptionButton>
+        {props.usesDragAndDrop
+          ? <Draggable
+          draggableId={option.value}
+          index={index}
+        >  
+          {provided => (
+            <OptionButton
+              {...provided.draggableProps}
+              {...provided.dragHandleProps} // handle to move the item with
+              ref={provided.innerRef}
+              
+              backgroundColor={option.color}
+              borderColor={componentStyles.borderColor}
+              hasBorder={componentStyles.hasBorder}
+              isActiveOption={props.activeOption === option.value}
+              onClick={(e) => handleClickOption(e, option.value)}
+              textColor={optionStlyes.textColor}
+            >
+              {option.label}
+            </OptionButton>
+          )}
+        </Draggable>
+        : <OptionButton
+            backgroundColor={option.color}
+            borderColor={componentStyles.borderColor}
+            hasBorder={componentStyles.hasBorder}
+            isActiveOption={props.activeOption === option.value}
+            onClick={(e) => handleClickOption(e, option.value)}
+            textColor={optionStlyes.textColor}
+          >
+            {option.label}
+          </OptionButton>
+        }
+        
 
         {
           index !== (options.length - 1)

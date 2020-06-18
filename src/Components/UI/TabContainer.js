@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import styled from 'styled-components'
 
 import ToggleButtonGroup from './ToggleButtonGroup'
@@ -9,6 +9,8 @@ const This = styled.div`
 `
 
 const TabContainer = (props) => {
+  const droppableRef = createRef(props.innerRef)
+
   const toggleButtonStyles = {
     component: {
       backgroundColor: colors.lightDarkBackground,
@@ -24,10 +26,13 @@ const TabContainer = (props) => {
   }
 
   return (
-    <This>
+    <This
+      ref={droppableRef}
+    >
       <ToggleButtonGroup
         activeOption={props.activeTab}
         options={props.tabs} // label/value pairs
+        usesDragAndDrop={props.usesDragAndDrop}
         setActiveOption={props.setActiveTab}
         styles={toggleButtonStyles}
       />

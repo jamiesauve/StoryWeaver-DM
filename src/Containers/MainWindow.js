@@ -65,6 +65,7 @@ const MainWindow = (props) => {
     return aspectsNestedArray.map((aspectsArray, index) => (
       <AspectSlot
         aspects={aspectsArray}
+        aspectSlotId={index}
         key={index}
       />
     ))
