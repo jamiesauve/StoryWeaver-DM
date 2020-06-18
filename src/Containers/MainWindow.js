@@ -1,4 +1,4 @@
-import React, { useEffect, useState, } from 'react'
+import React, { useState, } from 'react'
 
 import styled from 'styled-components'
 
@@ -8,12 +8,9 @@ import Frame from '../Components/MainWindow/Frame'
 import Pane from '../Components/MainWindow/Pane'
 
 import MainWindowHeader from './MainWindowHeader'
+import MainWindowBody from './MainWindowBody'
 
 import MainWindowContextProvider from '../context/MainWindowContextProvider'
-
-import AspectSlot from '../Components/MainWindow/AspectSlot'
-
-import aspects from '../utils/getAspectsAsArray'
 
 import useWindowResize from '../hooks/UseWindowResize'
 
@@ -25,51 +22,15 @@ const This = styled.div`
   flex-direction: column;
 `
 
-const MainWindowBody = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: stretch;
 
-  flex-grow: 1;
-`
 
 const MainWindow = (props) => {
   const windowHeight = useWindowResize() 
 
-  const [numberOfAspectSlots, /*setNumberOfAspectSlots*/] = useState(5)
-  const [aspectSlots, setAspectSlots] = useState([])
-
   const [activeLocationType, setActiveLocationType] = useState('any')
   const [activeLocation, setActiveLocation] = useState('')
 
-  useEffect(() => {
-    if (_.isEmpty(aspectSlots) && !_.isNull(windowHeight)) {
-      const aspectSlots = generateAspectSlots(numberOfAspectSlots, aspects)
-      setAspectSlots(aspectSlots)
-    }
-  }, [
-    aspectSlots,
-    windowHeight,
-    numberOfAspectSlots,
-  ])
 
-  const generateAspectSlots = (numberOfAspectSlots, aspects) => {
-    const aspectsNestedArray = Array(numberOfAspectSlots)
-      .fill(null)
-      .map(() =>[])
-
-    _.forEach(aspects, aspect => {
-      aspectsNestedArray[aspect.defaultAspectSlot].push(aspect)
-    })
-
-    return aspectsNestedArray.map((aspectsArray, index) => (
-      <AspectSlot
-        aspects={aspectsArray}
-        aspectSlotId={index}
-        key={index}
-      />
-    ))
-  }
 
   return (
     <MainWindowContextProvider
@@ -95,11 +56,9 @@ const MainWindow = (props) => {
             </Pane>
         </Frame>
 
-        <MainWindowBody
-          className="mainWindowBody"
-        >
-          {aspectSlots}
-        </MainWindowBody>
+        <MainWindowBody 
+          windowHeight={windowHeight}
+        />
       </This>
     </MainWindowContextProvider>
   )
