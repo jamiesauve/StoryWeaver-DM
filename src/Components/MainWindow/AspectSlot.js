@@ -17,7 +17,8 @@ const AspectSlot = (props) => {
   } = props
   
   const [activeAspect, setActiveAspect] = useState(null)
-  const [ActiveAspectComponent, setActiveAspectComponent] = useState(null) // a component can't be rendered with a lower-case name, hence this variable
+  // a component can't be rendered with a lower-case name, hence this variable
+  const [ActiveAspectComponent, setActiveAspectComponent] = useState(null)
 
   useEffect(() => {
     setActiveAspect(aspects[0])
@@ -31,7 +32,10 @@ const AspectSlot = (props) => {
 
 
   const activeLocation = useContext(ActiveLocationContext)
-  const mainWindowBodyHeight = useContext(MainWindowBodyHeightContext)
+  const windowHeight = useContext(MainWindowBodyHeightContext)
+  // margin, border and padding on panes for both MainWindowHeader pane and the aspect one, plus the height of MainWindowHeader
+  const mainWindowHeaderHeight = 138 
+  const aspectHeight = windowHeight - mainWindowHeaderHeight
 
   return (
     <This>
@@ -52,8 +56,7 @@ const AspectSlot = (props) => {
                 className="pane"
 
                 borderColor={activeAspect.color}
-                // margin, border and padding on pane for both this pane and the MainWindowHeader one
-                height={`${mainWindowBodyHeight - 64}px`} 
+                height={`${aspectHeight}px`} 
                 isBorderTopVisible={false}
               >
                 {

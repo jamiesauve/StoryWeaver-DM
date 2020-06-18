@@ -34,7 +34,7 @@ const MainWindowBody = styled.div`
 `
 
 const MainWindow = (props) => {
-  const mainWindowBodyHeight = useWindowResize() 
+  const windowHeight = useWindowResize() 
 
   const [numberOfAspectSlots, /*setNumberOfAspectSlots*/] = useState(5)
   const [aspectSlots, setAspectSlots] = useState([])
@@ -43,13 +43,13 @@ const MainWindow = (props) => {
   const [activeLocation, setActiveLocation] = useState('')
 
   useEffect(() => {
-    if (_.isEmpty(aspectSlots) && !_.isNull(mainWindowBodyHeight)) {
+    if (_.isEmpty(aspectSlots) && !_.isNull(windowHeight)) {
       const aspectSlots = generateAspectSlots(numberOfAspectSlots, aspects)
       setAspectSlots(aspectSlots)
     }
   }, [
     aspectSlots,
-    mainWindowBodyHeight,
+    windowHeight,
     numberOfAspectSlots,
   ])
 
@@ -73,7 +73,7 @@ const MainWindow = (props) => {
   return (
     <MainWindowContextProvider
       activeLocation={activeLocation}
-      mainWindowBodyHeight={mainWindowBodyHeight}
+      windowHeight={windowHeight}
     >
       <This>
         <Frame
