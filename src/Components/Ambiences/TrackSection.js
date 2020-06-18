@@ -27,6 +27,7 @@ const TrackSection = (props) => {
       content: () => <TrackGroup
         activeLocation={props.activeLocation}
         tracks={category.trackObjects}
+        categoryTitle={category.categoryLabel}
       />,
     }))
 

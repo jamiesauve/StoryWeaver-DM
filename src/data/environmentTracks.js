@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import terrainTypes from './terrainTypes'
 
 const [

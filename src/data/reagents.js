@@ -5,20 +5,18 @@ const [
   caves,
   coast,
   city,
-  desert,
+  // desert,
   forest,
-  freshwater,
+  // freshwater,
   jungle,
   mountains,
-  ocean,
+  // ocean,
   plains,
   swamp,
   village,
-  winter,
+  // winter,
   exotic,
 ] = _.map(terrainTypes, (terrainType) => terrainType.name)
-
-const NOT_WINTER = 'notWinter'
 
 /**
  * light levels:

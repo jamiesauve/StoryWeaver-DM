@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment, } from 'react'
 import styled from 'styled-components'
 import colors from '../../data/colors'
 
@@ -81,7 +81,9 @@ const ToggleButtonGroup = (props) => {
   const generateOptions = (options) => {
 
     return options.map((option, index) => (
-      <>
+      <Fragment 
+        key = {option.value}
+      >
         <OptionButton
           backgroundColor={option.color}
           borderColor={componentStyles.borderColor}
@@ -100,7 +102,7 @@ const ToggleButtonGroup = (props) => {
             isVisible={separatorStyles.isVisible}
           />
         }
-      </>
+      </Fragment>
     ))
   }
   

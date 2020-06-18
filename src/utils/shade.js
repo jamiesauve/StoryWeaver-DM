@@ -33,13 +33,13 @@ function shadeColor(colorWithHashTag, percentValue) {
     G = (G<255) ? G : 255  
     B = (B<255) ? B : 255  
 
-  const RR = !isShortHand && (R.toString(16).length==1)
+  const RR = !isShortHand && (R.toString(16).length === 1)
     ? "0"+R.toString(16)
     : R.toString(16)
-  const GG = !isShortHand && (G.toString(16).length==1)
+  const GG = !isShortHand && (G.toString(16).length === 1)
     ? "0"+G.toString(16)
     : G.toString(16)
-  const BB = !isShortHand && (B.toString(16).length==1)
+  const BB = !isShortHand && (B.toString(16).length === 1)
     ? "0"+B.toString(16)
     : B.toString(16)
 

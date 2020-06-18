@@ -101,6 +101,8 @@ export default (data) => {
             unit: null,
           }
         }
+
+        return null
       })
       .compact()
       .value()

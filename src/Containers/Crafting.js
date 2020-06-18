@@ -12,7 +12,6 @@ import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 
 import terrainTypes from '../data/terrainTypes'
 import reagents from '../data/reagents'
-import colors from '../data/colors'
 
 const This = styled.div`
   flex-grow: 1;

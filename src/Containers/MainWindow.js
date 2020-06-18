@@ -35,7 +35,7 @@ const MainWindow = (props) => {
   // I think this will update dynamically if it changes. onWindowResize, fire the useEffect? A listener for that?
   const [mainWindowBodyHeight, setMainWindowBodyHeight] = useState(null) 
 
-  const [numberOfAspectSlots, setNumberOfAspectSlots] = useState(5)
+  const [numberOfAspectSlots, /*setNumberOfAspectSlots*/] = useState(5)
   const [aspectSlots, setAspectSlots] = useState([])
 
   const [activeLocationType, setActiveLocationType] = useState('any')
@@ -52,7 +52,10 @@ const MainWindow = (props) => {
       const aspectSlots = generateAspectSlots(numberOfAspectSlots, aspects)
       setAspectSlots(aspectSlots)
     }
-  }, [mainWindowBodyHeight])
+  }, [
+    mainWindowBodyHeight,
+    numberOfAspectSlots,
+  ])
 
   const generateAspectSlots = (numberOfAspectSlots, aspects) => {
     const aspectsNestedArray = Array(numberOfAspectSlots)
@@ -63,9 +66,10 @@ const MainWindow = (props) => {
       aspectsNestedArray[aspect.defaultAspectSlot].push(aspect)
     })
 
-    return aspectsNestedArray.map(aspectsArray => (
+    return aspectsNestedArray.map((aspectsArray, index) => (
       <AspectSlot
         aspects={aspectsArray}
+        key={index}
       />
     ))
   }

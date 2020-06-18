@@ -12,22 +12,23 @@ import { ActiveLocationContext, MainWindowBodyHeightContext } from '../../contex
 const This = styled.div``
 
 const AspectSlot = (props) => {
+  const {
+    aspects,
+  } = props
+  
   const [activeAspect, setActiveAspect] = useState(null)
   const [ActiveAspectComponent, setActiveAspectComponent] = useState(null) // a component can't be rendered with a lower-case name, hence this variable
 
   useEffect(() => {
     setActiveAspect(aspects[0])
     setActiveAspectComponent(aspects[0].component)
-  }, [])
+  }, [aspects])
 
   useEffect(() => {
     (!_.isNull(activeAspect))
     && setActiveAspectComponent(activeAspect.component)
   }, [activeAspect])
 
-  const {
-    aspects,
-  } = props
 
   const activeLocation = useContext(ActiveLocationContext)
   const mainWindowBodyHeight = useContext(MainWindowBodyHeightContext)

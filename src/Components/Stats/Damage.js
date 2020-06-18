@@ -14,7 +14,6 @@ const This = styled.div`
 const Damage = (props) => {
   const {
     base,
-    borderColor,
     type,
     twoHanded,
   } = props.data
