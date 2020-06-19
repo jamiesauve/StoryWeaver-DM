@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import AspectSlot from '../Components/MainWindow/AspectSlot'
 
-import aspects from '../utils/getAspectsAsArray'
+import initialApectsArray from '../utils/getAspectsAsArray'
 
 const This = styled.div`
 display: flex;
@@ -20,29 +20,28 @@ const MainWindowBody = (props) => {
   } = props
 
   const [numberOfAspectSlots, /*setNumberOfAspectSlots*/] = useState(5)
-  const [aspectSlots, setAspectSlots] = useState([])
+  const [aspectSlots, setAspectSlots] = useState()
+  const [updatedAspectsArray, setUpdatedAspectsArray] = useState([])
 
   useEffect(() => {
-    if (_.isEmpty(aspectSlots) && !_.isNull(windowHeight)) {
-      const aspectSlots = generateAspectSlots(numberOfAspectSlots, aspects)
-      setAspectSlots(aspectSlots)
-    }
+    const aspectsArray = _.isEmpty(updatedAspectsArray)
+    ? initialApectsArray
+    : updatedAspectsArray
+    
+    setAspectSlots(populateAspectSlots(aspectsArray))
   }, [
-    aspectSlots,
-    windowHeight,
-    numberOfAspectSlots,
+    initialApectsArray,
+    updatedAspectsArray
   ])
 
-  const generateAspectSlots = (numberOfAspectSlots, aspects) => {
-    const aspectsNestedArray = Array(numberOfAspectSlots)
-      .fill(null)
-      .map(() =>[])
+  const populateAspectSlots = (aspectsArray) => {
+    const aspectSlots = Array(numberOfAspectSlots).fill(null).map(() => [])
 
-    _.forEach(aspects, aspect => {
-      aspectsNestedArray[aspect.defaultAspectSlot].push(aspect)
+    _.forEach(aspectsArray, aspect => {
+      aspectSlots[aspect.defaultAspectSlot].push(aspect)
     })
 
-    return aspectsNestedArray.map((aspectsArray, index) => (
+    return aspectSlots.map((aspectsArray, index) => (
       <AspectSlot
         aspects={aspectsArray}
         aspectSlotId={index}
@@ -51,13 +50,18 @@ const MainWindowBody = (props) => {
     ))
   }
 
+
+
   return (
     <This
       className="mainWindowBody"
     >
+      
       {aspectSlots}
     </This>
   )
 }
 
 export default MainWindowBody
+
+// AspectLocationTracker // contains state for which context is where, and also a drag drop context. Maybe those need to be here instead.
