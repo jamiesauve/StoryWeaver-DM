@@ -13,6 +13,8 @@ import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 import terrainTypes from '../data/terrainTypes'
 import reagents from '../data/reagents'
 
+import colors from '../data/colors'
+
 const This = styled.div`
   flex-grow: 1;
 
@@ -24,15 +26,18 @@ const This = styled.div`
 
 const Crafting = (props) => {
   const reagentsByTerrain = _.filter(reagents, reagent => 
-    _.isEmpty(reagent.terrain)
+    (
+      _.isEmpty(reagent.terrain) 
+      || _.isEmpty(props.activeLocation)
+    )
     ? true
-    : _.includes(reagent.terrain, props.activeLocation)
+    : _.includes(reagent.terrain, props.activeLocation.name)
   )
 
   const drawers = reagentsByTerrain
   .map(reagent => ({
     title: reagent.label,
-    titleColor: _.find(terrainTypes, {name: props.activeLocation}).color,
+    titleColor: _.get(_.find(terrainTypes, {name: props.activeLocation.name}), 'color', colors.forestGreen), // TODO: make the color match the type of plant somehow
     content: () => <ReagentDisplayCard
       data={reagent}
     />,
