@@ -46,7 +46,7 @@ const TrackGroup =  props => {
           })
           .map(track => (
               <TrackTitle
-                key={`${track.location}-${props.categoryTitle}`}
+                key={`${track.location}-${props.categoryTitle}-${track.title}`}
                 onClick={() => handleClickTrack(track.location)}
               >
                 {track.title}
