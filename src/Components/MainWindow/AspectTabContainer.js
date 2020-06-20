@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
 import { Droppable } from 'react-beautiful-dnd'
+
+import AreTabsContractedContext from '../../context/AreTabsContractedContext'
 
 import TabContainer from '../UI/TabContainer'
 import colors from '../../data/colors'
@@ -11,6 +13,8 @@ const This = styled.div``
 
 const AspectTabContainer = (props) => {
   const [tabOptions, setTabOptions] = useState([])
+
+  const areTabsContracted = useContext(AreTabsContractedContext)
   
   useEffect(() => {
     const newTabOptions = _.map(props.aspects, aspect => ({
@@ -37,6 +41,9 @@ const AspectTabContainer = (props) => {
     value: 'empty', 
   }]
 
+  // console.log(props.aspectSlotId, 
+  //   'has something in it:', !_.isEmpty(tabOptions))
+
   return (
     <This>
         {!_.isEmpty(tabOptions)
@@ -51,6 +58,7 @@ const AspectTabContainer = (props) => {
                 >
                   <TabContainer 
                     activeTab={_.get(props.activeAspect, 'name', null)}
+                    areTabsContracted={areTabsContracted}
                     borderColor={_.get(props.activeAspect, 'color', colors.darkGrey)}
                     usesDragAndDrop={true}
                     tabs={!_.isEmpty(tabOptions) ?  tabOptions : emptyTabOptions}

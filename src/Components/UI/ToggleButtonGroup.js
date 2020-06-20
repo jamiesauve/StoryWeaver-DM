@@ -1,4 +1,4 @@
-import React, { Fragment, } from 'react'
+import React, { Fragment, useContext } from 'react'
 import styled from 'styled-components'
 import colors from '../../data/colors'
 
@@ -11,6 +11,7 @@ const This = styled.div`
 
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: normal;
 
   background: ${props => props.backgroundColor || colors.lightBackGround};
@@ -20,10 +21,10 @@ const This = styled.div`
 `
   
 const OptionButton = styled.div`
-  flex-grow: 1;
-  
   z-index: 0;
   padding: 10px;
+
+  width: ${props => props.width};
   
   background: ${props => props.backgroundColor};
   
@@ -81,7 +82,7 @@ const ToggleButtonGroup = (props) => {
   } = props.styles
 
   const generateOptions = (options) => {
-
+console.log('rerendering: areTabsContracted', props.areTabsContracted)
     return options.map((option, index) => (
       <Fragment 
         key = {option.value}
@@ -98,6 +99,8 @@ const ToggleButtonGroup = (props) => {
               {...provided.draggableProps}
               {...provided.dragHandleProps} // handle to move the item with
               ref={provided.innerRef}
+              
+              width={props.areTabsContracted ? `${100 / (options.length + 2)}%` : `${100 / options.length}%`}
               
               backgroundColor={option.color}
               borderColor={componentStyles.borderColor}

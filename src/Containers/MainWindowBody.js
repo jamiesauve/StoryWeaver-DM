@@ -4,6 +4,8 @@ import _ from 'lodash'
 
 import { DragDropContext } from 'react-beautiful-dnd'
 
+import AreTabsContractedContext from '../context/AreTabsContractedContext'
+
 import AspectSlot from '../Components/MainWindow/AspectSlot'
 
 import initialAspectsArray from '../utils/getAspectsAsArray'
@@ -23,14 +25,8 @@ const MainWindowBody = (props) => {
 
   const [numberOfAspectSlots, /*setNumberOfAspectSlots*/] = useState(5)
   const [aspectSlots, setAspectSlots] = useState()
-
-  const [currentPositionsArray, setCurrentPositionsArray] = useState([]) // use this for tracking positions. Looks like:
-
-// [
-//   ['notes', 'ambiences'],
-//   ['crafting', 'gameplay']
-//   ...
-// ]
+  const [areTabsContracted, setAreTabsContracted] = useState(false)
+  const [currentPositionsArray, setCurrentPositionsArray] = useState([])
 
   useEffect(() => {
     const initialPositionsArray = _.reduce(initialAspectsArray, (aggr, aspect) => {
@@ -52,12 +48,18 @@ const MainWindowBody = (props) => {
     currentPositionsArray
   ])
 
+  const handleDragStart = () => {
+    setAreTabsContracted(true)
+  }
+
   const handleDragEnd = (dragDropObject) => {
     const {
       destination,
       draggableId: nameOfAspectToMove,
       source,
     } = dragDropObject
+
+    setAreTabsContracted(false)
 
     if (!destination) return
 
@@ -108,11 +110,14 @@ const MainWindowBody = (props) => {
     <This
       className="mainWindowBody"
     >
-      <DragDropContext
-        onDragEnd={handleDragEnd}
-      >
-        {aspectSlots}
-      </DragDropContext>
+      <AreTabsContractedContext.Provider value={areTabsContracted}>
+        <DragDropContext
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+        >
+          {aspectSlots}
+        </DragDropContext>
+      </AreTabsContractedContext.Provider>
     </This>
   )
 }

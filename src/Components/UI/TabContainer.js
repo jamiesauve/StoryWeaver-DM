@@ -31,6 +31,7 @@ const TabContainer = (props) => {
     >
       <ToggleButtonGroup
         activeOption={props.activeTab}
+        areTabsContracted={props.areTabsContracted}
         options={props.tabs} // label/value pairs
         usesDragAndDrop={props.usesDragAndDrop}
         setActiveOption={props.setActiveTab}
