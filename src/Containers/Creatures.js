@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import _ from 'lodash'
 
 import Section from '../Components/Layout/Section'
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
+
+import creatures from '../data/creatures'
 
 const This = styled.div`
   flex-grow: 1;
@@ -13,7 +16,25 @@ const This = styled.div`
   height: 100%;
 `
 
+const Creature = styled.div`
+  margin: 5px 0;
+`
+
 const Creatures = (props) => {
+  const {
+    activeLocation,
+  } = props
+
+  const filteredCreatures = !_.isEmpty(activeLocation)
+    ? _.filter(creatures, creature => _.includes(creature.terrain, activeLocation.name))
+    : creatures
+
+  const filteredCreatureStrings = _.map(filteredCreatures, creature => (
+    <Creature>
+      {`${creature.label} (${creature.location})`}
+    </Creature>
+  ))
+
   return (
     <This>
       <Section
@@ -22,7 +43,7 @@ const Creatures = (props) => {
         <ScrollableContainer
           className="scrollableContainer"
         >
-          Joblin the Goblin
+          {filteredCreatureStrings}
         </ScrollableContainer>
       </Section>
     </This>
