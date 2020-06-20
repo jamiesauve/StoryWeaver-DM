@@ -11,7 +11,7 @@ const This = styled.div`
 
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: normal;
 
   background: ${props => props.backgroundColor || colors.lightBackGround};
 
@@ -93,6 +93,8 @@ const ToggleButtonGroup = (props) => {
         >  
           {provided => (
             <OptionButton
+              className={"option"}
+            
               {...provided.draggableProps}
               {...provided.dragHandleProps} // handle to move the item with
               ref={provided.innerRef}
