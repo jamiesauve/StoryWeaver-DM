@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, } from 'react'
 import styled from 'styled-components'
 import colors from '../../data/colors'
 
@@ -81,7 +81,6 @@ const ToggleButtonGroup = (props) => {
   } = props.styles
 
   const generateOptions = (options) => {
-console.log('rerendering: areTabsContracted', props.areTabsContracted)
     return options.map((option, index) => (
       <Fragment 
         key = {option.value}

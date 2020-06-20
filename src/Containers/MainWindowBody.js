@@ -19,11 +19,6 @@ flex-grow: 1;
 `
 
 const MainWindowBody = (props) => {
-  const {
-    windowHeight
-  } = props
-
-  const [numberOfAspectSlots, /*setNumberOfAspectSlots*/] = useState(5)
   const [aspectSlots, setAspectSlots] = useState()
   const [areTabsContracted, setAreTabsContracted] = useState(false)
   const [currentPositionsArray, setCurrentPositionsArray] = useState([])
@@ -36,9 +31,7 @@ const MainWindowBody = (props) => {
       return aggr
     }, [])
     setCurrentPositionsArray(initialPositionsArray)
-  }, [
-    initialAspectsArray,
-  ])
+  }, [])
 
   useEffect(() => {
     const currentAspectSlots = populateAspectSlots(currentPositionsArray, initialAspectsArray)
