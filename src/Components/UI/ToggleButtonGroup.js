@@ -11,7 +11,6 @@ const This = styled.div`
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: normal;
 
   background: ${props => props.backgroundColor || colors.lightBackGround};

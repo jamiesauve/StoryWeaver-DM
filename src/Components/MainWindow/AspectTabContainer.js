@@ -49,6 +49,7 @@ const AspectTabContainer = (props) => {
         {!_.isEmpty(tabOptions)
           && (
             <Droppable
+              direction={"horizontal"}
               droppableId={props.aspectSlotId.toString()} // this prop must be a string
             >
               {provided => (
