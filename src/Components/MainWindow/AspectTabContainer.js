@@ -12,7 +12,7 @@ import colors from '../../data/colors'
 const This = styled.div``
 
 const AspectTabContainer = (props) => {
-  const [tabOptions, setTabOptions] = useState([])
+  const [tabOptions, setTabOptions] = useState(null)
 
   const areTabsContracted = useContext(AreTabsContractedContext)
   
@@ -41,37 +41,32 @@ const AspectTabContainer = (props) => {
     value: 'empty', 
   }]
 
-  // console.log(props.aspectSlotId, 
-  //   'has something in it:', !_.isEmpty(tabOptions))
-
   return (
     <This>
-        {!_.isEmpty(tabOptions)
-          && (
-            <Droppable
-              direction={"horizontal"}
-              droppableId={props.aspectSlotId.toString()} // this prop must be a string
+      {!_.isNull(tabOptions)
+        && <Droppable
+          direction={"horizontal"}
+          droppableId={props.aspectSlotId.toString()} // this prop must be a string
+        >
+          {provided => (
+            <div
+              {...provided.droppableProps}
+              ref={provided.innerRef}
             >
-              {provided => (
-                <div
-                  {...provided.droppableProps}
-                  ref={provided.innerRef}
-                >
-                  <TabContainer 
-                    activeTab={_.get(props.activeAspect, 'name', null)}
-                    areTabsContracted={areTabsContracted}
-                    borderColor={_.get(props.activeAspect, 'color', colors.darkGrey)}
-                    usesDragAndDrop={true}
-                    tabs={!_.isEmpty(tabOptions) ?  tabOptions : emptyTabOptions}
-                    setActiveTab={handleSetActiveTab}
-                  />
+              <TabContainer 
+                activeTab={_.get(props.activeAspect, 'name', null)}
+                areTabsContracted={areTabsContracted}
+                borderColor={_.get(props.activeAspect, 'color', colors.darkGrey)}
+                usesDragAndDrop={true}
+                tabs={!_.isEmpty(tabOptions) ?  tabOptions : emptyTabOptions}
+                setActiveTab={handleSetActiveTab}
+              />
 
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          )
-        }
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      }
     </This>
   )
 }
