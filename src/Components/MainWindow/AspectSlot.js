@@ -8,6 +8,7 @@ import Pane from './Pane'
 import AspectTabContainer from './AspectTabContainer'
 
 import { ActiveLocationContext, MainWindowBodyHeightContext } from '../../context/MainWindowContextProvider'
+import colors from '../../data/colors'
 
 const This = styled.div``
 
@@ -22,12 +23,12 @@ const AspectSlot = (props) => {
 
   useEffect(() => {
     setActiveAspect(aspects[0])
-    setActiveAspectComponent(aspects[0].component)
+    setActiveAspectComponent(_.get(aspects, 'component', null))
   }, [aspects])
 
   useEffect(() => {
     (!_.isNull(activeAspect))
-    && setActiveAspectComponent(activeAspect.component)
+    && setActiveAspectComponent(_.get(activeAspect, 'component', null))
   }, [activeAspect])
 
 
@@ -56,7 +57,7 @@ const AspectSlot = (props) => {
               <Pane
                 className="pane"
 
-                borderColor={activeAspect.color}
+                borderColor={_.get(activeAspect, 'color', colors.darkGrey)}
                 height={`${aspectHeight}px`} 
                 isBorderTopVisible={false}
               >

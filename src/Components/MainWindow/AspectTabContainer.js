@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import { Droppable } from 'react-beautiful-dnd'
 
 import TabContainer from '../UI/TabContainer'
+import colors from '../../data/colors'
 
 const This = styled.div``
 
@@ -23,31 +24,6 @@ const AspectTabContainer = (props) => {
     props.aspects,
     setTabOptions
   ])
-  
-  const handleDragEnd = (dropObject) => {
-    const {
-      destination,
-      draggableId,
-      source,
-    } = dropObject
-
-    if (!destination) return
-
-    if (
-      destination.droppableId === source.droppableId
-      && destination.index === source.index
-    ) {
-      return
-    }
-
-    const movedTab = _.find(tabOptions, {value: draggableId})
-
-    const newTabOptions = _.cloneDeep(tabOptions)
-    newTabOptions.splice(source.index, 1)
-    newTabOptions.splice(destination.index, 0, movedTab)
-
-    setTabOptions(newTabOptions)
-  }
 
   const handleSetActiveTab = (aspectName) => {
     const newActiveAspect = _.find(props.aspects, { name: aspectName })
@@ -57,9 +33,6 @@ const AspectTabContainer = (props) => {
 
   return (
     <This>
-      <DragDropContext
-        onDragEnd={handleDragEnd}
-      >
         <Droppable
           droppableId={props.aspectSlotId.toString()} // this prop must be a string
         >
@@ -69,8 +42,8 @@ const AspectTabContainer = (props) => {
               ref={provided.innerRef}
             >
               <TabContainer 
-                activeTab={props.activeAspect.name}
-                borderColor={props.activeAspect.color}
+                activeTab={_.get(props.activeAspect, 'name', null)}
+                borderColor={_.get(props.activeAspect, 'color', colors.darkGrey)}
                 usesDragAndDrop={true}
                 tabs={tabOptions}
                 setActiveTab={handleSetActiveTab}
@@ -80,7 +53,6 @@ const AspectTabContainer = (props) => {
             </div>
           )}
         </Droppable>
-      </DragDropContext>
     </This>
   )
 }
