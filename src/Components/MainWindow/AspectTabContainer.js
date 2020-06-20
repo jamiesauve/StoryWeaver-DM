@@ -31,28 +31,38 @@ const AspectTabContainer = (props) => {
     props.setActiveAspect(newActiveAspect)
   }
 
+  const emptyTabOptions = [{
+    color: colors.darkGrey,
+    label: '[empty]', 
+    value: 'empty', 
+  }]
+
   return (
     <This>
-        <Droppable
-          droppableId={props.aspectSlotId.toString()} // this prop must be a string
-        >
-          {provided => (
-            <div
-              {...provided.droppableProps}
-              ref={provided.innerRef}
+        {!_.isEmpty(tabOptions)
+          && (
+            <Droppable
+              droppableId={props.aspectSlotId.toString()} // this prop must be a string
             >
-              <TabContainer 
-                activeTab={_.get(props.activeAspect, 'name', null)}
-                borderColor={_.get(props.activeAspect, 'color', colors.darkGrey)}
-                usesDragAndDrop={true}
-                tabs={tabOptions}
-                setActiveTab={handleSetActiveTab}
-              />
+              {provided => (
+                <div
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                >
+                  <TabContainer 
+                    activeTab={_.get(props.activeAspect, 'name', null)}
+                    borderColor={_.get(props.activeAspect, 'color', colors.darkGrey)}
+                    usesDragAndDrop={true}
+                    tabs={!_.isEmpty(tabOptions) ?  tabOptions : emptyTabOptions}
+                    setActiveTab={handleSetActiveTab}
+                  />
 
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          )
+        }
     </This>
   )
 }
