@@ -2,6 +2,7 @@
 import Ambiences from '../Containers/Ambiences'
 import Creatures from '../Containers/Creatures'
 import Gameplay from '../Containers/Gameplay'
+import Items from '../Containers/Items'
 import Notes from '../Containers/Notes'
 import People from '../Containers/People'
 import Places from '../Containers/Places'
@@ -68,12 +69,12 @@ const Aspects = [
     label: "Crafting",
   },
   {
-    component: () => People,
-    color: colors.oceanBlue,
+    component: () => Items,
+    color: colors.exoticPink,
     defaultSlot: 3,
     defaultIndex: 1,
-    name: "item",
-    label: "Item",
+    name: "items",
+    label: "Items",
   },
   {
     component: () => Gameplay,
