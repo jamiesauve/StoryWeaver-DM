@@ -25,14 +25,19 @@ const This = styled.div`
 `
 
 const Crafting = (props) => {
-  const reagentsByTerrain = _.filter(reagents, reagent => 
-    (
+  const reagentsByTerrain = _.chain(reagents)
+    .filter(reagent => 
+      (
+        _.isEmpty(reagent.terrain) 
       _.isEmpty(reagent.terrain) 
-      || _.isEmpty(props.activeLocation)
+        _.isEmpty(reagent.terrain) 
+        || _.isEmpty(props.activeLocation)
+      )
+      ? true
+      : _.includes(reagent.terrain, props.activeLocation.name)
     )
-    ? true
-    : _.includes(reagent.terrain, props.activeLocation.name)
-  )
+    .sortBy('label')
+    .value()
 
   const drawers = reagentsByTerrain
   .map(reagent => ({
