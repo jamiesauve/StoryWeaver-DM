@@ -7,7 +7,13 @@ import Pane from './Pane'
 
 import AspectTabContainer from './AspectTabContainer'
 
-import { ActiveLocationContext, MainWindowBodyHeightContext } from '../../context/MainWindowContextProvider'
+import { 
+  ActiveLocationContext, 
+  ActiveLocationTypeContext,
+  LinkContext,
+  MainWindowBodyHeightContext 
+} from '../../context/MainWindowContextProvider'
+
 import colors from '../../data/colors'
 
 const This = styled.div``
@@ -33,6 +39,8 @@ const AspectSlot = (props) => {
 
 
   const activeLocation = useContext(ActiveLocationContext)
+  const activeLocationType = useContext(ActiveLocationTypeContext)
+  const currentLink = useContext(LinkContext)
   const windowHeight = useContext(MainWindowBodyHeightContext)
   // margin, border and padding on panes for both MainWindowHeader pane and the aspect one, plus the height of MainWindowHeader
   const mainWindowHeaderHeight = 138 
@@ -65,6 +73,8 @@ const AspectSlot = (props) => {
                   ActiveAspectComponent !== null
                   && <ActiveAspectComponent 
                     activeLocation={activeLocation}
+                    activeLocationType={activeLocationType}
+                    currentLink={currentLink}
                   />
                 }
               </Pane> 

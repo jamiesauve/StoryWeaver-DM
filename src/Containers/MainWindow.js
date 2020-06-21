@@ -35,6 +35,7 @@ const MainWindow = (props) => {
   return (
     <MainWindowContextProvider
       activeLocation={activeLocation}
+      activeLocationType={activeLocationType}
       windowHeight={windowHeight}
     >
       <This>
