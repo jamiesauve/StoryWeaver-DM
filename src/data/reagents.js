@@ -79,7 +79,7 @@ export default [
     ],
     value: [
       {
-        amount: 10,
+        amount: 3,
         unit: 'gp',
         partLabel: 'Root',
         partName: 'root'
@@ -166,7 +166,7 @@ export default [
         partName: 'limb',
       },
       {
-        amount: 15,
+        amount: 7,
         unit: 'gp',
         partLabel: 'Stave',
         partName: 'stave',
@@ -216,13 +216,13 @@ export default [
     ],
     value: [
       {
-        amount: 200,
+        amount: 5,
         unit: 'gp',
         partLabel: 'Fruit',
         partName: 'fruit',
       },
       {
-        amount: 20,
+        amount: 2,
         unit: 'gp',
         partLabel: 'Leaf',
         partName: 'leaf',
@@ -290,7 +290,7 @@ export default [
     ],
     value: [
       {
-        amount: 10,
+        amount: 2,
         unit: 'gp',
         partLabel: 'spine',
         partName: 'spine',
@@ -372,7 +372,7 @@ export default [
     ],
     value: [
       {
-        amount: 10,
+        amount: 1,
         unit: 'gp',
         partLabel: 'Pound',
         partName: 'pound',
@@ -489,7 +489,7 @@ export default [
     ],
     value: [
       {
-        amount: 5,
+        amount: 2,
         unit: 'gp',
         partLabel: 'Root',
         partName: 'root',
@@ -558,12 +558,159 @@ export default [
     ],
     value: [
       {
-        amount: 50,
+        amount: 5,
         unit: 'gp',
         partLabel: 'ounce of spores',
         partName: 'ounce-of-spores',
       },
     ],
+  },
+  {
+    label: "Bone Tree (Amagur)",
+    name: "bone-tree",
+    description: `A tree-sized, white, gnarled, plant. Has no leaves and looks like a dead tree. Very hard and heavy.`,
+    effects: ``,
+    identifyDC: 8,
+    location: `Sunless caves. Thrives on bioluminescence.`,
+    lore: `Not good for building since it deteriorates and crumbles when dead.`,
+    terrain: [
+      caves,
+    ],
+    type: "plant",
+    subTypes: [
+      "tree",
+    ],
+    uses: [],
+    value: [],
+  },
+  {
+    label: "Starflower",
+    name: "starflower",
+    description: `A tiny, thin plant with luminescent, pure white, starlike flowers.`,
+    effects: `A creature touching a starflower blossom that is still attached and alive can see the stars, no matter where they are.`,
+    identifyDC: 16,
+    location: `High on dry, rocky walls inside underground caves.`,
+    lore: `Valued for use in divination magic. It is said that some ancient culture planted Starflowers in many hidden places in the Underdark as a means of navigation.`,
+    terrain: [
+      caves,
+    ],
+    type: "plant",
+    subTypes: [
+      "flower",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+    ],
+    value: [
+      {
+        amount: 5,
+        unit: 'gp',
+        partLabel: 'dried flower',
+        partName: 'dried flower',
+      },
+    ],
+  },
+  {
+    label: "Silver Dust",
+    name: "Silver Dust",
+    description: `A tiny, luminescent moss.`,
+    effects: ``,
+    identifyDC: 13,
+    location: `Rock walls in lightless areas`,
+    lore: `Powdered for use as eyeshadow by dark elves for its sparkling, luminescent quality.`,
+    terrain: [
+      caves,
+    ],
+    type: "plant",
+    subTypes: [
+      "moss",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+      {
+        type: 'cosmetic',
+        partLabel: 'Plant',
+        partName: 'plant',
+        harvestDC: 6,
+        creation: {
+          label: 'Silver Dust Eyeshadow',
+          name: 'silver-dust-eyeshadow',
+        },
+      },
+    ],
+    value: [
+      {
+        amount: 5,
+        unit: 'gp',
+        partLabel: 'pound',
+        partName: 'pound',
+      },
+    ],
+  },
+  {
+    label: "Moon Blossom",
+    name: "moon-blossom",
+    description: `A small plant with silvery lobed leaves and pearly white flowers`,
+    effects: `A single drop of water is often in the middle of each blossom, and tastes sweet. If contaminated water is dripped into a flower, it is purified within one hour.`,
+    identifyDC: 13,
+    location: `Grows around water in lightless areas`,
+    lore: `Used in purification potions and magic.`,
+    terrain: [
+      caves,
+    ],
+    type: "plant",
+    subTypes: [
+      "flower",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+    ],
+    value: [
+      {
+        amount: 1,
+        unit: 'sp',
+        partLabel: 'ounce of flowers',
+        partName: 'ounce of flowers',
+      },
+    ],
+  },
+  {
+    label: "Silver Lace",
+    name: "silver-lace",
+    description: `A small plant with thin, serrated silver leaves`,
+    effects: ``,
+    identifyDC: 15,
+    location: `Grows around water in lightless areas`,
+    lore: ``,
+    terrain: [
+      caves,
+    ],
+    type: "plant",
+    subTypes: [
+      "small shrub",
+    ],
+    uses: [
+      // can be ingredient, eaten, salve, material component, gear
+    ],
+    value: [],
+  },
+  {
+    label: "Darkhorn",
+    name: "darkhorn",
+    description: `Small tapered tendrils standing upward, the mushroom is quite rigid, and the black exterior makes it difficult to see in the winding caverns of the Underdark. Has a slight musky aroma`,
+    effects: `A creature falling on a Darkhorn mushroom takes an additional 1d4 piercing damage from their fall. / Darkhorn smells wonderful if cooked, but contains sharp fibers that cause internal damage if eaten. A creature who consumes Darkhorn takes 2d4 piercing damage every hour for 8 hours.`,
+    identifyDC: 15,
+    location: `Grows in lightless places.`,
+    lore: `Dwarves add small chunks of the cap (carefully, so none gets out) to their ale while aging it to add flavor.`,
+    terrain: [
+      caves,
+    ],
+    type: "plant",
+    subTypes: [
+      "fungus",
+    ],
+    uses: [],
+    value: [],
   },
 ]
 
