@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const Pane = styled.div`
   display: flex;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Description from './Description'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div`
   flex-grow: 1;

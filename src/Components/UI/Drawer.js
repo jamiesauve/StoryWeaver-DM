@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import SectionTitle from '../styled/SectionTitle'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div`
   margin-top: 10px;

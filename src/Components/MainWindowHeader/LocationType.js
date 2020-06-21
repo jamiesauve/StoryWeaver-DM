@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ToggleButtonGroup from '../UI/ToggleButtonGroup'
 
-import locationTypeOptions from '../../data/locationTypeOptions'
+import locationTypeOptions from '../../data/generalData/locationTypeOptions'
 
 const This = styled.div`
   display: flex;

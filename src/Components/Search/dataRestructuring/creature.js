@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import abilityScores from '../../../data/abilityScores'
+import abilityScores from '../../../data/generalData/abilityScores'
 
 import getModifierFromAbilityScore from '../../../utils/getModifierFromAbilityScore'
 import toCapitalCase from '../../../utils/toCapitalCase'

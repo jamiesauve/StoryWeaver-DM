@@ -7,7 +7,7 @@ import BulletList from '../Stats/BulletList'
 import DisplayCard from '../styled/DisplayCard/Card'
 import Row from '../styled/DisplayCard/Row'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div``
 

@@ -11,7 +11,7 @@ import StatBox from '../Stats/StatBox'
 import Value from '../Stats/Value'
 import TerrainBreadCrumbs from '../Reagents/TerrainBreadCrumbs'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div`
   padding: 1px;

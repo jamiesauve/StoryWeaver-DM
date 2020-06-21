@@ -1,7 +1,7 @@
 import axios from 'axios'
 import _ from 'lodash'
 
-import searchCategories from '../data/searchCategories'
+import searchCategories from '../data/aspectData/search/searchCategories'
 
 const baseURL = `http://www.dnd5eapi.co/api`
 

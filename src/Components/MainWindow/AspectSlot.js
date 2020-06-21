@@ -14,7 +14,7 @@ import {
   MainWindowBodyHeightContext 
 } from '../../context/MainWindowContextProvider'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div``
 

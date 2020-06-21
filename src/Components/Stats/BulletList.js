@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import colors from '../../data/colors'
-import sizes from '../../data/sizes'
+import colors from '../../data/styles/colors'
+import sizes from '../../data/styles/sizes'
 
 const This = styled.div`
   flex-grow: 1;

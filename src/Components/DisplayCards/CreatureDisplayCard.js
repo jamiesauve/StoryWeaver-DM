@@ -20,7 +20,7 @@ import Row from '../styled/DisplayCard/Row'
 import Title from '../styled/DisplayCard/Title'
 import TitleDetail from '../styled/DisplayCard/TitleDetail'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 import BulletList from '../Stats/BulletList'
 
 const This = styled.div``

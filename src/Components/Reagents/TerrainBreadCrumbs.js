@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import terrainTypes from '../../data/terrainTypes'
+import terrainTypes from '../../data/generalData/terrainTypes'
 
 import toCapitalCase from '../../utils/toCapitalCase'
 
 import StatBox from '../Stats/StatBox'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div`
   display: flex;

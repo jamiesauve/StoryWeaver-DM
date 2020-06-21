@@ -10,8 +10,8 @@ import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
 import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 
-import terrainTypes from '../data/terrainTypes'
-import reagents from '../data/reagents'
+import terrainTypes from '../data/generalData/terrainTypes'
+import reagents from '../data/aspectData/crafting/reagents'
 
 const This = styled.div`
   flex-grow: 1;

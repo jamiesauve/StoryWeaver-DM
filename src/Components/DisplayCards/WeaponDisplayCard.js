@@ -16,7 +16,7 @@ import Row from '../styled/DisplayCard/Row'
 import Title from '../styled/DisplayCard/Title'
 import TitleDetail from '../styled/DisplayCard/TitleDetail'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div``
 

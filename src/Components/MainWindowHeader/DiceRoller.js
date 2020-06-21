@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import generateRoll from '../../utils/generateRoll'
 import { sanitizeNumeric } from '../../utils/sanitize'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div`
   display: flex;

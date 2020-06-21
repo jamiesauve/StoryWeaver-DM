@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 import MainWindow from './Containers/MainWindow'
 
-import colors from './data/colors'
-import sizes from './data/sizes'
+import colors from './data/styles/colors'
+import sizes from './data/styles/sizes'
 
 const This = styled.div`
   width: 100vw;

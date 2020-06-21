@@ -2,7 +2,7 @@ import React, { createRef } from 'react'
 import styled from 'styled-components'
 
 import ToggleButtonGroup from './ToggleButtonGroup'
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div`
   margin: 5px 5px -8px 5px;

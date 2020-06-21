@@ -1,5 +1,5 @@
-import terrainTypes from './terrainTypes'
-import colors from './colors'
+import terrainTypes from '../../terrainTypes'
+import colors from '../../styles/colors'
 
 export default {
   'Battle': {

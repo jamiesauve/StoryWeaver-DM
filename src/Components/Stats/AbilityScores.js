@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import StatBox from './StatBox'
 
-import abilityScores from '../../data/abilityScores'
+import abilityScores from '../../data/generalData/abilityScores'
 
 const This = styled.div`
   display: flex;

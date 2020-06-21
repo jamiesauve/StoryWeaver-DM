@@ -9,7 +9,7 @@ import Places from '../Containers/Places'
 import Crafting from '../Containers/Crafting'
 import Search from '../Containers/Search'
 
-import colors from '../data/colors'
+import colors from '../data/styles/colors'
 
 const Aspects = [
   {

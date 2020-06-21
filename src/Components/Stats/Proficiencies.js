@@ -5,7 +5,7 @@ import _ from 'lodash'
 import BulletList from './BulletList'
 import DoubleBulletList from './DoubleBulletList'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div`
   flex-grow: 1;

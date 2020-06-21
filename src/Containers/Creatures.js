@@ -5,7 +5,7 @@ import _ from 'lodash'
 import Section from '../Components/Layout/Section'
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
-import creatures from '../data/creatures'
+import creatures from '../data/aspectData/creatures/creatures'
 
 const This = styled.div`
   flex-grow: 1;

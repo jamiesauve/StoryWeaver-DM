@@ -1,4 +1,4 @@
-import terrainTypes from './terrainTypes'
+import terrainTypes from '../../generalData/terrainTypes'
 
 const [
   caves,

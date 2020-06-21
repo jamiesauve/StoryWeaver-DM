@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import terrainTypes from './terrainTypes'
+import terrainTypes from '../../generalData/terrainTypes'
 
 const [
   caves,
@@ -38,13 +38,55 @@ const [
  * 5 - standing water (rice field, swamp)
  * 6 - underwater
  * 
- * identifyDC: The is the nature roll to know what the plant is. The creature must have a reasonable reason to recognize it to attempt this. 
+ * identifyDC: The is the nature roll to know what the plant is and what it can be used for. A creature who knows
+ * what they are looking for usually doesn't need to do this.
  * 
- * harvestDC: The is the nature roll to harvest the reagent, and reflects the skill necessary to harvest the reagent assuming the creature has
- * the correct tools to do so. If it is a plant, this will be a general reference, but particular parts of the plant (see the 'uses' section)
- * may have a different harvestDC.
+ * harvestDC: The is an INT(nature) or straight DEX roll to harvest the reagent. On a failure,
+ * the reagent is unusable, and the creature may suffer the harvestFailEffect.
  */
 
+ /**
+  * units: default is 1 oz
+  * 
+  * types: plant: [
+  *   tree,
+  *   shrub,
+  *   herbaceous,
+  *   vine,
+  *   fungus,
+  *   aquatic,
+  *   reed,
+  *   grass,
+  *   other
+  * ], 
+  * mineral: [
+  *   metal,
+  *   gem,
+  *   other
+  * ], 
+  * creature: [
+  *   humanoid,
+  *   beast,
+  *   fish,
+  *   bird,
+  *   reptile,
+  *   insect,
+  *   shellfish,
+  *   amphibian,
+  *   monster,
+  *   other
+  * ],
+  * other
+  * uses: 
+  *   component, 
+  *   medicine, 
+  *   gear, 
+  *   item, 
+  *   consumable, 
+  *   cosmetic, 
+  *   poison,
+  *   other
+  */
 
 export default [
   {

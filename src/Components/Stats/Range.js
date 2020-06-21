@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import StatBox from './StatBox'
 
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 const This = styled.div`
   display: flex;

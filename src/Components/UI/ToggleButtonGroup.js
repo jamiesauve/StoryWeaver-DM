@@ -1,6 +1,6 @@
 import React, { Fragment, } from 'react'
 import styled from 'styled-components'
-import colors from '../../data/colors'
+import colors from '../../data/styles/colors'
 
 import {Draggable } from 'react-beautiful-dnd'
 

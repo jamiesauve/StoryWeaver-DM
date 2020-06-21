@@ -1,6 +1,6 @@
-import _ from 'lodash'
+import _ from './node_modules/lodash'
 
-import importedTerrainTypes from './terrainTypes'
+import importedTerrainTypes from '../../terrainTypes'
 import tracks from './environmentTracks'
 
 export default (activeLocation) => {

@@ -5,8 +5,8 @@ import DiceRoller from '../Components/MainWindowHeader/DiceRoller'
 import LocationType from '../Components/MainWindowHeader/LocationType'
 import LocationDropdown from '../Components/MainWindowHeader/LocationDropdown'
 
-import places from '../data/places'
-import terrainTypes from '../data/terrainTypes'
+import places from '../data/generalData/places'
+import terrainTypes from '../data/generalData/terrainTypes'
 
 
 const This = styled.div`
