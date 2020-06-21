@@ -72,7 +72,7 @@ export default [
         harvestDC: 13,
         creation: {
           type: 'poison',
-          name: 'blackroot-poison',
+          name: 'blackroot-poison', // maps to recipe.name
           label: 'Blackroot Poison',
         },
       },
@@ -713,9 +713,3 @@ export default [
     value: [],
   },
 ]
-
-
-
-
-// blackroot poison = Grind blackroot root into powder and distill in mammal blood for six weeks. Injury - DC13 constitution for 1d6 turns. On each fail, target is paralyzed until the end of their next turn.
-// value - 500GP / dose
