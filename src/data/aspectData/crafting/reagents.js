@@ -1,5 +1,7 @@
 import _ from 'lodash'
 import terrainTypes from '../../generalData/terrainTypes'
+import reagentTypes from './reagentTypes'
+import recipeTypes from './recipeTypes'
 
 const [
   caves,
@@ -18,75 +20,36 @@ const [
   exotic,
 ] = _.map(terrainTypes, (terrainType) => terrainType.name)
 
+const {
+  plant,
+  mineral,
+  creature,
+  otherReagentType,
+} = reagentTypes
+
+const {
+  consumable,
+  cosmetic,
+  gear,
+  item,
+  medicine,
+  poison,
+  other,
+} = recipeTypes
+
+// most reagents aren't a recipe on their own - use this to denote that
+// a reagent is a component used in making a recipe.
+const component = "component"
+
 /**
- * light levels:
- * 0 - total darkness
- * 1 - dim light (Underdark)
- * 2 - total shade (jungle floor)
- * 3 - mostly shade (forest floor)
- * 4 - half sun (edge of a field)
- * 5 - mostly sun (field in an average climate)
- * 6 - full sun (field in a hot climate)
- * 7 - extreme sun (desert, no cover)
- * 
- * moisture levels: 
- * 0 - no moisture
- * 1 - dry (desert)
- * 2 - mostly dry (plains)
- * 3 - moderate water (field in an average climate)
- * 4 - high water (field in a wet climate)
- * 5 - standing water (rice field, swamp)
- * 6 - underwater
- * 
  * identifyDC: The is the nature roll to know what the plant is and what it can be used for. A creature who knows
  * what they are looking for usually doesn't need to do this.
  * 
  * harvestDC: The is an INT(nature) or straight DEX roll to harvest the reagent. On a failure,
  * the reagent is unusable, and the creature may suffer the harvestFailEffect.
+ * units: default is 1 oz
  */
-
- /**
-  * units: default is 1 oz
-  * 
-  * types: plant: [
-  *   tree,
-  *   shrub,
-  *   herbaceous,
-  *   vine,
-  *   fungus,
-  *   aquatic,
-  *   reed,
-  *   grass,
-  *   other
-  * ], 
-  * mineral: [
-  *   metal,
-  *   gem,
-  *   other
-  * ], 
-  * creature: [
-  *   humanoid,
-  *   beast,
-  *   fish,
-  *   bird,
-  *   reptile,
-  *   insect,
-  *   shellfish,
-  *   amphibian,
-  *   monster,
-  *   other
-  * ],
-  * other
-  * uses: 
-  *   component, 
-  *   medicine, 
-  *   gear, 
-  *   item, 
-  *   consumable, 
-  *   cosmetic, 
-  *   poison,
-  *   other
-  */
+ 
 
 export default [
   {
