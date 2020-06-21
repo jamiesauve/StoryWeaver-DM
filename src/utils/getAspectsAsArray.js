@@ -76,14 +76,14 @@ const Aspects = [
     name: "items",
     label: "Items",
   },
-  {
-    component: () => Gameplay,
-    color: colors.battleRed,
-    defaultSlot: 4,
-    defaultIndex: 0,
-    name: "gameplay",
-    label: "Gameplay",
-  },
+  // {
+  //   component: () => Gameplay,
+  //   color: colors.battleRed,
+  //   defaultSlot: 4,
+  //   defaultIndex: 0,
+  //   name: "gameplay",
+  //   label: "Gameplay",
+  // },
 ]
 
 export default Aspects
