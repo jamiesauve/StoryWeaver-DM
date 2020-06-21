@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import Section from '../Components/Layout/Section'
+import Divider from '../Components/styled/Divider'
 
 import Dresser from '../Components/UI/Dresser'
 
@@ -12,6 +13,7 @@ import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 
 import terrainTypes from '../data/terrainTypes'
 import reagents from '../data/reagents'
+import recipes from '../data/recipes'
 
 import colors from '../data/colors'
 
@@ -37,7 +39,7 @@ const Crafting = (props) => {
     .sortBy('label')
     .value()
 
-  const drawers = reagentsByTerrain
+  const reagentDrawers = reagentsByTerrain
   .map(reagent => ({
     title: reagent.label,
     titleColor: _.get(_.find(terrainTypes, {name: props.activeLocation.name}), 'color', colors.forestGreen), // TODO: make the color match the type of plant somehow
@@ -46,19 +48,47 @@ const Crafting = (props) => {
     />,
   }))
 
+  const recipeDrawers = recipes
+  .map(recipe => ({
+    title: recipe.label,
+    titleColor: _.get(_.find(terrainTypes, {name: props.activeLocation.name}), 'color', colors.swampGreen), // TODO: make the color match the type of plant somehow
+    content: () => recipe.description,
+  }))
+
   return (
     <This
     className="crafting"
     >
       <Section
         className="section"
+        height={"50%"}
+        title="Reagents"
       >
         <ScrollableContainer
           className="scrollableContainer"
         >
           <Dresser 
             className="dresser"
-            drawers={drawers}
+            drawers={reagentDrawers}
+            hasToggleAllLink
+            initiallyExpanded={false}
+          />
+        </ScrollableContainer>
+      </Section>
+
+      <Divider />
+
+      <Section
+        className="section"
+        height={"50%"}
+        title="Recipes"
+      >
+        <ScrollableContainer
+          className="scrollableContainer"
+        >
+          <Dresser 
+            className="dresser"
+            drawers={recipeDrawers}
             hasToggleAllLink
             initiallyExpanded={false}
           />
