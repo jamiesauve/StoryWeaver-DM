@@ -29,8 +29,6 @@ const Crafting = (props) => {
     .filter(reagent => 
       (
         _.isEmpty(reagent.terrain) 
-      _.isEmpty(reagent.terrain) 
-        _.isEmpty(reagent.terrain) 
         || _.isEmpty(props.activeLocation)
       )
       ? true
