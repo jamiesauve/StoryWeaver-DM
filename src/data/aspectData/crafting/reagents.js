@@ -20,22 +20,22 @@ const [
   exotic,
 ] = _.map(terrainTypes, (terrainType) => terrainType.name)
 
-const {
-  plant,
-  mineral,
-  creature,
-  otherReagentType,
-} = reagentTypes
+// const {
+//   plant,
+//   mineral,
+//   creature,
+//   otherReagentType,
+// } = reagentTypes
 
-const {
-  consumable,
-  cosmetic,
-  gear,
-  item,
-  medicine,
-  poison,
-  other,
-} = recipeTypes
+// const {
+//   consumable,
+//   cosmetic,
+//   gear,
+//   item,
+//   medicine,
+//   poison,
+//   other,
+// } = recipeTypes
 
 // most reagents aren't a recipe on their own - use this to denote that
 // a reagent is a component used in making a recipe.
@@ -64,11 +64,11 @@ export default [
     terrain: [
       caves,
     ],
-    type: plant.vine,
+    type: reagentTypes.plant.vine,
     uses: [
       // can be ingredient, eaten, salve, material component, 
       {
-        type: 'ingredient',
+        type: component,
         partLabel: 'Root',
         partName: 'root',
         harvestDC: 13,
@@ -102,15 +102,15 @@ export default [
       jungle,
       swamp,
     ],
-    type: plant.fungus,
+    type: reagentTypes.plant.fungus,
     uses: [
       // can be ingredient, eaten, salve, material component, 
       {
-        type: 'ingredient',
+        type: component,
         partLabel: 'Cap',
         partName: 'cap',
         creation: {
-          type: 'beverage',
+          type: consumable,
           name: 'toadstool-ale',
           label: 'Toadstool Ale',
         },
@@ -142,7 +142,7 @@ export default [
       plains,
       village,
     ],
-    type: plant.tree,
+    type: reagentTypes.plant.tree,
     uses: [
       // can be ingredient, eaten, salve, material component, 
       {
@@ -180,7 +180,7 @@ export default [
     terrain: [
       exotic,
     ],
-    type: plant.herbaceous,
+    type: reagentTypes.plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -233,7 +233,7 @@ export default [
     terrain: [
       exotic,
     ],
-    type: plant.aquatic,
+    type: reagentTypes.plant.aquatic,
     uses: [],
     value: [],
   },
@@ -301,11 +301,11 @@ export default [
     terrain: [
       swamp,
     ],
-    type: plant.shrub,
+    type: reagentTypes.plant.shrub,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
-        type: 'ingredient',
+        type: component,
         partLabel: 'Root',
         partName: 'root',
         harvestDC: 5,
@@ -336,18 +336,18 @@ export default [
     terrain: [
       swamp,
     ],
-    type: plant.herbaceous,
+    type: reagentTypes.plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
-        type: 'ingredient',
+        type: component,
         partLabel: 'Fruit',
         partName: 'fruit',
         harvestDC: 2,
         creation: {
           label: 'Blackcorn Whiskey',
           name: 'blackcorn-whiskey',
-          type: 'beverage',
+          type: consumable,
         },
       }, 
     ],
@@ -371,18 +371,18 @@ export default [
     terrain: [
       swamp,
     ],
-    type: plant.aquatic,
+    type: reagentTypes.plant.aquatic,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
-        type: 'ingredient',
+        type: component,
         partLabel: 'Whole',
         partName: 'whole',
         harvestDC: 5,
         creation: {
           label: 'Bloodpurge Tincture',
           name: 'bloodpurge-tincture',
-          type: 'potion',
+          type: consumable,
         },
       }, 
     ],
@@ -414,11 +414,11 @@ export default [
       village,
 
     ],
-    type: plant.herbaceous,
+    type: reagentTypes.plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
-        type: 'smoked',
+        type: consumable, // smoked
         partLabel: 'Leaf',
         partName: 'leaf',
         harvestDC: 2,
@@ -445,7 +445,7 @@ export default [
       swamp,
 
     ],
-    type:plant.aquatic,
+    type:reagentTypes.plant.aquatic,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -480,7 +480,7 @@ export default [
       swamp,
 
     ],
-    type: plant.reed,
+    type: reagentTypes.plant.reed,
     uses: [],
     value: [],
   },
@@ -496,7 +496,7 @@ export default [
       caves,
 
     ],
-    type: plant.fungus,
+    type: reagentTypes.plant.fungus,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -511,7 +511,7 @@ export default [
         },
       },
       {
-        type: 'ingredient',
+        type: component,
         partLabel: 'Spores',
         partName: 'spores',
         harvestDC: 17,
@@ -542,7 +542,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: plant.tree,
+    type: reagentTypes.plant.tree,
     uses: [],
     value: [],
   },
@@ -557,7 +557,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: plant.herbaceous,
+    type: reagentTypes.plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
     ],
@@ -581,7 +581,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: plant.fungus,
+    type: reagentTypes.plant.fungus,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -615,7 +615,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: plant.herbaceous,
+    type: reagentTypes.plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
     ],
@@ -639,7 +639,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: plant.shrub,
+    type: reagentTypes.plant.shrub,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
     ],
@@ -656,7 +656,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: plant.fungus,
+    type: reagentTypes.plant.fungus,
     uses: [],
     value: [],
   },
