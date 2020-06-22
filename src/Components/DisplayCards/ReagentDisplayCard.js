@@ -35,7 +35,7 @@ const ReagentDisplayCard = (props) => {
         padding="5px"
       >
         <TitleDetail>
-          {reagent.type}{reagent.subTypes ? ` (${_.join(reagent.subTypes, ', ')})` : ``}
+          {reagent.type.mainType}{reagent.type.subType ? ` (${reagent.type.subType})` : ``}
         </TitleDetail>
           
         <VerticalList>

@@ -64,10 +64,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: "plant",
-    subTypes: [
-      "vine",
-    ],
+    type: plant.vine,
     uses: [
       // can be ingredient, eaten, salve, material component, 
       {
@@ -105,10 +102,7 @@ export default [
       jungle,
       swamp,
     ],
-    type: "plant",
-    subTypes: [
-      "mushroom",
-    ],
+    type: plant.fungus,
     uses: [
       // can be ingredient, eaten, salve, material component, 
       {
@@ -148,10 +142,7 @@ export default [
       plains,
       village,
     ],
-    type: "plant",
-    subTypes: [
-      "tree",
-    ],
+    type: plant.tree,
     uses: [
       // can be ingredient, eaten, salve, material component, 
       {
@@ -189,10 +180,7 @@ export default [
     terrain: [
       exotic,
     ],
-    type: "plant",
-    subTypes: [
-      "flax",
-    ],
+    type: plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -245,10 +233,7 @@ export default [
     terrain: [
       exotic,
     ],
-    type: "plant",
-    subTypes: [
-      "aquatic",
-    ],
+    type: plant.aquatic,
     uses: [],
     value: [],
   },
@@ -263,10 +248,7 @@ export default [
     terrain: [
       exotic,
     ],
-    type: "animal",
-    subTypes: [
-      "shellfish",
-    ],
+    type: creature.shellfish,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -319,10 +301,7 @@ export default [
     terrain: [
       swamp,
     ],
-    type: "plant",
-    subTypes: [
-      "shrub",
-    ],
+    type: plant.shrub,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -357,10 +336,7 @@ export default [
     terrain: [
       swamp,
     ],
-    type: "plant",
-    subTypes: [
-      "singlestem",
-    ],
+    type: plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -395,10 +371,7 @@ export default [
     terrain: [
       swamp,
     ],
-    type: "plant",
-    subTypes: [
-      "aquatic",
-    ],
+    type: plant.aquatic,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -441,10 +414,7 @@ export default [
       village,
 
     ],
-    type: "plant",
-    subTypes: [
-      "mound",
-    ],
+    type: plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -475,10 +445,7 @@ export default [
       swamp,
 
     ],
-    type: "plant",
-    subTypes: [
-      "aquatic",
-    ],
+    type:plant.aquatic,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -513,10 +480,7 @@ export default [
       swamp,
 
     ],
-    type: "plant",
-    subTypes: [
-      "reed",
-    ],
+    type: plant.reed,
     uses: [],
     value: [],
   },
@@ -532,10 +496,7 @@ export default [
       caves,
 
     ],
-    type: "plant",
-    subTypes: [
-      "fungus",
-    ],
+    type: plant.fungus,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -581,10 +542,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: "plant",
-    subTypes: [
-      "tree",
-    ],
+    type: plant.tree,
     uses: [],
     value: [],
   },
@@ -599,10 +557,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: "plant",
-    subTypes: [
-      "flower",
-    ],
+    type: plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
     ],
@@ -626,10 +581,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: "plant",
-    subTypes: [
-      "moss",
-    ],
+    type: plant.fungus,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
       {
@@ -663,10 +615,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: "plant",
-    subTypes: [
-      "flower",
-    ],
+    type: plant.herbaceous,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
     ],
@@ -690,10 +639,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: "plant",
-    subTypes: [
-      "small shrub",
-    ],
+    type: plant.shrub,
     uses: [
       // can be ingredient, eaten, salve, material component, gear
     ],
@@ -710,10 +656,7 @@ export default [
     terrain: [
       caves,
     ],
-    type: "plant",
-    subTypes: [
-      "fungus",
-    ],
+    type: plant.fungus,
     uses: [],
     value: [],
   },
