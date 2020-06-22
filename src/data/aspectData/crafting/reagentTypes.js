@@ -3,11 +3,13 @@ import _ from 'lodash'
 const reagentTypes = {
   plant: [
     "aquatic",
+    "cactus",
     "fungus",
     "grass",
     "herbaceous",
     "reed",
     "shrub",
+    "succulent",
     "tree",
     "vine",
     "other",
