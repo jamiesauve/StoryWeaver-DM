@@ -29,6 +29,7 @@ export default {
 
   // text
   lightGrey: "#ddd",
+  mediumGrey: "#bbb",
   darkGrey: "#777",
   darkText: "#333",
 
