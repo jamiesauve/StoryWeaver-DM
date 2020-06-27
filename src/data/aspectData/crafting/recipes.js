@@ -49,6 +49,9 @@ const recipes = [
       unit: moneyUnits.gp,
     },
   },
+  // potion-of-orientation
+  // silver-dust-eyeshadow
+  // draught-of-death
 ]
 
 export default recipes

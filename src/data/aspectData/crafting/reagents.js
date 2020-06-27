@@ -485,125 +485,134 @@ export default [
   //   value: [],
   // },
   // {
-  //   label: "Wipplecap",
-  //   name: "wipplecap",
-  //   description: `A 1-2 foot tall mushroom. Looks like a rich brown morel.`,
-  //   effects: `If jarred or knocked over, it releases a cloud of poisonous spores (5-10 foot radius). If inhaled, a creature takes 2d6 poison damage. This damage repeats at the start of each of its turns. If not in the poisoned area anymore, a poisoned creature can make a DC13 Constitution saving throw to reduce the damage by 1d6. This resets if the creature inhales any more spores.`,
-  //   identifyDC: 11,
-  //   location: `Dry, especially dark areas`,
-  //   lore: `Was used as a battlefield poison by the Durukhaaz dwarves to repel the Black Shields when besieged.`,
-  //   terrain: [
-  //     caves,
+  // {
+ 
+  {
+    label: "Wipplecap",
+    name: "wipplecap",
+    type: reagentTypes.plant.fungus,
 
-  //   ],
-  //   type: reagentTypes.plant.fungus,
-  //   uses: [
-  //     // can be ingredient, eaten, salve, material component, gear
-  //     {
-  //       type: 'poison',
-  //       partLabel: 'Spores',
-  //       partName: 'spores',
-  //       harvestDC: 17,
-  //       recipe: {
-  //         label: 'Wipplecap Spores',
-  //         name: 'wipplecap-spores',
-  //         poisonMechanism: 'inhaled',
-  //       },
-  //     },
-  //     {
-  //       type: component,
-  //       partLabel: 'Spores',
-  //       partName: 'spores',
-  //       harvestDC: 17,
-  //       recipe: {
-  //         label: 'Wipplecap Poison',
-  //         name: 'wipplecap-poison',
-  //         type: 'poison',
-  //       },
-  //     }, 
-  //   ],
-  //   value: [
-  //     {
-  //       amount: 5,
-  //       unit: 'gp',
-  //       partLabel: 'ounce of spores',
-  //       partName: 'ounce-of-spores',
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: "Bone Tree (Amagur)",
-  //   name: "bone-tree",
-  //   description: `A tree-sized, white, gnarled, plant. Has no leaves and looks like a dead tree. Very hard and heavy.`,
-  //   effects: ``,
-  //   identifyDC: 8,
-  //   location: `Sunless caves. Thrives on bioluminescence.`,
-  //   lore: `Not good for building since it deteriorates and crumbles when dead.`,
-  //   terrain: [
-  //     caves,
-  //   ],
-  //   type: reagentTypes.plant.tree,
-  //   uses: [],
-  //   value: [],
-  // },
-  // {
-  //   label: "Starflower",
-  //   name: "starflower",
-  //   description: `A tiny, thin plant with luminescent, pure white, starlike flowers.`,
-  //   effects: `A creature touching a starflower blossom that is still attached and alive can see the stars, no matter where they are.`,
-  //   identifyDC: 16,
-  //   location: `High on dry, rocky walls inside underground caves.`,
-  //   lore: `Valued for use in divination magic. It is said that some ancient culture planted Starflowers in many hidden places in the Underdark as a means of navigation.`,
-  //   terrain: [
-  //     caves,
-  //   ],
-  //   type: reagentTypes.plant.herbaceous,
-  //   uses: [
-  //     // can be ingredient, eaten, salve, material component, gear
-  //   ],
-  //   value: [
-  //     {
-  //       amount: 5,
-  //       unit: 'gp',
-  //       partLabel: 'dried flower',
-  //       partName: 'dried flower',
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: "Silver Dust",
-  //   name: "Silver Dust",
-  //   description: `A tiny, luminescent moss.`,
-  //   effects: ``,
-  //   identifyDC: 13,
-  //   location: `Rock walls in lightless areas`,
-  //   lore: `Powdered for use as eyeshadow by dark elves for its sparkling, luminescent quality.`,
-  //   terrain: [
-  //     caves,
-  //   ],
-  //   type: reagentTypes.plant.fungus,
-  //   uses: [
-  //     // can be ingredient, eaten, salve, material component, gear
-  //     {
-  //       type: 'cosmetic',
-  //       partLabel: 'Plant',
-  //       partName: 'plant',
-  //       harvestDC: 6,
-  //       recipe: {
-  //         label: 'Silver Dust Eyeshadow',
-  //         name: 'silver-dust-eyeshadow',
-  //       },
-  //     },
-  //   ],
-  //   value: [
-  //     {
-  //       amount: 5,
-  //       unit: 'gp',
-  //       partLabel: 'pound',
-  //       partName: 'pound',
-  //     },
-  //   ],
-  // },
+    description: `A 1-2 foot tall mushroom. Looks like a rich brown morel.`,
+    effects: [
+      `If jarred or knocked over, it releases a cloud of poisonous spores (5-10 foot radius). If inhaled, a creature takes 2d6 poison damage. This damage repeats at the start of each of its turns. If not in the poisoned area anymore, a poisoned creature can make a DC13 Constitution saving throw to reduce the damage by 1d6. This resets if the creature inhales any more spores.`,
+    ],
+    location: `Dry, lightless areas`,
+    lore: [
+      `Was used as a battlefield poison by the Durukhaaz dwarves to repel the Black Shields when besieged.`,
+    ],
+
+    terrain: [
+      caves,
+    ],
+
+    harvesting: [
+      {
+        reagentPart: plantParts.spores,
+        harvestDC: 17,
+        onHarvestFailure: `see effect`,
+        recipes: [{
+          type: recipeTypes.poison.ingested,
+          name: 'Draught of Death',
+          label: 'draught-of-death',
+        }],
+        simpleUses: [
+          recipeTypes.poison.inhaled,
+        ],
+        value: {
+          amount: 5,
+          unit: moneyUnits.gp,
+        },
+      },
+    ]
+  },
+  {
+    label: "Bone Tree (Amagur)",
+    name: "bone-tree",
+    type: reagentTypes.plant.tree,
+
+    description: `A tree-sized, white, gnarled, plant. Has no leaves and looks like a dead tree. Very hard and heavy.`,
+    effects: [],
+    location: `Sunless caves. Thrives on bioluminescence.`,
+    lore: [
+      `Not good for building since it deteriorates and crumbles when dead.`,
+    ],
+
+    terrain: [
+      caves,
+    ],
+
+    harvesting: [],
+  },
+  {
+    label: "Starflower",
+    name: "starflower",
+    type: reagentTypes.plant.herbaceous,
+
+    description: `A tiny, thin plant with luminescent, pure white, starlike flowers.`,
+    effects: [
+      `A creature touching a starflower blossom that is still attached and alive can see the stars, no matter where they are.`,
+    ],
+    location: `High on dry, rocky walls inside underground caves.`,
+    lore: [
+      `Valued for use in divination magic. It is said that some ancient culture planted Starflowers in many hidden places in the Underdark as a means of navigation.`,
+    ],
+
+    terrain: [
+      caves,
+    ],
+
+    harvesting: [
+      {
+        reagentPart: plantParts.flower,
+        harvestDC: 7,
+        onHarvestFailure: ``,
+        recipes: [{
+          type: recipeTypes.consumable.potion,
+          name: 'Potion of Orientation',
+          label: 'potion-of-orientation',
+        }],
+        simpleUses: [],
+        value: {
+          amount: 5,
+          unit: moneyUnits.gp,
+          amountOfReagent: "flower",
+        },
+      },
+    ]
+  },
+  {
+    label: "Silver Dust",
+    name: "silver-dust",
+    type: reagentTypes.plant.moss,
+
+    description: `A tiny, luminescent moss.`,
+    effects: [],
+    location: `Grows on rock walls in lightless areas`,
+    lore: [
+      `Powdered for use as eyeshadow by dark elves for its sparkling, luminescent quality.`,
+    ],
+
+    terrain: [
+      caves,
+    ],
+    harvesting: [
+      {
+        reagentPart: plantParts.whole,
+        harvestDC: 3,
+        onHarvestFailure: ``,
+        recipes: [{
+          type: recipeTypes.cosmetic.makeup,
+          name: 'Silver Dust Eyeshadow',
+          label: 'silver-dust-eyeshadow',
+        }],
+        simpleUses: [],
+        value: {
+          amount: 4,
+          unit: moneyUnits.sp,
+        },
+      },
+    ]
+  },
   {
     label: "Moon Blossom",
     name: "moon-blossom",
