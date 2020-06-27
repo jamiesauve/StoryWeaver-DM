@@ -13,7 +13,7 @@ const This = styled.div`
 
 const Senses = (props) => {
   const {
-    data: senses,
+    senses,
   } = props
 
   return (
@@ -21,6 +21,7 @@ const Senses = (props) => {
       {_.map(senses, sense => (
         <StatBox
           borderColor={colors.exploringTeal}
+          key={sense.name}
           label={sense.name}
           value={`${sense.value}${!_.isNull(sense.unit) ? sense.unit : ``}`}
         />

@@ -117,13 +117,13 @@ const CreatureDisplayCard = (props) => {
             flexDirection="row"
           >
             <Senses
-              data={senses}
+              senses={senses}
             />
 
             <Filler />
 
             <Speed
-              data={speed}
+              travelMethods={speed}
             />
           </ScrollableContainer>
         </Row>
@@ -131,7 +131,7 @@ const CreatureDisplayCard = (props) => {
         {languages 
           && <Row>
             <Languages
-              data={languages}
+              languages={languages}
             />
           </Row>
         }
@@ -139,14 +139,14 @@ const CreatureDisplayCard = (props) => {
         {!_.isEmpty(proficiencies)
           && <Row>
             <Proficiencies
-              data={proficiencies}
+              proficiencies={proficiencies}
             />
           </Row>  
         }
 
         <Row>
           <AbilityScores
-            data={abilityScores}
+            abilityScores={abilityScores}
           />
         </Row>
 

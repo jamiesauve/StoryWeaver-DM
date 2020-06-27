@@ -31,7 +31,7 @@ const AbilityScoreTitle = styled.div`
 
 const AbilityScores = (props) => {
   const {
-    data: creatureAbilityScores,
+    abilityScores: creatureAbilityScores,
   } = props
 
   const [isShowingModifier, setIsShowingModifier] = useState(true)

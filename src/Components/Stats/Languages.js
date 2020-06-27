@@ -14,7 +14,7 @@ const This = styled.div`
 
 const Languages = (props) => {
   const {
-    data: languages,
+    languages,
   } = props
 
   return (

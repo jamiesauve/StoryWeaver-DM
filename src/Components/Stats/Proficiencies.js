@@ -16,7 +16,7 @@ const This = styled.div`
 
 const Proficiencies = (props) => {
   const {
-    data: proficiencies,
+    proficiencies,
   } = props
 
   const allProficiencies = _.map(proficiencies, proficiency => 

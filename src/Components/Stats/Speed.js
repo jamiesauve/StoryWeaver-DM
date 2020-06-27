@@ -13,7 +13,7 @@ const This = styled.div`
 
 const Speed = (props) => {
   const {
-    data: travelMethods,
+    travelMethods,
   } = props
 
   return (
@@ -21,6 +21,7 @@ const Speed = (props) => {
       {_.map(travelMethods, travelMethod => (
         <StatBox
           borderColor={colors.plainsYellow}
+          key={travelMethod.name}
           label={travelMethod.name}
           value={`${travelMethod.value}${!_.isNull(travelMethod.unit) ? travelMethod.unit : ``}`}
         />
