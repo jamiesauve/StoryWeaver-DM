@@ -2,25 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
+import shadeColor from '../../utils/shade'
+
 import colors from '../../data/styles/colors'
 import sizes from '../../data/styles/sizes'
 
 const This = styled.div`
-  flex-grow: 1;
-
-  margin: 2px;
-  border: 1px solid ${props => props.borderColor || colors.darkGrey};
-  border-radius: 5px;
-  padding: 3px;
-  
   display: flex;
   flex-direction: column;
-
-  min-width: 30px;
-
-  background: ${colors.darkBackground};
-  color: ${colors.lightGrey};
 `
+
 
 const Heading = styled.div`
   align-self: center;
@@ -35,17 +26,15 @@ const ListItem = styled.div`
   padding: 5px 0;
 `
 
-const BulletList = (props) => {
+const List = (props) => {
   const {
-    borderColor,
+    areBulletsVisible,
     items,
     heading,
   } = props
   
   return (
-    <This
-      borderColor={borderColor}
-    >
+    <This>
       {heading && 
         <Heading>
           {heading}
@@ -54,15 +43,15 @@ const BulletList = (props) => {
       
       {_.map(items, item => (
         <ListItem key={item}>
-          {item}
+          {areBulletsVisible ? `- ` : ``}{item}
         </ListItem>
       ))}
     </This>
   )
 }
 
-BulletList.defaultProps = {
+List.defaultProps = {
   numberOfColumns: 1,
 }
 
-export default BulletList
+export default List
