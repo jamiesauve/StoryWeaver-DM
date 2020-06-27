@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BulletList from './BulletList'
+import BulletList from './List'
 
 const Description = (props) => {
   const {

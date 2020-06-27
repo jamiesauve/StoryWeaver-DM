@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import BulletList from '../Stats/BulletList'
+import BulletList from '../Stats/List'
 
 import DisplayCard from '../styled/DisplayCard/Card'
 import Row from '../styled/DisplayCard/Row'

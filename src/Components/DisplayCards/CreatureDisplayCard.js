@@ -21,7 +21,7 @@ import Title from '../styled/DisplayCard/Title'
 import TitleDetail from '../styled/DisplayCard/TitleDetail'
 
 import colors from '../../data/styles/colors'
-import BulletList from '../Stats/BulletList'
+import BulletList from '../Stats/List'
 
 const This = styled.div``
 

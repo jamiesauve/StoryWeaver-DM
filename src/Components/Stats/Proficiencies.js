@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import BulletList from './BulletList'
+import BulletList from './List'
 import DoubleBulletList from './DoubleBulletList'
 
 import colors from '../../data/styles/colors'
