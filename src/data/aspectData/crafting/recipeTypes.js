@@ -1,11 +1,68 @@
+import _ from 'lodash'
+
+import colors from '../../styles/colors'
+
 const recipeTypes = {
-  consumable: "consumable", 
-  cosmetic: "cosmetic", 
-  gear: "gear", 
-  item: "item", 
-  medicine: "medicine", 
-  poison: "poison",
-  other: "other",
+  consumable: [
+  "potion",
+  "edible",
+  "beverage",
+  "smoked",
+  "other",
+  ],
+  cosmetic: [
+  "makeup",
+  "other",
+  ],
+  item: [
+  "weapon",
+  "armor",
+  "utility",
+  "tool",
+  "expended",
+  "magical",
+  "practical",
+  "other",
+  ],
+  medecine: [
+  "ingested",
+  "applied",
+  "other",
+  ],
+  poison: [
+  "ingested",
+  "inhaled",
+  "contact",
+  "wound",
+  "other",
+  ],
+  other: [
+  "other",
+  ],
 }
 
-export default recipeTypes
+export const recipeTypeColors = {
+  consumable: colors.desertOrange,
+  cosmetic: colors.exoticPink,
+  item: colors.villageBrown,
+  medecine: colors.battleRed,
+  poison: colors.swampGreen,
+  other: colors.darkGrey,
+}
+
+const mappedRecipeTypes = _.reduce(Object.entries(recipeTypes), (aggr, recipeGroup) => {
+  const mainType = recipeGroup[0]
+  
+  return {
+    ...aggr,
+    [mainType]: _.reduce(recipeGroup[1], (aggr, subType) => ({
+      ...aggr,
+      [subType]: {
+        mainType,
+        subType,
+      },
+    }), {})
+  }
+}, {})
+
+export default mappedRecipeTypes
