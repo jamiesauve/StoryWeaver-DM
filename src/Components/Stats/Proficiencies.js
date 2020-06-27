@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import BulletList from './List'
-import DoubleBulletList from './DoubleBulletList'
+import List from './List'
 
 import colors from '../../data/styles/colors'
+import ColoredBox from '../UI/ColoredBox'
 
 const This = styled.div`
   flex-grow: 1;
@@ -26,18 +26,16 @@ const Proficiencies = (props) => {
     <This
       className="proficiencies"
     >
-      {allProficiencies.length > 1
-        ? <DoubleBulletList
-        borderColor={colors.jungleGreen}
-        items={allProficiencies}
-        heading="Proficiencies"
-      />
-      : <BulletList
-      borderColor={colors.jungleGreen}
-      items={allProficiencies}
-      heading="Proficiencies"
-    />
-      }
+      <ColoredBox
+        color={colors.cavesPurple}
+      >
+        <List
+          heading="Proficiencies"
+          
+          items={allProficiencies}
+          numberOfColumns={2}
+        />
+      </ColoredBox>
     </This>
   )
 }
