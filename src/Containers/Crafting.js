@@ -10,12 +10,12 @@ import Dresser from '../Components/UI/Dresser'
 import ScrollableContainer from '../Components/styled/ScrollableContainer'
 
 import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
+import RecipeDisplayCard from '../Components/DisplayCards/RecipeDisplayCard'
 
-import terrainTypes from '../data/generalData/terrainTypes'
 import reagents from '../data/aspectData/crafting/reagents'
+import { reagentTypeColors } from '../data/aspectData/crafting/reagentTypes'
 import recipes from '../data/aspectData/crafting/recipes'
-
-import colors from '../data/styles/colors'
+import { recipeTypeColors } from '../data/aspectData/crafting/recipeTypes'
 
 const This = styled.div`
   flex-grow: 1;
@@ -42,7 +42,7 @@ const Crafting = (props) => {
   const reagentDrawers = reagentsByTerrain
   .map(reagent => ({
     title: reagent.label,
-    titleColor: _.get(_.find(terrainTypes, {name: props.activeLocation.name}), 'color', colors.forestGreen), // TODO: make the color match the type of plant somehow
+    titleColor: reagentTypeColors[reagent.type.mainType],
     content: () => <ReagentDisplayCard
       data={reagent}
     />,
@@ -51,8 +51,10 @@ const Crafting = (props) => {
   const recipeDrawers = recipes
   .map(recipe => ({
     title: recipe.label,
-    titleColor: _.get(_.find(terrainTypes, {name: props.activeLocation.name}), 'color', colors.swampGreen), // TODO: make the color match the type of plant somehow
-    content: () => recipe.description,
+    titleColor: recipeTypeColors[recipe.type.mainType],
+    content: () => <RecipeDisplayCard
+      data={recipe}
+    />,
   }))
 
   return (
