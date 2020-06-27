@@ -96,6 +96,7 @@ const CreatureDisplayCard = (props) => {
         >
           <InlineStat 
             color={colors.battleRed}
+            fontWeight="bold"
             label={"CR"}
             value={challengeRating}
           />
@@ -104,6 +105,7 @@ const CreatureDisplayCard = (props) => {
 
           <InlineStat 
             color={colors.magicPink}
+            fontWeight="bold"
             label={"PP"}
             value={passivePerception}
           />
@@ -156,20 +158,26 @@ const CreatureDisplayCard = (props) => {
           {spellDC
             && <InlineStat 
             color={colors.magicPink}
+            fontWeight="bold"
             label={"Spell DC"}
+            margin={`0 0 0 10px`}
             value={spellDC}
           />
           }
 
           <InlineStat 
             color={colors.weatherBlue}
+            fontWeight="bold"
             label={"AC"}
+            margin={`0 0 0 10px`}
             value={armorClass}
           />
         
           <InlineStat 
             color={colors.puzzleOrange}
+            fontWeight="bold"
             label={"HP"}
+            margin={`0 0 0 10px`}
             value={hitPoints}
           />
         </Row>
