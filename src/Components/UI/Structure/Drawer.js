@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import SectionTitle from '../styled/SectionTitle'
-
-import colors from '../../data/styles/colors'
+import colors from '../../../data/styles/colors'
 
 const This = styled.div`
   margin-top: 10px;
@@ -12,6 +10,11 @@ const This = styled.div`
   box-shadow: 0 0 3px ${colors.darkGrey};
 
   align-items: center;
+`
+
+const SectionTitle = styled.div`
+  margin-bottom: 7px;
+  font-weight: bold;
 `
 
 const DrawerTitle = styled.div`

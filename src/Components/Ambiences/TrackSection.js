@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import TrackGroup from './TrackGroup'
-import Dresser from '../UI/Dresser'
+import Dresser from '../UI/Structure/Dresser'
 
 const This = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ToggleButtonGroup from '../UI/ToggleButtonGroup'
+import ToggleButtonGroup from '../UI/Action/ToggleButtonGroup'
 
 import locationTypeOptions from '../../data/generalData/locationTypeOptions'
 

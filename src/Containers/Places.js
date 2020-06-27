@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Section from '../Components/Layout/Section'
+import Section from '../Components/UI/Structure/Section'
 
-import Dresser from '../Components/UI/Dresser'
+import Dresser from '../Components/UI/Structure/Dresser'
 
-import ScrollableContainer from '../Components/styled/ScrollableContainer'
+import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
 
-import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
+import ReagentDisplayCard from '../Components/Stats/DisplayCards/ReagentDisplayCard'
 
 import terrainTypes from '../data/generalData/terrainTypes'
 import reagents from '../data/aspectData/crafting/reagents'

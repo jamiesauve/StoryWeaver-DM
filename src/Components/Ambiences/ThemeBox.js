@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import SectionTitle from '../styled/SectionTitle'
-
 const This = styled.div`
   margin-top: 10px;
   
@@ -11,6 +9,11 @@ const This = styled.div`
   box-shadow: 0 0 3px #777;
 
   align-items: center;
+`
+
+const SectionTitle = styled.div`
+  margin-bottom: 7px;
+  font-weight: bold;
 `
 
 const ThemeTitle = styled.div`

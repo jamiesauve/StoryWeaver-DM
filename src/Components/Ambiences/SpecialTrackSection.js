@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import ThemeBox from './ThemeBox'
 
 import tracks from '../../data/specialTracks'
-import ToggleExpandedButton from '../Layout/ToggleExpandedButton'
+import ToggleExpandedButton from '../UI/Structure/ToggleExpandedButton'
 
 const This = styled.div`
   display: flex;

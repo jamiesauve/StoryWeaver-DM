@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import Drawer from './Drawer'
-import ToggleExpandedButton from '../Layout/ToggleExpandedButton'
+import ToggleExpandedButton from './ToggleExpandedButton'
 
 const This = styled.div`
   display: flex;

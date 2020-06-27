@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Section from '../Components/Layout/Section'
-import ScrollableContainer from '../Components/styled/ScrollableContainer'
+import Section from '../Components/UI/Structure/Section'
+import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
 
 import creatures from '../data/aspectData/creatures/creatures'
 

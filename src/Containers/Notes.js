@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import Divider from '../Components/styled/Divider'
+import Divider from '../Components/UI/Structure/Divider'
 
 import SessionEvents from '../Components/Notes/SessionEvents'
 import SessionDetails from '../Components/Notes/SessionDetails'

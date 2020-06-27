@@ -6,7 +6,7 @@ import { Droppable } from 'react-beautiful-dnd'
 
 import AreTabsContractedContext from '../../context/AreTabsContractedContext'
 
-import TabContainer from '../UI/TabContainer'
+import TabContainer from '../UI/Action/TabContainer'
 import colors from '../../data/styles/colors'
 
 const This = styled.div``

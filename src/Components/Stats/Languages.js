@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import List from './List'
+import List from '../UI/Structure/List'
 
 import colors from '../../data/styles/colors'
-import ColoredBox from '../UI/ColoredBox'
+import ColoredBox from '../UI/Style/ColoredBox'
 
 const This = styled.div`
   flex-grow: 1;

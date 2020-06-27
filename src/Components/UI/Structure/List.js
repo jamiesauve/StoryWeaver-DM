@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import shadeColor from '../../utils/shade'
+import shadeColor from '../../../utils/shade'
 
-import colors from '../../data/styles/colors'
-import sizes from '../../data/styles/sizes'
+import colors from '../../../data/styles/colors'
+import sizes from '../../../data/styles/sizes'
 
 const This = styled.div`
   display: flex;

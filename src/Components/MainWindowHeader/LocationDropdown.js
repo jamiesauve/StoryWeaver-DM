@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import SelectInput from '../UI/SelectInput'
+import SelectInput from '../UI/Action/SelectInput'
 
 
 

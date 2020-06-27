@@ -2,20 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import BreadCrumbList from '../Stats/BreadCrumbList'
-import ColoredBox from '../UI/ColoredBox'
+import BreadCrumbList from '../UI/Structure/BreadCrumbList'
+import ColoredBox from '../UI/Style/ColoredBox'
 import Damage from '../Stats/Damage'
-import List from '../Stats/List'
+import List from '../UI/Structure/List'
 import Range from '../Stats/Range'
 import Value from '../Stats/Value'
 
 import restructureData from '../Search/dataRestructuring/weapon'
 import Weight from '../Stats/Weight'
 
-import DisplayCard from '../styled/DisplayCard/Card'
-import Row from '../styled/DisplayCard/Row'
-import Title from '../styled/DisplayCard/Title'
-import TitleDetail from '../styled/DisplayCard/TitleDetail'
+import { 
+  DisplayCard, 
+  Row,
+  Title,
+  TitleDetail,
+} from '..//UI/Style/DisplayCard'
 
 import colors from '../../data/styles/colors'
 

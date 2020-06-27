@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import StatBox from './StatBox'
+import StatBox from '../UI/Structure/StatBox'
 
 import colors from '../../data/styles/colors'
 

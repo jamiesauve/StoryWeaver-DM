@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Row from '../styled/DisplayCard/Row'
-import TitleDetail from '../styled/DisplayCard/TitleDetail'
+import Row from '..//UI/Style/DisplayCard/Row'
+import TitleDetail from '..//UI/Style/DisplayCard/TitleDetail'
 
-import ColoredBox from '../UI/ColoredBox'
+import ColoredBox from '../UI/Style/ColoredBox'
+import List from '../UI/Structure/List'
 
-import List from '../Stats/List'
 import TerrainBreadCrumbs from '../Crafting/TerrainBreadCrumbs'
 
 import Harvesting from '../Crafting/Harvesting'

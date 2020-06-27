@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import StatBox from './StatBox'
+import StatBox from '../UI/Structure/StatBox'
 
 import colors from '../../data/styles/colors'
 

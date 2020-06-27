@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Section from '../Components/Layout/Section'
-import Divider from '../Components/styled/Divider'
+import Section from '../Components/UI/Structure/Section'
+import Divider from '../Components/UI/Structure/Divider'
 
-import Dresser from '../Components/UI/Dresser'
+import Dresser from '../Components/UI/Structure/Dresser'
 
-import ScrollableContainer from '../Components/styled/ScrollableContainer'
+import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
 
 import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
 import RecipeDisplayCard from '../Components/DisplayCards/RecipeDisplayCard'

@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import SectionTitle from '../styled/SectionTitle'
-
 const This = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,6 +8,11 @@ const This = styled.div`
   align-items: stretch;
   height: ${props => props.height ? `${props.height}` : `auto`};
   max-height: 100%;
+`
+
+const SectionTitle = styled.div`
+  margin-bottom: 7px;
+  font-weight: bold;
 `
 
 const ItemTopRight = styled.div`

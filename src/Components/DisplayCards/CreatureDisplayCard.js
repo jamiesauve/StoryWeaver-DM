@@ -7,20 +7,23 @@ import Speed from '../Stats/Speed'
 import AbilityScores from '../Stats/AbilityScores'
 import Languages from '../Stats/Languages'
 import Proficiencies from '../Stats/Proficiencies'
-import InlineStat from '../Stats/InlineStat'
+import InlineStat from '../UI/Structure/InlineStat'
 
 import restructureData from '../Search/dataRestructuring/creature'
 
-import ColoredBox from '../UI/ColoredBox'
-import ScrollableContainer from '../styled/ScrollableContainer'
-import Spacer from '../styled/Spacer'
-import DisplayCard from '../styled/DisplayCard/Card'
-import Row from '../styled/DisplayCard/Row'
-import Title from '../styled/DisplayCard/Title'
-import TitleDetail from '../styled/DisplayCard/TitleDetail'
+import ColoredBox from '../UI/Style/ColoredBox'
+import List from '../UI/Structure/List'
+import ScrollableContainer from '../UI/Structure/ScrollableContainer'
+import Spacer from '../UI/Structure/Spacer'
+
+import { 
+  DisplayCard, 
+  Row,
+  Title,
+  TitleDetail,
+} from '..//UI/Style/DisplayCard'
 
 import colors from '../../data/styles/colors'
-import List from '../Stats/List'
 
 
 const This = styled.div``

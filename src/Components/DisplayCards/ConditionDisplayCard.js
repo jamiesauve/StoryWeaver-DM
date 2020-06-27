@@ -2,11 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import List from '../Stats/List'
-
-import ColoredBox from '../UI/ColoredBox'
-import DisplayCard from '../styled/DisplayCard/Card'
-import Row from '../styled/DisplayCard/Row'
+import ColoredBox from '../UI/Style/ColoredBox'
+import { DisplayCard, Row } from '../UI/Style/DisplayCard'
+import List from '../UI/Structure/List'
 
 import colors from '../../data/styles/colors'
 

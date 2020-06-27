@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import DataTable from '../Layout/DataTable'
+import DataTable from '../UI/Structure/DataTable'
 
 import colors from '../../data/styles/colors'
 

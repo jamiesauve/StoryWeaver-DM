@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import colors from '../../data/styles/colors'
+import colors from '../../../data/styles/colors'
 
-import shade from '../../utils/shade'
+import shade from '../../../utils/shade'
 
 const StyledBox = styled.div`
   flex-grow: 1;

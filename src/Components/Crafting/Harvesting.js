@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import ColoredBox from '../UI/ColoredBox'
+import ColoredBox from '../UI/Style/ColoredBox'
 
 import HarvestingEntry from './HarvestingEntry'
 

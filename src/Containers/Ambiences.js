@@ -1,9 +1,9 @@
 import React, { useState, useEffect, } from 'react'
 
-import Section from '../Components/Layout/Section'
-import Spacer from '../Components/styled/Spacer'
+import Section from '../Components/UI/Structure/Section'
+import Spacer from '../Components/UI/Structure/Spacer'
 
-import ScrollableContainer from '../Components/styled/ScrollableContainer'
+import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
 
 import TrackSection from '../Components/Ambiences/TrackSection'
 

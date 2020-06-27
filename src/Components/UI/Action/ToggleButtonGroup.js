@@ -1,10 +1,10 @@
 import React, { Fragment, } from 'react'
 import styled from 'styled-components'
-import colors from '../../data/styles/colors'
+import colors from '../../../data/styles/colors'
 
 import {Draggable } from 'react-beautiful-dnd'
 
-import shade from '../../utils/shade'
+import shade from '../../../utils/shade'
 
 const This = styled.div`
   height: 100%;
@@ -159,7 +159,3 @@ ToggleButtonGroup.defaultProps = {
 }
 
 export default ToggleButtonGroup
-
-// activeOption={props.activeLocationType}
-// setActiveOption={props.setActiveLocationType}
-// options={props.locationTypeOptions}

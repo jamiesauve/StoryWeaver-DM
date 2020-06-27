@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Section from '../Layout/Section'
-import TextArea from '../styled/TextArea'
+import Section from '../UI/Structure/Section'
+import TextArea from '../UI/Action/TextArea';
 
 
 const NPCNames = () => {

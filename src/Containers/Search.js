@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Section from '../Components/Layout/Section'
+import Section from '../Components/UI/Structure/Section'
 import SearchBar from '../Components/Search/SearchBar'
-import ScrollableContainer from '../Components/styled/ScrollableContainer'
+import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
 
 import displayCards from '../Components/DisplayCards'
 import toCapitalCase from '../utils/toCapitalCase'

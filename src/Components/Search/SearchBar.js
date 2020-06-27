@@ -1,7 +1,7 @@
 import React, { useState, } from 'react'
 import styled from 'styled-components'
 
-import TextInput from '../UI/TextInput'
+import TextInput from '../UI/Action/TextInput'
 
 import { sanitizeAlphaNumericWithConnectors } from '../../utils/sanitize'
 

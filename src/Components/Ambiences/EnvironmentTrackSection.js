@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import ThemeBox from './ThemeBox'
-import ToggleExpandedButton from '../Layout/ToggleExpandedButton'
+import ToggleExpandedButton from '../UI/Structure/ToggleExpandedButton'
 
 import terrainTypes from '../../data/terrainTypes'
 import tracks from '../../data/environmentTracks'
