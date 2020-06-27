@@ -20,6 +20,7 @@ const recipeTypes = {
   "utility",
   "tool",
   "expended",
+  "instrument",
   "magical",
   "practical",
   "other",
