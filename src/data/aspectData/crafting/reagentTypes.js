@@ -1,5 +1,7 @@
 import _ from 'lodash'
 
+import colors from '../../styles/colors'
+
 const reagentTypes = {
   plant: [
     "aquatic",
@@ -45,6 +47,13 @@ const reagentTypes = {
   otherReagentType: [
     "other",
   ]
+}
+
+export const reagentTypeColors = {
+  creature: colors.battleRed,
+  plant: colors.forestGreen,
+  mineral: colors.mountainsTeal,
+  otherReagentType: colors.darkGrey,
 }
 
 const mappedReagentTypes = _.reduce(Object.entries(reagentTypes), (aggr, reagentGroup) => {
