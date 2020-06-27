@@ -52,6 +52,9 @@ const recipes = [
   // potion-of-orientation
   // silver-dust-eyeshadow
   // draught-of-death
+  // guklulla-salve
+  // bloodpurge-tincture
+  // blackcorn-whiskey
 ]
 
 export default recipes

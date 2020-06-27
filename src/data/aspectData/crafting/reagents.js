@@ -325,168 +325,198 @@ export default [
   //     },
   //   ],
   // },
-  // {
-  //   label: "Blackcorn",
-  //   name: "blackcorn",
-  //   description: `Resembles miniature corn.`,
-  //   effects: `Bitter taste when raw`, 
-  //   identifyDC: 15,
-  //   location: `Grows around swamps and other humid areas`,
-  //   lore: `It is overly difficult to cultivate and farm, which attributes to the rarity of the plant. The vegetable is prized not for eating, but for making a sweet alcohol called Blackcorn Whiskey that has a strong flavor of plums`,
-  //   terrain: [
-  //     swamp,
-  //   ],
-  //   type: reagentTypes.plant.herbaceous,
-  //   uses: [
-  //     // can be ingredient, eaten, salve, material component, gear
-  //     {
-  //       type: component,
-  //       partLabel: 'Fruit',
-  //       partName: 'fruit',
-  //       harvestDC: 2,
-  //       recipe: {
-  //         label: 'Blackcorn Whiskey',
-  //         name: 'blackcorn-whiskey',
-  //         type: recipeTypes.consumable.beverage,
-  //       },
-  //     }, 
-  //   ],
-  //   value: [
-  //     {
-  //       amount: 1,
-  //       unit: 'gp',
-  //       partLabel: 'Pound',
-  //       partName: 'pound',
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: "Bloodpurge",
-  //   name: "bloodpurge",
-  //   description: `A cluster of broad, waxy leaves, and a single root that trails down into the water. The leaves are a bright green with red capillaries. During the warmer months a bright red flower sprouts from the top. `,
-  //   effects: ``,
-  //   identifyDC: 13,
-  //   location: `Floats on the surface of marshes`,
-  //   lore: `Drying the plant causes it to turn into a flaky powder, which is often used in a distilled tincture to neutralize minor poisons.`,
-  //   terrain: [
-  //     swamp,
-  //   ],
-  //   type: reagentTypes.plant.aquatic,
-  //   uses: [
-  //     // can be ingredient, eaten, salve, material component, gear
-  //     {
-  //       type: component,
-  //       partLabel: 'Whole',
-  //       partName: 'whole',
-  //       harvestDC: 5,
-  //       recipe: {
-  //         label: 'Bloodpurge Tincture',
-  //         name: 'bloodpurge-tincture',
-  //         type: consumable,
-  //       },
-  //     }, 
-  //   ],
-  //   value: [
-  //     {
-  //       amount: 2,
-  //       unit: 'sp',
-  //       partLabel: 'Plant',
-  //       partName: 'plant',
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: "Butterspice Weed",
-  //   name: "butterspice-weed",
-  //   description: `A short leafy plant, the top sprouts large yellow flowers upon reaching maturity`,
-  //   effects: ``,
-  //   identifyDC: 9,
-  //   location: `The plant is quite hardy and can grow in a surprisingly wide variety of places.`,
-  //   lore: `The most renown quality of the plant is that the leaves can be harvested and cured, becoming crumbly brown flakes which can be smoked. It is quite well known among halflings, which often grow it in small patches along with other crops. Those that smoke the weed claim that it has a smooth spicy flavor. `,
-  //   terrain: [
-  //     city,
-  //     coast,
-  //     forest,
-  //     jungle,
-  //     mountains,
-  //     swamp,
-  //     plains,
-  //     village,
+  {
+    label: "Blackcorn",
+    name: "blackcorn",
+    type: reagentTypes.plant.reed,
 
-  //   ],
-  //   type: reagentTypes.plant.herbaceous,
-  //   uses: [
-  //     // can be ingredient, eaten, salve, material component, gear
-  //     {
-  //       type: consumable, // smoked
-  //       partLabel: 'Leaf',
-  //       partName: 'leaf',
-  //       harvestDC: 2,
-  //     }, 
-  //   ],
-  //   value: [
-  //     {
-  //       amount: 1,
-  //       unit: 'cp',
-  //       partLabel: 'Handful of leaves',
-  //       partName: 'handful of leaves',
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: "Guklulla",
-  //   name: "guklulla",
-  //   description: `the plant appears to be little more than a pair of large, broad leaves floating on the surface of the stagnant water. During warmer months, a large yellow flower blossoms in the midst of the two leaves.`,
-  //   effects: `Grinding the root into a paste and applying it to wounds provides not only accelerated healing, but also numbs the affected area.`,
-  //   identifyDC: 9,
-  //   location: `Grows in water in swamps`,
-  //   lore: `Hidden beneath the surface, the plant has an extensive root system that reaches far down into the muck, a massive tangle that catches other debris that is carried along by the slow current. Various species of fish and snakes lay their eggs in the tangle of roots. Orc tribes harvest the Guklulla for the roots, pulling the plants out of the muck, cutting off sections of the roots and throwing them back into the swamp to be harvested again in the future.`,
-  //   terrain: [
-  //     swamp,
+    description: `Resemble miniature corm plants in dark colors.`,
+    effects: [
+      `Bitter taste when raw.`
+    ],
+    location: `Grows around swamps and other humid areas.`,
+    lore: [
+      `It is overly difficult to cultivate and farm, which attributes to the rarity of the plant. The vegetable is prized not for eating, but for making a sweet alcohol called Blackcorn Whiskey that has a strong flavor of plums`,
+    ],
 
-  //   ],
-  //   type:reagentTypes.plant.aquatic,
-  //   uses: [
-  //     // can be ingredient, eaten, salve, material component, gear
-  //     {
-  //       type: 'salve',
-  //       partLabel: 'Root',
-  //       partName: 'root',
-  //       harvestDC: 2,
-  //       recipe: {
-  //         label: 'Guklulla Salve',
-  //         name: 'guklulla-salve',
-  //       },
-  //     }, 
-  //   ],
-  //   value: [
-  //     {
-  //       amount: 2,
-  //       unit: 'gp',
-  //       partLabel: 'Root',
-  //       partName: 'root',
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: "Rattlestalks",
-  //   name: "rattlestalks",
-  //   description: `These tall stalks end in a thick bulb with a hard shell.`,
-  //   effects: ``,
-  //   identifyDC: 11,
-  //   location: `Grow out of stagnant water.`,
-  //   lore: `In the colder months, the stalk withers, and the bulb falls off, to float around until the bulb softens and falls away to disperse the seeds within. The seeds sit freely in the shell, and when shaken make a slight rattle noise, which is unnerving when the wind rushes through a cluster of rattlestalks. Tribes that live in the swamps will often use the unnerving aspect of the rattlestalks to create fear inducing noisemakers.`,
-  //   terrain: [
-  //     swamp,
+    terrain: [
+      swamp,
+    ],
 
-  //   ],
-  //   type: reagentTypes.plant.reed,
-  //   uses: [],
-  //   value: [],
-  // },
-  // {
-  // {
- 
+    harvesting: [
+      {
+        reagentPart: plantParts.fruit,
+        harvestDC: 5,
+        onHarvestFailure: ``,
+        recipes: [{
+          type: recipeTypes.consumable.beverage,
+          label: "Blackcorn Whiskey",
+          name: 'blackcorn-whiskey',
+        }],
+        simpleUses: [
+          recipeTypes.consumable.edible,
+        ],
+        value: {
+          amount: 1,
+          unit: moneyUnits.gp,
+          amountOfReagent: "bushel",
+        },
+      },
+    ]
+  },
+  {
+    label: "Bloodpurge",
+    name: "bloodpurge",
+    type: reagentTypes.plant.aquatic,
+
+    description: `A cluster of broad, waxy leaves, and a single root that trails down into the water. The leaves are a bright green with red capillaries. During the warmer months a bright red flower sprouts from the top.`,
+    effects: [],
+    location: `Floats on the surface of marshes and calm places in lakes.`,
+    lore: [
+      `Drying the plant causes it to turn into a flaky powder, which is often used in a distilled tincture to neutralize minor poisons.`,
+    ],
+
+    terrain: [
+      freshwater,
+      swamp,
+    ],
+
+    harvesting: [
+      {
+        reagentPart: plantParts.leaf,
+        harvestDC: 5,
+        onHarvestFailure: ``,
+        recipes: [{
+          type: recipeTypes.medecine.ingested,
+          label: "Bloodpurge Tincture",
+          name: 'bloodpurge-tincture',
+        }],
+        simpleUses: [],
+        value: {
+          amount: 5,
+          unit: moneyUnits.gp,
+          amountOfReagent: "pound",
+        },
+      },
+    ]
+  },
+  {
+    label: "Butterspice Weed",
+    name: "butterspice-weed",
+    type: reagentTypes.plant.herbaceous,
+
+    description: `A short leafy plant, the top sprouts large yellow flowers upon reaching maturity.`,
+    effects: [],
+    location: `The plant is quite hardy and can grow in a surprisingly wide variety of places.`,
+    lore: [
+      `The most renowned quality of the plant is that the leaves can be harvested and cured, becoming crumbly brown flakes which can be smoked. It is quite well known among halflings, which often grow it in small patches along with other crops. Those that smoke the weed claim that it has a smooth spicy flavor.`,
+    ],
+
+    terrain: [
+      city,
+      coast,
+      forest,
+      jungle,
+      mountains,
+      swamp,
+      plains,
+      village,
+    ],
+
+    harvesting: [
+      {
+        reagentPart: plantParts.leaf,
+        harvestDC: 2,
+        onHarvestFailure: ``,
+        recipes: [{
+          type: recipeTypes.consumable.smoked,
+          label: "Butterfly Leaf",
+          name: 'butterfly-leaf',
+        }],
+        simpleUses: [],
+        value: {
+          amount: 5,
+          unit: moneyUnits.sp,
+          amountOfReagent: "pound",
+        },
+      },
+    ]
+  },
+  {
+    label: "Guklulla",
+    name: "guklulla",
+    type: reagentTypes.plant.aquatic,
+
+    description: `The plant appears to be little more than a pair of large, broad leaves floating on the surface of the stagnant water. During warmer months, a large yellow flower blossoms in the midst of the two leaves.`,
+    effects: [
+      `Grinding the root into a paste and applying it to wounds provides not only accelerated healing, but also numbs the affected area. A creature who applies Guklulla to wounds recovers an extra 1d4 per hit dice used during a short rest.`,
+    ],
+    location: `Grows in stagnant water, usually in swamps.`,
+    lore: [
+      `Hidden beneath the surface, the plant has an extensive root system that reaches far down into the muck, a massive tangle that catches other debris that is carried along by the slow current. Various species of fish and snakes lay their eggs in the tangle of roots. Orc tribes harvest the Guklulla for the roots, pulling the plants out of the muck, cutting off sections of the roots and throwing them back into the swamp to be harvested again in the future.`,
+      `Guklulla is edible, but usually must be cleaned thoroughly before eating because of where it grows.`,
+    ],
+
+    terrain: [
+      swamp,
+    ],
+
+    harvesting: [
+      {
+        reagentPart: plantParts.spores,
+        harvestDC: 17,
+        onHarvestFailure: `see effect`,
+        recipes: [{
+          type: recipeTypes.medecine.applied,
+          label: "Guklulla Salve",
+          name: 'guklulla-salve',
+        }],
+        simpleUses: [
+          recipeTypes.consumable.edible,
+        ],
+        value: {
+          amount: 5,
+          unit: moneyUnits.gp,
+        },
+      },
+    ]
+  },
+  {
+    label: "Rattlestalks",
+    name: "rattlestalks",
+    type: reagentTypes.plant.reed,
+
+    description: `These tall stalks end in a thick bulb with a hard shell.`,
+    effects: [],
+    location: `They grow out of stagnant water.`,
+    lore: [
+      `In the colder months, the stalk withers, and the bulb falls off, to float around until the bulb softens and falls away to disperse the seeds within`,
+      `The seeds sit freely in the shell, and when shaken make a slight rattle noise, which is unnerving when the wind rushes through a cluster of rattlestalks`,
+      `Tribes that live in the swamps will often use the unnerving aspect of the rattlestalks to create fear-inducing noisemakers.`,
+      `Rattlestalks can be used as a rustic instrument, but are not especially durable.`,
+    ],
+
+    terrain: [
+      swamp,
+    ],
+
+    harvesting: [
+      {
+        reagentPart: plantParts.stalk,
+        harvestDC: 5,
+        onHarvestFailure: ``,
+        recipes: [],
+        simpleUses: [
+          recipeTypes.item.instrument,
+        ],
+        value: {
+          amount: 1,
+          unit: moneyUnits.cp,
+          amountOfReagent: "stalk",
+        },
+      },
+    ]
+  },
   {
     label: "Wipplecap",
     name: "wipplecap",
