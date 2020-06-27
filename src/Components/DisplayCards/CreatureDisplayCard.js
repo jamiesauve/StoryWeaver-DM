@@ -9,10 +9,9 @@ import Languages from '../Stats/Languages'
 import Proficiencies from '../Stats/Proficiencies'
 import InlineStat from '../Stats/InlineStat'
 
-import Description from '../Stats/Description'
-
 import restructureData from '../Search/dataRestructuring/creature'
 
+import ColoredBox from '../UI/ColoredBox'
 import ScrollableContainer from '../styled/ScrollableContainer'
 import Spacer from '../styled/Spacer'
 import DisplayCard from '../styled/DisplayCard/Card'
@@ -21,7 +20,8 @@ import Title from '../styled/DisplayCard/Title'
 import TitleDetail from '../styled/DisplayCard/TitleDetail'
 
 import colors from '../../data/styles/colors'
-import BulletList from '../Stats/List'
+import List from '../Stats/List'
+
 
 const This = styled.div``
 
@@ -175,41 +175,50 @@ const CreatureDisplayCard = (props) => {
         <Row>
         <ScrollableContainer
             className="scrollableContainer"
-            flexDirection="row"
+            flexDirection="column"
           >
             {!_.isEmpty(damageImmunities)
-              && <DamageStatContainer
-                areThereMultipleDamageStats={areThereMultipleDamageStats}
-              >
-                <BulletList
-                  borderColor={colors.battleRed}
-                  items={damageImmunities}
-                  heading="Damage Immunities"
-                />
+              && <DamageStatContainer>
+                <ColoredBox
+                  color={colors.battleRed}
+                >
+                  <List
+                    heading="Damage Immunities"
+                    
+                    areBulletsVisible={damageImmunities.length > 1}
+                    items={damageImmunities}
+                  />
+                </ColoredBox>
               </DamageStatContainer>
             }
 
             {!_.isEmpty(damageResistances)
-              && <DamageStatContainer
-                areThereMultipleDamageStats={areThereMultipleDamageStats}
-              >
-                <BulletList
-                  borderColor={colors.puzzleOrange}
-                  items={damageResistances}
-                  heading="Damage Resistances"
-                />
+              && <DamageStatContainer>
+                <ColoredBox
+                  color={colors.puzzleOrange}
+                >
+                  <List
+                    heading="Damage Resistances"
+                    
+                    areBulletsVisible={damageResistances.length > 1}
+                    items={damageResistances}
+                  />
+                </ColoredBox>
               </DamageStatContainer>
             }
 
             {!_.isEmpty(damageVulnerabilities)
-              && <DamageStatContainer
-                areThereMultipleDamageStats={areThereMultipleDamageStats}
-              >
-                <BulletList
-                  borderColor={colors.forestGreen}
-                  items={damageVulnerabilities}
-                  heading="Damage Vulnerabilities"
-                />
+              && <DamageStatContainer>
+                <ColoredBox
+                  color={colors.forestGreen}
+                >
+                  <List
+                    heading="Damage Vulnerabilities"
+                    
+                    areBulletsVisible={damageVulnerabilities.length > 1}
+                    items={damageVulnerabilities}
+                  />
+                </ColoredBox>
               </DamageStatContainer>
             }
           </ScrollableContainer>
@@ -222,26 +231,37 @@ const CreatureDisplayCard = (props) => {
           )
         ? <Spacer />
         : _.map(specialAbilities, specialAbility => (
-          <Description
-            borderColor={colors.magicPink}
-            text={`
-            ${specialAbility.description}
-            ${specialAbility.usage 
-              ? `(${specialAbility.usage.times} times ${specialAbility.usage.type})` 
-              : ``
-            }
-            `}
-            heading={specialAbility.name}
-          />
+          <ColoredBox
+            color={colors.magicPink}
+            key={specialAbility.name}
+          >
+            <List
+              heading={specialAbility.name}
+
+              items={[`
+              ${specialAbility.description}
+              ${specialAbility.usage 
+                ? `(${specialAbility.usage.times} times ${specialAbility.usage.type})` 
+                : ``
+              }
+              `]}
+            />
+          </ColoredBox>
         ))}
 
         {_.map(actions, action => (
-          <Row>
-            <Description
-            borderColor={colors.battleRed}
-            text={action.description}
-            heading={action.name}
-            />
+          <Row
+            key={action.name}
+          >
+            <ColoredBox
+              color={colors.battleRed}
+            >
+              <List
+                heading={action.name}
+
+                items={[action.description]}
+              />
+            </ColoredBox>
           </Row>
         ))}
 

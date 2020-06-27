@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Description from './Description'
+import List from './List'
 
 import colors from '../../data/styles/colors'
+import ColoredBox from '../UI/ColoredBox'
 
 const This = styled.div`
   flex-grow: 1;
@@ -21,11 +22,15 @@ const Languages = (props) => {
     <This
       className="languages"
     >
-      <Description
-        borderColor={colors.coastBlue}
-        text={languages.join(", ")}
-        heading="Languages"
-      />
+      <ColoredBox
+        color={colors.coastBlue}
+      >
+        <List
+          heading="Languages"
+          
+          items={[languages.join(', ')]}
+        />
+      </ColoredBox>
     </This>
   )
 }

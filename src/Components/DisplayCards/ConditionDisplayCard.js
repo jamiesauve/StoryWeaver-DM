@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import BulletList from '../Stats/List'
+import List from '../Stats/List'
 
+import ColoredBox from '../UI/ColoredBox'
 import DisplayCard from '../styled/DisplayCard/Card'
 import Row from '../styled/DisplayCard/Row'
 
@@ -26,11 +27,15 @@ const ConditionDisplayCard = (props) => {
           justifyContent="flex-start"
           padding="0 0 5px 0"
         >
-          <BulletList
-            borderColor={colors.magicPink}
-            heading={name}
-            items={_.map(descriptionItems, item => item.slice(2))}
-          />
+          <ColoredBox
+            color={colors.magicPink}
+          >
+            <List
+              heading={name}
+
+              items={_.map(descriptionItems, item => item.slice(2))}
+            />
+          </ColoredBox>
         </Row>
       </DisplayCard>
     </This>

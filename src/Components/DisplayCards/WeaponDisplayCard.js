@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Value from '../Stats/Value'
-import Damage from '../Stats/Damage'
 import BreadCrumbList from '../Stats/BreadCrumbList'
+import ColoredBox from '../UI/ColoredBox'
+import Damage from '../Stats/Damage'
+import List from '../Stats/List'
 import Range from '../Stats/Range'
-import Description from '../Stats/Description'
+import Value from '../Stats/Value'
 
 import restructureData from '../Search/dataRestructuring/weapon'
 import Weight from '../Stats/Weight'
@@ -81,10 +82,13 @@ const WeaponDisplayCard = (props) => {
 
           {special 
             && !_.isEmpty(special)
-            && <Description
-              borderColor={colors.mountainsTeal}
-              text={special}
-            />
+            && <ColoredBox
+              color={colors.mountainsTeal}
+              >
+                <List
+                  items={[special]}
+                />
+              </ColoredBox>
           }
         </Row>
       </DisplayCard>
