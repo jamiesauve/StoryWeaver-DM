@@ -9,6 +9,7 @@ const reagentTypes = {
     "fungus",
     "grass",
     "herbaceous",
+    "moss",
     "reed",
     "shrub",
     "succulent",
