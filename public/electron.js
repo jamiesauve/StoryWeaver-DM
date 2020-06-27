@@ -7,7 +7,8 @@ const isDev = require('electron-is-dev');
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({width: 900, height: 680});
+  mainWindow = new BrowserWindow();
+  mainWindow.maximize();
   mainWindow.loadURL(isDev ? 'http://localhost:4203' : `file://${path.join(__dirname, '../build/index.html')}`);
   if (isDev) {
     // Open the DevTools.
