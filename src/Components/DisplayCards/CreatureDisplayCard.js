@@ -33,7 +33,7 @@ const DamageStatContainer = styled.div`
   flex-grow: 1;
   flex-shrink: 0;
 
-  max-width: ${props => props.areThereMultipleDamageStats ? `75%` : `100%`};
+  max-width: 100%;
 
   display: flex;
   flex-direction: inherit;
@@ -65,16 +65,6 @@ const CreatureDisplayCard = (props) => {
     subType,
     type,
   } = creatureData
-
-  // used to make sure one damage stat doesn't fill the screen if there are others as it would hide them visually
-  const areThereMultipleDamageStats = _.chain([
-    !_.isEmpty(damageImmunities),
-    !_.isEmpty(damageResistances),
-    !_.isEmpty(damageVulnerabilities)
-  ])
-  .compact()
-  .value()
-  .length > 1
 
   return (
     <This>
