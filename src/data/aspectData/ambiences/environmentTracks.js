@@ -67,7 +67,7 @@ export default [
   },
   {
     title: 'Cave - inhabited',
-    location: 'https://michaelghelfi.bandcamp.com/track/torchlit-dungeon',
+    location: 'https://www.youtube.com/watch?v=CSPjCl_7hXo',
     tags: ['cave', 'fire', 'underground', 'magic', 'chains'],
     terrain: [
       caves,
@@ -75,7 +75,7 @@ export default [
   },
   {
     title: 'Dripping Windy River Cave',
-    location: 'https://michaelghelfi.bandcamp.com/track/dark-humid-cave',
+    location: 'https://www.youtube.com/watch?v=H0cF3t01T-w',
     tags: ['dripping', 'windy', 'river', 'squeak'],
     terrain: [
       caves,
@@ -83,7 +83,7 @@ export default [
   },
   {
     title: 'Crystal Cave',
-    location: 'https://michaelghelfi.bandcamp.com/track/crystal-cave',
+    location: 'https://www.youtube.com/watch?v=-ck5wXXD-_4',
     tags: [
       'crystal', 'cave', 'underground', 'magical', 'wonder',
     ],
@@ -94,7 +94,7 @@ export default [
   },
   {
     title: 'Sea Cave',
-    location: 'https://michaelghelfi.bandcamp.com/track/sea-cave',
+    location: 'https://www.youtube.com/watch?v=onmRPro40GI',
     tags: ['waves',],
     terrain: [
       caves,
@@ -161,7 +161,7 @@ export default [
   },
   {
     title: 'Sewers',
-    location: 'https://michaelghelfi.bandcamp.com/track/sewers',
+    location: 'https://www.youtube.com/watch?v=pv7sc85UZ-4',
     tags: ['sewer', 'dripping', 'caves', 'squeaks'],
     terrain: [
       caves,
@@ -237,7 +237,7 @@ export default [
   },
   {
     title: 'Twisted Forest - Roaring',
-    location: 'https://michaelghelfi.bandcamp.com/track/darkest-forest',
+    location: 'https://www.youtube.com/watch?v=7ElGv7zMqeY',
     tags: ['creepy', 'roaring', 'howling', 'forest'],
     terrain: [
       caves,
@@ -439,7 +439,7 @@ export default [
   },
   {
     title: 'Durukhaaz - The Clanging Cavern',
-    location: 'https://michaelghelfi.bandcamp.com/track/deep-forge',
+    location: 'https://www.youtube.com/watch?v=gS0sNL82Tvk',
     tags: ['hammers', 'dwarves', 'durukhaaz', 'city', 'underground'],
     terrain: [
       caves,
@@ -448,7 +448,7 @@ export default [
   },
   {
     title: 'Durukhaaz - The Streets',
-    location: 'https://michaelghelfi.bandcamp.com/track/dark-elves-city',
+    location: 'https://www.youtube.com/watch?v=Jtz57E2seZY',
     tags: ['people', 'durukhaaz', 'city', 'underground', 'screeching'],
     terrain: [
       caves,
@@ -456,7 +456,7 @@ export default [
   },
   {
     title: 'Durukhaaz - The Merchantry',
-    location: 'https://michaelghelfi.bandcamp.com/track/slums',
+    location: 'https://www.youtube.com/watch?v=UlbxDQMo1o4',
     tags: ['people', 'market', 'busy', 'dogs'],
     terrain: [
       caves,
@@ -464,7 +464,7 @@ export default [
   },
   {
     title: 'Durukhaaz - The Forests',
-    location: 'https://michaelghelfi.bandcamp.com/track/underground-mushroom-forest-2',
+    location: 'https://www.youtube.com/watch?v=dzV3o8zr5Hw',
     tags: ['magic', 'calm', 'mushrooms', 'underground'],
     terrain: [
       caves,
@@ -472,7 +472,7 @@ export default [
   },
   {
     title: 'Durukhaaz - The Lake',
-    location: 'https://michaelghelfi.bandcamp.com/track/sewers',
+    location: 'https://www.youtube.com/watch?v=pv7sc85UZ-4',
     tags: ['sewer', 'dripping', 'caves', 'squeaks'],
     terrain: [
       caves,
@@ -480,7 +480,7 @@ export default [
   },
   {
     title: 'Durukhaaz - The Mines',
-    location: 'https://michaelghelfi.bandcamp.com/track/active-mine',
+    location: 'https://www.youtube.com/watch?v=F6_ZuJSWQ4c',
     tags: ['mining', 'work', 'caves', 'underground'],
     terrain: [
       caves,
