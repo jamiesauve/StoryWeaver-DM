@@ -21,6 +21,11 @@ export default {
         location: 'https://www.youtube.com/watch?v=47UqaBordWE',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
       },
+      {
+        title: 'Creepy Fight',
+        location: 'https://www.youtube.com/watch?v=MI2wq39BPFo ',
+        tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
+      },
     ],
   },
   'Exploring': {
@@ -42,6 +47,11 @@ export default {
         tags: ['skyrim', 'battle', 'serious'],
         terrain: [],
       },
+      {
+        title: 'Moonlight',
+        location: 'https://www.youtube.com/watch?v=tZBV2JJ20Hw',
+        tags: ['moonlight', 'night', 'birds', 'magic', 'peaceful'],
+      },
     ]
   },
   'Puzzle': {
@@ -49,12 +59,12 @@ export default {
     trackObjects: [
       {
         title: 'Suspense, torches',
-        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-fire',
+        location: 'https://www.youtube.com/watch?v=6AlsnSQZP8I',
         tags: ['ruins', 'fire', 'quiet', 'peaceful'],
       },
       {
         title: 'Puzzle Room (Creepy)',
-        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
+        location: 'https://www.youtube.com/watch?v=IA0_cxItj9s',
         tags: [
           'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
         ],
@@ -71,46 +81,41 @@ export default {
     trackObjects: [
       {
         title: 'Moonlight',
-        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-moon',
+        location: 'https://www.youtube.com/watch?v=tZBV2JJ20Hw',
         tags: ['moonlight', 'night', 'birds', 'magic', 'peaceful'],
       },
       {
         title: 'Crystal Cave',
-        location: 'https://michaelghelfi.bandcamp.com/track/crystal-cave',
+        location: 'https://www.youtube.com/watch?v=-ck5wXXD-_4',
         tags: [
           'crystal', 'cave', 'underground', 'magical', 'wonder',
         ],
       },
     ]
   },
-  'Creepy': {
+  'Tension': {
     titleColor: colors.creepyPurple,
     trackObjects: [
       {
-        title: 'Suspense, torches',
-        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-fire',
-        tags: ['ruins', 'fire', 'quiet', 'peaceful'],
-      },
-      {
         title: 'Slow Dread',
-        location: 'https://michaelghelfi.bandcamp.com/track/gloomy-cave',
-        tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
-      },
-      {
-        title: 'Music: Creepy Fight',
-        location: 'https://www.youtube.com/watch?v=MI2wq39BPFo ',
+        location: 'https://www.youtube.com/watch?v=3radp0y5FFs',
         tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
       },
       {
         title: 'Puzzle Room',
-        location: 'https://michaelghelfi.bandcamp.com/track/temple-of-the-knowledge',
+        location: 'https://www.youtube.com/watch?v=IA0_cxItj9s',
         tags: [
           'crystal', 'cave', 'underground', 'magical', 'wonder', 'puzzle', 'whispers'
         ],
       },
       {
+        title: 'Creepy Fight',
+        location: 'https://www.youtube.com/watch?v=MI2wq39BPFo ',
+        tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
+      },
+      {
         title: 'Creepy Dungeon',
-        location: 'https://michaelghelfi.bandcamp.com/track/generic-dungeon-iv',
+        location: 'https://www.youtube.com/watch?v=j6rCcTTOs1I',
         tags: ['dark', 'creepy'],
       },
     ],
@@ -120,13 +125,13 @@ export default {
     trackObjects: [
       {
         title: 'Rain',
-        location: 'https://michaelghelfi.bandcamp.com/track/realistic-rain',
+        location: 'https://www.youtube.com/watch?v=fGRh_hIpDt4',
         tags: ['rain',],
         excludeFrom: [terrainTypes.winter.name],
       },
       {
         title: 'Wind',
-        location: 'https://michaelghelfi.bandcamp.com/track/stormy-highlands',
+        location: 'https://www.youtube.com/watch?v=1zCDGPtDR8Q',
         tags: ['wind', 'storm'],
       },
     ]
@@ -141,7 +146,7 @@ export default {
       },
       {
         title: 'Shady Tavern',
-        location: 'https://michaelghelfi.bandcamp.com/track/back-alley-tavern',
+        location: 'https://www.youtube.com/watch?v=Ag8sbpNXBEQ',
         tags: ['tavern',],
       },
     ],
