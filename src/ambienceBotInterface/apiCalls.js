@@ -24,3 +24,16 @@ export const startTrack = (trackTitle, trackUrl) => {
   
   return result;
 }
+
+export const stopTrack = () => {
+  const result = axios.post(`${baseUrl}/api`, {
+    data: {
+      command: 'stop',
+    },
+    headers: {
+      'content-type': 'application/json',
+    }
+  })
+
+  return result;
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import { startTrack, } from '../../ambienceBotInterface/apiCalls'
+import { startTrack, stopTrack } from '../../ambienceBotInterface/apiCalls'
 
 const This = styled.div``
 
@@ -44,6 +44,11 @@ const TrackGroup =  props => {
 
   return (
     <This>
+      <div
+        onClick={stopTrack}
+      >
+        Stop Track
+      </div>
       <TrackGroupBody>
         {_.chain(props.tracks)
           .filter(trackObject => {
