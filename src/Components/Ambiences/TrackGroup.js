@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
+import { startTrack, } from '../../ambienceBotInterface/apiCalls'
+
 const This = styled.div``
 
 const TrackGroupBody = styled.div`
@@ -31,8 +33,13 @@ const TrackGroup =  props => {
     navigator.clipboard.writeText(command)
   }
 
-  const handleClickTrack = (location) => {
-    copyTrack(location)
+  const playTrack = async(trackTitle,location) => {
+    const result = await startTrack(trackTitle, location)
+  }
+
+  const handleClickTrack = (trackTitle, location) => {
+    // copyTrack(location)
+    playTrack(trackTitle, location)
   }
 
   return (
@@ -47,7 +54,7 @@ const TrackGroup =  props => {
           .map(track => (
               <TrackTitle
                 key={`${track.location}-${props.categoryTitle}-${track.title}`}
-                onClick={() => handleClickTrack(track.location)}
+                onClick={() => handleClickTrack(track.title, track.location)}
               >
                 {track.title}
               </TrackTitle>
