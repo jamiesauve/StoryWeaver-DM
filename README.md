@@ -1,6 +1,6 @@
 Hey!
 
-This is the dnd-helper app. It's aimed at a very specific group of individuals using very specific tools (possibly only me): Game Masters for online-only Dungeons and Dragons 5E games, who use Discord for audio(/video) and the Fredboat app to run ambiences and soundtracks.
+This is the StoryWeaver DM app. It's aimed at a very specific group of individuals using very specific tools (possibly only me): Game Masters for online-only Dungeons and Dragons 5E games, who use Discord for audio(/video) and the Fredboat app to run ambiences and soundtracks.
 
 It’s an app built for speed and don’t-make-me-think; as a DM you have enough things going on in your head during a game and a good helper app needs to require as little attention as possible. That being said, it doesn’t function exactly as you might expect; here's a quick overview of the features and their quirks.
 

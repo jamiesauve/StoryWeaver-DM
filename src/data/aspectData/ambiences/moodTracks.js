@@ -6,20 +6,9 @@ export default {
     titleColor: colors.battleRed,
     trackObjects: [
       {
-        title: 'Music: Serious (1:00)',
+        title: 'Battle - Skyrim (1:00)',
         location: 'https://www.youtube.com/watch?v=yIMy3pOeo34',
         tags: ['skyrim', 'battle', 'serious'],
-      },
-      {
-        title: 'Music: Serious mix (0:44)',
-        location: 'https://www.youtube.com/watch?v=KEerqdg5f_8',
-        tags: ['skyrim', 'battle', 'serious', 'mix'],
-      },
-      {
-        title: 'Music: Intense Mix (0:52)',
-        location: 'https://www.youtube.com/watch?v=w0sUw735gRw',
-        tags: ['skyrim', 'battle', 'serious', 'mix'],
-        
       },
       {
         title: 'Taiko Drums - clacks (1:00)',
@@ -28,7 +17,7 @@ export default {
         
       },
       {
-        title: 'Viking Drums - steady (1:00)',
+        title: 'Steady Viking Drums (1:00)',
         location: 'https://www.youtube.com/watch?v=47UqaBordWE',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
       },
@@ -38,17 +27,17 @@ export default {
     titleColor: colors.exploringTeal,
     trackObjects: [
       {
-        title: 'Music: Mix 1 (0:58)',
+        title: 'Exploring Mix 1 (0:58)',
         location: 'https://www.youtube.com/watch?v=S4ADbLPLmN8',
         tags: ['hooves', 'horseback', 'birdsong', 'walk'],
       },
       {
-        title: 'Music: Mix 2 (0:58)',
+        title: 'Exploring Mix 2 (0:58)',
         location: 'https://www.youtube.com/watch?v=A8qMyBWZNw0',
         tags: ['hooves', 'horseback', 'birdsong', 'walk'],
       },
       {
-        title: 'Night Music (1:00)',
+        title: 'Night - Skyrim (1:00)',
         location: 'https://www.youtube.com/watch?v=aK4JSwhdcdE',
         tags: ['skyrim', 'battle', 'serious'],
         terrain: [],
