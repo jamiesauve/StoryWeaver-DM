@@ -14,13 +14,16 @@ import specialTracks from '../data/aspectData/ambiences/getSpecialTracks'
 import _ from 'lodash'
 
 const Ambiences = (props) => {
-  const [moodTracks, setMoodTracks] = useState(getMoodTracks(props.activeLocation))
-  const [environmentTracks, setEnvironmentTracks] = useState(getEnvironmentTracks(props.activeLocation))
+  const [moodTracks, setMoodTracks] = useState(getMoodTracks(props.activeLocationType, props.activeLocation))
+  const [environmentTracks, setEnvironmentTracks] = useState(getEnvironmentTracks(props.activeLocationType, props.activeLocation))
 
   useEffect(() => {
-    setMoodTracks(getMoodTracks(props.activeLocation))
-    setEnvironmentTracks(getEnvironmentTracks(props.activeLocation))
-  }, [props.activeLocation])
+    setMoodTracks(getMoodTracks(props.activeLocationType, props.activeLocation))
+    setEnvironmentTracks(getEnvironmentTracks(props.activeLocationType, props.activeLocation))
+  }, [
+    props.activeLocation,
+    props.activeLocationType
+  ])
 
   return (
     <Section

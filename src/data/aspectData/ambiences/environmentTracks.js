@@ -165,7 +165,11 @@ export default [
     tags: ['sewer', 'dripping', 'caves', 'squeaks'],
     terrain: [
       caves,
-    ]
+    ],
+    places: [{
+      name: "durukhaaz",
+      trackTitle: "The Lake",
+    }]
   },
   {
     title: 'Digging',
