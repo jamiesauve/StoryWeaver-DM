@@ -442,52 +442,64 @@ export default [
     ]
   },
   {
-    title: 'Durukhaaz - The Clanging Cavern',
+    title: 'Deep Forge',
     location: 'https://www.youtube.com/watch?v=gS0sNL82Tvk',
     tags: ['hammers', 'dwarves', 'durukhaaz', 'city', 'underground'],
     terrain: [
       caves,
       exotic,
-    ]
+    ],
+    places: [{
+      name: 'durukhaaz',
+      trackTitle: 'The Clanging Cavern',
+    }]
   },
   {
-    title: 'Durukhaaz - The Streets',
+    title: 'Town',
     location: 'https://www.youtube.com/watch?v=Jtz57E2seZY',
     tags: ['people', 'durukhaaz', 'city', 'underground', 'screeching'],
     terrain: [
-      caves,
+      city,
     ],
+    places: [{
+      name: 'durukhaaz',
+      trackTitle: 'The Streets',
+    }]
   },
   {
-    title: 'Durukhaaz - The Merchantry',
+    title: 'Marketplace',
     location: 'https://www.youtube.com/watch?v=UlbxDQMo1o4',
     tags: ['people', 'market', 'busy', 'dogs'],
     terrain: [
-      caves,
-    ]
+      city,
+    ],
+    places: [{
+      name: 'durukhaaz',
+      trackTitle: 'The Merchantry',
+    }]
   },
   {
-    title: 'Durukhaaz - The Forests',
+    title: 'Mushroom Forest (underground)',
     location: 'https://www.youtube.com/watch?v=dzV3o8zr5Hw',
     tags: ['magic', 'calm', 'mushrooms', 'underground'],
     terrain: [
       caves,
-    ]
+    ],
+    places: [{
+      name: 'durukhaaz',
+      trackTitle: 'The Forests',
+    }]
   },
   {
-    title: 'Durukhaaz - The Lake',
-    location: 'https://www.youtube.com/watch?v=pv7sc85UZ-4',
-    tags: ['sewer', 'dripping', 'caves', 'squeaks'],
-    terrain: [
-      caves,
-    ]
-  },
-  {
-    title: 'Durukhaaz - The Mines',
+    title: 'Mine',
     location: 'https://www.youtube.com/watch?v=F6_ZuJSWQ4c',
     tags: ['mining', 'work', 'caves', 'underground'],
     terrain: [
       caves,
-    ]
+    ],
+    places: [{
+      name: 'durukhaaz',
+      trackTitle: 'The Mines', 
+    }]
   },
 ]
