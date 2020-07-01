@@ -16,6 +16,7 @@ import reagents from '../data/aspectData/crafting/reagents'
 import { reagentTypeColors } from '../data/aspectData/crafting/reagentTypes'
 import recipes from '../data/aspectData/crafting/recipes'
 import { recipeTypeColors } from '../data/aspectData/crafting/recipeTypes'
+import places from '../data/generalData/places'
 
 const This = styled.div`
   flex-grow: 1;
@@ -27,19 +28,40 @@ const This = styled.div`
 `
 
 const Crafting = (props) => {
-  const reagentsByTerrain = _.chain(reagents)
-    .filter(reagent => 
-      (
-        _.isEmpty(reagent.terrain) 
-        || _.isEmpty(props.activeLocation)
-      )
-      ? true
-      : _.includes(reagent.terrain, props.activeLocation.name)
-    )
-    .sortBy('label')
-    .value()
+  const getReagentsByLocation = () => { 
+    if (_.isEmpty(props.activeLocation)) {
+      return reagents
+    } else if (props.activeLocationType === "terrain") {
+      return _.filter(reagents, reagent => {
+        if ( _.includes(reagent.terrain, props.activeLocation.name)) {
+          return true
+        } else if  (
+          _.isEmpty(reagent.terrain) && _.isEmpty(reagent.places)
+          || _.isEmpty(props.activeLocation)
+        ) {
+          return true
+        }  
+      })
+    } else if (props.activeLocationType === "place") {
+      const place = _.find(places, {name: props.activeLocation.name})
 
-  const reagentDrawers = reagentsByTerrain
+      return _.filter(reagents, reagent => {
+        if ( _.includes(reagent.places, props.activeLocation.name)) {
+          return true
+        }
+
+        const reagentIsInAllPlaceTerrains = _.every(place.terrainTypes, placeTerrainType => _.includes(reagent.terrain, placeTerrainType))
+        
+        return reagentIsInAllPlaceTerrains
+      })
+    } else { // I don't think this will ever get hit
+      return reagents
+    }
+  }
+
+  // console.log('reagents', getReagentsByLocation())
+
+  const reagentDrawers = getReagentsByLocation()
   .map(reagent => ({
     title: reagent.label,
     titleColor: reagentTypeColors[reagent.type.mainType],
