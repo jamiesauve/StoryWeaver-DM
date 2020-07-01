@@ -1,4 +1,5 @@
 import colors from '../styles/colors'
+import _ from 'lodash'
 
 const terrainTypes = {
   caves: {
@@ -72,5 +73,12 @@ const terrainTypes = {
     color: colors.exoticPink,
   }
 }
+
+export const terrainTypeNames = _.reduce(terrainTypes, (aggr, terrainType) => {
+  return {
+    ...aggr,
+    [terrainType.name]: terrainType.name,
+  }
+}, {})
 
 export default terrainTypes

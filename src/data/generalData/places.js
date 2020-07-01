@@ -1,24 +1,7 @@
 import colors from '../styles/colors'
 import _ from 'lodash'
 
-import terrainTypes from './terrainTypes'
-
-const [
-  caves,
-  coast,
-  city,
-  desert,
-  forest,
-  freshwater,
-  jungle,
-  mountains,
-  ocean,
-  plains,
-  swamp,
-  village,
-  winter,
-  exotic,
- ] = Object.keys(terrainTypes)
+import { terrainTypeNames } from './terrainTypes'
 
 const places = {
   durukhaaz: {
@@ -26,8 +9,8 @@ const places = {
     name: 'durukhaaz',
     color: colors.cavesPurple,
     terrainTypes: [
-      caves,
-      city,
+      terrainTypeNames.caves,
+      terrainTypeNames.city,
     ]
   },
 }

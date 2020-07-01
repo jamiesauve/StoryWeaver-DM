@@ -1,4 +1,4 @@
-import terrainTypes from '../../generalData/terrainTypes'
+import { terrainTypeNames } from '../../generalData/terrainTypes'
 import colors from '../../styles/colors'
 
 export default {
@@ -127,7 +127,7 @@ export default {
         title: 'Rain',
         location: 'https://www.youtube.com/watch?v=fGRh_hIpDt4',
         tags: ['rain',],
-        excludeFrom: [terrainTypes.winter.name],
+        excludeFrom: [terrainTypeNames.winter],
       },
       {
         title: 'Wind',

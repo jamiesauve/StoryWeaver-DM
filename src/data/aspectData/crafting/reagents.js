@@ -1,27 +1,10 @@
 import _ from 'lodash'
-import terrainTypes from '../../generalData/terrainTypes'
+import { terrainTypeNames } from '../../generalData/terrainTypes'
 import reagentTypes from './reagentTypes'
 import recipeTypes from './recipeTypes'
 import plantParts from './plantParts'
 import creatureParts from './creatureParts'
 import moneyUnits from '../../generalData/moneyUnits'
-
-const [
-  caves,
-  coast,
-  city,
-  desert,
-  forest,
-  freshwater,
-  jungle,
-  mountains,
-  ocean,
-  plains,
-  swamp,
-  village,
-  winter,
-  exotic,
-] = _.map(terrainTypes, (terrainType) => terrainType.name)
 
 // const {
 //   plant,
@@ -65,7 +48,7 @@ export default [
     ],
     
     terrain: [
-      caves,
+      terrainTypeNames.caves,
     ],
 
     harvesting: [
@@ -98,16 +81,16 @@ export default [
     effects: [
       `Those that step on the toadstool causes it to rupture and release a cloud of spores within a 5ft-radius. Those that inhale the spores must make a DC 11 Constitution saving throw or become incapacitated while vomiting for the next minute.`,
     ],
-    location: `Found in swamps and wet areas, but not in standing water.`,
+    location: `Found in terrainTypeNames.swamps and wet areas, but not in standing water.`,
     lore: [
       `Most people are careful not to step on the toadstools.`,
-      `Some villagers harvest the mushrooms to make a particularly earthy tasting ale.`
+      `Some terrainTypeNames.villagers harvest the mushrooms to make a particularly earthy tasting ale.`
     ],
 
     terrain: [
-      forest,
-      jungle,
-      swamp,
+      terrainTypeNames.forest,
+      terrainTypeNames.jungle,
+      terrainTypeNames.swamp,
     ],
 
     harvesting: [
@@ -138,18 +121,18 @@ export default [
     
     description: `A broad oak-like tree that sprouts many branches and a multitude of light green leaves.`,
     effects: [],
-    location: `widespread in forests, though not in particularly wet or dry areas.`,
+    location: `widespread in terrainTypeNames.forests, though not in particularly wet or dry areas.`,
     lore: [
       `Good wood for making bows. Now much rarer now than it used to be because of overharvesting.`,
     ],
 
     terrain: [
-      city,
-      forest,
-      jungle,
-      mountains,
-      plains,
-      village,
+      terrainTypeNames.city,
+      terrainTypeNames.forest,
+      terrainTypeNames.jungle,
+      terrainTypeNames.mountains,
+      terrainTypeNames.plains,
+      terrainTypeNames.village,
     ],
 
     harvesting: [
@@ -182,7 +165,7 @@ export default [
   //   location: `Found in active volcanoes and on the Plane of Fire.`,
   //   lore: `This is one of the only plants cultivated by Azers. Salamanders are known to love the fruit, and will eat it whole. The fruit is edible but spicy enough to kill other creatures in large amounts.`,
   //   terrain: [
-  //     exotic,
+  //     terrainTypeNames.exotic,
   //   ],
   //   type: reagentTypes.plant.herbaceous,
   //   uses: [
@@ -235,7 +218,7 @@ export default [
   //   location: `Found in active volcanoes and on the Plane of Fire.`,
   //   lore: `Cultivated by Azers for its beauty. Plants are often tethered so they can be pulled to safety before eruptions.`,
   //   terrain: [
-  //     exotic,
+  //     terrainTypeNames.exotic,
   //   ],
   //   type: reagentTypes.plant.aquatic,
   //   uses: [],
@@ -256,7 +239,7 @@ export default [
     ],
 
     terrain: [
-      exotic,
+      terrainTypeNames.exotic,
     ],
 
     harvesting: [
@@ -296,10 +279,10 @@ export default [
   //   description: `The stem grows symmetrical pairs of stiff oval leaves. During warmer months the plant blossoms into violet flowers.`,
   //   effects: ``,
   //   identifyDC: 13,
-  //   location: `grows on the edges of swamps`,
+  //   location: `grows on the edges of terrainTypeNames.swamps`,
   //   lore: `The large roots of the plant can be ground into a powder, and is the main ingredient in a potion that allows people to see into other realms, often referred to as Sight Beyond.`,
   //   terrain: [
-  //     swamp,
+  //     terrainTypeNames.swamp,
   //   ],
   //   type: reagentTypes.plant.shrub,
   //   uses: [
@@ -334,13 +317,13 @@ export default [
     effects: [
       `Bitter taste when raw.`
     ],
-    location: `Grows around swamps and other humid areas.`,
+    location: `Grows around terrainTypeNames.swamps and other humid areas.`,
     lore: [
       `It is overly difficult to cultivate and farm, which attributes to the rarity of the plant. The vegetable is prized not for eating, but for making a sweet alcohol called Blackcorn Whiskey that has a strong flavor of plums`,
     ],
 
     terrain: [
-      swamp,
+      terrainTypeNames.swamp,
     ],
 
     harvesting: [
@@ -377,8 +360,8 @@ export default [
     ],
 
     terrain: [
-      freshwater,
-      swamp,
+      terrainTypeNames.freshwater,
+      terrainTypeNames.swamp,
     ],
 
     harvesting: [
@@ -413,14 +396,14 @@ export default [
     ],
 
     terrain: [
-      city,
-      coast,
-      forest,
-      jungle,
-      mountains,
-      swamp,
-      plains,
-      village,
+      terrainTypeNames.city,
+      terrainTypeNames.coast,
+      terrainTypeNames.forest,
+      terrainTypeNames.jungle,
+      terrainTypeNames.mountains,
+      terrainTypeNames.swamp,
+      terrainTypeNames.plains,
+      terrainTypeNames.village,
     ],
 
     harvesting: [
@@ -451,14 +434,14 @@ export default [
     effects: [
       `Grinding the root into a paste and applying it to wounds provides not only accelerated healing, but also numbs the affected area. A creature who applies Guklulla to wounds recovers an extra 1d4 per hit dice used during a short rest.`,
     ],
-    location: `Grows in stagnant water, usually in swamps.`,
+    location: `Grows in stagnant water, usually in terrainTypeNames.swamps.`,
     lore: [
-      `Hidden beneath the surface, the plant has an extensive root system that reaches far down into the muck, a massive tangle that catches other debris that is carried along by the slow current. Various species of fish and snakes lay their eggs in the tangle of roots. Orc tribes harvest the Guklulla for the roots, pulling the plants out of the muck, cutting off sections of the roots and throwing them back into the swamp to be harvested again in the future.`,
+      `Hidden beneath the surface, the plant has an extensive root system that reaches far down into the muck, a massive tangle that catches other debris that is carried along by the slow current. Various species of fish and snakes lay their eggs in the tangle of roots. Orc tribes harvest the Guklulla for the roots, pulling the plants out of the muck, cutting off sections of the roots and throwing them back into the terrainTypeNames.swamp to be harvested again in the future.`,
       `Guklulla is edible, but usually must be cleaned thoroughly before eating because of where it grows.`,
     ],
 
     terrain: [
-      swamp,
+      terrainTypeNames.swamp,
     ],
 
     harvesting: [
@@ -492,12 +475,12 @@ export default [
     lore: [
       `In the colder months, the stalk withers, and the bulb falls off, to float around until the bulb softens and falls away to disperse the seeds within`,
       `The seeds sit freely in the shell, and when shaken make a slight rattle noise, which is unnerving when the wind rushes through a cluster of rattlestalks`,
-      `Tribes that live in the swamps will often use the unnerving aspect of the rattlestalks to create fear-inducing noisemakers.`,
+      `Tribes that live in the terrainTypeNames.swamps will often use the unnerving aspect of the rattlestalks to create fear-inducing noisemakers.`,
       `Rattlestalks can be used as a rustic instrument, but are not especially durable.`,
     ],
 
     terrain: [
-      swamp,
+      terrainTypeNames.swamp,
     ],
 
     harvesting: [
@@ -532,7 +515,7 @@ export default [
     ],
 
     terrain: [
-      caves,
+      terrainTypeNames.caves,
     ],
 
     harvesting: [
@@ -562,13 +545,13 @@ export default [
 
     description: `A tree-sized, white, gnarled, plant. Has no leaves and looks like a dead tree. Very hard and heavy.`,
     effects: [],
-    location: `Sunless caves. Thrives on bioluminescence.`,
+    location: `Sunless terrainTypeNames.caves. Thrives on bioluminescence.`,
     lore: [
       `Not good for building since it deteriorates and crumbles when dead.`,
     ],
 
     terrain: [
-      caves,
+      terrainTypeNames.caves,
     ],
 
     harvesting: [],
@@ -582,13 +565,13 @@ export default [
     effects: [
       `A creature touching a starflower blossom that is still attached and alive can see the stars, no matter where they are.`,
     ],
-    location: `High on dry, rocky walls inside underground caves.`,
+    location: `High on dry, rocky walls inside underground terrainTypeNames.caves.`,
     lore: [
       `Valued for use in divination magic. It is said that some ancient culture planted Starflowers in many hidden places in the Underdark as a means of navigation.`,
     ],
 
     terrain: [
-      caves,
+      terrainTypeNames.caves,
     ],
 
     harvesting: [
@@ -623,7 +606,7 @@ export default [
     ],
 
     terrain: [
-      caves,
+      terrainTypeNames.caves,
     ],
     harvesting: [
       {
@@ -658,7 +641,7 @@ export default [
     ],
 
     terrain: [
-      caves,
+      terrainTypeNames.caves,
     ],
     harvesting: [
       {
@@ -687,7 +670,7 @@ export default [
     ],
 
     terrain: [
-      caves,
+      terrainTypeNames.caves,
     ],
     harvesting: []
   },
@@ -709,7 +692,7 @@ export default [
     ],
 
     terrain: [
-      caves,
+      terrainTypeNames.caves,
     ],
     harvesting: [
       {

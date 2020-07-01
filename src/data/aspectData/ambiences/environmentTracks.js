@@ -1,7 +1,7 @@
-import terrainTypes from '../../generalData/terrainTypes'
+import { terrainTypeNames } from '../../generalData/terrainTypes'
 import { placeNames } from '../../generalData/places'
 
-const [
+const {
   caves,
   coast,
   city,
@@ -16,7 +16,7 @@ const [
   village,
   winter,
   exotic,
- ] = Object.keys(terrainTypes)
+ } = terrainTypeNames
 
 export default [
   {

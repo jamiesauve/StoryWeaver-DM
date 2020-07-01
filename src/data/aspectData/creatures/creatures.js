@@ -1,28 +1,11 @@
-import terrainTypes from '../../generalData/terrainTypes'
-
-const [
-  caves,
-  coast,
-  city,
-  desert,
-  forest,
-  freshwater,
-  jungle,
-  mountains,
-  ocean,
-  plains,
-  swamp,
-  village,
-  winter,
-  exotic,
- ] = Object.keys(terrainTypes)
+import { terrainTypeNames } from '../../generalData/terrainTypes'
 
 const creatures = [
   {
     label: "Hermit Crab",
     name: "hermit-crab",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "near water",
   },
@@ -30,7 +13,7 @@ const creatures = [
     label: "Crab",
     name: "crab",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "near water",
   },
@@ -38,7 +21,7 @@ const creatures = [
     label: "Lobster",
     name: "lobster",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "near water",
   },
@@ -46,7 +29,7 @@ const creatures = [
     label: "Fish",
     name: "fish",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "water",
   },
@@ -54,7 +37,7 @@ const creatures = [
     label: "Squid",
     name: "squid",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "water",
   },
@@ -62,7 +45,7 @@ const creatures = [
     label: "Octopus",
     name: "octopus",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "water",
   },
@@ -70,7 +53,7 @@ const creatures = [
     label: "Snail",
     name: "smail",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "near water",
   },
@@ -78,7 +61,7 @@ const creatures = [
     label: "Slug",
     name: "slug",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "near water",
   },
@@ -86,7 +69,7 @@ const creatures = [
     label: "Turtle",
     name: "turtle",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "near water",
   },
@@ -94,7 +77,7 @@ const creatures = [
     label: "Frog",
     name: "frog",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "near water",
   },
@@ -102,7 +85,7 @@ const creatures = [
     label: "rats, nifflers, night squirrels, cave monkeys (in forests), toads, beetles, and centipedes",
     name: "cheat",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "dry areas",
   },
@@ -110,7 +93,7 @@ const creatures = [
     label: "bugs, bats, ghost jellyfish, moths, and cave owls",
     name: "cheat2",
     terrain: [
-      caves
+      terrainTypeNames.caves
     ],
     location: "flying",
   },
