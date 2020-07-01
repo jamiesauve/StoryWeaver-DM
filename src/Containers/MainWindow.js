@@ -30,13 +30,10 @@ const MainWindow = (props) => {
   const [activeLocationType, setActiveLocationType] = useState('any')
   const [activeLocation, setActiveLocation] = useState({})
 
-  useEffect(() => {
-    if (activeLocationType === "any") {
-      setActiveLocation({})
-    }
-  }, [
-    activeLocationType,
-  ])
+  const setActiveLocationTypeAndResetActiveLocation = (activeLocationType) => {
+    setActiveLocation({})
+    setActiveLocationType(activeLocationType)
+  }
 
   return (
     <MainWindowContextProvider
@@ -56,7 +53,7 @@ const MainWindow = (props) => {
             >
               <MainWindowHeader 
                 activeLocationType={activeLocationType}
-                setActiveLocationType={setActiveLocationType}
+                setActiveLocationType={setActiveLocationTypeAndResetActiveLocation}
                 activeLocation={activeLocation}
                 setActiveLocation={setActiveLocation}
               />
