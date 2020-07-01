@@ -1,4 +1,4 @@
-import React, { useState, } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import styled from 'styled-components'
 
@@ -28,9 +28,15 @@ const MainWindow = (props) => {
   const windowHeight = useWindowResize() 
 
   const [activeLocationType, setActiveLocationType] = useState('any')
-  const [activeLocation, setActiveLocation] = useState('')
+  const [activeLocation, setActiveLocation] = useState({})
 
-
+  useEffect(() => {
+    if (activeLocationType === "any") {
+      setActiveLocation({})
+    }
+  }, [
+    activeLocationType,
+  ])
 
   return (
     <MainWindowContextProvider
