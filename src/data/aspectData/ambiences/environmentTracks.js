@@ -127,29 +127,29 @@ export default [
     title: 'Cicadas Campfire',
     location: 'https://michaelghelfi.bandcamp.com/track/campfire-at-dusk',
     tags: ['campfire', 'cicadas', 'evening', 'peaceful'],
-    excludeFrom: [
-      caves,
-      city,
-      exotic,
-      freshwater,
-      ocean,
-      village,
-      winter,
-    ],
+    terrain: [
+      coast,
+      desert,
+      forest,
+      jungle,
+      mountains,
+      plains,
+      swamp,
+    ]
   },
   {
     title: 'Crickets Campfire',
     location: 'https://michaelghelfi.bandcamp.com/track/savannah-night-camp',
     tags: ['campfire', 'crickets', 'birds', 'peaceful'],
-    excludeFrom: [
-      caves,
-      city,
-      exotic,
-      freshwater,
-      ocean,
-      village,
-      winter,
-    ],
+    terrain: [
+      coast,
+      desert,
+      forest,
+      jungle,
+      mountains,
+      plains,
+      swamp,
+    ]
   },
   {
     title: 'Black Market (bubbling)',
