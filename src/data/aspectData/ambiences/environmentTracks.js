@@ -1,4 +1,5 @@
 import terrainTypes from '../../generalData/terrainTypes'
+import { placeNames } from '../../generalData/places'
 
 const [
   caves,
@@ -167,7 +168,7 @@ export default [
       caves,
     ],
     places: [{
-      name: "durukhaaz",
+      name: placeNames.durukhaaz,
       trackTitle: "The Lake",
     }]
   },
@@ -444,25 +445,25 @@ export default [
   {
     title: 'Deep Forge',
     location: 'https://www.youtube.com/watch?v=gS0sNL82Tvk',
-    tags: ['hammers', 'dwarves', 'durukhaaz', 'city', 'underground'],
+    tags: ['hammers', 'dwarves', placeNames.durukhaaz, 'city', 'underground'],
     terrain: [
       caves,
       exotic,
     ],
     places: [{
-      name: 'durukhaaz',
+      name: placeNames.durukhaaz,
       trackTitle: 'The Clanging Cavern',
     }]
   },
   {
     title: 'Town',
     location: 'https://www.youtube.com/watch?v=Jtz57E2seZY',
-    tags: ['people', 'durukhaaz', 'city', 'underground', 'screeching'],
+    tags: ['people', placeNames.durukhaaz, 'city', 'underground', 'screeching'],
     terrain: [
       city,
     ],
     places: [{
-      name: 'durukhaaz',
+      name: placeNames.durukhaaz,
       trackTitle: 'The Streets',
     }]
   },
@@ -474,7 +475,7 @@ export default [
       city,
     ],
     places: [{
-      name: 'durukhaaz',
+      name: placeNames.durukhaaz,
       trackTitle: 'The Merchantry',
     }]
   },
@@ -486,7 +487,7 @@ export default [
       caves,
     ],
     places: [{
-      name: 'durukhaaz',
+      name: placeNames.durukhaaz,
       trackTitle: 'The Forests',
     }]
   },
@@ -498,7 +499,7 @@ export default [
       caves,
     ],
     places: [{
-      name: 'durukhaaz',
+      name: placeNames.durukhaaz,
       trackTitle: 'The Mines', 
     }]
   },

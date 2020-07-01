@@ -70,7 +70,6 @@ const shouldIncludeTrack = (trackObject, activeLocation, activeLocationType, loc
     const matchByTerrain =  _.get(trackObject, 'terrain', []).includes(location.name)
 
     const places =  _.map(_.get(trackObject, 'places', []), place => place.name)
-
     const matchByPlace = _.includes(places, location.name)
 
     return matchByTerrain || matchByPlace

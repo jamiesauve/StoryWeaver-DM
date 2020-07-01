@@ -1,4 +1,5 @@
 import colors from '../styles/colors'
+import _ from 'lodash'
 
 import terrainTypes from './terrainTypes'
 
@@ -30,5 +31,12 @@ const places = {
     ]
   },
 }
+
+export const placeNames = _.reduce(places, (aggr, place) => {
+  return {
+    ...aggr,
+    [place.name]: place.name,
+  }
+}, {})
 
 export default places
