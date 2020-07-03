@@ -34,19 +34,20 @@ const recipes = [
     ingredients: [
       {
         label: "Blackroot",
-        name: "blackroot" // maps to reagent.name
-        // amount: defaults to 1oz
+        name: "blackroot", // maps to reagent.name
+        amount: null,
       },
       {
         label: "mammal blood",
-        // amount: default to 1oz
+        amount: null, // defaults to 1oz
       }
     ],
     instructions: "Grind blackroot root into powder and distill in mammal blood for six weeks.",
-    // amountCreated: defaults to 1oz
+    amountCreated: null, // defaults to 1oz
     value: {
       amount: 50,
       unit: moneyUnits.gp,
+      amountCreated: null, // defaults to 1oz
     },
   },
   // potion-of-orientation
