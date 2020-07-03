@@ -18,7 +18,7 @@ const This = styled.div`
   background-color: ${colors.mediumBackground};
 
   font-family: sans-serif;
-  font-size: ${sizes.default};
+  font-size: ${sizes.medium};
   color: ${colors.lightGrey};
 `
 
