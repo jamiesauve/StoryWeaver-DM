@@ -15,8 +15,10 @@ import RecipeDisplayCard from '../Components/DisplayCards/RecipeDisplayCard'
 import reagents from '../data/aspectData/crafting/reagents'
 import { reagentTypeColors } from '../data/aspectData/crafting/reagentTypes'
 import recipes from '../data/aspectData/crafting/recipes'
+import createRecipePlaceholders from '../data/aspectData/crafting/createRecipePlaceholders'
 import { recipeTypeColors } from '../data/aspectData/crafting/recipeTypes'
 import places from '../data/generalData/places'
+import colors from '../data/styles/colors'
 
 const This = styled.div`
   flex-grow: 1;
@@ -59,8 +61,6 @@ const Crafting = (props) => {
     }
   }
 
-  // console.log('reagents', getReagentsByLocation())
-
   const reagentDrawers = getReagentsByLocation()
   .map(reagent => ({
     title: reagent.label,
@@ -78,7 +78,16 @@ const Crafting = (props) => {
       data={recipe}
     />,
   }))
-
+  .concat({
+    title: `+`,
+    titleColor: colors.winterWhite,
+    content: () => <RecipeDisplayCard
+      isEditable={true}
+      isInCreateMode={true}
+      placeholders={createRecipePlaceholders}
+    />
+  })
+    
   return (
     <This
     className="crafting"

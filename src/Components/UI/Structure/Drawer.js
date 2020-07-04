@@ -24,6 +24,8 @@ const DrawerTitle = styled.div`
 
   padding-top: 7px;
   background-color: ${props => props.titleColor};
+
+  color: ${props => props.titleColor === colors.winterWhite ? colors.darkGrey : `inherit`} // TODO: make this flip for all too-light colors, not just winterWhite
 `
 
 const DrawerBody = styled.div`

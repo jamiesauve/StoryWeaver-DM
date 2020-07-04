@@ -65,7 +65,7 @@ const EditableList = (props) => {
     heading,
     items,
     numberOfColumns,
-    useItemsAsPlaceholders,
+    placeholder,
   } = props
 
   const [listItems, setListItems] = useState([])
@@ -74,31 +74,20 @@ const EditableList = (props) => {
     const columns = Array(numberOfColumns).fill(null).map(() => [])
 
     _.forEach(items, (item, index) => {
-      const itemObject =  useItemsAsPlaceholders
-        ? {
-          placeholder: item,
-          value: ``,
-        }
-        : {
-          placeholder: ``,
-          value: item,
-        }
-      
-      columns[index % numberOfColumns].push(itemObject)
+      columns[index % numberOfColumns].push(item)
     })
 
     setListItems(columns)
   }, [
     items,
     numberOfColumns,
-    useItemsAsPlaceholders,
   ])
 
   const updateListItem = (columnIndex, itemIndex, value) => {
     // TODO: sanitize user input
     const newListItems = _.cloneDeep(listItems)
 
-    newListItems[columnIndex][itemIndex].value = value
+    newListItems[columnIndex][itemIndex] = value
 
     setListItems(newListItems)
   }
@@ -128,8 +117,8 @@ const EditableList = (props) => {
                 <EditableTextarea
                   className="editableTextarea"
                   onChange={e => updateListItem(columnIndex, itemIndex, e.target.value)}
-                  placeholder={listItems[columnIndex][itemIndex].placeholder}
-                  value={listItems[columnIndex][itemIndex].value}
+                  placeholder={placeholder}
+                  value={listItems[columnIndex][itemIndex]}
                 />
               </ListItem>
             ))}

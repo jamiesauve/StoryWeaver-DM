@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import Row from '..//UI/Style/DisplayCard/Row'
-import TitleDetail from '..//UI/Style/DisplayCard/TitleDetail'
-
 import ColoredBox from '../UI/Style/ColoredBox'
 import DataTable from '../UI/Structure/DataTable'
+import EditableList from '../UI/Action/EditableList'
 import List from '../UI/Structure/List'
+import Row from '..//UI/Style/DisplayCard/Row'
+import TitleDetail from '..//UI/Style/DisplayCard/TitleDetail'
 
 import colors from '../../data/styles/colors'
 import sizes from '../../data/styles/sizes'
@@ -41,12 +41,14 @@ const RecipeDisplayCard = (props) => {
       type,
       value,
     },
+    isEditable,
+    isInCreateMode,
+    placeholders,
   } = props
 
   const ingredientsList = _.map(ingredients, ingredient => (
     `${ingredient.label} (${ingredient.amount || `1 oz`})`
   ))
-
 
   const recipeTableData = [{
     labelCell: `Create DC:`,
@@ -65,7 +67,10 @@ const RecipeDisplayCard = (props) => {
     valueCells: [amountCreated || `1 ounce`],
   }, {
     labelCell: `Value:`,
-    valueCells: [`${value.amount} ${value.unit.shortName} per ounce`],
+    valueCells: [`${value.amount} ${isInCreateMode 
+      ? null
+      : value.unit.shortName} per ${value.amountCreated || `ounce`
+    }`],
   }]
 
   return (
@@ -83,10 +88,17 @@ const RecipeDisplayCard = (props) => {
         <ColoredBox
           color={colors.forestGreen}
         >
-          <List
-            heading="Description"
-            items={[description]}
-          />
+          {isEditable
+            ? <EditableList
+              heading="Description"
+              items={[description]}
+              placeholder={placeholders.description}
+            />
+            : <List
+              heading="Description"
+              items={[description]}
+            />
+          }
         </ColoredBox>
       </Row>
 
@@ -152,6 +164,14 @@ const RecipeDisplayCard = (props) => {
       </Row>
     </This>
   )
+}
+
+RecipeDisplayCard.defaultProps = {
+  data: {
+    ingredients: {},
+    type: {},
+    value: {},
+  },
 }
 
 export default RecipeDisplayCard
