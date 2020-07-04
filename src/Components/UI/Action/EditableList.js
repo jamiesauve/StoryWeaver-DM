@@ -66,12 +66,23 @@ const EditableList = (props) => {
     items,
     numberOfColumns,
     placeholder,
+    maxLength,
   } = props
 
   const [listItems, setListItems] = useState([])
 
   useEffect(() => {
     const columns = Array(numberOfColumns).fill(null).map(() => [])
+    
+    // TODO: handle maxLength, if I actually want to enforce this
+    if (_.isEmpty(items) || maxLength < items.length) { 
+      /**
+       * if this array comes back empty, the placeholder won't be shown
+       * because the corresponding index won't exist, but it needs to be
+       * shown when this array is empty. 
+       */
+      items.push('')
+    }
 
     _.forEach(items, (item, index) => {
       columns[index % numberOfColumns].push(item)
