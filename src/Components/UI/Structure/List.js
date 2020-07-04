@@ -50,13 +50,13 @@ const List = (props) => {
 
     return (
       <ColumnContainer>
-        {_.map(columns, column => (
+        {_.map(columns, (column, columnIndex) => (
           <Column
-            key={column[0]}
+            key={columnIndex}
           >
-            {_.map(column, item => (
+            {_.map(column, (item, itemIndex) => (
               <ListItem
-                key={item}
+                key={itemIndex}
               >
                 {areBulletsVisible ? `- ` : ``}{item}
               </ListItem>
