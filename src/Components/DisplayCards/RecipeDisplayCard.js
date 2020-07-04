@@ -92,6 +92,7 @@ const RecipeDisplayCard = (props) => {
             ? <EditableList
               heading="Description"
               items={[description]}
+              maxLength={1}
               placeholder={placeholders.description}
             />
             : <List
@@ -102,15 +103,22 @@ const RecipeDisplayCard = (props) => {
         </ColoredBox>
       </Row>
 
-      {!_.isEmpty(lore)
+      {(isEditable || !_.isEmpty(lore))
         && <Row>
           <ColoredBox
             color={colors.plainsYellow}
           >
-            <List
-              heading="Lore"
-              items={lore}
-            />
+            {isEditable
+              ? <EditableList
+                heading="Lore"
+                items={lore}
+                placeholder={placeholders.lore}
+              />
+              : <List
+                heading="Lore"
+                items={lore}
+              />
+            }
           </ColoredBox>
         </Row>
       }
@@ -131,10 +139,18 @@ const RecipeDisplayCard = (props) => {
         <ColoredBox
           color={colors.villageBrown}
         >
-          <List
-            heading="Instructions"
-            items={[instructions]}
-          />
+          {isEditable
+            ? <EditableList
+              heading="Instructions"
+              items={[instructions]}
+              maxLength={1}
+              placeholder={placeholders.instructions}
+            />
+            : <List
+              heading="Instructions"
+              items={[instructions]}
+            />
+          }
         </ColoredBox>
       </Row>
 
@@ -156,10 +172,17 @@ const RecipeDisplayCard = (props) => {
         <ColoredBox
           color={colors.battleRed}
         >
-          <List
-            heading="Effects"
-            items={effects}
-          />
+          {isEditable
+            ? <EditableList
+              heading="Effects"
+              items={effects}
+              placeholder={placeholders.effects}
+            />
+            : <List
+              heading="Effects"
+              items={effects}
+            />
+          }
         </ColoredBox>
       </Row>
     </This>
@@ -168,7 +191,10 @@ const RecipeDisplayCard = (props) => {
 
 RecipeDisplayCard.defaultProps = {
   data: {
+    description: '',
+    effects: [],
     ingredients: {},
+    lore: [],
     type: {},
     value: {},
   },
