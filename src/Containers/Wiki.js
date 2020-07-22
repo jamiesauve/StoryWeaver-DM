@@ -8,10 +8,9 @@ import Dresser from '../Components/UI/Structure/Dresser'
 
 import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
 
-import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
+import WikiEntryDisplayCard from '../Components/DisplayCards/WikiEntryDisplayCard'
 
-import terrainTypes from '../data/generalData/terrainTypes'
-import reagents from '../data/aspectData/crafting/reagents'
+import { wikiEntriesAsArray } from '../data/aspectData/wiki/wikiEntries'
 
 const This = styled.div`
   flex-grow: 1;
@@ -22,25 +21,21 @@ const This = styled.div`
   height: 100%;
 `
 
-const Places = (props) => {
-  const reagentsByTerrain = _.filter(reagents, reagent => 
-    _.isEmpty(reagent.terrain)
-    ? true
-    : _.includes(reagent.terrain, props.activeLocation)
-  )
-
-  const drawers = reagentsByTerrain
-  .map(reagent => ({
-    title: reagent.label,
-    titleColor: _.find(terrainTypes, {name: props.activeLocation}).color,
-    content: () => <ReagentDisplayCard
-      data={reagent}
-    />,
+const Wiki = (props) => {
+  // TODO: make these filter by locationTags in places.js
+  const drawers = wikiEntriesAsArray
+  .map(wikiEntry => ({
+    title: wikiEntry.label,
+    titleDetail: wikiEntry.type,
+    titleColor: wikiEntry.titleColor,
+    content: () => <WikiEntryDisplayCard
+      wikiEntry={wikiEntry}
+    />
   }))
 
   return (
     <This
-    className="places"
+    className="wiki"
     >
       <Section
         className="section"
@@ -60,4 +55,4 @@ const Places = (props) => {
   )
 }
 
-export default Places
+export default Wiki
