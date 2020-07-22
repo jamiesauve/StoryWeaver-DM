@@ -59,6 +59,7 @@ const Dresser = (props) => {
           content={drawer.content}
           title={drawer.title}
           titleColor={drawer.titleColor}
+          titleDetail={drawer.titleDetail}
         />
       ))}
     </This>

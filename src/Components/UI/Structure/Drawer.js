@@ -11,22 +11,34 @@ const This = styled.div`
 
   align-items: center;
 `
-
-const SectionTitle = styled.div`
-  margin-bottom: 7px;
-  font-weight: bold;
-`
-
-const DrawerTitle = styled.div`
+const DrawerFace = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
 
   padding-top: 7px;
   background-color: ${props => props.titleColor};
 
   color: ${props => props.titleColor === colors.winterWhite ? colors.darkGrey : `inherit`} // TODO: make this flip for all too-light colors, not just winterWhite
 `
+
+const DrawerThird = styled.div`
+  width: ${100 / 3}%;
+`
+
+const DrawerTitle = styled.div`
+  margin-bottom: 7px;
+  font-weight: bold;
+
+  text-align: center;
+`
+
+const TitleDetail = styled.div`
+  padding-right: 10px;
+
+  text-align: right;
+  font-style: italic;
+`
+
 
 const DrawerBody = styled.div`
   display: flex;
@@ -50,24 +62,36 @@ const Drawer =  props => {
       className="Drawer"
       isOpen={props.isOpen}
     >
-      <DrawerTitle
-        className="DrawerTitle"
+      <DrawerFace
+        className="drawerFace"
         titleColor={props.titleColor}
         onClick={handleClickTitle}
       >
-        <SectionTitle>
-          {props.title}
-        </SectionTitle>
-      </DrawerTitle>
+        <DrawerThird />
 
-        {
-          props.isOpen
-          && <DrawerBody
-            className="drawerBody"
-          >
-            <DrawerContent />
-          </DrawerBody>
-        }
+        <DrawerThird>
+          <DrawerTitle>
+            {props.title}
+          </DrawerTitle>
+        </DrawerThird>
+
+        <DrawerThird>
+          {props.titleDetail
+            && <TitleDetail>
+              {props.titleDetail}
+            </TitleDetail>
+          }
+        </DrawerThird>
+      </DrawerFace>
+
+      {
+        props.isOpen
+        && <DrawerBody
+          className="drawerBody"
+        >
+          <DrawerContent />
+        </DrawerBody>
+      }
     </This>
   )
 }
