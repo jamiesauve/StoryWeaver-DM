@@ -50,7 +50,7 @@ const HarvestingEntry = (props) => {
 
   const harvestingData = [{
     labelCell: `Value:`,
-    valueCells: [`${value.amount} ${value.unit.shortName} per ${value.amountOfReagent || `ounce`}`],
+    valueCells: [_.isEmpty(value) ? `` : `${value.amount} ${value.unit.shortName} per ${value.amountOfReagent || `ounce`}`],
   }, {
     labelCell: `Harvest DC:`,
     valueCells: [harvestDC],
