@@ -5,7 +5,7 @@ import Gameplay from '../Containers/Gameplay'
 import Items from '../Containers/Items'
 import Notes from '../Containers/Notes'
 import People from '../Containers/People'
-import Places from '../Containers/Places'
+import Wiki from '../Containers/Wiki'
 import Crafting from '../Containers/Crafting'
 import Search from '../Containers/Search'
 
@@ -37,12 +37,12 @@ const Aspects = [
     label: "Ambiences",
   },
   {
-    component: () => Places,
+    component: () => Wiki,
     color: colors.mountainsTeal,
     defaultSlot: 1,
     defaultIndex: 1,
-    name: "places",
-    label: "Places",
+    name: "wiki",
+    label: "Wiki",
   },
   {
     component: () => People,
