@@ -29,8 +29,8 @@ const Column = styled.div`
 
 const ListItem = styled.div`
   font-size: ${sizes.small};
-  text-align: center;
-  padding: 5px 0;
+  text-align: ${props => props.textAlign || `center`};
+  padding: 5px;
 `
 
 const List = (props) => {
@@ -39,6 +39,7 @@ const List = (props) => {
     numberOfColumns,
     items,
     heading,
+    textAlign,
   } = props
 
   const generateColumns = () => {
@@ -57,6 +58,7 @@ const List = (props) => {
             {_.map(column, (item, itemIndex) => (
               <ListItem
                 key={itemIndex}
+                textAlign={textAlign}
               >
                 {areBulletsVisible ? `- ` : ``}{item}
               </ListItem>
