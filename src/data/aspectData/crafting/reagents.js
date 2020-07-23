@@ -156,74 +156,88 @@ export default [
       },
     ],
   },
-  // {
-  //   label: "Flameleaf",
-  //   name: "flameleaf",
-  //   description: `Tall, elegant, flax-like plant with leaves colored like flames - blue, red, orange, to pale yellow at the tips. Grows a deep red fruit nestled in the middle that glows. `,
-  //   effects: `Gives off a moderate amount of heat in a 10-foot radius.  Holding a leaf of the plant that was harvested in the last year keeps the holder comfortably warm.`,
-  //   identifyDC: 7,
-  //   location: `Found in active volcanoes and on the Plane of Fire.`,
-  //   lore: `This is one of the only plants cultivated by Azers. Salamanders are known to love the fruit, and will eat it whole. The fruit is edible but spicy enough to kill other creatures in large amounts.`,
-  //   terrain: [
-  //     terrainTypeNames.exotic,
-  //   ],
-  //   type: reagentTypes.plant.herbaceous,
-  //   uses: [
-  //     // can be ingredient, eaten, salve, material component, gear
-  //     {
-  //       type: 'eaten',
-  //       partLabel: 'Fruit',
-  //       partName: 'fruit',
-  //       harvestDC: 15,
-  //       recipe: {
-  //         label: 'Flameleaf Pepper',
-  //         name: 'flameleaf-pepper',
-  //         type: recipeTypes.consumable.edible,
-  //       },
-  //     },
-  //     {
-  //       type: 'gear',
-  //       partLabel: 'Leaf',
-  //       partName: 'leaf',
-  //       harvestDC: 5,
-  //       recipe: {
-  //         label: 'Flameleaf',
-  //         name: 'flameleaf',
-  //         gearType: recipeTypes.item.magical,
-  //         use: 'holding a leaf of the plant that was harvested in the last year keeps the holder comfortably warm.',
-  //       },
-  //     }, 
-  //   ],
-  //   value: [
-  //     {
-  //       amount: 5,
-  //       unit: 'gp',
-  //       partLabel: 'Fruit',
-  //       partName: 'fruit',
-  //     },
-  //     {
-  //       amount: 2,
-  //       unit: 'gp',
-  //       partLabel: 'Leaf',
-  //       partName: 'leaf',
-  //     }
-  //   ],
-  // },
-  // {
-  //   label: "Magma Lily",
-  //   name: "magma-lily",
-  //   description: `medium-sized plants with wide, ashen blue leaves and bright yellow flowers blooming up from the middle of the plant. Has long, thin roots.`,
-  //   effects: `If the flower is smelled, it grants advantage to perception checks using smell for 1d4 hours.`,
-  //   identifyDC: 5,
-  //   location: `Found in active volcanoes and on the Plane of Fire.`,
-  //   lore: `Cultivated by Azers for its beauty. Plants are often tethered so they can be pulled to safety before eruptions.`,
-  //   terrain: [
-  //     terrainTypeNames.exotic,
-  //   ],
-  //   type: reagentTypes.plant.aquatic,
-  //   uses: [],
-  //   value: [],
-  // },
+  {
+    label: "Flameleaf",
+    name: "flameleaf",
+    type: reagentTypes.plant.flax,
+
+    description: `Tall, elegant, flax-like plant with leaves colored like flames - blue, red, orange, to pale yellow at the tips. Grows a deep red fruit nestled in the middle that glows.`,
+    effects: [
+      `Gives off a moderate amount of heat in a 10-foot radius.`,
+      `Holding a leaf of the plant that was harvested within the last year keeps the holder comfortably warm.`,
+    ],
+    location: `Found in active volcanoes and on the Plane of Fire.`,
+    lore: [
+      `This is one of the only plants cultivated by Azers.`,
+      `Salamanders are known to love the fruit, and will eat it whole.`,
+      `The fruit is edible but spicy enough to kill other creatures in large amounts.`,
+    ],
+
+    terrain: [
+      terrainTypeNames.exotic,
+    ],
+
+    harvesting: [
+      {
+        reagentPart: plantParts.fruit,
+        harvestDC: 15,
+        onHarvestFailure: `If the harvester is not wearing protective gloves, they take 1d4 fire damage and have disadvantage on dexterity checks using their hands for 24 hours.`,
+        recipes: [{
+          type: recipeTypes.consumable.edible,
+          label: "Flameleaf Pepper",
+          name: 'flameleaf-pepper',
+        }],
+        simpleUses: [],
+        value: {
+          amount: 2,
+          unit: moneyUnits.gp,
+          amountOfReagent: "pound",
+        },
+      },
+      {
+        reagentPart: plantParts.leaf,
+        harvestDC: 5,
+        onHarvestFailure: ``,
+        recipes: [],
+        simpleUses: [{
+          type: recipeTypes.item.magical,
+        }],
+        value: {
+          amount: 2,
+          unit: moneyUnits.gp,
+          amountOfReagent: "leaf",
+        },
+      },
+    ]
+  },
+  {
+    label: "Magma Lily",
+    name: "magma-lily",
+    type: reagentTypes.plant.aquatic,
+
+    description: `Medium-sized plants with wide, ashen blue leaves and bright yellow flowers blooming up from the middle of the plant. Has long, thin roots.`,
+    effects: [
+      `If the flower is smelled, it grants advantage to perception checks using smell for 1d4 hours.`,
+    ],
+    location: `Found in active volcanoes and on the Plane of Fire.`,
+    lore: [
+      `Cultivated by Azers for its beauty. These plants are often tethered so they can be pulled to safety before eruptions.`,
+    ],
+    terrain: [
+      terrainTypeNames.exotic,
+    ],
+
+    harvesting: [
+      {
+        reagentPart: plantParts.flower,
+        harvestDC: 7,
+        onHarvestFailure: ``,
+        recipes: [],
+        simpleUses: [],
+        value: [],
+      },
+    ]
+  },
   {
     label: "Magma Urchin",
     name: "magma-urchin",
@@ -273,47 +287,47 @@ export default [
       }
     ],
   },
-  // {
-  //   label: "Adarna",
-  //   name: "adarna",
-  //   description: `The stem grows symmetrical pairs of stiff oval leaves. During warmer months the plant blossoms into violet flowers.`,
-  //   effects: ``,
-  //   identifyDC: 13,
-  //   location: `grows on the edges of terrainTypeNames.swamps`,
-  //   lore: `The large roots of the plant can be ground into a powder, and is the main ingredient in a potion that allows people to see into other realms, often referred to as Sight Beyond.`,
-  //   terrain: [
-  //     terrainTypeNames.swamp,
-  //   ],
-  //   type: reagentTypes.plant.shrub,
-  //   uses: [
-  //     // can be ingredient, eaten, salve, material component, gear
-  //     {
-  //       type: component,
-  //       partLabel: 'Root',
-  //       partName: 'root',
-  //       harvestDC: 5,
-  //       recipe: {
-  //         label: 'Sight Beyond',
-  //         name: 'sight-beyond',
-  //         type: recipeTypes.consumable.potion,
-  //       },
-  //     }, 
-  //   ],
-  //   value: [
-  //     {
-  //       amount: 2,
-  //       unit: 'gp',
-  //       partLabel: 'Root',
-  //       partName: 'root',
-  //     },
-  //   ],
-  // },
+  {
+    label: "Adarna",
+    name: "adarna",
+    type: reagentTypes.plant.shrub,
+
+    description: `The stem grows symmetrical pairs of stiff oval leaves. During warmer months the plant blossoms into violet flowers.`,
+    effects: [],
+    location: `Grows around the edges of swamps`,
+    lore: [
+      `The large roots of the plant can be ground into a powder, and is the main ingredient in a potion that allows people to see into other realms, often referred to as Sight Beyond.`,
+    ],
+
+    terrain: [
+      terrainTypeNames.swamp,
+    ],
+
+    harvesting: [
+      {
+        reagentPart: plantParts.root,
+        harvestDC: 7,
+        onHarvestFailure: ``,
+        recipes: [{
+          type: recipeTypes.consumable.potion,
+          label: "Sight Beyond",
+          name: 'sight-beyond',
+        }],
+        simpleUses: [],
+        value: {
+          amount: 2,
+          unit: moneyUnits.gp,
+          amountOfReagent: "root",
+        },
+      },
+    ]
+  },
   {
     label: "Blackcorn",
     name: "blackcorn",
     type: reagentTypes.plant.reed,
 
-    description: `Resemble miniature corm plants in dark colors.`,
+    description: `Resemble miniature corn plants in dark colors.`,
     effects: [
       `Bitter taste when raw.`
     ],

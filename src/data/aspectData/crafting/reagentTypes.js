@@ -6,6 +6,7 @@ const reagentTypes = {
   plant: [
     "aquatic",
     "cactus",
+    "flax",
     "fungus",
     "grass",
     "herbaceous",

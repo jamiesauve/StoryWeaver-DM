@@ -22,7 +22,6 @@ const recipeTypes = {
   "expended",
   "instrument",
   "magical",
-  "practical",
   "other",
   ],
   medecine: [
