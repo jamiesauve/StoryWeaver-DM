@@ -4,6 +4,14 @@ import _ from 'lodash'
 import { terrainTypeNames } from './terrainTypes'
 
 const places = {
+  ambalora: {
+    label: 'Ambalora',
+    name: 'ambalora',
+    color: colors.creepyPurple,
+    terrainTypes: [
+      terrainTypeNames.caves,
+    ],
+  },
   durukhaaz: {
     label: 'Durukhaaz',
     name: 'durukhaaz',
@@ -11,7 +19,7 @@ const places = {
     terrainTypes: [
       terrainTypeNames.caves,
       terrainTypeNames.city,
-    ]
+    ],
   },
 }
 

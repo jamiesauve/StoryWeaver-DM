@@ -503,4 +503,16 @@ export default [
       trackTitle: 'The Mines', 
     }]
   },
+  {
+    title: 'Desert Temple',
+    location: 'https://www.youtube.com/watch?v=Zost8sfrQA8',
+    tags: ['creepy', 'ruins', 'wind', 'underground'],
+    terrain: [
+      caves,
+    ],
+    places: [{
+      name: placeNames.ambalora,
+      trackTitle: 'Ambalora',
+    }]
+  },
 ]
