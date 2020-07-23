@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
+import EditableTextarea from './EditableTextArea'
 
 import colors from '../../../data/styles/colors'
 import sizes from '../../../data/styles/sizes'
@@ -46,27 +47,14 @@ const BulletPoint = styled.div`
   margin-right: 5px;
 `
 
-const EditableTextarea = styled.textarea`
-  flex-grow: 1;
-
-  padding: 5px;
-  resize: vertical;
-
-  border: solid 1px rgba(255, 255, 255, 0.1);
-  
-  background: rgba(255, 255, 255, 0.1);
-  font-size: ${sizes.medium};
-  color: ${colors.lightGrey};
-`
-
 const EditableList = (props) => {
   const {
     areBulletsVisible,
     heading,
     items,
+    maxLength,
     numberOfColumns,
     placeholder,
-    maxLength,
   } = props
 
   const [listItems, setListItems] = useState([])
