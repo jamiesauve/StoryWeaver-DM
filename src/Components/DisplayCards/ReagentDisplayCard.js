@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import Row from '..//UI/Style/DisplayCard/Row'
-import TitleDetail from '..//UI/Style/DisplayCard/TitleDetail'
 
 import ColoredBox from '../UI/Style/ColoredBox'
 import List from '../UI/Structure/List'
@@ -25,15 +24,6 @@ const ReagentDisplayCard = (props) => {
 
   return (
     <This>
-      <Row
-        justifyContent="center"
-        padding="5px"
-      >
-        <TitleDetail>
-          {reagent.type.mainType}{reagent.type.subType ? ` (${reagent.type.subType})` : ``}
-        </TitleDetail>
-      </Row>
-
       <Row>
         <TerrainBreadCrumbs 
           data={reagent.terrain}

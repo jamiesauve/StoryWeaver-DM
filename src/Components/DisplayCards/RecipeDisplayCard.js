@@ -7,7 +7,6 @@ import DataTable from '../UI/Structure/DataTable'
 import EditableList from '../UI/Action/EditableList'
 import List from '../UI/Structure/List'
 import Row from '..//UI/Style/DisplayCard/Row'
-import TitleDetail from '..//UI/Style/DisplayCard/TitleDetail'
 
 import colors from '../../data/styles/colors'
 import sizes from '../../data/styles/sizes'
@@ -75,15 +74,6 @@ const RecipeDisplayCard = (props) => {
 
   return (
     <This>
-      <Row
-        justifyContent="center"
-        padding="5px"
-      >
-        <TitleDetail>
-          {type.mainType}{type.subType ? ` (${type.subType})` : ``}
-        </TitleDetail>
-      </Row>
-
       <Row>
         <ColoredBox
           color={colors.forestGreen}
