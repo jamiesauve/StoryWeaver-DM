@@ -65,6 +65,7 @@ const Crafting = (props) => {
   .map(reagent => ({
     title: reagent.label,
     titleColor: reagentTypeColors[reagent.type.mainType],
+    titleDetail: reagent.type.subType || reagent.type.mainType,
     content: () => <ReagentDisplayCard
       data={reagent}
     />,
@@ -74,6 +75,7 @@ const Crafting = (props) => {
   .map(recipe => ({
     title: recipe.label,
     titleColor: recipeTypeColors[recipe.type.mainType],
+    titleDetail: recipe.type.subType || recipe.type.mainType,
     content: () => <RecipeDisplayCard
       data={recipe}
     />,
