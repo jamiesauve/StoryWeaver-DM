@@ -13,7 +13,7 @@ const Row = styled.div`
 `
 
 const HeadingCell = styled.div`
-  width: 80px;
+  min-width: 65px;
 
   margin: 5px;
   
@@ -35,6 +35,8 @@ const DataTable = (props) => {
     tableRows,
   } = props
 
+  console.log('datatable', tableRows)
+
   const generateTableRows = () => (
     _.chain(tableRows)
     .map((tableRow, index) => {
@@ -42,26 +44,27 @@ const DataTable = (props) => {
       ? !_.isEmpty(tableRow.valueCells)
       : true
 
-    const valueCells =  _.map(
-      tableRow.valueCells, 
-      valueCell => { 
-        return (
-        <DataCell
-          key={`${tableRow.labelCell}-${valueCell}`}
-        >
+      const valueCells =  _.map(
+        tableRow.valueCells, 
+        valueCell => {
+          return (
+            <DataCell
+              // as long as the order won't change, index seems to be okay to use as a key: https://reactjs.org/docs/lists-and-keys.html
+              key={`${tableRow.labelCell}-${typeof valueCell === "string" ? valueCell : index}`} 
+            >
           {valueCell}
         </DataCell>
       )})
-
+      
       return shouldCreateRow
       ? <Row
-        key={tableRow.labelCell}
+      key={tableRow.labelCell}
       >
         <HeadingCell>
           {tableRow.labelCell}
         </HeadingCell>
 
-       {valueCells}
+        {valueCells}
       </Row>
       : null
     })
