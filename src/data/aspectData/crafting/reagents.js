@@ -724,4 +724,37 @@ export default [
       },
     ]
   },
+  {
+    label: "Torchstalk",
+    name: "torchstalk",
+    type: reagentTypes.plant.fungus,
+    
+    description: `A one- to two-foot-tall mushroom. the stalk is pale orange and the cap is a deeper, mottled orange.`,
+    effects: [
+      `A torchstalk has a combustible cap and will burn for 24 hours when lit. It has a 1 in 6 change of exploding into fiery spores when lit, causing 1d6 fire damage to any creature within 10 feet.`
+    ],
+    location: `Grows in areas with very little light.`,
+    lore: [
+      `Often used as a last resort torch for unprepared or lost travelers in the Underdark.`,
+    ],
+
+    terrain: [
+      terrainTypeNames.caves,
+    ],
+    harvesting: [
+      {
+        reagentPart: plantParts.whole,
+        harvestDC: 7,
+        onHarvestFailure: ``,
+        recipes: [],
+        simpleUses: [
+          recipeTypes.item.utility,
+        ],
+        value: {
+          amount: 2,
+          unit: moneyUnits.sp,
+        },
+      },
+    ]
+  },
 ]
