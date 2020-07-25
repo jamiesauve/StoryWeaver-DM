@@ -91,7 +91,11 @@ export default [
     terrain: [
       caves,
       winter,
-    ]
+    ],
+    places: [{
+      name: placeNames.ambalora,
+      trackTitle: 'Ambalora',
+    }]
   },
   {
     title: 'Sea Cave',
@@ -510,9 +514,5 @@ export default [
     terrain: [
       caves,
     ],
-    places: [{
-      name: placeNames.ambalora,
-      trackTitle: 'Ambalora',
-    }]
   },
 ]
