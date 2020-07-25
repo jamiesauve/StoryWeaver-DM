@@ -23,15 +23,17 @@ const This = styled.div`
 
 const Wiki = (props) => {
   // TODO: make these filter by locationTags in places.js
-  const drawers = wikiEntriesAsArray
+  const drawers = _.chain(wikiEntriesAsArray)
   .map(wikiEntry => ({
     title: wikiEntry.label,
     titleDetail: wikiEntry.type,
     titleColor: wikiEntry.titleColor,
     content: () => <WikiEntryDisplayCard
-      wikiEntry={wikiEntry}
+    wikiEntry={wikiEntry}
     />
   }))
+  .sortBy(entry => entry.title)
+  .value()
 
   return (
     <This
