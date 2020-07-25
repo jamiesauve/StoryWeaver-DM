@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
+import EditableIngredients from '../Crafting/EditableIngredients'
+
 import ColoredBox from '../UI/Style/ColoredBox'
 import DataTable from '../UI/Structure/DataTable'
 import EditableList from '../UI/Action/EditableList'
@@ -10,6 +12,11 @@ import Row from '..//UI/Style/DisplayCard/Row'
 
 import colors from '../../data/styles/colors'
 import sizes from '../../data/styles/sizes'
+import {
+  getCreateRecipeData,
+  getEditRecipeData,
+  getStaticRecipeData,
+} from '../Crafting/recipeCreationStats'
 
 const This = styled.div`
   padding: 1px;
@@ -26,54 +33,51 @@ const Heading = styled.div`
 
 const RecipeDisplayCard = (props) => {
   const {
-    data: {
-      amountCreated,
-      creationDC,
-      creationTime,
-      description,
-      distillingTime,
-      effects,
-      ingredients,
-      instructions,
-      lore,
-      onCreateFail,
-      type,
-      value,
-    },
+    data,
     isEditable,
     isInCreateMode,
     placeholders,
   } = props
 
+  const {
+    description,
+    effects,
+    ingredients,
+    instructions,
+    lore,
+    type,
+  } = data
+
   const ingredientsList = _.map(ingredients, ingredient => (
     `${ingredient.label} (${ingredient.amount || `1 oz`})`
   ))
 
-  const recipeTableData = [{
-    labelCell: `Create DC:`,
-    valueCells: [creationDC],
-  }, {
-    labelCell: `On Fail:`,
-    valueCells: [onCreateFail],
-  }, {
-    labelCell: `Creating Time:`,
-    valueCells: [creationTime],
-  }, {
-    labelCell: `Distilling Time:`,
-    valueCells: [distillingTime],
-  }, {
-    labelCell: `Yield:`,
-    valueCells: [amountCreated || `1 ounce`],
-  }, {
-    labelCell: `Value:`,
-    valueCells: [`${value.amount} ${isInCreateMode 
-      ? null
-      : value.unit.shortName} per ${value.amountCreated || `ounce`
-    }`],
-  }]
+  const recipeTableData = isEditable
+    ? isInCreateMode
+      ? getCreateRecipeData(placeholders)
+      : getEditRecipeData(data, placeholders)
+    : getStaticRecipeData(data, placeholders)
 
   return (
     <This>
+      <Row>
+        <ColoredBox
+          color={colors.battleRed}
+        >
+          {isEditable
+            ? <EditableList
+              heading="Effects"
+              items={effects}
+              placeholder={placeholders.effects}
+            />
+            : <List
+              heading="Effects"
+              items={effects}
+            />
+          }
+        </ColoredBox>
+      </Row>
+
       <Row>
         <ColoredBox
           color={colors.forestGreen}
@@ -117,11 +121,17 @@ const RecipeDisplayCard = (props) => {
         <ColoredBox
           color={colors.jungleGreen}
         >
-          <List
-            areBulletsVisible={ingredientsList.length > 1}
-            heading="Ingredients"
-            items={ingredientsList}
-          />
+          {isEditable
+            ? <EditableIngredients
+              ingredients={[ingredients]}
+              placeholder={placeholders.ingredients}
+            />
+            : <List
+              areBulletsVisible={ingredientsList.length > 1}
+              heading="Ingredients"
+              items={ingredientsList}
+            />
+          }
         </ColoredBox>
       </Row>
 
@@ -155,24 +165,6 @@ const RecipeDisplayCard = (props) => {
           <DataTable
             tableRows={recipeTableData}
           />
-        </ColoredBox>
-      </Row>
-
-      <Row>
-        <ColoredBox
-          color={colors.battleRed}
-        >
-          {isEditable
-            ? <EditableList
-              heading="Effects"
-              items={effects}
-              placeholder={placeholders.effects}
-            />
-            : <List
-              heading="Effects"
-              items={effects}
-            />
-          }
         </ColoredBox>
       </Row>
     </This>

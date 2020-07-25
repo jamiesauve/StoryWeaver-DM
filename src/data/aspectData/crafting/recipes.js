@@ -43,11 +43,10 @@ const recipes = [
       }
     ],
     instructions: "Grind blackroot root into powder and distill in mammal blood for six weeks.",
-    amountCreated: null, // defaults to 1oz
+    recipeYield: null, // defaults to 1oz
     value: {
       amount: 50,
       unit: moneyUnits.gp,
-      amountCreated: null, // defaults to 1oz
     },
   },
   // potion-of-orientation

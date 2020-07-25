@@ -35,8 +35,6 @@ const DataTable = (props) => {
     tableRows,
   } = props
 
-  console.log('datatable', tableRows)
-
   const generateTableRows = () => (
     _.chain(tableRows)
     .map((tableRow, index) => {

@@ -3,25 +3,24 @@ const createRecipeData = {
   name: "",
   type: "Select recipe type...",
 
-  creationDC: null,
-  onCreateFail: "What happens to a creature if they make a big mistake while creating it?",
-  creationTime: "How much time does it take a creature to make this?",
-  distillingTime: "How long does it need to sit before being used?",
+  creationDC: 10,
+  onCreateFail: "Potion becomes a mild poison, causing 1d4 damage when drunk with no noticeable change",
+  creationTime: "4 hours",
+  distillingTime: "3 days",
 
-  description: "What does the finished product look like, smell like, feel like?",
-  effects: "What does this creation do? Ie. 'This sword does 1d6 fire damage', or 'this potion makes the drinker float a few inches off the ground for 1d6 days'",
-  lore: "Are there any interesting facts about this creation?",
+  description: "A bubbly, pink liquid that smells like cinnamon",
+  effects: "When drunk, this potion makes the drinker float a few inches off the ground for 1d4 hours",
+  lore: "Occasionally used by nobles in Runaz as a prank at dinner parties",
   ingredients: {
       label: "Name of ingredient",
       name: "",
       amount: "1 ounce",
     },
-  instructions: "How does a creature use the ingredients to make this creation?",
-  amountCreated: "1 ounce",
+  instructions: "Stir all three ingredients in a silver pan and distill in a cool, dark place",
+  recipeYield: "1 ounce",
   value: {
     amount: null,
     unit: null,
-    amountCreated: null,
   },
 }
 

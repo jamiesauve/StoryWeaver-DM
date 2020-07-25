@@ -72,24 +72,25 @@ const EditableIngredients = (props) => {
             key={ingredient.name || index}
           >
             <FillInTheBlanksInput
-            className="fillInTheBlanks"
-            copySegments={[``, ` (`, ` `, `)`]}
-            fieldGroupIndex={index}
-            items={
-              [{
-                fieldName: `label`,
-                fieldType: `text`,
-                flexGrow: 1,
-                placeholder: placeholder.label,
-                value: ingredient.label,
-                // onChange ... update this state
-              }, {
-                fieldName: `amount`,
-                fieldType: `text`,
-                placeholder: placeholder.amount,
-                value: ingredient.amount,
-                fieldWidth: `70px`,
-              }]}
+              className="fillInTheBlanks"
+              copySegments={[``, ` (`, ` `, `)`]}
+              fieldGroupIndex={index}
+              items={
+                [{
+                  fieldName: `label`,
+                  fieldType: `text`,
+                  flexGrow: 1,
+                  placeholder: placeholder.label,
+                  value: ingredient.label,
+                  // onChange ... update this state
+                }, {
+                  fieldName: `amount`,
+                  fieldType: `text`,
+                  placeholder: placeholder.amount,
+                  value: ingredient.amount,
+                  fieldWidth: `70px`,
+                }]
+              }
               handleChange={updateListItem}
             />
 

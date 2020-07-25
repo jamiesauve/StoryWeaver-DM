@@ -1,10 +1,8 @@
 import React from 'react'
 
-// TODO: move this elsewhere, it's a component now or something
-
-import EditableInput from '../../../Components/UI/Action/EditableInput'
-import EditableTextArea from '../../../Components/UI/Action/EditableTextArea'
-import FillInTheBlanksInput from '../../../Components/UI/Action/FillInTheBlanksInput'
+import EditableInput from '../UI/Action/EditableInput'
+import EditableTextArea from '../UI/Action/EditableTextArea'
+import FillInTheBlanksInput from '../UI/Action/FillInTheBlanksInput'
 
 export const getCreateRecipeData = (placeholders) => {
   return [{
@@ -34,7 +32,7 @@ export const getCreateRecipeData = (placeholders) => {
   }, {
     labelCell: `Yield:`,
     valueCells: [<EditableInput 
-      placeholder={placeholders.amountCreated} // TODO: change to 'yield' 
+      placeholder={placeholders.recipeYield}
       type="text"
     />],
   }, {
@@ -42,47 +40,35 @@ export const getCreateRecipeData = (placeholders) => {
     valueCells: [
       <FillInTheBlanksInput
         className="fillInTheBlanks"
-        copySegments={[``, ` `, ` per `]}
+        copySegments={[``, ` `]}
         fieldGroupIndex={0} // TODO: change to dynamic index
         items={
           [{
             fieldName: `amount`,
-            fieldType: `text`,
-            flexGrow: 1,
+            fieldType: `number`,
+            fieldWidth: `60px`,
             placeholder: placeholders.value.amount,
-            // value: ingredient.label,
-            // onChange ... update this state
           }, {
             fieldName: `unit`,
             fieldType: `text`,
             fieldWidth: `40px`,
             placeholder: placeholders.value.unit,
-            // value: ingredient.amount,
-          }, {
-            fieldName: `amountCreated`,
-            fieldType: `text`,
-            flexGrow: 1,
-            placeholder: placeholders.value.amountCreated,
-            // value: ingredient.label, // TODO: handle this
-            // onChange ... update this state
           }]
         }
-        // handleChange={updateListItem} // TODO: make me a multi - new component    
+        handleChange={(e) => console.log(e)} // TODO: make me a multi - new component    
       />
     ]
   }]
 }
 
 export const getEditRecipeData = (data) => {
-  console.log('getting edit')
-
   const {
-    amountCreated,
     creationDC,
     creationTime,
     distillingTime,
     onCreateFail,
     value,
+    recipeYield,
   } = data
 
   return [{
@@ -99,23 +85,21 @@ export const getEditRecipeData = (data) => {
     valueCells: [distillingTime],
   }, {
     labelCell: `Yield:`,
-    valueCells: [amountCreated || `1 ounce`],
+    valueCells: [recipeYield || `1 ounce`],
   }, {
     labelCell: `Value:`,
-    valueCells: [`${value.amount} ${value.unit.shortName} per ${value.amountCreated || `ounce`}`],
+    valueCells: [`${value.amount} ${value.unit.shortName} per ${value.recipeYield || `ounce`}`],
   }]
 }
 
 export const getStaticRecipeData = (data) => {
-  console.log('getting static')
-
   const {
-    amountCreated,
     creationDC,
     creationTime,
     distillingTime,
     onCreateFail,
     value,
+    recipeYield,
   } = data
 
   return [{
@@ -132,9 +116,9 @@ export const getStaticRecipeData = (data) => {
     valueCells: [distillingTime],
   }, {
     labelCell: `Yield:`,
-    valueCells: [amountCreated || `1 ounce`],
+    valueCells: [recipeYield || `1 ounce`],
   }, {
     labelCell: `Value:`,
-    valueCells: [`${value.amount} ${value.unit.shortName} per ${value.amountCreated || `ounce`}`],
+    valueCells: [`${value.amount} ${value.unit.shortName} per ${value.recipeYield || `ounce`}`],
   }]
 }
