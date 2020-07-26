@@ -8,21 +8,19 @@ import List from '../UI/Structure/List'
 import { 
   DisplayCard, 
   Row,
-  Title,
-  TitleDetail,
 } from '..//UI/Style/DisplayCard'
 
-import colors from '../../data/styles/colors'
+import TextWithLinksActivated from '../UI/Structure/TextWithLinksActivated'
 
 const This = styled.div``
 
 const WikiEntryDisplayCard = (props) => {
   const {
-    label,
     paragraphs,
     titleColor,
-    type,
   } = props.wikiEntry
+
+  const paragraphsWithLinksActivated = _.map(paragraphs, paragraph => <TextWithLinksActivated text={paragraph} />)
 
   return (
     <This>
@@ -35,7 +33,7 @@ const WikiEntryDisplayCard = (props) => {
             color={titleColor}
           >
             <List
-              items={paragraphs}
+              items={paragraphsWithLinksActivated}
               textAlign="left"
             />
           </ColoredBox>
