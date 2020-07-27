@@ -1,10 +1,16 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
+import {
+  useRecoilValue,
+} from 'recoil'
+
 import { Droppable } from 'react-beautiful-dnd'
 
-import AreTabsContractedContext from '../../context/AreTabsContractedContext'
+import {
+  areTabsContractedAtom,
+} from '../../atoms/generalAtoms'
 
 import TabContainer from '../UI/Action/TabContainer'
 import colors from '../../data/styles/colors'
@@ -14,7 +20,7 @@ const This = styled.div``
 const AspectTabContainer = (props) => {
   const [tabOptions, setTabOptions] = useState(null)
 
-  const areTabsContracted = useContext(AreTabsContractedContext)
+  const areTabsContracted = useRecoilValue(areTabsContractedAtom)
   
   useEffect(() => {
     const newTabOptions = _.map(props.aspects, aspect => ({

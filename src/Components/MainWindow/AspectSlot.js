@@ -1,18 +1,23 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
+import { 
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil'
 
 import Frame from './Frame'
 import Pane from './Pane'
 
 import AspectTabContainer from './AspectTabContainer'
 
-import { 
-  ActiveLocationContext, 
-  ActiveLocationTypeContext,
-  LinkContext,
-  MainWindowBodyHeightContext 
-} from '../../context/MainWindowContextProvider'
+import useWindowResize from '../../hooks/UseWindowResize'
+
+import {
+  activeLocationAtom,
+  activeLocationTypeAtom,
+  currentWikiLinkAtom,
+} from '../../atoms/generalAtoms'
 
 import colors from '../../data/styles/colors'
 
@@ -38,13 +43,14 @@ const AspectSlot = (props) => {
   }, [activeAspect])
 
 
-  const activeLocation = useContext(ActiveLocationContext)
-  const activeLocationType = useContext(ActiveLocationTypeContext)
-  const currentLink = useContext(LinkContext)
-  const windowHeight = useContext(MainWindowBodyHeightContext)
+  const activeLocation = useRecoilValue(activeLocationAtom)
+  const activeLocationType = useRecoilValue(activeLocationTypeAtom)
+  const [currentWikiLink, setCurrentWikiLink] = useRecoilState(currentWikiLinkAtom)
+
+  const currentWindowHeight = useWindowResize()
   // margin, border and padding on panes for both MainWindowHeader pane and the aspect one, plus the height of MainWindowHeader
-  const mainWindowHeaderHeight = 138 
-  const aspectHeight = windowHeight - mainWindowHeaderHeight
+  const MAIN_WINDOW_HEADER_HEIGHT = 138 
+  const aspectHeight = currentWindowHeight - MAIN_WINDOW_HEADER_HEIGHT
 
   return (
     <This>
@@ -74,7 +80,8 @@ const AspectSlot = (props) => {
                   && <ActiveAspectComponent 
                     activeLocation={activeLocation}
                     activeLocationType={activeLocationType}
-                    currentLink={currentLink}
+                    currentWikiLink={currentWikiLink}
+                    setCurrentWikiLink={setCurrentWikiLink}
                   />
                 }
               </Pane> 

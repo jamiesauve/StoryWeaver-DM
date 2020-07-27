@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { RecoilRoot } from 'recoil'
 
 import MainWindow from './Containers/MainWindow'
 
@@ -30,7 +31,9 @@ function App() {
     <This
       className="App"
     >
-      <MainWindow />
+      <RecoilRoot>
+        <MainWindow />
+      </RecoilRoot>
     </This>
   );
 }

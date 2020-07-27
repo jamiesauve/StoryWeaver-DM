@@ -4,7 +4,9 @@ import _ from 'lodash'
 
 import { DragDropContext } from 'react-beautiful-dnd'
 
-import AreTabsContractedContext from '../context/AreTabsContractedContext'
+import {useRecoilState } from 'recoil'
+
+import { areTabsContractedAtom } from '../atoms/generalAtoms'
 
 import AspectSlot from '../Components/MainWindow/AspectSlot'
 
@@ -20,8 +22,8 @@ flex-grow: 1;
 
 const MainWindowBody = (props) => {
   const [aspectSlots, setAspectSlots] = useState()
-  const [areTabsContracted, setAreTabsContracted] = useState(false)
-  const [currentPositionsArray, setCurrentPositionsArray] = useState([])
+  const [areTabsContracted, setAreTabsContracted] = useRecoilState(areTabsContractedAtom)
+  const [currentTabPositionsArray, setCurrentTabPositionsArray] = useState([])
 
   useEffect(() => {
     const initialPositionsArray = _.reduce(initialAspectsArray, (aggr, aspect) => {
@@ -30,15 +32,15 @@ const MainWindowBody = (props) => {
 
       return aggr
     }, [])
-    setCurrentPositionsArray(initialPositionsArray)
+    setCurrentTabPositionsArray(initialPositionsArray)
   }, [])
 
   useEffect(() => {
-    const currentAspectSlots = populateAspectSlots(currentPositionsArray, initialAspectsArray)
+    const currentAspectSlots = populateAspectSlots(currentTabPositionsArray, initialAspectsArray)
 
     setAspectSlots(currentAspectSlots)
   }, [
-    currentPositionsArray
+    currentTabPositionsArray
   ])
 
   const handleDragStart = () => {
@@ -66,10 +68,10 @@ const MainWindowBody = (props) => {
     const sourceDroppableId = parseInt(source.droppableId)
     const destinationDroppableId = parseInt(destination.droppableId)
 
-    const newPositionsArray = _.cloneDeep(currentPositionsArray)
+    const newPositionsArray = _.cloneDeep(currentTabPositionsArray)
 
     newPositionsArray[sourceDroppableId] = _.filter(
-      currentPositionsArray[sourceDroppableId], 
+      currentTabPositionsArray[sourceDroppableId], 
       aspectName => aspectName !== nameOfAspectToMove
     )
 
@@ -79,11 +81,11 @@ const MainWindowBody = (props) => {
       nameOfAspectToMove
     )
 
-    setCurrentPositionsArray(newPositionsArray)
+    setCurrentTabPositionsArray(newPositionsArray)
   }
 
-  const populateAspectSlots = (currentPositionsArray, initialAspectsArray) => {
-    return currentPositionsArray.map((slotPositionsArray, index) => {
+  const populateAspectSlots = (currentTabPositionsArray, initialAspectsArray) => {
+    return currentTabPositionsArray.map((slotPositionsArray, index) => {
       const aspectsArray = _.map(
         slotPositionsArray, 
         aspectName => _.find(initialAspectsArray, {name: aspectName})
@@ -103,14 +105,12 @@ const MainWindowBody = (props) => {
     <This
       className="mainWindowBody"
     >
-      <AreTabsContractedContext.Provider value={areTabsContracted}>
-        <DragDropContext
-          onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd}
-        >
-          {aspectSlots}
-        </DragDropContext>
-      </AreTabsContractedContext.Provider>
+      <DragDropContext
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+      >
+        {aspectSlots}
+      </DragDropContext>
     </This>
   )
 }

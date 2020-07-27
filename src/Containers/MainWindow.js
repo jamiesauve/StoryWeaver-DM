@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react'
-
+import React, { useState, } from 'react'
 import styled from 'styled-components'
-
 import _ from 'lodash'
+import { 
+  useRecoilState,
+ } from 'recoil'
+
+import {
+  activeLocationAtom,
+  activeLocationTypeAtom,
+} from '../atoms/generalAtoms'
 
 import Frame from '../Components/MainWindow/Frame'
 import Pane from '../Components/MainWindow/Pane'
 
 import MainWindowHeader from './MainWindowHeader'
 import MainWindowBody from './MainWindowBody'
-
-import MainWindowContextProvider from '../context/MainWindowContextProvider'
-
-import useWindowResize from '../hooks/UseWindowResize'
 
 const This = styled.div`
   width: 100vw;
@@ -22,13 +24,9 @@ const This = styled.div`
   flex-direction: column;
 `
 
-
-
 const MainWindow = (props) => {
-  const windowHeight = useWindowResize() 
-
-  const [activeLocationType, setActiveLocationType] = useState('any')
-  const [activeLocation, setActiveLocation] = useState({})
+  const [activeLocationType, setActiveLocationType] = useRecoilState(activeLocationTypeAtom)
+  const [activeLocation, setActiveLocation] = useRecoilState(activeLocationAtom)
 
   const setActiveLocationTypeAndResetActiveLocation = (activeLocationType) => {
     setActiveLocation({})
@@ -36,35 +34,27 @@ const MainWindow = (props) => {
   }
 
   return (
-    <MainWindowContextProvider
-      activeLocation={activeLocation}
-      activeLocationType={activeLocationType}
-      windowHeight={windowHeight}
-    >
-      <This>
-        <Frame
-            className="frame"
-            width='100%'
+    <This>
+      <Frame
+          className="frame"
+          width='100%'
+        >
+          <Pane
+            borderColor={_.get(activeLocation, 'color', null)}
+            className="pane"
+            isBorderTopVisible={true}
           >
-            <Pane
-              borderColor={_.get(activeLocation, 'color', null)}
-              className="pane"
-              isBorderTopVisible={true}
-            >
-              <MainWindowHeader 
-                activeLocationType={activeLocationType}
-                setActiveLocationType={setActiveLocationTypeAndResetActiveLocation}
-                activeLocation={activeLocation}
-                setActiveLocation={setActiveLocation}
-              />
-            </Pane>
-        </Frame>
+            <MainWindowHeader 
+              activeLocationType={activeLocationType}
+              setActiveLocationType={setActiveLocationTypeAndResetActiveLocation}
+              activeLocation={activeLocation}
+              setActiveLocation={setActiveLocation}
+            />
+          </Pane>
+      </Frame>
 
-        <MainWindowBody 
-          windowHeight={windowHeight}
-        />
-      </This>
-    </MainWindowContextProvider>
+      <MainWindowBody />
+    </This>
   )
 }
 
