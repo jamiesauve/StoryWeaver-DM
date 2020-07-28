@@ -33,7 +33,7 @@ const recipes = [
     lore: [],
     ingredients: [
       {
-        label: "Blackroot",
+        label: ";;;Blackroot%%%blackroot%%%reagents;;;",
         name: "blackroot", // maps to reagent.name
         amount: null,
       },

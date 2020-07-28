@@ -63,6 +63,7 @@ const Crafting = (props) => {
 
   const reagentDrawers = getReagentsByLocation()
   .map(reagent => ({
+    name: reagent.name,
     title: reagent.label,
     titleColor: reagentTypeColors[reagent.type.mainType],
     titleDetail: reagent.type.subType || reagent.type.mainType,
@@ -73,6 +74,7 @@ const Crafting = (props) => {
 
   const recipeDrawers = recipes
   .map(recipe => ({
+    name: recipe.name,
     title: recipe.label,
     titleColor: recipeTypeColors[recipe.type.mainType],
     titleDetail: recipe.type.subType || recipe.type.mainType,
@@ -81,6 +83,7 @@ const Crafting = (props) => {
     />,
   }))
   .concat({
+    name: null,
     title: `+`,
     titleColor: colors.winterWhite,
     content: () => <RecipeDisplayCard
@@ -89,6 +92,22 @@ const Crafting = (props) => {
       placeholders={createRecipePlaceholders}
     />
   })
+
+  const getReagentDrawerToOpen = () => {
+    const reagent = _.find(reagentDrawers, {name: props.currentWikiLink.linkTarget})
+
+    return reagent
+      ? reagent.title
+      : ''
+  }
+
+  const getRecipeDrawerToOpen = () => {
+    const recipe = _.find(recipeDrawers, {name: props.currentWikiLink.linkTarget})
+
+    return recipe
+      ? recipe.title
+      : ''
+  }
     
   return (
     <This
@@ -105,6 +124,7 @@ const Crafting = (props) => {
           <Dresser 
             className="dresser"
             drawers={reagentDrawers}
+            drawerToOpen={getReagentDrawerToOpen()}
             hasToggleAllLink
             initiallyExpanded={false}
           />
@@ -124,6 +144,7 @@ const Crafting = (props) => {
           <Dresser 
             className="dresser"
             drawers={recipeDrawers}
+            drawerToOpen={getRecipeDrawerToOpen()}
             hasToggleAllLink
             initiallyExpanded={false}
           />

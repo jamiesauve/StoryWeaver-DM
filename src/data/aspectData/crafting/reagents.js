@@ -55,12 +55,12 @@ export default [
       {
         reagentPart: plantParts.root,
         harvestDC: 13,
-        onHarvestFailure: `see Blackroot Poison`,
+        onHarvestFailure: `see ;;;Blackroot Poison%%%blackroot-poison%%%recipes;;;`,
         recipes: [
           {
             type: recipeTypes.poison.wound,
             name: 'blackroot-poison',
-            label: 'Blackroot Poison',
+            label: ';;;Blackroot Poison%%%blackroot-poison%%%recipes;;;',
           },
         ],
         simpleUses: [],
