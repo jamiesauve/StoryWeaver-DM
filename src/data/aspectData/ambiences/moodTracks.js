@@ -52,6 +52,11 @@ export default {
         location: 'https://www.youtube.com/watch?v=tZBV2JJ20Hw',
         tags: ['moonlight', 'night', 'birds', 'magic', 'peaceful'],
       },
+      {
+        title: 'Enchanted Lands',
+        location: 'https://www.youtube.com/watch?v=zloJ_yptWU0',
+        tags: ['dull', 'quiet', 'ambience', 'grim', 'peaceful'],
+      },
     ]
   },
   'Puzzle': {
