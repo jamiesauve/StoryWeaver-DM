@@ -22,6 +22,14 @@ const This = styled.div`
 `
 
 const Wiki = (props) => {
+  const getDrawerToOpen = () => {
+    const wikiEntry = _.find(wikiEntriesAsArray, {name: props.currentWikiLink.linkTarget})
+
+    return wikiEntry
+      ? wikiEntry.label
+      : ''
+  }
+
   // TODO: make these filter by locationTags in places.js
   const drawers = _.chain(wikiEntriesAsArray)
   .map(wikiEntry => ({
@@ -50,6 +58,7 @@ const Wiki = (props) => {
             drawers={drawers}
             hasToggleAllLink
             initiallyExpanded={false}
+            drawerToOpen={getDrawerToOpen()}
           />
         </ScrollableContainer>
       </Section>

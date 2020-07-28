@@ -12,7 +12,11 @@ const This = styled.div`
 `
 
 const Dresser = (props) => {
-  const [ currentlyOpenDrawer, setCurrentlyOpenDrawer ] = useState('')
+  const {
+    drawerToOpen,
+  } = props
+
+  const [ currentlyOpenDrawer, setCurrentlyOpenDrawer ] = useState(props.drawerToOpen)
   const [ areAllDrawersOpen, setAreAllDrawersOpen ] = useState(props.isInitiallyExpanded || false)
 
   const isOnlyOneDrawer = props.drawers.length === 1
@@ -36,6 +40,15 @@ const Dresser = (props) => {
   }, [
     props.drawers,
     props.isInitiallyExpanded,
+  ])
+
+  useEffect(() => {
+    if (drawerToOpen) {
+      setAreAllDrawersOpen(false)
+      setCurrentlyOpenDrawer(drawerToOpen)
+    }
+  }, [
+    drawerToOpen
   ])
 
   return (
