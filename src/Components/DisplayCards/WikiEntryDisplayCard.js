@@ -10,8 +10,6 @@ import {
   Row,
 } from '..//UI/Style/DisplayCard'
 
-import TextWithLinksActivated from '../UI/Structure/TextWithLinksActivated'
-
 const This = styled.div``
 
 const WikiEntryDisplayCard = (props) => {
@@ -19,8 +17,6 @@ const WikiEntryDisplayCard = (props) => {
     paragraphs,
     titleColor,
   } = props.wikiEntry
-
-  const paragraphsWithLinksActivated = _.map(paragraphs, paragraph => <TextWithLinksActivated text={paragraph} />)
 
   return (
     <This>
@@ -33,7 +29,7 @@ const WikiEntryDisplayCard = (props) => {
             color={titleColor}
           >
             <List
-              items={paragraphsWithLinksActivated}
+              items={paragraphs}
               textAlign="left"
             />
           </ColoredBox>

@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
+import TextWithLinksActivated from '../Structure/TextWithLinksActivated'
+
 import sizes from '../../../data/styles/sizes'
 
 const This = styled.div`
@@ -60,7 +62,9 @@ const List = (props) => {
                 key={itemIndex}
                 textAlign={textAlign}
               >
-                {areBulletsVisible ? `- ` : ``}{item}
+                <TextWithLinksActivated
+                  text={`${areBulletsVisible ? `- ` : ``}${item}`}
+                />
               </ListItem>
             ))}
           </Column>
