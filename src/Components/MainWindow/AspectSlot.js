@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
-import { 
-  useRecoilState,
+import {
   useRecoilValue,
 } from 'recoil'
 
@@ -45,7 +44,18 @@ const AspectSlot = (props) => {
 
   const activeLocation = useRecoilValue(activeLocationAtom)
   const activeLocationType = useRecoilValue(activeLocationTypeAtom)
-  const [currentWikiLink, setCurrentWikiLink] = useRecoilState(currentWikiLinkAtom)
+  const currentWikiLink = useRecoilValue(currentWikiLinkAtom)
+
+  useEffect(() => {
+    const destinationAspect = _.find(aspects, {name: currentWikiLink.destinationAspect})
+    
+    if (destinationAspect) {
+      destinationAspect.linkTarget = currentWikiLink.linkTarget
+      setActiveAspect(destinationAspect)
+    }
+  }, [
+    currentWikiLink,
+  ])
 
   const currentWindowHeight = useWindowResize()
   // margin, border and padding on panes for both MainWindowHeader pane and the aspect one, plus the height of MainWindowHeader
@@ -81,7 +91,6 @@ const AspectSlot = (props) => {
                     activeLocation={activeLocation}
                     activeLocationType={activeLocationType}
                     currentWikiLink={currentWikiLink}
-                    setCurrentWikiLink={setCurrentWikiLink}
                   />
                 }
               </Pane> 

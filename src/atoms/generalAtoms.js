@@ -19,5 +19,8 @@ export const areTabsContractedAtom = atom({
 
 export const currentWikiLinkAtom = atom({
   key: 'curentWikiLink',
-  default: {}
+  default: {
+    destinationAspect: ``,
+    linkTarget: ``,
+  }
 })

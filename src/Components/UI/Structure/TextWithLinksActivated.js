@@ -1,7 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 
-import Link from '../Action/Link'
+import WikiLink from '../Action/WikiLink'
 
 const TextWithLinksActivated = props => {
   const segmentsAndLinks = props.text.split(`;;;`)
@@ -18,15 +18,16 @@ const TextWithLinksActivated = props => {
   const links = _.map(linkConfigs, linkConfig => {
     const [
       label,
-      destination,
+      linkTarget,
+      destinationAspect,
     ] = linkConfig.split('%%%')
 
     return (
-      <Link
-        destination={destination}
-        key={`${label}-${destination}`}
+      <WikiLink
+        destinationAspect={destinationAspect}
+        linkTarget={linkTarget}
+        key={`${label}-${linkTarget}`}
         label={label}
-        
       />
     )
   })
