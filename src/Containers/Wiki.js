@@ -9,7 +9,10 @@ import WikiEntryDisplayCard from '../Components/DisplayCards/WikiEntryDisplayCar
 
 import SearchBar from '../Components/UI/Action/SearchBar'
 
-import { wikiEntriesAsArray } from '../data/aspectData/wiki/wikiEntries'
+import createWikiEntryPlaceholders from '../data/aspectData/wiki/createWikiEntryPlaceholders'
+import wikiEntries from '../data/aspectData/wiki/wikiEntries'
+
+import colors from '../data/styles/colors'
 
 const This = styled.div`
   flex-grow: 1;
@@ -23,9 +26,9 @@ const This = styled.div`
 const Wiki = (props) => {
   const [searchInput, setSearchInput] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
-  
+
   const getDrawerToOpen = () => {
-    const wikiEntry = _.find(wikiEntriesAsArray, {name: props.currentWikiLink.linkTarget})
+    const wikiEntry = _.find(wikiEntries, {name: props.currentWikiLink.linkTarget})
 
     return wikiEntry
       ? wikiEntry.label
@@ -37,16 +40,28 @@ const Wiki = (props) => {
 
   // TODO: a value is getting set in searchQuery now, and search should be fired by it changing. Need to set this up
   // TODO: make these filter by locationTags in places.js
-  const drawers = _.chain(wikiEntriesAsArray)
+
+  const drawers = _.chain(wikiEntries)
   .map(wikiEntry => ({
     title: wikiEntry.label,
-    titleDetail: wikiEntry.type,
+    titleDetail: wikiEntry.type.subType,
     titleColor: wikiEntry.titleColor,
     content: () => <WikiEntryDisplayCard
-    wikiEntry={wikiEntry}
+      wikiEntry={wikiEntry}
     />
   }))
   .sortBy(entry => entry.title)
+  .concat({
+    name: null,
+    title: `+`,
+    titleColor: colors.winterWhite,
+    content: () => <WikiEntryDisplayCard
+      isEditable={true}
+      isInCreateMode={true}
+      placeholders={createWikiEntryPlaceholders}
+      wikiEntry={{}}
+    />
+  })
   .value()
 
   const handleSubmitSearch = (e) => {
