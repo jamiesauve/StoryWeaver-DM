@@ -1,12 +1,7 @@
 import colors from '../../styles/colors'
 import places from '../../generalData/places'
 
-const wikiEntryTypes = {
-  place: {
-    city: 'city',
-    ruinedCity: 'ruined city',
-  }
-}
+import wikiEntryTypes from './wikiEntryTypes'
 
 const wikiEntries = {
   'chinclincha': {
@@ -32,7 +27,7 @@ const wikiEntries = {
       places.gulandabar,
     ],
     titleColor: colors.creepyPurple,
-    type: wikiEntryTypes.place.ruinedCity,
+    type: wikiEntryTypes.place['ruined city'],
     paragraphs: [
       `Ambalora is a ruined city built around 3700 SA by elvish necromancers from ;;;Abundabar%%%abundabar;;;, who were seeking a place to practice their dark arts. They chose to build on top of an abandoned diamond mine called Hoh I Noor; Hoh I Noor had been abandoned a few decades earlier when a Beholder moved in, but it was still believed to be rich in diamonds. The Ambalorans, as the eight founders called themselves, thought very highly of themselves and their magical prowess and planned to drive out the Beholder and reclaim the mine. This would provide them with a good supply of diamonds for their experiments, as diamonds are a common component in resurrection magic.`,
       `The Ambalorans, four sets of twin brothers, were Tuillas, Nandor, Horenas, Lolendas, Hurilas, Amando, Trendalos, and Trelachus. They came to Hoh I Noor and confronted the Beholder. They succeeded in killing it, but several of the Ambalorans were killed in the struggle. Trelachus was so badly disintegrated that he could not be resurrected from his coma. Trendalos, his twin, channeled his grief into ambition, eventually declaring himself king over the others. This title was grudgingly accepted, mostly because the other Ambalorans cared more about their research than they did about the title Trendalos claimed for himself; since there were only seven of them and each was capable of amassing undead servants, kingship did not make much of a difference among them.`,
