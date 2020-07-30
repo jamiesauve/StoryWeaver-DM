@@ -157,6 +157,7 @@ const RecipeDisplayCard = (props) => {
           </Heading>
 
           <DataTable
+            keyColumnWidth={'70px'}
             tableRows={recipeTableData}
           />
         </ColoredBox>

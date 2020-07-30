@@ -15,7 +15,10 @@ const Row = styled.div`
 `
 
 const HeadingCell = styled.div`
-  min-width: 65px;
+  ${props => props.width 
+    ? `width: ${props.width};`
+    : ``
+  }
 
   margin: 5px;
   
@@ -33,6 +36,7 @@ const DataCell = styled.div`
 
 const DataTable = (props) => {
   const {
+    keyColumnWidth,
     renderRowsWithNoData,
     tableRows,
   } = props
@@ -49,6 +53,7 @@ const DataTable = (props) => {
         valueCell => {
           return (
             <DataCell
+              className="dataCell"
               // as long as the order won't change, index seems to be okay to use as a key: https://reactjs.org/docs/lists-and-keys.html
               key={`${tableRow.labelCell}-${typeof valueCell === "string" ? valueCell : index}`} 
             >
@@ -68,7 +73,9 @@ const DataTable = (props) => {
       ? <Row
       key={tableRow.labelCell}
       >
-        <HeadingCell>
+        <HeadingCell
+          width={keyColumnWidth}
+        >
           {tableRow.labelCell}
         </HeadingCell>
 

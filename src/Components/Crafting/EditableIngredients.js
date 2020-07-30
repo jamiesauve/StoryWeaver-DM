@@ -19,6 +19,8 @@ const IngredientsContainer = styled.div``
 const Row = styled.div`
   display: flex;
   flex-direction: row;
+
+  justify-content: space-between;
 `
 
 const EditableIngredients = (props) => {
@@ -80,9 +82,9 @@ const EditableIngredients = (props) => {
                 }, {
                   fieldName: `amount`,
                   fieldType: `text`,
+                  fieldWidth: `70px`,
                   placeholder: placeholder.amount,
                   value: ingredient.amount,
-                  fieldWidth: `70px`,
                 }]
               }
               handleChange={updateListItem}

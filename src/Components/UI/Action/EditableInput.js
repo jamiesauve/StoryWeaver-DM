@@ -1,12 +1,29 @@
+import React from 'react'
 import styled from 'styled-components'
+
+import Heading from '../Structure/Heading'
 
 import colors from '../../../data/styles/colors'
 import sizes from '../../../data/styles/sizes'
 
-const EditableInput = styled.input`
+const This = styled.div`
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  width: ${props => props.width || `auto`};
+
+  ${props => props.alignItems 
+    ? `align-items: ${props.alignItems};` 
+    : ``
+  }
+`
+
+const Input = styled.input`
   flex-grow: ${props => props.flexGrow || 0};
 
-  width: ${props => props.width || `250px`};
+  width: ${props => props.width || `auto`};
 
   padding: 5px;
   resize: vertical;
@@ -17,5 +34,41 @@ const EditableInput = styled.input`
   font-size: ${sizes.medium};
   color: ${colors.lightGrey};
 `
+
+const EditableInput = (props) => {
+  const {
+    alignItems,
+    flexGrow,
+    heading,
+    inputWidth,
+    placeholder,
+    type,
+    value,
+    wrapperWidth,
+  } = props
+
+  return (
+    <This
+      alignItems={alignItems}
+      className="editableInput"
+      width={wrapperWidth}
+    >
+      {
+        heading
+        && <Heading>
+          {heading}
+        </Heading>
+      }
+
+      <Input
+        flexGrow={flexGrow}
+        placeholder={placeholder}
+        type={type}
+        value={value}
+        width={inputWidth}
+      />
+    </This>
+  )
+}
 
 export default EditableInput

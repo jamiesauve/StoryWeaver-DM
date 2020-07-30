@@ -5,8 +5,6 @@ import _ from 'lodash'
 import EditableInput from './EditableInput'
 
 const This = styled.div`
-  flex-grow: 1;
-
   display: flex;
   flex-direction: row;
 
@@ -42,7 +40,7 @@ const FillInTheBlanks = (props) => {
             placeholder={currentField.placeholder}
             type={currentField.fieldType}
             value={currentField.value || ``}
-            width={currentField.fieldWidth || `50px`}
+            wrapperWidth={currentField.fieldWidth || `auto`}
           />
         )
       }
