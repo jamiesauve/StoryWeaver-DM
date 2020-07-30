@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import EditableTextarea from './EditableTextArea'
+import Heading from '../Structure/Heading'
 
 import colors from '../../../data/styles/colors'
 import sizes from '../../../data/styles/sizes'
@@ -10,13 +11,6 @@ import sizes from '../../../data/styles/sizes'
 const This = styled.div`
   display: flex;
   flex-direction: column;
-`
-
-const Heading = styled.div`
-  align-self: center;
-
-  font-weight: bold;
-  font-size: ${sizes.small};
 `
 
 const ColumnContainer = styled.div`

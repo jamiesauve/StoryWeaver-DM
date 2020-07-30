@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
+import Heading from '../UI/Structure/Heading'
 import ColoredBox from '../UI/Style/ColoredBox'
 
 import HarvestingEntry from './HarvestingEntry'
@@ -11,13 +12,6 @@ import sizes from '../../data/styles/sizes'
 
 const This = styled.div`
   font-size: ${sizes.small}
-`
-
-const Heading = styled.div`
-  align-self: center;
-
-  font-weight: bold;
-  font-size: ${sizes.small};
 `
 
 const Harvesting = (props) => {

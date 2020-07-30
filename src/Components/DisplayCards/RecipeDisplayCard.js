@@ -7,6 +7,7 @@ import EditableIngredients from '../Crafting/EditableIngredients'
 import ColoredBox from '../UI/Style/ColoredBox'
 import DataTable from '../UI/Structure/DataTable'
 import EditableList from '../UI/Action/EditableList'
+import Heading from '../UI/Structure/Heading'
 import List from '../UI/Structure/List'
 import Row from '..//UI/Style/DisplayCard/Row'
 
@@ -21,13 +22,6 @@ import {
 const This = styled.div`
   padding: 1px;
 
-  font-size: ${sizes.small};
-`
-
-const Heading = styled.div`
-  align-self: center;
-
-  font-weight: bold;
   font-size: ${sizes.small};
 `
 

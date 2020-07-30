@@ -3,19 +3,13 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import TextWithLinksActivated from '../Structure/TextWithLinksActivated'
+import Heading from '../Structure/Heading'
 
 import sizes from '../../../data/styles/sizes'
 
 const This = styled.div`
   display: flex;
   flex-direction: column;
-`
-
-const Heading = styled.div`
-  align-self: center;
-
-  font-weight: bold;
-  font-size: ${sizes.small};
 `
 
 const ColumnContainer = styled.div`

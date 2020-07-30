@@ -6,18 +6,12 @@ import sizes from '../../data/styles/sizes'
 
 import AddIcon from '../UI/Action/AddIcon'
 import FillInTheBlanksInput from '../UI/Action/FillInTheBlanksInput'
+import Heading from '../UI/Structure/Heading'
 import RemoveIcon from '../UI/Action/RemoveIcon'
 
 const This = styled.div`
   display: flex;
   flex-direction: column;
-`
-
-const Heading = styled.div`
-  align-self: center;
-
-  font-weight: bold;
-  font-size: ${sizes.small};
 `
 
 const IngredientsContainer = styled.div``
