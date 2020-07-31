@@ -4,8 +4,11 @@ import _ from 'lodash'
 
 import ColoredBox from '../UI/Style/ColoredBox'
 import List from '../UI/Structure/List'
+import ColorPicker from '../UI/Action/ColorPicker/ColorPicker'
 import EditableList from '../UI/Action/EditableList'
 import EditableInput from '../UI/Action/EditableInput'
+
+import Heading from '../UI/Structure/Heading'
 
 import { 
   DisplayCard, 
@@ -15,6 +18,15 @@ import {
 import colors from '../../data/styles/colors'
 
 const This = styled.div``
+
+const PositionWrapper = styled.div`
+  align-self: stretch;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+`
 
 const WikiEntryStatsSection = styled.div`
   padding: 5px;
@@ -69,14 +81,16 @@ const WikiEntryDisplayCard = (props) => {
                     value={wikiEntry.type}
                   />
 
-                  <EditableInput // TODO: create a color picker here
-                    alignItems="center"
-                    heading="Color"
-                    placeholder={placeholders.titleColor}
-                    type="text"
-                    value={wikiEntry.titleColor}
-                    inputWidth="20px"
-                  />
+                  <PositionWrapper>
+                    <Heading>
+                      Color
+                    </Heading>
+
+                    <ColorPicker
+                      onChange={(color) => console.log('new color: ', color)}
+                      initialValue={colors.mountainsTeal}
+                    />
+                  </PositionWrapper>
                 </Row>
 
                 <Row
