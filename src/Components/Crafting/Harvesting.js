@@ -7,18 +7,23 @@ import ColoredBox from '../UI/Style/ColoredBox'
 
 import HarvestingEntry from './HarvestingEntry'
 
-import colors from '../../data/styles/colors'
+import { useRecoilValue } from 'recoil'
+import {
+  colorsAtom,
+} from '../../state/atoms/staticDataAtoms'
 import sizes from '../../data/styles/sizes'
 
 const This = styled.div`
-  font-size: ${sizes.small}
+font-size: ${sizes.small}
 `
 
 const Harvesting = (props) => {
   const {
     reagent,
   } = props
-
+  
+  const colors = useRecoilValue(colorsAtom)
+  
   return (
     <This>
       <ColoredBox
