@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import colors from '../../../data/styles/colors'
 
 import { useRecoilState } from 'recoil'
-import { currentWikiLinkAtom } from '../../../atoms/generalAtoms'
+import { currentWikiLinkAtom } from '../../../state/atoms/generalAtoms'
 
 const This = styled.span`
   color: ${colors.freshwaterBlue};

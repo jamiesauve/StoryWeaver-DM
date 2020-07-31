@@ -6,7 +6,7 @@ import { DragDropContext } from 'react-beautiful-dnd'
 
 import {useRecoilState } from 'recoil'
 
-import { areTabsContractedAtom } from '../atoms/generalAtoms'
+import { areTabsContractedAtom } from '../state/atoms/generalAtoms'
 
 import AspectSlot from '../Components/MainWindow/AspectSlot'
 

@@ -16,7 +16,7 @@ import {
   activeLocationAtom,
   activeLocationTypeAtom,
   currentWikiLinkAtom,
-} from '../../atoms/generalAtoms'
+} from '../../state/atoms/generalAtoms'
 
 import colors from '../../data/styles/colors'
 

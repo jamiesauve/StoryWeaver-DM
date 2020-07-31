@@ -10,7 +10,7 @@ import { Droppable } from 'react-beautiful-dnd'
 
 import {
   areTabsContractedAtom,
-} from '../../atoms/generalAtoms'
+} from '../../state/atoms/generalAtoms'
 
 import TabContainer from '../UI/Action/TabContainer'
 import colors from '../../data/styles/colors'

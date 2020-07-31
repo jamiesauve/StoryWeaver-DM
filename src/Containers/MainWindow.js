@@ -1,4 +1,4 @@
-import React, { useState, } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 import { 
@@ -8,7 +8,7 @@ import {
 import {
   activeLocationAtom,
   activeLocationTypeAtom,
-} from '../atoms/generalAtoms'
+} from '../state/atoms/generalAtoms'
 
 import Frame from '../Components/MainWindow/Frame'
 import Pane from '../Components/MainWindow/Pane'
