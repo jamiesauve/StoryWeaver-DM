@@ -1,12 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
+import { useRecoilValue } from 'recoil'
+
+import {
+  wikiEntryTypesAtom,
+} from '../../state/atoms/staticDataAtoms'
 
 import ColoredBox from '../UI/Style/ColoredBox'
 import List from '../UI/Structure/List'
 import ColorPicker from '../UI/Action/ColorPicker/ColorPicker'
 import EditableList from '../UI/Action/EditableList'
 import EditableInput from '../UI/Action/EditableInput'
+import SelectInput from '../UI/Action/SelectInput'
 
 import Heading from '../UI/Structure/Heading'
 
@@ -15,11 +21,14 @@ import {
   Row,
 } from '..//UI/Style/DisplayCard'
 
+
 import colors from '../../data/styles/colors'
 
 const This = styled.div``
 
-const PositionWrapper = styled.div`
+const TypeSelectWrapper = styled.div``
+
+const ColorPickerWrapper = styled.div`
   align-self: stretch;
 
   display: flex;
@@ -39,9 +48,18 @@ const WikiEntryDisplayCard = (props) => {
     placeholders,
     wikiEntry,
   } = props
+
+  const wikiEntryTypes = useRecoilValue(wikiEntryTypesAtom)
   
   const paragraphs = wikiEntry.paragraphs || []
   const titleColor = wikiEntry.titleColor || colors.mountainsTeal
+
+  console.log('types', wikiEntryTypes)
+
+  const wikiEntryTypeOptions = _.map(wikiEntryTypes, type => ({
+    label: `${type.mainType} - ${type.subType}`,
+    value: type.subType,
+  }))
 
   return (
     <This>
@@ -73,15 +91,21 @@ const WikiEntryDisplayCard = (props) => {
                   className="row"
                   padding="0 0 5px 0"
                 >
-                  <EditableInput // TODO: replace with a select
-                    flexGrow={1}
-                    heading={"Type"}
-                    placeholder={placeholders.type}
-                    type="text"
-                    value={wikiEntry.type}
-                  />
+                  <TypeSelectWrapper>
+                    <Heading>
+                      Type
+                    </Heading>
 
-                  <PositionWrapper>
+                    <SelectInput 
+                      backgroundColor={colors.mountainsTeal}
+                      onChange={(e) => console.log('new choice', e)}
+                      options={wikiEntryTypeOptions} // fix
+                      styleType="dark"
+                      value={wikiEntry.type}
+                    />
+                  </TypeSelectWrapper>
+
+                  <ColorPickerWrapper>
                     <Heading>
                       Color
                     </Heading>
@@ -90,7 +114,7 @@ const WikiEntryDisplayCard = (props) => {
                       onChange={(color) => console.log('new color: ', color)}
                       initialValue={colors.mountainsTeal}
                     />
-                  </PositionWrapper>
+                  </ColorPickerWrapper>
                 </Row>
 
                 <Row
@@ -119,6 +143,15 @@ const WikiEntryDisplayCard = (props) => {
               textAlign="left"
             />
             }
+
+            {/* {
+              isEditable
+              ? <ButtonContainer>
+                <SubmitButton />
+                <CancelButton />
+              </ButtonContainer>
+              : null
+            } */}
           </ColoredBox>
         </Row>
       </DisplayCard>

@@ -6,3 +6,8 @@ export const colorsAtom = atom({
   key: 'colors',
   default: {},
 })
+
+export const wikiEntryTypesAtom = atom({
+  key: 'wikiEntryTypes',
+  default: {},
+})
