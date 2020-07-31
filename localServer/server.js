@@ -5,6 +5,7 @@ const fs = require('fs')
 const app = express()
 const port = 4204
 
+const databaseApi = require('./database/routes')
 // const { getNotesFromFile } = require('./utils/getNotesFromFile')
 // const { parseDataToNoteString } = require('./utils/parseDataToNoteString')
 
@@ -15,6 +16,9 @@ app.use(function(req, res, next) {
 })
 
 app.use(bodyParser.json()) 
+
+
+databaseApi(app)
 
 app.get('/', (req, res) => {
   res.send('hello world!')
