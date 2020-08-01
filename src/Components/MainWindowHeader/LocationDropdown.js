@@ -47,6 +47,7 @@ const LocationDropdown = (props) => {
       <SelectInput 
         onChange={handleSelectLocation}
         options={locationOptions}
+        styleType="light"
         value={props.activeLocation.value}
       />
     </This>

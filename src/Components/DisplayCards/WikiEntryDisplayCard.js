@@ -102,6 +102,7 @@ const WikiEntryDisplayCard = (props) => {
                       options={wikiEntryTypeOptions} // fix
                       styleType="dark"
                       value={wikiEntry.type}
+                      width={`100%`}
                     />
                   </TypeSelectWrapper>
 
