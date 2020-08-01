@@ -6,8 +6,8 @@ import ColorPalette from './ColorPalette'
 import colors from '../../../../data/styles/colors'
 
 const This = styled.div`
-  width: ${props => props.cellDimensionInPixels}px;
-  height: ${props => props.cellDimensionInPixels}px;
+  width: ${props => props.sizeInPixels}px;
+  height: ${props => props.sizeInPixels}px;
 
   background: ${props => props.value};
 `
@@ -32,6 +32,7 @@ const ColorPaletteContainer = styled.div`
 
 const ColorPicker = props => {
   const {
+    horizontalShiftInPixels,
     initialValue,
     numberOfColumns,
     onChange,
@@ -52,18 +53,18 @@ const ColorPicker = props => {
       : setIsColorPaletteOpen(true)
   }
 
-  const cellDimensionInPixels = sizeInPixels / numberOfColumns
+  const paletteSizeInPixels = sizeInPixels * numberOfColumns
 
   return (
     <This
-      cellDimensionInPixels={cellDimensionInPixels}
+      sizeInPixels={sizeInPixels}
       onClick={toggleIsColorPaletteOpen}
       value={currentColor}
     >
       {
         isColorPaletteOpen
           ? <ColorPaletteContainer
-            horizontalShiftInPixels={-120}    
+            horizontalShiftInPixels={horizontalShiftInPixels}    
           >
             <BackgroundScreen
               className="backgroundScreen"
@@ -71,7 +72,7 @@ const ColorPicker = props => {
             />
             
             <ColorPalette
-              cellDimensionInPixels={cellDimensionInPixels}
+              paletteSizeInPixels={paletteSizeInPixels}
               colors={Object.values(colors).slice(0, 22)} // Exclude text/background colors. This will need to be updated if we add more theme colors
               numberOfColumns={numberOfColumns}
               onChange={handleChange}
@@ -86,8 +87,9 @@ const ColorPicker = props => {
 }
 
 ColorPicker.defaultProps = {
+  horizontalShiftInPizels: 0,
   numberOfColumns: 5,
-  sizeInPixels: 150,
+  sizeInPixels: 30,
 }
 
 export default ColorPicker

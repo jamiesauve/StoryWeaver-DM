@@ -42,11 +42,11 @@ const Cell = styled.div`
 
 const ColorPalette = props => {
   const {
-    cellDimensionInPixels,
+    sizeInPixels,
     colors,
     numberOfColumns,
     onChange,
-    sizeInPixels,
+    paletteSizeInPixels,
   } = props
 
   const getRows = () => {
@@ -55,7 +55,7 @@ const ColorPalette = props => {
     return _.map(rows, row => (
       <Row
         key={row[0]}
-        height={cellDimensionInPixels}
+        height={sizeInPixels}
       >
         {getCells(row)}
       </Row>
@@ -68,14 +68,14 @@ const ColorPalette = props => {
         key={cell}
         colorValue={cell}
         onClick={() => onChange(cell)}
-        width={cellDimensionInPixels}
+        width={sizeInPixels}
       />
     ))
   }
 
   return (
     <This
-      width={sizeInPixels}
+      width={paletteSizeInPixels}
     >
       {getRows()}
     </This>
