@@ -1,6 +1,6 @@
 const createWikiEntryPlaceholders = {
   label: "Person, place, thing, event, etc.",
-  locationTags: "Associated locations",
+  placeTags: "Associated locations",
   name: "",
   titleColor: "select color for entry",
   type: "select type of entry",

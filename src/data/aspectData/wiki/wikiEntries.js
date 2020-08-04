@@ -7,7 +7,7 @@ const wikiEntries = {
   'chinclincha': {
     name: 'chinclincha',
     label: 'Chinclincha',
-    locationTags: [
+    placeTags: [
       places.climina
     ],
     titleColor: colors.mountainsTeal,
@@ -22,7 +22,7 @@ const wikiEntries = {
   'ambalora': {
     name: 'ambalora',
     label: 'Ambalora',
-    locationTags: [
+    placeTags: [
       places.ambalora,
       places.gulandabar,
     ],
@@ -40,7 +40,7 @@ const wikiEntries = {
   'abundabar': {
     name: 'abundabar',
     label: 'Abundabar',
-    locationTags: [
+    placeTags: [
       places.abundabar,
       places.gulandabar,
     ],

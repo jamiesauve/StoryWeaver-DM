@@ -39,7 +39,7 @@ const Wiki = (props) => {
   const debouncedSetSearchQuery = useCallback(_.debounce(setSearchQuery, 500), [])
 
   // TODO: a value is getting set in searchQuery now, and search should be fired by it changing. Need to set this up
-  // TODO: make these filter by locationTags in places.js
+  // TODO: make these filter by placeTags in places.js
 
   const drawers = _.chain(wikiEntries)
   .map(wikiEntry => ({
