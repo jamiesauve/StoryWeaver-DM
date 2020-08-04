@@ -23,20 +23,20 @@ const This = styled.div`
 `
 
 const People = (props) => {
-  const reagentsByTerrain = _.filter(reagents, reagent => 
-    _.isEmpty(reagent.terrain)
-    ? true
-    : _.includes(reagent.terrain, props.activeLocation)
-  )
+  // const reagentsByTerrain = _.filter(reagents, reagent => 
+  //   _.isEmpty(reagent.terrain)
+  //   ? true
+  //   : _.includes(reagent.terrain, props.activeLocation)
+  // )
 
-  const drawers = reagentsByTerrain
-  .map(reagent => ({
-    title: reagent.label,
-    titleColor: _.find(terrainTypes, {name: props.activeLocation}).color,
-    content: () => <ReagentDisplayCard
-      data={reagent}
-    />,
-  }))
+  // const drawers = reagentsByTerrain
+  // .map(reagent => ({
+  //   title: reagent.label,
+  //   titleColor: _.find(terrainTypes, {name: props.activeLocation}).color,
+  //   content: () => <ReagentDisplayCard
+  //     data={reagent}
+  //   />,
+  // }))
 
   return (
     <This
@@ -48,12 +48,12 @@ const People = (props) => {
         <ScrollableContainer
           className="scrollableContainer"
         >
-          <Dresser 
+          {/* <Dresser 
             className="dresser"
             drawers={drawers}
             hasToggleAllLink
             initiallyExpanded={false}
-          />
+          /> */}
         </ScrollableContainer>
       </Section>
     </This>
