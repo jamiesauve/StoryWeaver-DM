@@ -26,9 +26,12 @@ import colors from '../../data/styles/colors'
 
 const This = styled.div``
 
-const TypeSelectWrapper = styled.div``
+const TypeSelectWrapper = styled.div`
+  flex-grow: 10;
+`
 
 const ColorPickerWrapper = styled.div`
+  flex-grow: 1;
   align-self: stretch;
 
   display: flex;
@@ -81,9 +84,9 @@ const WikiEntryDisplayCard = (props) => {
                   <EditableInput
                     flexGrow={1}
                     heading="Associated Locations"
-                    placeholder={placeholders.locationTags}
+                    placeholder={placeholders.placeTags}
                     type="text"
-                    value={wikiEntry.locationTags}
+                    value={wikiEntry.placeTags}
                   />
                 </Row>
 
@@ -112,8 +115,10 @@ const WikiEntryDisplayCard = (props) => {
                     </Heading>
 
                     <ColorPicker
+                      horizontalShiftInPixels={-154} // odd number caused by flex-grows of containers
                       onChange={(color) => console.log('new color: ', color)}
                       initialValue={colors.mountainsTeal}
+                      sizeInPixels={38} // match height of SelectInput, as it is not customizable
                     />
                   </ColorPickerWrapper>
                 </Row>
