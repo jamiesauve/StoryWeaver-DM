@@ -77,6 +77,19 @@ const WikiEntryDisplayCard = (props) => {
             {
               isEditable 
               && <WikiEntryStatsSection>
+                 <Row
+                  className="row"
+                  padding="0 0 5px 0"
+                >
+                  <EditableInput
+                    flexGrow={1}
+                    heading="Title"
+                    placeholder={placeholders.label}
+                    type="text"
+                    value={wikiEntry.label}
+                  />
+                </Row>
+                
                 <Row
                   className="row"
                   padding="0 0 5px 0"
@@ -121,19 +134,6 @@ const WikiEntryDisplayCard = (props) => {
                       sizeInPixels={38} // match height of SelectInput, as it is not customizable
                     />
                   </ColorPickerWrapper>
-                </Row>
-
-                <Row
-                  className="row"
-                  padding="0 0 5px 0"
-                >
-                  <EditableInput // TODO: replace with a multi
-                    flexGrow={1}
-                    heading="Title"
-                    placeholder={placeholders.label}
-                    type="text"
-                    value={wikiEntry.label}
-                  />
                 </Row>
               </WikiEntryStatsSection>
             }
