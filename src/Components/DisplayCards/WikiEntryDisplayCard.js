@@ -57,8 +57,6 @@ const WikiEntryDisplayCard = (props) => {
   const paragraphs = wikiEntry.paragraphs || []
   const titleColor = wikiEntry.titleColor || colors.mountainsTeal
 
-  console.log('types', wikiEntryTypes)
-
   const wikiEntryTypeOptions = _.map(wikiEntryTypes, type => ({
     label: `${type.mainType} - ${type.subType}`,
     value: type.subType,

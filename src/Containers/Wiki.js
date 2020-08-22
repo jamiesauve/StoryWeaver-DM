@@ -30,7 +30,7 @@ const Wiki = (props) => {
   const [currentDrawers, setCurrentDrawers] = useState([])
 
   useEffect(() => {
-    setUnfilteredDrawers(filterDrawersBy(''))
+    setUnfilteredDrawers(filterDrawersBy('', props.activeLocation.label))
   }, [])
 
   useEffect(() => {
@@ -48,12 +48,37 @@ const Wiki = (props) => {
   }, [
     searchQuery,
   ])
+  
+  useEffect(() => {
+    setCurrentDrawers(filterDrawersBy(searchQuery))
+  }, [
+    props.activeLocation.label,
+  ])
+
+  // https://medium.com/@rajeshnaroth/using-throttle-and-debounce-in-a-react-function-component-5489fc3461b3
+  const debouncedSetSearchQuery = useCallback(_.debounce(setSearchQuery, 500), [])  
 
   const filterDrawersBy = (filterTerm) => {
     const filterTermInLowerCase = filterTerm.toLowerCase()
+    
+    const filteredWikiEntries = _.filter(wikiEntries, wikiEntry => {
+      const includedBySearchTerm =  _.includes(wikiEntry.label.toLowerCase(), filterTermInLowerCase)
 
-    const drawers = _.chain(wikiEntries)
-    .filter(wikiEntry => _.includes(wikiEntry.label.toLowerCase(), filterTermInLowerCase))
+      const includedByPlaceTag = (
+        _.isEmpty(wikiEntry.placeTags)
+        || _.isEmpty(props.activeLocation) 
+      )
+      ? true
+      : (
+        _.includes(wikiEntry.placeTags, props.activeLocation.label)
+        || wikiEntry.name === props.activeLocation.name
+      )
+
+      return (includedBySearchTerm && includedByPlaceTag)
+    })
+
+
+    const drawers = _.chain(filteredWikiEntries)
     .map(wikiEntry => ({
       title: wikiEntry.label,
       titleDetail: wikiEntry.type.subType,
@@ -87,12 +112,6 @@ const Wiki = (props) => {
       : ''
   }
   
-  // https://medium.com/@rajeshnaroth/using-throttle-and-debounce-in-a-react-function-component-5489fc3461b3
-  const debouncedSetSearchQuery = useCallback(_.debounce(setSearchQuery, 500), [])
-
-  // TODO: make these filter by placeTags in places.js
-
-  
 
   const handleSubmitSearch = (e) => {
     const searchTerm = e.target.value
@@ -100,7 +119,7 @@ const Wiki = (props) => {
     
     debouncedSetSearchQuery(searchTerm)  
   }
-  
+
   return (
     <This
     className="wiki"
