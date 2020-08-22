@@ -4,6 +4,15 @@ import _ from 'lodash'
 import { terrainTypeNames } from './terrainTypes'
 
 const places = {
+  abundabar: {
+    label: 'Abundabar',
+    name: 'abundabar',
+    color: colors.mountainsTeal,
+    terrainTypes: [
+      terrainTypeNames.caves,
+      terrainTypeNames.city,
+    ],
+  },
   ambalora: {
     label: 'Ambalora',
     name: 'ambalora',

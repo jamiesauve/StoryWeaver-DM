@@ -4,6 +4,9 @@ const wikiEntryTypes = {
   place: [
     'city',
     'ruined city',
+    'history',
+    'geography',
+    'culture',
   ]
 }
 
