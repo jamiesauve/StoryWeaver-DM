@@ -1,4 +1,4 @@
-import React, { useState, useCallback, } from 'react'
+import React, { useState, useEffect, useCallback, } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
@@ -26,6 +26,58 @@ const This = styled.div`
 const Wiki = (props) => {
   const [searchInput, setSearchInput] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
+  const [unfilteredDrawers, setUnfilteredDrawers] = useState([])
+  const [currentDrawers, setCurrentDrawers] = useState([])
+
+  useEffect(() => {
+    setUnfilteredDrawers(filterDrawersBy(''))
+  }, [])
+
+  useEffect(() => {
+    setCurrentDrawers(unfilteredDrawers)
+  }, [
+    unfilteredDrawers
+  ])
+
+  useEffect(() => {
+    if (searchQuery === "") {
+      setCurrentDrawers(unfilteredDrawers);
+    } else {
+      setCurrentDrawers(filterDrawersBy(searchQuery))
+    }
+  }, [
+    searchQuery,
+  ])
+
+  const filterDrawersBy = (filterTerm) => {
+    const filterTermInLowerCase = filterTerm.toLowerCase()
+
+    const drawers = _.chain(wikiEntries)
+    .filter(wikiEntry => _.includes(wikiEntry.label.toLowerCase(), filterTermInLowerCase))
+    .map(wikiEntry => ({
+      title: wikiEntry.label,
+      titleDetail: wikiEntry.type.subType,
+      titleColor: wikiEntry.titleColor,
+      content: () => <WikiEntryDisplayCard
+        wikiEntry={wikiEntry}
+      />
+    }))
+    .sortBy(entry => entry.title)
+    .concat({
+      name: null,
+      title: `+`,
+      titleColor: colors.winterWhite,
+      content: () => <WikiEntryDisplayCard
+        isEditable={true}
+        isInCreateMode={true}
+        placeholders={createWikiEntryPlaceholders}
+        wikiEntry={{}}
+      />
+    })
+    .value()
+
+    return drawers
+  }
 
   const getDrawerToOpen = () => {
     const wikiEntry = _.find(wikiEntries, {name: props.currentWikiLink.linkTarget})
@@ -38,31 +90,9 @@ const Wiki = (props) => {
   // https://medium.com/@rajeshnaroth/using-throttle-and-debounce-in-a-react-function-component-5489fc3461b3
   const debouncedSetSearchQuery = useCallback(_.debounce(setSearchQuery, 500), [])
 
-  // TODO: a value is getting set in searchQuery now, and search should be fired by it changing. Need to set this up
   // TODO: make these filter by placeTags in places.js
 
-  const drawers = _.chain(wikiEntries)
-  .map(wikiEntry => ({
-    title: wikiEntry.label,
-    titleDetail: wikiEntry.type.subType,
-    titleColor: wikiEntry.titleColor,
-    content: () => <WikiEntryDisplayCard
-      wikiEntry={wikiEntry}
-    />
-  }))
-  .sortBy(entry => entry.title)
-  .concat({
-    name: null,
-    title: `+`,
-    titleColor: colors.winterWhite,
-    content: () => <WikiEntryDisplayCard
-      isEditable={true}
-      isInCreateMode={true}
-      placeholders={createWikiEntryPlaceholders}
-      wikiEntry={{}}
-    />
-  })
-  .value()
+  
 
   const handleSubmitSearch = (e) => {
     const searchTerm = e.target.value
@@ -71,8 +101,6 @@ const Wiki = (props) => {
     debouncedSetSearchQuery(searchTerm)  
   }
   
-
-
   return (
     <This
     className="wiki"
@@ -91,7 +119,7 @@ const Wiki = (props) => {
 
           <Dresser 
             className="dresser"
-            drawers={drawers}
+            drawers={currentDrawers}
             hasToggleAllLink
             initiallyExpanded={false}
             drawerToOpen={getDrawerToOpen()}
