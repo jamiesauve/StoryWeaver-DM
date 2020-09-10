@@ -71,7 +71,7 @@ const Wiki = (props) => {
       ? true
       : (
         _.includes(wikiEntry.placeTags, props.activeLocation.label)
-        || wikiEntry.name === props.activeLocation.name
+        || _.includes(wikiEntry.name, props.activeLocation.name)
       )
 
       return (includedBySearchTerm && includedByPlaceTag)
