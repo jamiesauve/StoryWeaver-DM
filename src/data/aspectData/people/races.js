@@ -5,6 +5,7 @@ const races = [
   "aasimar",
   "bugbear",
   "changeling",
+  "dark elf",
   "dragonborn",
   "dwarf",
   "eladrin",
