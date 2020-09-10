@@ -8,6 +8,8 @@ import {
   wikiEntryTypesAtom,
 } from './atoms/staticDataAtoms'
 
+const callDatabase = window.callDatabase
+
 const baseUrl = 'http://127.0.0.1:4204' // TODO: stick this in a .env file
 
 const StaticDataInitializer = (props) => {
@@ -15,13 +17,18 @@ const StaticDataInitializer = (props) => {
   const [, setColors] = useRecoilState(colorsAtom)
   const [, setWikiEntryTypes] = useRecoilState(wikiEntryTypesAtom)
   
-  
   useEffect(() => {
     const getStaticData = async () => {
-      const {data} = await axios.get(`${baseUrl}/api/staticData`)
+      const {error, result } = await window.callDatabase(`/api/staticData`)
+      if (error) throw error;
 
-      setColors(data.colors)
-      setWikiEntryTypes(data.wikiEntryTypes)
+      const {
+        colors,
+        wikiEntryTypes,
+      } = result
+
+      setColors(colors)
+      setWikiEntryTypes(wikiEntryTypes)
 
       setStaticDataHasLoaded(true)
     }

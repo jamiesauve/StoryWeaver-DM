@@ -6,12 +6,11 @@ const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-d
 const path = require('path');
 const isDev = require('electron-is-dev');
 
-const databaseApi = require('../pesudoServer/api/controller/routes')
+const databaseApi = require('../pseudoServer/api/controller/routes')
 
-ipcMain.on('dbRequest', async (event, request) => {
-  console.log('IN MAIN, MESSAGE RECEIVED:', request)
+ipcMain.handle('dbRequest', async (event, request) => {
   const response = await databaseApi(request)
-  event.reply('dbResponse', response)
+  return response
 })
 
 let mainWindow;

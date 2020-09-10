@@ -39,8 +39,7 @@
     "electron-pack": "electron-builder build -mw",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn build",
-    "server": "nodemon localServer/server.js",
-    "start": "concurrently \"PORT=4203 rescripts start\" \"npm run server\"",
+    "start": "PORT=4203 rescripts start",
     "test": "rescripts test"
   },
   "eslintConfig": {
