@@ -121,12 +121,16 @@ export default [
   },
   {
     title: 'Calm Market',
-    location: 'https://michaelghelfi.bandcamp.com/track/slums',
+    location: 'https://www.youtube.com/watch?v=UlbxDQMo1o4',
     tags: ['people', 'market', 'busy', 'dogs'],
     terrain: [
       city,
       village
-    ]
+    ],
+    places: [{
+      name: placeNames.abundabar,
+      trackTitle: 'Narrada Market',
+    }]
   },
   {
     title: 'Cicadas Campfire',
@@ -158,7 +162,7 @@ export default [
   },
   {
     title: 'Black Market (bubbling)',
-    location: 'https://michaelghelfi.bandcamp.com/track/black-market-2',
+    location: 'https://www.youtube.com/watch?v=vHaWAxh8vzU',
     tags: ['market', 'people',],
     terrain: [
       city
@@ -257,7 +261,7 @@ export default [
   },
   {
     title: 'Desert Wind',
-    location: 'https://michaelghelfi.bandcamp.com/track/desert',
+    location: 'https://www.youtube.com/watch?v=4E-_Xpj0Mgo',
     tags: ['desert', 'wind',],
     terrain: [
       desert,
@@ -279,7 +283,7 @@ export default [
   },
   {
     title: 'Ruins',
-    location: 'https://michaelghelfi.bandcamp.com/track/ruined-castle-2',
+    location: 'https://www.youtube.com/watch?v=TqH8B0_YV8M',
     tags: ['quiet', 'ruins', 'calm', 'mystery', 'sad', 'desolate'],
     terrain: [
       coast,
@@ -317,7 +321,7 @@ export default [
   },
   {
     title: 'Bazaar',
-    location: 'https://michaelghelfi.bandcamp.com/track/bazaar',
+    location: 'https://www.youtube.com/watch?v=8uRtW8lBe0I',
     tags: ['market', 'bazaar', 'busy', 'crowd', 'people', 'children'],
     terrain: [
       city,
@@ -384,7 +388,7 @@ export default [
   },
   {
     title: 'Sailing Ship',
-    location: 'https://michaelghelfi.bandcamp.com/track/sailing-ship',
+    location: 'https://www.youtube.com/watch?v=beOw8MEojQ4',
     tags: ['chains', 'wind', 'creaking', 'windy', 'water'],
     terrain: [
       ocean,

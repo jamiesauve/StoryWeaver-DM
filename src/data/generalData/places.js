@@ -10,7 +10,6 @@ const places = {
     color: colors.mountainsTeal,
     terrainTypes: [
       terrainTypeNames.caves,
-      terrainTypeNames.city,
     ],
   },
   ambalora: {
