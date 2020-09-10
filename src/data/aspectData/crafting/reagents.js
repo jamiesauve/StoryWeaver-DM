@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import { terrainTypeNames } from '../../generalData/terrainTypes'
 import reagentTypes from './reagentTypes'
 import recipeTypes from './recipeTypes'
