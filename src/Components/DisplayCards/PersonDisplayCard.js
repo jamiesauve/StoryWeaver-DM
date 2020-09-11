@@ -36,6 +36,15 @@ const PersonStatsSection = styled.div`
   padding: 5px;
 `
 
+const QuirksAndTraitsContainer = styled.div`
+  flex-grow: 1;
+  display: flex;
+
+  & > * {
+    flex-basis: 100%;
+  }
+`
+
 const PersonDisplayCard = (props) => {
   const {
     isEditable,
@@ -47,10 +56,42 @@ const PersonDisplayCard = (props) => {
   
   const description = person.description || []
   const titleColor = person.titleColor || colors.freshwaterBlue
+  const {
+    quirks,
+    traits,
+  } = person
 
   return (
     <This>
       <DisplayCard>        
+        <Row
+          justifyContent="flex-start"
+          padding="0 0 5px 0"
+        >
+          <QuirksAndTraitsContainer>
+            <ColoredBox
+              color={titleColor}
+            >
+              <List
+                heading="quirks"
+                items={[quirks.join(', ')]}
+                textAlign="left"
+              />
+            </ColoredBox>
+
+            <ColoredBox
+              color={titleColor}
+            >
+              <List
+                heading="traits"
+                items={[traits.join(', ')]}
+                textAlign="left"
+              />
+            </ColoredBox>
+          </QuirksAndTraitsContainer>
+
+        </Row>
+
         <Row
           justifyContent="flex-start"
           padding="0 0 5px 0"
