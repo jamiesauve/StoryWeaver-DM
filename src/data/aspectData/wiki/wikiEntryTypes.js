@@ -3,10 +3,19 @@ import _ from 'lodash'
 const wikiEntryTypes = {
   place: [
     'city',
-    'ruined city',
-    'history',
-    'geography',
     'culture',
+    'geography',
+    'history',
+    'neighborhood',
+    'lake',
+    'ruined city',
+  ],
+  faction: [
+    'family',
+    'guild',
+  ],
+  directory: [
+    'directory',
   ]
 }
 
