@@ -485,6 +485,9 @@ export default [
     places: [{
       name: placeNames.durukhaaz,
       trackTitle: 'The Merchantry',
+    }, {
+      name: placeNames.dragon_falls,
+      trackTitle: 'Westcliff Market',
     }]
   },
   {
@@ -518,5 +521,22 @@ export default [
     terrain: [
       caves,
     ],
+  },
+  {
+    title: 'Waterfall',
+    location: 'https://www.youtube.com/watch?v=TUFTST1tqjQ',
+    tags: ['waterfall'],
+    terrain: [
+      caves,
+      coast,
+      forest,
+      freshwater,
+      jungle,
+      mountains,
+    ],
+    places: [{
+      name: placeNames.dragon_falls,
+      trackTitle: 'The Cauldron',
+    }]
   },
 ]

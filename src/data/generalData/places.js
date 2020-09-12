@@ -20,6 +20,15 @@ const places = {
       terrainTypeNames.caves,
     ],
   },
+  dragon_falls: {
+    label: 'Dragon Falls',
+    name: 'dragon_falls',
+    color: colors.oceanBlue,
+    terrainTypes: [
+      terrainTypeNames.city,
+      terrainTypeNames.mountains,
+    ],
+  },
   durukhaaz: {
     label: 'Durukhaaz',
     name: 'durukhaaz',
