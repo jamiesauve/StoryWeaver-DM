@@ -20,8 +20,8 @@ const {
 
 export default [
   {
-    title: 'Horseback - Light Forest',
-    location: 'https://michaelghelfi.bandcamp.com/track/horseback',
+    title: 'Horseback (no background)',
+    location: 'https://www.youtube.com/watch?v=49TLUjcIWYI',
     tags: ['hooves', 'horseback', 'birdsong', 'walk'],
     terrain: [
       coast, 
@@ -108,7 +108,7 @@ export default [
   },
   {
     title: 'By a Stream',
-    location: 'https://michaelghelfi.bandcamp.com/track/lively-tundra-2',
+    location: 'https://www.youtube.com/watch?v=xJN2COqmLg4',
     tags: ['stream', 'fire', 'day', 'birds'],
     terrain: [
       coast,
@@ -134,7 +134,7 @@ export default [
   },
   {
     title: 'Cicadas Campfire',
-    location: 'https://michaelghelfi.bandcamp.com/track/campfire-at-dusk',
+    location: 'https://www.youtube.com/watch?v=XUts4U8saJc',
     tags: ['campfire', 'cicadas', 'evening', 'peaceful'],
     terrain: [
       coast,
@@ -148,7 +148,7 @@ export default [
   },
   {
     title: 'Crickets Campfire',
-    location: 'https://michaelghelfi.bandcamp.com/track/savannah-night-camp',
+    location: 'https://www.youtube.com/watch?v=al1F0hURxhs',
     tags: ['campfire', 'crickets', 'birds', 'peaceful'],
     terrain: [
       coast,
@@ -182,7 +182,7 @@ export default [
   },
   {
     title: 'Digging',
-    location: 'https://michaelghelfi.bandcamp.com/track/construction-site',
+    location: 'https://www.youtube.com/watch?v=Ly9Ci1lTAnY',
     tags: ['ruins', 'working', 'poeple', 'busy'],
     terrain: [
       city,
@@ -191,7 +191,7 @@ export default [
   },
   {
     title: 'Swamp',
-    location: 'https://michaelghelfi.bandcamp.com/track/swamp',
+    location: 'https://www.youtube.com/watch?v=fq_ZTJqJTcc',
     tags: ['swamp', 'flies', 'crickets'],
     terrain: [
       swamp
@@ -199,7 +199,7 @@ export default [
   },
   {
     title: 'Night Swamp - Haunted',
-    location: 'https://michaelghelfi.bandcamp.com/track/dead-marshes',
+    location: 'https://www.youtube.com/watch?v=NQIoLiQ_uNU',
     tags: ['swamp', 'flies', 'magic', 'crickets', 'tense'],
     terrain: [
       forest,
@@ -210,7 +210,7 @@ export default [
   },
   {
     title: 'Swamp Campfire',
-    location: 'https://michaelghelfi.bandcamp.com/track/swamp-campfire',
+    location: 'https://www.youtube.com/watch?v=1ZTqzkh1fUo',
     tags: ['campfire', 'crickets', 'flies'],
     terrain: [
       swamp,
@@ -240,7 +240,7 @@ export default [
   }, 
   {
     title: 'Daytime Forest (roars)',
-    location: 'https://michaelghelfi.bandcamp.com/track/daytime-forest',
+    location: 'https://www.youtube.com/watch?v=HAw37tUHcOo',
     tags: ['leaves', 'stream',],
     terrain: [
       forest,
@@ -272,7 +272,7 @@ export default [
   },
   {
     title: 'Desert Campfire',
-    location: 'https://michaelghelfi.bandcamp.com/track/desert-campfire',
+    location: 'https://www.youtube.com/watch?v=rOAiDBTr-N8',
     tags: ['desert', 'wind',],
     terrain: [
       desert,
@@ -297,7 +297,7 @@ export default [
   },
   {
     title: 'Night Ruins',
-    location: 'https://michaelghelfi.bandcamp.com/track/nightfall-ruins',
+    location: 'https://www.youtube.com/watch?v=exOg8RCGluE',
     tags: ['quiet', 'ruins', 'calm', 'mystery', 'night', 'sad'],
     terrain: [
       coast,
@@ -312,7 +312,7 @@ export default [
   },
   {
     title: 'Windy Ocean',
-    location: 'https://michaelghelfi.bandcamp.com/track/windy-coast',
+    location: 'https://www.youtube.com/watch?v=ST_cPtDe3-c',
     tags: ['waves', 'coast', 'wind', 'ocean'],
     terrain: [
       coast,
@@ -330,7 +330,7 @@ export default [
   },
   {
     title: 'Jungle Cove',
-    location: 'https://michaelghelfi.bandcamp.com/track/cove',
+    location: 'https://www.youtube.com/watch?v=NrEiRL7VLhs',
     tags: ['cove', 'water', 'waves', 'animals', 'night'],
     terrain: [
       coast,
@@ -339,7 +339,7 @@ export default [
   },
   {
     title: 'Haunted Coast',
-    location: 'https://michaelghelfi.bandcamp.com/track/on-the-haunted-shore',
+    location: 'https://www.youtube.com/watch?v=c8mbKjH1-qU',
     tags: ['coast', 'haunted', 'magic', 'night', 'creepy'],
     terrain: [
       coast,
@@ -348,7 +348,7 @@ export default [
   },
   {
     title: 'Blacksmith\'s Forge',
-    location: 'https://michaelghelfi.bandcamp.com/track/blacksmith',
+    location: 'https://www.youtube.com/watch?v=pRkFl9j3NLk',
     tags: ['blacksmith', 'torches', 'forge'],
     terrain: [
       city,
@@ -357,7 +357,7 @@ export default [
   },
   {
     title: 'Winter Coast',
-    location: 'https://michaelghelfi.bandcamp.com/track/frozen-coast',
+    location: 'https://www.youtube.com/watch?v=Y2yT3vH8x7M',
     tags: ['windy', 'waves', 'creepy'],
     terrain: [
       winter,
@@ -367,7 +367,7 @@ export default [
   },
   {
     title: 'Windy Shack',
-    location: 'https://michaelghelfi.bandcamp.com/track/abandoned-shack',
+    location: 'https://www.youtube.com/watch?v=0Tphr0vyfFU',
     tags: ['windy', 'people'],
     terrain: [
       coast,
@@ -380,7 +380,7 @@ export default [
   },
   {
     title: 'Beach',
-    location: 'https://michaelghelfi.bandcamp.com/track/on-the-shore',
+    location: 'https://www.youtube.com/watch?v=4W2EfqdOmiI',
     tags: ['coast', 'beach', 'peaceful', 'windy', 'gulls'],
     terrain: [
       coast,
@@ -396,7 +396,7 @@ export default [
   },
   {
     title: 'Harbor',
-    location: 'https://michaelghelfi.bandcamp.com/track/harbour',
+    location: 'https://www.youtube.com/watch?v=t0AmfPQMs4k',
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'gulls'],
     terrain: [
       coast,
@@ -406,7 +406,7 @@ export default [
   },
   {
     title: 'Ship in Storm',
-    location: 'https://michaelghelfi.bandcamp.com/track/ship-in-storms',
+    location: 'https://www.youtube.com/watch?v=ZNz7yFEHtDs',
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'storm'],
     terrain: [
       coast,
@@ -432,7 +432,7 @@ export default [
   },
   {
     title: 'Desert Canyon',
-    location: 'https://michaelghelfi.bandcamp.com/track/desert-canyon-2',
+    location: 'https://www.youtube.com/watch?v=U-e_w9v0BwU',
     tags: ['desert', 'wind', 'birds'],
     terrain: [
       coast,
@@ -444,7 +444,7 @@ export default [
   },
   {
     title: 'Volcano',
-    location: 'https://michaelghelfi.bandcamp.com/track/volcano-temple',
+    location: 'https://www.youtube.com/watch?v=fUN-T3zwAYc',
     tags: ['desert', 'wind', 'birds'],
     terrain: [
       exotic,
