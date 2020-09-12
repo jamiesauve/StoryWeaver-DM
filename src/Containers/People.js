@@ -70,7 +70,7 @@ const People = (props) => {
       )
       ? true
       : (
-        _.includes(person.placeTags, props.activeLocation.label)
+        _.includes(person.placeTags, props.activeLocation.name)
         || person.name === props.activeLocation.name
       )
 

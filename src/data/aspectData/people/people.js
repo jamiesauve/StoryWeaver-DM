@@ -1,5 +1,5 @@
 import colors from '../../styles/colors'
-import places from '../../generalData/places'
+import { placeNames } from '../../generalData/places'
 
 import races from './races'
 import occupations from './occupations'
@@ -9,7 +9,7 @@ const people = {
     name: 'oggshin',
     label: 'Oggshin',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.puzzleOrange,
     quirks: [],
@@ -26,7 +26,7 @@ const people = {
     name: 'kingus',
     label: 'Kingus',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.exoticPink,
     quirks: ['moves shoulders', 'touches people he talks to'],
@@ -43,7 +43,7 @@ const people = {
     name: 'trelindara',
     label: 'Trelindara',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.magicPink,
     quirks: [],
@@ -60,7 +60,7 @@ const people = {
     name: 'alahandra',
     label: 'Alahandra',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.cavesPurple,
     quirks: [],
@@ -77,7 +77,7 @@ const people = {
     name: 'dursh',
     label: 'Dursh',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.villageBrown,
     quirks: ['missing many teeth'],
@@ -94,7 +94,7 @@ const people = {
     name: 'indabara',
     label: 'Indabara',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.swampGreen,
     quirks: ['winks a lot'],
@@ -111,7 +111,7 @@ const people = {
     name: 'alturas',
     label: 'Alturas',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.freshwaterBlue,
     quirks: ['talks slowly'],
@@ -128,7 +128,7 @@ const people = {
     name: 'elissandra',
     label: 'Elissandra',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.freshwaterBlue,
     quirks: ['looks down a lot'],
@@ -145,7 +145,7 @@ const people = {
     name: 'ninantura',
     label: 'Ninantura',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.mountainsTeal,
     quirks: [`grunts, doesn't talk much`],
@@ -162,7 +162,7 @@ const people = {
     name: 'elberara',
     label: 'Elberara',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.mountainsTeal,
     quirks: [`folds arms and leans back when not talking`],
@@ -179,7 +179,7 @@ const people = {
     name: 'kamabia_kalendalar',
     label: 'Kamabia Kalendalar',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.battleRed,
     quirks: [`inspects her fingernails while talking down to people`],
@@ -196,7 +196,7 @@ const people = {
     name: 'alabara',
     label: 'Alabara',
     placeTags: [
-      places.abundabar,
+      placeNames.abundabar,
     ],
     titleColor: colors.magicPink,
     quirks: [],
