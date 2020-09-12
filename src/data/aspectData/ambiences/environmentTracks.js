@@ -440,7 +440,11 @@ export default [
       forest,
       jungle,
       mountains,
-    ]
+    ],
+    places: [{
+      name: placeNames.dragon_falls,
+      trackTitle: 'The Hills',
+    }]
   },
   {
     title: 'Volcano',
@@ -537,6 +541,30 @@ export default [
     places: [{
       name: placeNames.dragon_falls,
       trackTitle: 'The Cauldron',
+    }]
+  },
+  {
+    title: `Mage's Tower`,
+    location: 'https://www.youtube.com/watch?v=TUFTST1tqjQ',
+    tags: ['waterfall'],
+    terrain: [
+      city,
+    ],
+    places: [{
+      name: placeNames.dragon_falls,
+      trackTitle: 'Crystal Academy',
+    }]
+  },
+  {
+    title: `Library`,
+    location: 'https://www.youtube.com/watch?v=VvC12NAf-Cw',
+    tags: ['library'],
+    terrain: [
+      city,
+    ],
+    places: [{
+      name: placeNames.dragon_falls,
+      trackTitle: `Scholar's Guild`,
     }]
   },
 ]
