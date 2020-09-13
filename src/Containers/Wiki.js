@@ -70,7 +70,7 @@ const Wiki = (props) => {
       )
       ? true
       : (
-        _.includes(wikiEntry.placeTags, props.activeLocation.label)
+        _.includes(wikiEntry.placeTags, props.activeLocation.name)
         || _.includes(wikiEntry.name, props.activeLocation.name)
       )
 

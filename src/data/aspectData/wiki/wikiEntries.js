@@ -1,5 +1,5 @@
 import colors from '../../styles/colors'
-import places from '../../generalData/places'
+import { placeNames } from '../../generalData/places'
 
 import wikiEntryTypes from './wikiEntryTypes'
 
@@ -15,7 +15,7 @@ const wikiEntries = {
     name: 'chinclincha',
     label: 'Chinclincha',
     placeTags: [
-      places.climina
+      placeNames.climina
     ],
     titleColor: colors.mountainsTeal,
     type: wikiEntryTypes.place.city,
@@ -30,8 +30,8 @@ const wikiEntries = {
     name: 'ambalora',
     label: 'Ambalora',
     placeTags: [
-      places.ambalora,
-      places.gulandabar,
+      placeNames.ambalora,
+      placeNames.gulandabar,
     ],
     titleColor: colors.creepyPurple,
     type: wikiEntryTypes.place['ruined city'],
@@ -44,6 +44,19 @@ const wikiEntries = {
       `Areas of interest in Ambalora include the four schools that the founders were primarily interested in - Animation, Control, Resurrection, and Telepathy; the Meditorium; the Arcane Repository; the tomb of Trelachus (the Ambaloran first killed); and the Teleportation Circle, which sat on a rocky hill above the fortress, accessible via a winding stairway carved into the rock. Inside each school are artifacts of the research done there, including many gruesome remains; the Meditorium is mostly ruins, as it was the least warded building; the Arcane Repository is guarded by a deadly, twisted puzzle created by Trendalos, but contains a wealth of gemstones, arcane objects, and orbs; and the tomb of Trelachus is a dark place surrounded by slumbering undead skeletons, tied to Trendalos' puzzle at the Arcane Repository.`
     ]
   },
+  'saddle': { // TODO: make this show up when searching Dragon Falls
+    name: 'saddle',
+    label: 'Saddle',
+    placeTags: [
+      placeNames.dragon_falls,
+    ],
+    titleColor: colors.coastBlue,
+    type: wikiEntryTypes.place.town,
+    paragraphs: [
+      `Saddle is a small town a mile or so northwest of Dragon Falls that caters to the ranchers of the region, dealing in feed, livestock, tack, and has a horse corral for showing and selling, a farrier, a tack store, a couple of saddlemakers, a blacksmith, a bow maker who makes bows for horse archery and an arena where they have a show including horse archery. Some of the ranchers in the region also train horses specifically for horse archery, and some offer countryside rides for the wealthy folk in Dragon Falls. Horse races are occasionally held also.`,
+    ]
+  },
+
   
 }
 
