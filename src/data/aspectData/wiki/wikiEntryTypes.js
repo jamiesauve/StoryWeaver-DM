@@ -9,6 +9,7 @@ const wikiEntryTypes = {
     'neighborhood',
     'lake',
     'ruined city',
+    'town',
   ],
   faction: [
     'family',
