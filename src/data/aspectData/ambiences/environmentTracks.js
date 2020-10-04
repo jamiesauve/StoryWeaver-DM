@@ -567,4 +567,13 @@ export default [
       trackTitle: `Scholar's Guild`,
     }]
   },
+  {
+    title: `Korrim'ban Village`,
+    location: 'https://www.youtube.com/watch?v=roVUD2e1fwM',
+    tags: ['village'],
+    terrain: [
+      city,
+      village,
+    ]
+  },
 ]

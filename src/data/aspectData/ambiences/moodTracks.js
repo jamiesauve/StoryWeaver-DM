@@ -23,8 +23,13 @@ export default {
       },
       {
         title: 'Creepy Fight',
-        location: 'https://www.youtube.com/watch?v=MI2wq39BPFo ',
+        location: 'https://www.youtube.com/watch?v=MI2wq39BPFo',
         tags: ['creepy', 'unsettling', 'fear', 'anxiety'],
+      },
+      {
+        title: 'Arena',
+        location: 'https://www.youtube.com/watch?v=plUgICpVAoc',
+        tags: ['fight', 'arena'],
       },
     ],
   },
