@@ -38,7 +38,7 @@
     "dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:4203 && electron .\"",
     "electron-pack": "electron-builder build -mw",
     "postinstall": "electron-builder install-app-deps",
-    "preelectron-pack": "yarn build",
+    "preelectron-pack": "npm install",
     "start": "PORT=4203 rescripts start",
     "test": "rescripts test"
   },
@@ -73,8 +73,11 @@
       "category": "public.app-category.utilities"
     },
     "files": [
+      "public/**/*",
       "build/**/*",
-      "node_modules/**/*"
+      "node_modules/**/*",
+      "pseudoServer/**/*",
+      "./public/electron.js"
     ],
     "directories": {
       "buildResources": "assets"
