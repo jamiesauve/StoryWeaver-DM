@@ -756,4 +756,79 @@ export default [
       },
     ]
   },
+  {
+    label: "Yellow Eye",
+    name: "yellow-eye",
+    type: reagentTypes.plant.herbaceous,
+    
+    description: `A two- to four-foot-tall black-eyed susan with many flowers.`,
+    effects: [
+      `Anyone who can smell a live Yellow Eye has an increased ability to focus (advantage on INT-based checks). This is only true while they can smell it and the flower is alive.`
+    ],
+    location: `Grows in warm plains.`,
+    lore: [
+      `The Scholar's Guild in Dragon Falls keeps fresh-cut Yellow Eyes in vases all over the building to help them in their work.`,
+    ],
+
+    terrain: [
+      terrainTypeNames.coast,
+      terrainTypeNames.mountains,
+      terrainTypeNames.plains,
+    ],
+    harvesting: [
+      {
+        reagentPart: plantParts.flower,
+        harvestDC: 5,
+        onHarvestFailure: ``,
+        recipes: [],
+        simpleUses: [
+          recipeTypes.item.magical,
+        ],
+        value: {
+          amount: 1,
+          amountOfReagent: 'stalk',
+          unit: moneyUnits.cp,
+        },
+      },
+    ]
+  },
+  {
+    label: "Bluebells",
+    name: "bluebells",
+    type: reagentTypes.plant.herbaceous,
+    
+    description: `A two- to three-foot-tall plant with a cloud of lacy foliage and blue bell-shaped flowers.`,
+    effects: [
+      `Freshens breath and encourages calmness (similar to chamomile).`
+    ],
+    location: `Grows in sunny areas.`,
+    lore: [
+      `Travelers and children who find them growing near paths or in meadows often eat the sweet flowers. Some folks make it into tea as well.`,
+      `Grows in abundance around Dragon Falls, and is encouraged by ranchers because it is healthy for their herds abd helps keep them docile.`,
+    ],
+
+    terrain: [
+      terrainTypeNames.city,
+      terrainTypeNames.coast,
+      terrainTypeNames.forest,
+      terrainTypeNames.mountains,
+      terrainTypeNames.plains,
+      terrainTypeNames.village,
+    ],
+    harvesting: [
+      {
+        reagentPart: plantParts.flower,
+        harvestDC: 2,
+        onHarvestFailure: ``,
+        recipes: [],
+        simpleUses: [
+          recipeTypes.consumable.edible,
+        ],
+        value: {
+          amount: 1,
+          unit: moneyUnits.cp,
+        },
+      },
+    ]
+  },
 ]
