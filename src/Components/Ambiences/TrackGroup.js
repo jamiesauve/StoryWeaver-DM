@@ -28,18 +28,17 @@ const TrackTitle = styled.div`
 `
 
 const TrackGroup =  props => {
-  const copyTrack = (location) => {    
-    const command = `;;play ${location}`
+  const copyTrack = (trackLocation) => {    
+    const command = `;;play ${trackLocation}`
     navigator.clipboard.writeText(command)
   }
 
-  const playTrack = async(trackTitle,location) => {
-    const result = await startTrack(trackTitle, location)
+  const playTrack = async(trackTitle, trackLocation, isFromLocal = false) => {
+    const result = await startTrack(trackTitle, trackLocation, isFromLocal)
   }
 
-  const handleClickTrack = (trackTitle, location) => {
-    // copyTrack(location)
-    playTrack(trackTitle, location)
+  const handleClickTrack = (trackTitle, trackLocation, isFromLocal) => {
+    playTrack(trackTitle, trackLocation, isFromLocal)
   }
 
   return (
@@ -59,7 +58,7 @@ const TrackGroup =  props => {
           .map(track => (
               <TrackTitle
                 key={`${track.location}-${props.categoryTitle}-${track.title}`}
-                onClick={() => handleClickTrack(track.title, track.location)}
+                onClick={() => handleClickTrack(track.title, track.location, track.isFromLocal)}
               >
                 {track.title}
               </TrackTitle>

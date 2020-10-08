@@ -10,9 +10,10 @@ export default [{
       tags: ['Skyworld', 'wyvern', 'desert'],
     },
     {
-      title: 'El Dorado (0:59)',
-      location: 'https://www.youtube.com/watch?v=RSrqK0tU0uc',
-      tags: ['El Dorado', '',],
+      title: 'Cornflower',
+      isFromLocal: true,
+      location: './personal-tracks/Cornflower.mp3',
+      tags: ['Composition', '',],
     },
   ],
 }]
