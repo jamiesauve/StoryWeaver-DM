@@ -8,15 +8,15 @@ const encodeTrackUrl = (url) => {
   .replace(/\?/g, '^^')
 }
 
-export const startTrack = (trackTitle, basicTrackLocation, isFromLocal = false) => {
-  const rawLocation = isFromLocal 
+export const startTrack = (trackTitle, basicTrackLocation, isMyOwnSong = false) => {
+  const rawLocation = isMyOwnSong 
   ? basicTrackLocation
   : encodeTrackUrl(basicTrackLocation)
 
   const result = axios.post(`${baseUrl}/api`, {
     data: {
       command: 'play',
-      isFromLocal,
+      isMyOwnSong,
       trackTitle,
       rawLocation,
     },
