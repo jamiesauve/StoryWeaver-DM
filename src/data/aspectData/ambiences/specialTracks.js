@@ -5,14 +5,25 @@ export default [{
   titleColor: colors.specialPink,
   trackObjects: [
     {
-      title: 'Desert Chase (1:03)',
-      location: 'https://www.youtube.com/watch?v=L65k0_Y-LPY',
+      title: 'El Dorado',
+      location: '_El Dorado',
       tags: ['Skyworld', 'wyvern', 'desert'],
     },
     {
+      title: 'Cannon in D',
+      location: '_Cannon in D',
+      tags: ['Cannon in D'],
+    },
+    {
       title: 'Cornflower',
-      isFromLocal: true,
+      isMyOwnSong: true,
       location: './personal-tracks/Cornflower.mp3',
+      tags: ['Composition', '',],
+    },
+    {
+      title: `Ariana's Song`,
+      isMyOwnSong: true,
+      location: `./personal-tracks/ArianasSong.mp3`,
       tags: ['Composition', '',],
     },
   ],
