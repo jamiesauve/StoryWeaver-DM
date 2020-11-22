@@ -51,6 +51,12 @@ export default (activeLocationType, activeLocation) => {
     }
   })
 
+  // TODO: make places return the Ambience sections of the terrains they're in also - there should be a drawer for each
+  // if (activeLocationType === "place") {
+  //   importedPlaces.
+  //   restructuredLocationTypes.push()
+  // }
+
   return restructuredLocationTypes
 }
 

@@ -33,12 +33,12 @@ const TrackGroup =  props => {
     navigator.clipboard.writeText(command)
   }
 
-  const playTrack = async(trackTitle, trackLocation, isMyOwnSong = false) => {
-    const result = await startTrack(trackTitle, trackLocation, isMyOwnSong)
+  const playTrack = async(trackTitle, trackLocation, isMyOwnSong = false, modifyVolumeBy = 1) => {
+    const result = await startTrack(trackTitle, trackLocation, isMyOwnSong, modifyVolumeBy)
   }
 
-  const handleClickTrack = (trackTitle, trackLocation, isMyOwnSong) => {
-    playTrack(trackTitle, trackLocation, isMyOwnSong)
+  const handleClickTrack = (trackTitle, trackLocation, isMyOwnSong, modifyVolumeBy) => {
+    playTrack(trackTitle, trackLocation, isMyOwnSong, modifyVolumeBy)
   }
 
   return (
@@ -58,7 +58,7 @@ const TrackGroup =  props => {
           .map(track => (
               <TrackTitle
                 key={`${track.location}-${props.categoryTitle}-${track.title}`}
-                onClick={() => handleClickTrack(track.title, track.location, track.isMyOwnSong)}
+                onClick={() => handleClickTrack(track.title, track.location, track.isMyOwnSong, track.modifyVolumeBy)}
               >
                 {track.title}
               </TrackTitle>

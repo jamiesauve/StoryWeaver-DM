@@ -20,8 +20,19 @@ const {
 
 export default [
   {
+    title: 'Desert Wind',
+    location: 'Desert',
+    tags: ['desert', 'wind',],
+    terrain: [
+      desert,
+      mountains,
+      plains,
+      winter,
+    ]
+  },
+  {
     title: 'Horseback (no background)',
-    location: 'https://www.youtube.com/watch?v=49TLUjcIWYI',
+    location: 'Horseback (no background)',
     tags: ['hooves', 'horseback', 'birdsong', 'walk'],
     terrain: [
       coast, 
@@ -31,31 +42,8 @@ export default [
     ]
   },
   {
-    title: 'Plains Night (4:03)',
-    location: 'https://www.youtube.com/watch?v=MdZv1YVE6_w&vl=en',
-    tags: ['quiet', 'peaceful', 'night', 'crickets'],
-    terrain: [
-      coast,
-      desert, 
-      mountains, 
-      plains, 
-      swamp, 
-    ],
-  },
-  {
-    title: 'Forest Night (10:00)',
-    location: 'https://www.youtube.com/watch?v=_FJIH0Yi2Mk',
-    tags: ['quiet', 'peaceful', 'night', 'crickets'],
-    terrain: [
-      forest, 
-      jungle,
-      mountains,
-      swamp, 
-    ],
-  },
-  {
     title: 'Quiet Night River',
-    location: 'https://www.youtube.com/watch?v=ty_Pq__TU_0',
+    location: 'Mountain Lake,
     tags: ['birds', 'day', 'peaceful'],
     terrain: [
       desert, 
@@ -68,7 +56,7 @@ export default [
   },
   {
     title: 'Cave - inhabited',
-    location: 'https://www.youtube.com/watch?v=CSPjCl_7hXo',
+    location: 'Torchlit Dungeon',
     tags: ['cave', 'fire', 'underground', 'magic', 'chains'],
     terrain: [
       caves,
@@ -76,7 +64,7 @@ export default [
   },
   {
     title: 'Dripping Windy River Cave',
-    location: 'https://www.youtube.com/watch?v=H0cF3t01T-w',
+    location: 'Dark Humid Cave',
     tags: ['dripping', 'windy', 'river', 'squeak'],
     terrain: [
       caves,
@@ -84,7 +72,7 @@ export default [
   },
   {
     title: 'Crystal Cave',
-    location: 'https://www.youtube.com/watch?v=-ck5wXXD-_4',
+    location: 'Crystal Cave',
     tags: [
       'crystal', 'cave', 'underground', 'magical', 'wonder',
     ],
@@ -99,7 +87,7 @@ export default [
   },
   {
     title: 'Sea Cave',
-    location: 'https://www.youtube.com/watch?v=onmRPro40GI',
+    location: 'Sea Cave',
     tags: ['waves',],
     terrain: [
       caves,
@@ -108,7 +96,7 @@ export default [
   },
   {
     title: 'By a Stream',
-    location: 'https://www.youtube.com/watch?v=xJN2COqmLg4',
+    location: 'Lively Tundra,
     tags: ['stream', 'fire', 'day', 'birds'],
     terrain: [
       coast,
@@ -121,7 +109,7 @@ export default [
   },
   {
     title: 'Calm Market',
-    location: 'https://www.youtube.com/watch?v=UlbxDQMo1o4',
+    location: 'Slums', // ?
     tags: ['people', 'market', 'busy', 'dogs'],
     terrain: [
       city,
@@ -134,7 +122,7 @@ export default [
   },
   {
     title: 'Cicadas Campfire',
-    location: 'https://www.youtube.com/watch?v=XUts4U8saJc',
+    location: 'Campfire at Dusk',
     tags: ['campfire', 'cicadas', 'evening', 'peaceful'],
     terrain: [
       coast,
@@ -148,7 +136,7 @@ export default [
   },
   {
     title: 'Crickets Campfire',
-    location: 'https://www.youtube.com/watch?v=al1F0hURxhs',
+    location: 'Campfire in the Woods',
     tags: ['campfire', 'crickets', 'birds', 'peaceful'],
     terrain: [
       coast,
@@ -162,7 +150,7 @@ export default [
   },
   {
     title: 'Black Market (bubbling)',
-    location: 'https://www.youtube.com/watch?v=vHaWAxh8vzU',
+    location: 'Black Market',
     tags: ['market', 'people',],
     terrain: [
       city
@@ -170,7 +158,7 @@ export default [
   },
   {
     title: 'Sewers',
-    location: 'https://www.youtube.com/watch?v=pv7sc85UZ-4',
+    location: 'Sewers',
     tags: ['sewer', 'dripping', 'caves', 'squeaks'],
     terrain: [
       caves,
@@ -182,7 +170,7 @@ export default [
   },
   {
     title: 'Digging',
-    location: 'https://www.youtube.com/watch?v=Ly9Ci1lTAnY',
+    location: 'Construction Site',
     tags: ['ruins', 'working', 'poeple', 'busy'],
     terrain: [
       city,
@@ -191,7 +179,7 @@ export default [
   },
   {
     title: 'Swamp',
-    location: 'https://www.youtube.com/watch?v=fq_ZTJqJTcc',
+    location: 'Swamp',
     tags: ['swamp', 'flies', 'crickets'],
     terrain: [
       swamp
@@ -199,7 +187,7 @@ export default [
   },
   {
     title: 'Night Swamp - Haunted',
-    location: 'https://www.youtube.com/watch?v=NQIoLiQ_uNU',
+    location: 'Dead Marshes',
     tags: ['swamp', 'flies', 'magic', 'crickets', 'tense'],
     terrain: [
       forest,
@@ -210,15 +198,15 @@ export default [
   },
   {
     title: 'Swamp Campfire',
-    location: 'https://www.youtube.com/watch?v=1ZTqzkh1fUo',
+    location: 'Swamp Campfire',
     tags: ['campfire', 'crickets', 'flies'],
     terrain: [
       swamp,
     ],
   },
   {
-    title: 'Quiet Day - Forest',
-    location: 'https://www.youtube.com/watch?v=HqdjZSYNV8M',
+    title: 'Forest Daytime',
+    location: 'Forest Day',
     tags: ['birds', 'day', 'peaceful'],
     terrain: [
       coast,
@@ -228,19 +216,8 @@ export default [
     ],
   },
   {
-    title: 'Quiet Day - Plains',
-    location: 'https://www.youtube.com/watch?v=66UCZF3NlRo',
-    tags: ['birds', 'day', 'peaceful'],
-    terrain: [
-      forest,
-      jungle,
-      mountains, 
-      plains, 
-    ],
-  }, 
-  {
     title: 'Daytime Forest (roars)',
-    location: 'https://www.youtube.com/watch?v=HAw37tUHcOo',
+    location: 'Daytime Forest',
     tags: ['leaves', 'stream',],
     terrain: [
       forest,
@@ -250,7 +227,7 @@ export default [
   },
   {
     title: 'Twisted Forest - Roaring',
-    location: 'https://www.youtube.com/watch?v=7ElGv7zMqeY',
+    location: 'Darkest Forest',
     tags: ['creepy', 'roaring', 'howling', 'forest'],
     terrain: [
       caves,
@@ -260,19 +237,8 @@ export default [
     ]
   },
   {
-    title: 'Desert Wind',
-    location: 'https://www.youtube.com/watch?v=4E-_Xpj0Mgo',
-    tags: ['desert', 'wind',],
-    terrain: [
-      desert,
-      mountains,
-      plains,
-      winter,
-    ]
-  },
-  {
     title: 'Desert Campfire',
-    location: 'https://www.youtube.com/watch?v=rOAiDBTr-N8',
+    location: 'Desert Campfire',
     tags: ['desert', 'wind',],
     terrain: [
       desert,
@@ -283,7 +249,7 @@ export default [
   },
   {
     title: 'Ruins',
-    location: 'https://www.youtube.com/watch?v=TqH8B0_YV8M',
+    location: 'Ruined Castle',
     tags: ['quiet', 'ruins', 'calm', 'mystery', 'sad', 'desolate'],
     terrain: [
       coast,
@@ -297,7 +263,7 @@ export default [
   },
   {
     title: 'Night Ruins',
-    location: 'https://www.youtube.com/watch?v=exOg8RCGluE',
+    location: 'Nightfall Ruins',
     tags: ['quiet', 'ruins', 'calm', 'mystery', 'night', 'sad'],
     terrain: [
       coast,
@@ -312,7 +278,7 @@ export default [
   },
   {
     title: 'Windy Ocean',
-    location: 'https://www.youtube.com/watch?v=ST_cPtDe3-c',
+    location: 'Windy Coast',
     tags: ['waves', 'coast', 'wind', 'ocean'],
     terrain: [
       coast,
@@ -321,7 +287,7 @@ export default [
   },
   {
     title: 'Bazaar',
-    location: 'https://www.youtube.com/watch?v=8uRtW8lBe0I',
+    location: 'Bazaar',
     tags: ['market', 'bazaar', 'busy', 'crowd', 'people', 'children'],
     terrain: [
       city,
@@ -330,7 +296,7 @@ export default [
   },
   {
     title: 'Jungle Cove',
-    location: 'https://www.youtube.com/watch?v=NrEiRL7VLhs',
+    location: 'Cove',
     tags: ['cove', 'water', 'waves', 'animals', 'night'],
     terrain: [
       coast,
@@ -339,7 +305,7 @@ export default [
   },
   {
     title: 'Haunted Coast',
-    location: 'https://www.youtube.com/watch?v=c8mbKjH1-qU',
+    location: 'On The Haunted Shore',
     tags: ['coast', 'haunted', 'magic', 'night', 'creepy'],
     terrain: [
       coast,
@@ -348,7 +314,7 @@ export default [
   },
   {
     title: 'Blacksmith\'s Forge',
-    location: 'https://www.youtube.com/watch?v=pRkFl9j3NLk',
+    location: 'Blacksmith',
     tags: ['blacksmith', 'torches', 'forge'],
     terrain: [
       city,
@@ -357,7 +323,7 @@ export default [
   },
   {
     title: 'Winter Coast',
-    location: 'https://www.youtube.com/watch?v=Y2yT3vH8x7M',
+    location: 'Frozen Coast',
     tags: ['windy', 'waves', 'creepy'],
     terrain: [
       winter,
@@ -367,7 +333,7 @@ export default [
   },
   {
     title: 'Windy Shack',
-    location: 'https://www.youtube.com/watch?v=0Tphr0vyfFU',
+    location: 'Abandoned Shack',
     tags: ['windy', 'people'],
     terrain: [
       coast,
@@ -380,7 +346,7 @@ export default [
   },
   {
     title: 'Beach',
-    location: 'https://www.youtube.com/watch?v=4W2EfqdOmiI',
+    location: 'On The Shore',
     tags: ['coast', 'beach', 'peaceful', 'windy', 'gulls'],
     terrain: [
       coast,
@@ -388,7 +354,7 @@ export default [
   },
   {
     title: 'Sailing Ship',
-    location: 'https://www.youtube.com/watch?v=beOw8MEojQ4',
+    location: 'Sailing Ship',
     tags: ['chains', 'wind', 'creaking', 'windy', 'water'],
     terrain: [
       ocean,
@@ -396,7 +362,7 @@ export default [
   },
   {
     title: 'Harbor',
-    location: 'https://www.youtube.com/watch?v=t0AmfPQMs4k',
+    location: 'Harbour',
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'gulls'],
     terrain: [
       coast,
@@ -406,7 +372,7 @@ export default [
   },
   {
     title: 'Ship in Storm',
-    location: 'https://www.youtube.com/watch?v=ZNz7yFEHtDs',
+    location: 'Ship in Storms',
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'storm'],
     terrain: [
       coast,
@@ -414,8 +380,8 @@ export default [
     ]
   },
   {
-    title: 'Ship\'s Cabin (by land, storm)',
-    location: 'https://www.youtube.com/watch?v=Ft-lJyu_nuY',
+    title: `Ship's Cabin (by land, storm)`,
+    location: 'Cabin in Port',
     tags: ['coast', 'harbor', 'ships', 'creaking', 'waves', 'birds', 'storm'],
     terrain: [
       coast,
@@ -423,7 +389,7 @@ export default [
   },
   {
     title: 'Lively Market',
-    location: 'https://www.youtube.com/watch?v=gcPSA3sUilc',
+    location: 'Lively Market',
     tags: ['town', 'harbor', 'music', 'drums', 'loud', 'shouting'],
     terrain: [
       city,
@@ -432,7 +398,7 @@ export default [
   },
   {
     title: 'Desert Canyon',
-    location: 'https://www.youtube.com/watch?v=U-e_w9v0BwU',
+    location: 'Desert Canyon',
     tags: ['desert', 'wind', 'birds'],
     terrain: [
       coast,
@@ -448,7 +414,7 @@ export default [
   },
   {
     title: 'Volcano',
-    location: 'https://www.youtube.com/watch?v=fUN-T3zwAYc',
+    location: 'Inside a Volcano',
     tags: ['desert', 'wind', 'birds'],
     terrain: [
       exotic,
@@ -456,7 +422,7 @@ export default [
   },
   {
     title: 'Deep Forge',
-    location: 'https://www.youtube.com/watch?v=gS0sNL82Tvk',
+    location: 'Deep Forge',
     tags: ['hammers', 'dwarves', placeNames.durukhaaz, 'city', 'underground'],
     terrain: [
       caves,
@@ -469,7 +435,7 @@ export default [
   },
   {
     title: 'Town',
-    location: 'https://www.youtube.com/watch?v=Jtz57E2seZY',
+    location: 'Dark Elves City',
     tags: ['people', placeNames.durukhaaz, 'city', 'underground', 'screeching'],
     terrain: [
       city,
@@ -481,7 +447,7 @@ export default [
   },
   {
     title: 'Marketplace',
-    location: 'https://www.youtube.com/watch?v=UlbxDQMo1o4',
+    location: 'Slums',
     tags: ['people', 'market', 'busy', 'dogs'],
     terrain: [
       city,
@@ -496,7 +462,7 @@ export default [
   },
   {
     title: 'Mushroom Forest (underground)',
-    location: 'https://www.youtube.com/watch?v=dzV3o8zr5Hw',
+    location: 'Underground Mushroom Forest',
     tags: ['magic', 'calm', 'mushrooms', 'underground'],
     terrain: [
       caves,
@@ -508,7 +474,7 @@ export default [
   },
   {
     title: 'Mine',
-    location: 'https://www.youtube.com/watch?v=F6_ZuJSWQ4c',
+    location: 'Active Mine',
     tags: ['mining', 'work', 'caves', 'underground'],
     terrain: [
       caves,
@@ -520,7 +486,7 @@ export default [
   },
   {
     title: 'Desert Temple',
-    location: 'https://www.youtube.com/watch?v=Zost8sfrQA8',
+    location: 'Desert Temple',
     tags: ['creepy', 'ruins', 'wind', 'underground'],
     terrain: [
       caves,
@@ -528,7 +494,7 @@ export default [
   },
   {
     title: 'Waterfall',
-    location: 'https://www.youtube.com/watch?v=TUFTST1tqjQ',
+    location: 'Waterfall',
     tags: ['waterfall'],
     terrain: [
       caves,
@@ -545,7 +511,7 @@ export default [
   },
   {
     title: `Mage's Tower`,
-    location: 'https://www.youtube.com/watch?v=TUFTST1tqjQ',
+    location: 'School of Magic',
     tags: ['waterfall'],
     terrain: [
       city,
@@ -557,7 +523,7 @@ export default [
   },
   {
     title: `Library`,
-    location: 'https://www.youtube.com/watch?v=VvC12NAf-Cw',
+    location: 'Library',
     tags: ['library'],
     terrain: [
       city,
@@ -569,11 +535,38 @@ export default [
   },
   {
     title: `Korrim'ban Village`,
-    location: 'https://www.youtube.com/watch?v=roVUD2e1fwM',
+    location: 'African Village',
     tags: ['village'],
     terrain: [
       city,
       village,
     ]
+  },
+  {
+    title: `Herbalist's Shop`,
+    location: `Herbalist's Shop`,
+    tags: ['village'],
+    terrain: [
+      city,
+      village,
+    ],
+  },
+  {
+    title: `Unicorn's Glade`,
+    location: `Unicorn Glade`,
+    tags: ['forest', 'village'],
+    terrain: [
+      city,
+      village,
+    ],
+  },
+  {
+    title: `Feywild Forest`,
+    location: `Forest Shrine`,
+    tags: ['forest', 'village'],
+    terrain: [
+      forest,
+      village,
+    ],
   },
 ]

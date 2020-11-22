@@ -8,7 +8,7 @@ const encodeTrackUrl = (url) => {
   .replace(/\?/g, '^^')
 }
 
-export const startTrack = (trackTitle, basicTrackLocation, isMyOwnSong = false) => {
+export const startTrack = (trackTitle, basicTrackLocation, isMyOwnSong = false, modifyVolumeBy = 1) => {
   const rawLocation = isMyOwnSong 
   ? basicTrackLocation
   : encodeTrackUrl(basicTrackLocation)
@@ -19,6 +19,7 @@ export const startTrack = (trackTitle, basicTrackLocation, isMyOwnSong = false) 
       isMyOwnSong,
       trackTitle,
       rawLocation,
+      modifyVolumeBy,
     },
     headers: {
       'content-type': 'application/json',

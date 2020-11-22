@@ -15,6 +15,12 @@ export default [{
       tags: ['Cannon in D'],
     },
     {
+      title: 'Welcome to the Feywild',
+      location: 'Forbidden Friendship',
+      tags: ['How to train your Dragon'],
+      modifyVolumeBy: 2,
+    },
+    {
       title: 'Cornflower',
       isMyOwnSong: true,
       location: './personal-tracks/Cornflower.mp3',
