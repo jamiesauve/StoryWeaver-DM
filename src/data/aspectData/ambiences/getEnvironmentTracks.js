@@ -17,7 +17,14 @@ export default (activeLocationType, activeLocation) => {
         ...importedPlaces,
       }
 
-  const locationTypes = !_.isEmpty(activeLocation) ? [activeLocation] : importedLocations;
+  let locationTypes = !_.isEmpty(activeLocation) ? [activeLocation] : importedLocations;
+  
+  if (activeLocationType === "place" && !_.isEmpty(activeLocation)) {
+    const namesOfTerrainTypesAssociatedWithPlace = importedPlaces[activeLocation.name].terrainTypes
+
+    const terrainTypesAssociatedWithPlace = _.filter(importedTerrainTypes, terrainType => _.includes(namesOfTerrainTypesAssociatedWithPlace, terrainType.name));
+    locationTypes = locationTypes.concat(terrainTypesAssociatedWithPlace)
+  }
 
   const restructuredLocationTypes = _.map(locationTypes, location => {
     const filteredTracks = _.filter(tracks, trackObject => {
@@ -51,11 +58,9 @@ export default (activeLocationType, activeLocation) => {
     }
   })
 
-  // TODO: make places return the Ambience sections of the terrains they're in also - there should be a drawer for each
-  // if (activeLocationType === "place") {
-  //   importedPlaces.
-  //   restructuredLocationTypes.push()
-  // }
+  if (activeLocationType === "place") {
+    // restructuredLocationTypes.push() terrain groups associated with the place
+  }
 
   return restructuredLocationTypes
 }
@@ -70,7 +75,9 @@ const shouldIncludeTrack = (trackObject, activeLocation, activeLocationType, loc
     ? _.map(trackObject.places, place => place.name)
     : false
 
-    return _.includes(placeNamesInTrack, activeLocation.name ? activeLocation.name : location.name)
+    const matchByTerrain =  _.get(trackObject, 'terrain', []).includes(location.name)
+
+    return _.includes(placeNamesInTrack, activeLocation.name ? activeLocation.name : location.name) || matchByTerrain;
 
   } else {
     const matchByTerrain =  _.get(trackObject, 'terrain', []).includes(location.name)

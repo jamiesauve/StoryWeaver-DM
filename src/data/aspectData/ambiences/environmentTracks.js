@@ -43,7 +43,7 @@ export default [
   },
   {
     title: 'Quiet Night River',
-    location: 'Mountain Lake,
+    location: 'Mountain Lake',
     tags: ['birds', 'day', 'peaceful'],
     terrain: [
       desert, 
@@ -96,7 +96,7 @@ export default [
   },
   {
     title: 'By a Stream',
-    location: 'Lively Tundra,
+    location: 'Lively Tundra',
     tags: ['stream', 'fire', 'day', 'birds'],
     terrain: [
       coast,

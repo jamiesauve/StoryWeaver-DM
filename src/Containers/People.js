@@ -60,6 +60,8 @@ const People = (props) => {
 
   const filterDrawersBy = (filterTerm) => {
     const filterTermInLowerCase = filterTerm.toLowerCase()
+
+    console.log('peope', people)
     
     const filteredWikiEntries = _.filter(people, person => {
       const includedBySearchTerm =  _.includes(person.label.toLowerCase(), filterTermInLowerCase)

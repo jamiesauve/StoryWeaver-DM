@@ -38,6 +38,16 @@ const places = {
       terrainTypeNames.city,
     ],
   },
+  gwimbledym: {
+    label: 'Gwimbledym',
+    name: 'gwimbledym',
+    color: colors.jungleGreen,
+    terrainTypes: [
+      terrainTypeNames.forest,
+      terrainTypeNames.village,
+      terrainTypeNames.freshwater,
+    ],
+  }
 }
 
 export const placeNames = _.reduce(places, (aggr, place) => {

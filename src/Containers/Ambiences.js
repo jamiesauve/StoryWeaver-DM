@@ -18,7 +18,6 @@ const Ambiences = (props) => {
   const [environmentTracks, setEnvironmentTracks] = useState(getEnvironmentTracks(props.activeLocationType, props.activeLocation))
 
   useEffect(() => {
-    console.log(getEnvironmentTracks(props.activeLocationType, props.activeLocation))
     setMoodTracks(getMoodTracks(props.activeLocationType, props.activeLocation))
     setEnvironmentTracks(getEnvironmentTracks(props.activeLocationType, props.activeLocation))
   }, [

@@ -14,7 +14,11 @@ export default {
         title: 'Taiko Drums - clacks',
         location: 'Taiko Drums',
         tags: ['skyrim', 'battle', 'serious', 'mix'],
-        
+      },
+      {
+        title: 'The King of the Highlands',
+        location: 'The King of the Highlands',
+        tags: ['skyrim', 'battle', 'serious', 'mix'],
       },
       {
         title: 'Thunder Drums',

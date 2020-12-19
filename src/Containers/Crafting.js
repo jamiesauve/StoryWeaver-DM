@@ -52,7 +52,7 @@ const Crafting = (props) => {
           return true
         }
 
-        const reagentIsInAllPlaceTerrains = _.every(place.terrainTypes, placeTerrainType => _.includes(reagent.terrain, placeTerrainType))
+        const reagentIsInAllPlaceTerrains = _.some(place.terrainTypes, placeTerrainType => _.includes(reagent.terrain, placeTerrainType))
         
         return reagentIsInAllPlaceTerrains
       })

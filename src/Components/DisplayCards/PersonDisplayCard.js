@@ -36,7 +36,7 @@ const PersonStatsSection = styled.div`
   padding: 5px;
 `
 
-const QuirksAndTraitsContainer = styled.div`
+const OccupationQuirksAndTraitsContainer = styled.div`
   flex-grow: 1;
   display: flex;
 
@@ -57,9 +57,12 @@ const PersonDisplayCard = (props) => {
   const description = person.description || []
   const titleColor = person.titleColor || colors.freshwaterBlue
   const {
+    occupations,
     quirks,
     traits,
   } = person
+
+  console.log('person', person)
 
   return (
     <This>
@@ -68,7 +71,7 @@ const PersonDisplayCard = (props) => {
           justifyContent="flex-start"
           padding="0 0 5px 0"
         >
-          <QuirksAndTraitsContainer>
+          <OccupationQuirksAndTraitsContainer>
             <ColoredBox
               color={titleColor}
             >
@@ -88,7 +91,17 @@ const PersonDisplayCard = (props) => {
                 textAlign="left"
               />
             </ColoredBox>
-          </QuirksAndTraitsContainer>
+
+            <ColoredBox
+              color={titleColor}
+            >
+              <List
+                heading="occupation"
+                items={[_.map(occupations, occupation => occupation.label).join(', ')]}
+                textAlign="left"
+              />
+            </ColoredBox>
+          </OccupationQuirksAndTraitsContainer>
 
         </Row>
 
