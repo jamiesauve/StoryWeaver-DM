@@ -1,0 +1,87 @@
+{
+  "main": "public/electron.js",
+  "name": "storyweaver-dm",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "concurrently": "^5.1.0",
+    "electron-is-dev": "^1.1.0",
+    "install": "^0.13.0",
+    "node-pre-gyp": "^0.17.0",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.0",
+    "react-beautiful-dnd": "^13.0.0",
+    "react-dom": "^16.13.0",
+    "react-hook-form": "^6.1.2",
+    "react-scripts": "3.4.0",
+    "react-select": "^3.1.0",
+    "recoil": "0.0.10",
+    "styled-components": "^5.0.1",
+    "wait-on": "^4.0.1"
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.13",
+    "@rescripts/rescript-env": "^0.0.11",
+    "electron": "^12.0.1",
+    "electron-builder": "^22.4.1",
+    "electron-devtools-installer": "^2.2.4",
+    "typescript": "^3.8.3"
+  },
+  "homepage": "./",
+  "scripts": {
+    "build": "node_modules/.bin/rescripts build",
+    "eject": "react-scripts eject",
+    "electron-dev": "node_modules/.bin/concurrently \"BROWSER=none npm start\" \"node_modules/.bin/wait-on http://localhost:4203 && node_modules/.bin/electron .\"",
+    "dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:4203 && electron .\"",
+    "electron-pack": "electron-builder build -mw",
+    "postinstall": "node_modules/.bin/electron-builder install-app-deps",
+    "preelectron-pack": "npm install",
+    "start": "PORT=4203 node_modules/.bin/rescripts start",
+    "test": "rescripts test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "rescripts": [
+    "env"
+  ],
+  "author": {
+    "name": "Jamie Sauve and other wonderful people",
+    "email": "jamiesauve@zohomail.com"
+  },
+  "build": {
+    "appId": "com.my-website.my-app",
+    "productName": "StoryWeaver DM",
+    "copyright": "Copyright © 2019 ${author}",
+    "mac": {
+      "icon": "./assets.icon.icns",
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "public/**/*",
+      "build/**/*",
+      "node_modules/**/*",
+      "pseudoServer/**/*",
+      "./public/electron.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}

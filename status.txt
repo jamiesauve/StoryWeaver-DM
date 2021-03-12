@@ -1,0 +1,7 @@
+./node_modules/.bin/concurrently "BROWSER=none PORT=4203 ./node_modules/.bin/rescripts start" "./node_modules/.bin/wait-on http://localhost:4203 && ./node_modules/.bin/electron ."
+
+This command only failed at electron - it ran nearly everything else. I might be able to get it up in a web browser if I can't resolve that.
+In the mean time, npm install is failing on node-pre-gyp again.
+
+
+Nice, I've got the app starting!! It fails because it can't find sqlite3. But if I rebuild it not to use sqlite :( I can get it working I think.
