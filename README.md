@@ -30,3 +30,12 @@ Build Notes:
 5. From the terminal, once you are in the main directory of the project (called the root) run `npm install`, wait for it to finish, then run `npm run electron-dev`. This will open the app, and everything should work except for Ambiences (I will update this when that is good to go also).
 
 Please open an issue on GitHub if these instructions do not work, and I will look into it! 
+
+
+
+
+
+To install a Virtual Audio cable, use this: https://vb-audio.com/Cable/
+Download Discord PTB, create a new user, and attach that one to your computer audio and route it through. Bear in mind that this will transmit every sound your computer makes to everyone on the call.
+
+This project requires all ambiences to be stored in the /src/assets/ambiences folder.
