@@ -20,26 +20,5 @@ export default [{
       tags: ['How to train your Dragon'],
       modifyVolumeBy: 2,
     },
-    {
-      title: 'Cornflower',
-      isMyOwnSong: true,
-      location: './personal-tracks/Cornflower.mp3',
-      tags: ['Composition', '',],
-      modifyVolumeBy: 1,
-    },
-    {
-      title: `Ariana's Song`,
-      isMyOwnSong: true,
-      location: `./personal-tracks/ArianasSong.mp3`,
-      tags: ['Composition', '',],
-      modifyVolumeBy: 1,
-    },
-    {
-      title: `The Silver Sea`,
-      isMyOwnSong: true,
-      location: `./personal-tracks/TheSilverSea.mp3`,
-      tags: ['Composition', '',],
-      modifyVolumeBy: 1,
-    },
   ],
 }]
