@@ -34,7 +34,7 @@
   "scripts": {
     "build": "rescripts build",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:4203 && electron .\"",
+    "electron-dev": "node ./pseudoServer/getTrackNames.js & node_modules/.bin/concurrently \"BROWSER=none npm start\" \"node_modules/.bin/wait-on http://localhost:4203 && node_modules/.bin/electron .\"",
     "dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:4203 && electron .\"",
     "electron-pack": "electron-builder build -mw",
     "postinstall": "electron-builder install-app-deps",
