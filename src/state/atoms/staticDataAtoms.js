@@ -11,3 +11,8 @@ export const wikiEntryTypesAtom = atom({
   key: 'wikiEntryTypes',
   default: {},
 })
+
+export const mp3sAtom = atom({
+  key: 'mp3s',
+  default: {},
+})

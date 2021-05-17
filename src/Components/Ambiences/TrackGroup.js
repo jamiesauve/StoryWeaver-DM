@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
+import { useRecoilValue } from 'recoil';
 
-import { startTrack, stopTrack } from '../../ambienceBotInterface/apiCalls'
+import { mp3sAtom } from '../../state/atoms/staticDataAtoms';
+
 
 const This = styled.div``
 
@@ -27,27 +29,52 @@ const TrackTitle = styled.div`
   }
 `
 
+const TrackContainer = styled.div`
+  // TODO: add breakpoints so this shows up properly. Or redo it in a non-hacky way.
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 113%;
+  overflow: hidden;
+`
+
+const TrackLabel = styled.div`
+  width: 40%;
+  z-index: 1;
+  background: #333;
+  height: 25px;
+  line-height: 25px;
+`
+
+const TrackControls = styled.div`
+  width: 60%;
+  height: 25px;
+  z-index: 0;
+
+  audio {
+    margin-left: -18px;
+    overflow: hidden;
+    width: 110%;
+    height: 100%;
+    padding: 0;
+  }
+  
+  audio::-webkit-media-controls-panel {
+    background-color: #333;
+  }
+
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+  }
+`
+
 const TrackGroup =  props => {
-  const copyTrack = (trackLocation) => {    
-    const command = `;;play ${trackLocation}`
-    navigator.clipboard.writeText(command)
-  }
-
-  const playTrack = async(trackTitle, trackLocation, isMyOwnSong = false, modifyVolumeBy = 1) => {
-    const result = await startTrack(trackTitle, trackLocation, isMyOwnSong, modifyVolumeBy)
-  }
-
-  const handleClickTrack = (trackTitle, trackLocation, isMyOwnSong, modifyVolumeBy) => {
-    playTrack(trackTitle, trackLocation, isMyOwnSong, modifyVolumeBy)
-  }
+  const mp3s = useRecoilValue(mp3sAtom)
 
   return (
     <This>
-      <div
-        onClick={stopTrack}
-      >
-        Stop Track
-      </div>
       <TrackGroupBody>
         {_.chain(props.tracks)
           .filter(trackObject => {
@@ -55,14 +82,25 @@ const TrackGroup =  props => {
 
             return !_.includes(trackObject.excludeFrom, props.activeLocation)
           })
-          .map(track => (
+          .map(track => {
+            return (
               <TrackTitle
                 key={`${track.location}-${props.categoryTitle}-${track.title}`}
-                onClick={() => handleClickTrack(track.title, track.location, track.isMyOwnSong, track.modifyVolumeBy)}
+                // onClick={() => handleClickTrack(track.title, track.location, track.isMyOwnSong, track.modifyVolumeBy)}
               >
-                {track.title}
+                <TrackContainer>
+                  <TrackLabel>
+                    {track.title}
+                  </TrackLabel>
+
+                  <TrackControls>
+                    <audio controls loop>
+                      <source src={mp3s[`${track.location}.mp3`]} type="audio/mpeg" />
+                    </audio>
+                  </TrackControls>
+                </TrackContainer>
               </TrackTitle>
-          ))
+          )})
           .value()
         }
       </TrackGroupBody>
