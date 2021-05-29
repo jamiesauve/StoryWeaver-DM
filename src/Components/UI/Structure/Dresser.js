@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
@@ -21,19 +21,28 @@ const Dresser = (props) => {
 
   const isOnlyOneDrawer = props.drawers.length === 1
 
-  const openSelf = (drawerTitle) => {
+  const openSelf = useCallback((drawerTitle) => {
     isOnlyOneDrawer 
       ? setAreAllDrawersOpen(true) 
       : areAllDrawersOpen 
         ? setCurrentlyOpenDrawer('') 
         : setCurrentlyOpenDrawer(drawerTitle)       
-  }
+  }, [
+    areAllDrawersOpen,
+    isOnlyOneDrawer,
+    setAreAllDrawersOpen,
+    setCurrentlyOpenDrawer,
+  ])
 
-  const closeSelf = () => {
+  const closeSelf = useCallback(() => {
     isOnlyOneDrawer 
       ? setAreAllDrawersOpen(false) 
       : setCurrentlyOpenDrawer('')  
-  }
+  }, [
+    isOnlyOneDrawer,
+    setAreAllDrawersOpen,
+    setCurrentlyOpenDrawer,
+  ]);
 
   useEffect(() => {
     setAreAllDrawersOpen(props.isInitiallyExpanded)
@@ -51,6 +60,16 @@ const Dresser = (props) => {
     drawerToOpen
   ])
 
+  const drawers = useCallback(
+    props.drawers.map(drawer => ({
+      ...drawer,
+      openSelf: () => openSelf(drawer.title),
+    })),
+    [
+      props.drawers
+    ]
+  );
+
   return (
     <This
       className="Dresser"
@@ -62,9 +81,9 @@ const Dresser = (props) => {
         />
       }
 
-      {_.map(props.drawers, drawer => (
+      {_.map(drawers, drawer => (
         <Drawer
-          openSelf={() => openSelf(drawer.title)}
+          openSelf={drawer.openSelf}
           closeSelf={closeSelf}
           isOpen={areAllDrawersOpen ? true : currentlyOpenDrawer === drawer.title}
           key={drawer.title}
