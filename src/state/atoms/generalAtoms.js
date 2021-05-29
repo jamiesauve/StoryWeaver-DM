@@ -12,9 +12,24 @@ export const activeLocationTypeAtom = atom({
   default: 'any',
 })
 
+export const ambiencesAtom = atom({
+  key: 'ambiencesAtom',
+  default: {},
+})
+
 export const areTabsContractedAtom = atom({
   key: 'areTabsContractedAtom',
   default: false,
+})
+
+export const craftingAtom = atom({
+  key: 'craftingAtom',
+  default: {},
+})
+
+export const creaturesAtom = atom({
+  key: 'creaturesAtom',
+  default: {},
 })
 
 export const currentWikiLinkAtom = atom({
@@ -23,4 +38,9 @@ export const currentWikiLinkAtom = atom({
     destinationAspect: ``,
     linkTarget: ``,
   }
+})
+
+export const searchAtom = atom({
+  key: 'searchAtom',
+  default: {},
 })

@@ -4,12 +4,8 @@ import axios from 'axios'
 import { useRecoilState } from 'recoil'
 
 import {
-  // colorsAtom,
-  // wikiEntryTypesAtom,
   mp3sAtom,
 } from './atoms/staticDataAtoms'
-
-const callDatabase = window.callDatabase
 
 const baseUrl = 'http://127.0.0.1:4204' // TODO: stick this in a .env file
 

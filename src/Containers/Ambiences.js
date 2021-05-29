@@ -7,9 +7,9 @@ import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
 
 import TrackSection from '../Components/Ambiences/TrackSection'
 
-import getMoodTracks from '../data/aspectData/ambiences/getMoodTracks'
-import getEnvironmentTracks from '../data/aspectData/ambiences/getEnvironmentTracks'
-import specialTracks from '../data/aspectData/ambiences/getSpecialTracks'
+import getMoodTracks from '../data/generalData/ambiences/getMoodTracks'
+import getEnvironmentTracks from '../data/generalData/ambiences/getEnvironmentTracks'
+import specialTracks from '../data/generalData/ambiences/getSpecialTracks'
 
 import _ from 'lodash'
 

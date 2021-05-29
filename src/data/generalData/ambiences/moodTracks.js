@@ -1,4 +1,4 @@
-import { terrainTypeNames } from '../../generalData/terrainTypes'
+import { terrainTypeNames } from '../terrainTypes'
 import colors from '../../styles/colors'
 
 export default {
