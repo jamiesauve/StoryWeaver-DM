@@ -9,7 +9,7 @@ import {
   wikiAtom,
 } from './atoms/aspectDataAtoms';
 
-const currentProfile = "dalymbia-DK";
+const currentProfile = "dalymbia-PK";
 
 const ProfileDataInitializer = (props) => {
   const [profileDataHasLoaded, setProfileDataHasLoaded] = useState(false)
