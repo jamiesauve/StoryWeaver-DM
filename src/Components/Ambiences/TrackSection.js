@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
@@ -21,7 +21,7 @@ const Title = styled.div`
 `
 
 const TrackSection = (props) => {
-  const drawers = _.map(props.tracks, category => ({
+  const drawers = useMemo(() => _.map(props.tracks, category => ({
       title: category.categoryLabel,
       titleColor: category.titleColor,
       content: () => <TrackGroup
@@ -29,7 +29,7 @@ const TrackSection = (props) => {
         tracks={category.trackObjects}
         categoryTitle={category.categoryLabel}
       />,
-    }))
+    })))
 
   return (
     <This
