@@ -2,6 +2,11 @@ import {
   atom,
 } from 'recoil'
 
+export const profilesAtom = atom({
+  hey: 'profiles',
+  default: [],
+})
+
 export const colorsAtom = atom({
   key: 'colors',
   default: {},

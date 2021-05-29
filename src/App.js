@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { RecoilRoot } from 'recoil'
 
+import ProfileDataInitializer from './state/ProfileDataInitializer'
 import StaticDataInitializer from './state/StaticDataInitializer'
 
 import MainWindow from './Containers/MainWindow'
@@ -33,7 +34,9 @@ function App() {
     >
       <RecoilRoot>
         <StaticDataInitializer>
-          <MainWindow />
+          <ProfileDataInitializer>
+            <MainWindow />
+          </ProfileDataInitializer>
         </StaticDataInitializer>
       </RecoilRoot>
     </This>
