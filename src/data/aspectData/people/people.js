@@ -8,12 +8,14 @@ import {
   abundabarPeople,
   dragonFallsPeople,
   gwimbledymPeople,
+  portMarunaPkPeople,
 } from './peopleGroups'
 
 const people = {
   ...abundabarPeople,
   ...dragonFallsPeople,
   ...gwimbledymPeople,
+  ...portMarunaPkPeople,
 }
 
 export const peopleAsArray = Object.values(people) 

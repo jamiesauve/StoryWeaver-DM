@@ -50,7 +50,7 @@ const places = {
   },
   port_maruna_pk: {
     label: 'Port Maruna (PK)',
-    name: 'port-maruna-pk',
+    name: 'port_maruna_pk',
     color: colors.coastBlue,
     terrainTypes: [
       terrainTypeNames.coast,
