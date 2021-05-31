@@ -1,5 +1,5 @@
 import colors from '../../../../styles/colors'
-import { placeNames } from '../../../../generalData/places'
+import { placeNames } from '../../places'
 
 import races from '../races'
 import occupations from '../occupations'

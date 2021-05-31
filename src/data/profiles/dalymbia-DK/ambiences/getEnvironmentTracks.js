@@ -2,8 +2,8 @@
 
 import _ from 'lodash'
 
-import importedTerrainTypes from '../../generalData/terrainTypes'
-import importedPlaces from '../../generalData/places'
+import importedTerrainTypes from '../../../generalData/terrainTypes'
+import importedPlaces from '../places'
 
 import tracks from './environmentTracks'
 

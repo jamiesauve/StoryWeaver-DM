@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useRecoilValue } from 'recoil'
 
 import DiceRoller from '../Components/MainWindowHeader/DiceRoller'
 import LocationType from '../Components/MainWindowHeader/LocationType'
 import LocationDropdown from '../Components/MainWindowHeader/LocationDropdown'
 
-import places from '../data/generalData/places'
+import { placesAtom } from '../state/atoms/aspectDataAtoms'
 import terrainTypes from '../data/generalData/terrainTypes'
 
 
@@ -40,6 +41,7 @@ const RightContainer = styled.div`
 
 
 const MainWindowHeader = (props) => {
+  const places = useRecoilValue(placesAtom);
 
   return (
     <This

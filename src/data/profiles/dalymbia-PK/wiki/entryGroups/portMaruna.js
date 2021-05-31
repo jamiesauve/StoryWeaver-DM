@@ -1,5 +1,5 @@
 import colors from '../../../../styles/colors'
-import places from '../../../../generalData/places'
+import places from '../../places';
 
 import wikiEntryTypes from '../wikiEntryTypes'
 

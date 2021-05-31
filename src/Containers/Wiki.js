@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
+import { useRecoilValue } from 'recoil'
 
 import Dresser from '../Components/UI/Structure/Dresser'
 import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
@@ -10,7 +11,7 @@ import WikiEntryDisplayCard from '../Components/DisplayCards/WikiEntryDisplayCar
 import SearchBar from '../Components/UI/Action/SearchBar'
 
 import createWikiEntryPlaceholders from '../data/aspectData/wiki/createWikiEntryPlaceholders'
-import wikiEntries from '../data/aspectData/wiki/wikiEntries'
+import { wikiAtom } from '../state/atoms/aspectDataAtoms';
 
 import colors from '../data/styles/colors'
 
@@ -24,6 +25,10 @@ const This = styled.div`
 `
 
 const Wiki = (props) => {
+  const wikiData = useRecoilValue(wikiAtom);
+
+  const wikiEntries = wikiData.wikiEntries;
+
   const [searchInput, setSearchInput] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [unfilteredDrawers, setUnfilteredDrawers] = useState([])
