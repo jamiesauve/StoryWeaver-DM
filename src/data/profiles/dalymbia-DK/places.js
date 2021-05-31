@@ -1,7 +1,7 @@
-import colors from '../styles/colors'
+import colors from '../../styles/colors'
 import _ from 'lodash'
 
-import { terrainTypeNames } from './terrainTypes'
+import { terrainTypeNames } from '../../generalData/terrainTypes'
 
 const places = {
   abundabar: {
@@ -48,15 +48,6 @@ const places = {
       terrainTypeNames.freshwater,
     ],
   },
-  port_maruna_pk: {
-    label: 'Port Maruna (PK)',
-    name: 'port_maruna_pk',
-    color: colors.coastBlue,
-    terrainTypes: [
-      terrainTypeNames.coast,
-      terrainTypeNames.city,
-    ],
-  }
 }
 
 export const placeNames = _.reduce(places, (aggr, place) => {

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
+import { useRecoilValue } from 'recoil'
 
 import Section from '../Components/UI/Structure/Section'
 import Divider from '../Components/UI/Structure/Divider'
@@ -17,7 +18,7 @@ import { reagentTypeColors } from '../data/aspectData/crafting/reagentTypes'
 import recipes from '../data/aspectData/crafting/recipes'
 import createRecipePlaceholders from '../data/aspectData/crafting/createRecipePlaceholders'
 import { recipeTypeColors } from '../data/aspectData/crafting/recipeTypes'
-import places from '../data/generalData/places'
+import { placesAtom } from '../state/atoms/aspectDataAtoms'
 import colors from '../data/styles/colors'
 
 const This = styled.div`
@@ -30,6 +31,8 @@ const This = styled.div`
 `
 
 const Crafting = (props) => {
+  const places = useRecoilValue(placesAtom);
+  
   const getReagentsByLocation = () => { 
     if (_.isEmpty(props.activeLocation)) {
       return reagents

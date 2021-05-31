@@ -1,5 +1,7 @@
 import React, { useState, useEffect, } from 'react'
 
+import { useRecoilValue } from 'recoil'
+
 import Section from '../Components/UI/Structure/Section'
 import Spacer from '../Components/UI/Structure/Spacer'
 
@@ -7,13 +9,18 @@ import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
 
 import TrackSection from '../Components/Ambiences/TrackSection'
 
-import getMoodTracks from '../data/generalData/ambiences/getMoodTracks'
-import getEnvironmentTracks from '../data/generalData/ambiences/getEnvironmentTracks'
-import specialTracks from '../data/generalData/ambiences/getSpecialTracks'
+import { ambiencesAtom } from '../state/atoms/aspectDataAtoms'
 
 import _ from 'lodash'
 
 const Ambiences = (props) => {
+  const ambiencesData = useRecoilValue(ambiencesAtom)
+  const {
+    getEnvironmentTracks,
+    getMoodTracks,
+    specialTracks,
+  } = ambiencesData
+
   const [moodTracks, setMoodTracks] = useState(getMoodTracks(props.activeLocationType, props.activeLocation))
   const [environmentTracks, setEnvironmentTracks] = useState(getEnvironmentTracks(props.activeLocationType, props.activeLocation))
 

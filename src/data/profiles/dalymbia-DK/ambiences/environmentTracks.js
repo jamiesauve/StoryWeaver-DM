@@ -1,5 +1,5 @@
-import { terrainTypeNames } from '../../generalData/terrainTypes'
-import { placeNames } from '../../generalData/places'
+import { terrainTypeNames } from '../../../generalData/terrainTypes'
+import { placeNames } from '../places'
 
 const {
   caves,

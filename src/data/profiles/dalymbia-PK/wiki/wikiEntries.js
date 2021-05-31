@@ -1,5 +1,5 @@
 import colors from '../../../styles/colors'
-import { placeNames } from '../../../generalData/places'
+import { placeNames } from '../../dalymbia-DK/places'
 
 import wikiEntryTypes from './wikiEntryTypes'
 
