@@ -11,6 +11,8 @@ import TrackSection from '../Components/Ambiences/TrackSection'
 
 import { ambiencesAtom } from '../state/atoms/aspectDataAtoms'
 
+import toCapitalCase from '../utils/toCapitalCase'
+
 import _ from 'lodash'
 
 const Ambiences = (props) => {
@@ -53,7 +55,10 @@ const Ambiences = (props) => {
             activeLocation={props.activeLocation}
             hasToggleAllLink={!_.isEmpty(props.activeLocation)}
             isInitiallyExpanded={!_.isEmpty(props.activeLocation)}
-            title="Environment"
+            title={props.activeLocationType === "any" 
+              ? "Location" 
+              : toCapitalCase(props.activeLocationType)
+            }
             tracks={environmentTracks}
           />
 
