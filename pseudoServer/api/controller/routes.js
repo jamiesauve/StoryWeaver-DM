@@ -1,12 +1,14 @@
 const _ = require('lodash')
 
 const staticDataController = require('./staticDataController')
+const trackNamesController = require('./trackNamesController')
 const wikiEntryController = require('./wikiEntryController')
 
-const databaseRouter = (request) => {
+const databaseRouter = ({ body, url }) => {
   return Promise.all([
-    staticDataController(request),
-    wikiEntryController(request),
+    staticDataController({ body, url }),
+    trackNamesController({ body, url }),
+    wikiEntryController({ body, url }),
   ]).then((results) => {
     const compactedResults = _.compact(results)
 
@@ -23,7 +25,7 @@ const databaseRouter = (request) => {
     } else {
       return compactedResults[0]
     }
-  })
+  }).catch((e) => console.log('error:', e))
 }
 
 module.exports = databaseRouter

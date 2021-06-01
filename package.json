@@ -11,7 +11,6 @@
     "concurrently": "^5.1.0",
     "electron-is-dev": "^1.1.0",
     "install": "^0.13.0",
-    "node-pre-gyp": "^0.17.0",
     "nodemon": "^2.0.4",
     "react": "^16.13.0",
     "react-beautiful-dnd": "^13.0.0",
@@ -20,6 +19,7 @@
     "react-scripts": "3.4.0",
     "react-select": "^3.1.0",
     "recoil": "0.0.10",
+    "sqlite3": "^5.0.2",
     "styled-components": "^5.0.1",
     "wait-on": "^4.0.1"
   },
@@ -29,19 +29,24 @@
     "electron": "^12.0.1",
     "electron-builder": "^22.4.1",
     "electron-devtools-installer": "^2.2.4",
+    "electron-rebuild": "^2.3.5",
+    "node-pre-gyp": "0.12.0",
     "typescript": "^3.8.3"
   },
   "homepage": "./",
   "scripts": {
     "build": "node_modules/.bin/rescripts build",
     "eject": "react-scripts eject",
-    "electron-dev": "node ./pseudoServer/getTrackNames.js & node_modules/.bin/concurrently \"BROWSER=none npm start\" \"node_modules/.bin/wait-on http://localhost:4203 && node_modules/.bin/electron .\"",
+    "electron-dev": "npm run server & npm run ui",
     "dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:4203 && electron .\"",
     "electron-pack": "electron-builder build -mw",
     "postinstall": "node_modules/.bin/electron-builder install-app-deps",
     "preelectron-pack": "npm install",
     "start": "PORT=4203 node_modules/.bin/rescripts start",
-    "test": "rescripts test"
+    "electron-rebuild": "electron-rebuild",
+    "server": "nodemon ./pseudoServer/server.js",
+    "test": "rescripts test",
+    "ui": "node_modules/.bin/concurrently \"BROWSER=none npm start\" \"node_modules/.bin/wait-on http://localhost:4203 && node_modules/.bin/electron .\" "
   },
   "eslintConfig": {
     "extends": "react-app"

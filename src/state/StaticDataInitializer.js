@@ -4,39 +4,13 @@ import axios from 'axios'
 import { useRecoilState } from 'recoil'
 
 import {
+  colorsAtom,
   mp3sAtom,
+  wikiEntryTypesAtom,
 } from './atoms/staticDataAtoms'
 
-// can't use the sqlite3 database on Mac Silicon
-// instead, load colors from here manually:
-// const colors = {
-//   "villageBrown": "#a85",
-//   "swampGreen": "#575",
-//   "plainsYellow": "#da0",
-//   "oceanBlue": "#17d",
-//   "mountainsTeal": "#589",
-//   "jungleGreen": "#373",
-//   "freshwaterBlue": "#49d",
-//   "forestGreen": "#292",
-//   "coastBlue": "#33d",
-//   "cavesPurple": "#737",
-//   "tavernSalmon": "#c43",
-//   "weatherBlue": "#45e",
-//   "creepyPurple": "#448",
-//   "magicPink": "#a4a",
-//   "winterWhite": "#fff",
-//   "puzzleOrange": "#d50",
-//   "exploringTeal": "#099",
-//   "battleRed": "#a01",
-// };
-
-// const wikiEntryTypes = {
-//   place: [
-//     "city",
-//     "ruined city",
-//   ],
-// };
-
+console.log('using preload')
+// const callDatabase = window.callDatabase
 
 const baseUrl = 'http://127.0.0.1:4204' // TODO: stick this in a .env file
 
@@ -66,14 +40,23 @@ const importMp3s = async (trackNames) => {
 
 const StaticDataInitializer = (props) => {
   const [staticDataHasLoaded, setStaticDataHasLoaded] = useState(false)
+  const [, setColors] = useRecoilState(colorsAtom)
   const [, setMp3s] = useRecoilState(mp3sAtom)
+  const [, setWikiEntryTypes] = useRecoilState(wikiEntryTypesAtom)
   
   useEffect(() => {
     const getStaticData = async () => {     
-      const result = await axios.get(`${baseUrl}/`)
-      const trackNames = result.data
+      const { data: trackNames} = await axios.get(`${baseUrl}/api/trackNames`)
       const mp3s = await importMp3s(trackNames); 
       setMp3s(mp3s)
+
+      const { 
+        colors,
+        wikiEntryTypes,
+      } = await axios.get(`${baseUrl}/api/staticData`)
+ 
+      setColors(colors)
+      setWikiEntryTypes(wikiEntryTypes)
 
       setStaticDataHasLoaded(true)
     }

@@ -22,13 +22,6 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: false,
       webSecurity: false,
-
-      /**
-       * import native Node modules explicitly in this file; something about Create-React-App and webpack mess
-       * with Electron's ability to provide these directly.
-       * See the comment by HemalR here: https://github.com/electron/electron/issues/9920
-       */
-      preload: __dirname + '/preload.js'
     },
   });
   mainWindow.maximize();
