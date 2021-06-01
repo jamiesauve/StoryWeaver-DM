@@ -4,7 +4,9 @@ import axios from 'axios'
 import { useRecoilState } from 'recoil'
 
 import {
+  colorsAtom,
   mp3sAtom,
+  wikiEntryTypesAtom,
 } from './atoms/staticDataAtoms'
 
 const baseUrl = 'http://127.0.0.1:4204' // TODO: stick this in a .env file
@@ -35,23 +37,22 @@ const importMp3s = async (trackNames) => {
 
 const StaticDataInitializer = (props) => {
   const [staticDataHasLoaded, setStaticDataHasLoaded] = useState(false)
+  const [, setColors] = useRecoilState(colorsAtom)
   const [, setMp3s] = useRecoilState(mp3sAtom)
+  const [, setWikiEntryTypes] = useRecoilState(wikiEntryTypesAtom)
   
   useEffect(() => {
-    const getStaticData = async () => {
-      const {error, result } = await window.callDatabase(`/api/staticData`)
-      if (error) throw error;
-
-      const {
-        colors,
-        wikiEntryTypes,
-      } = result
-
-      const result = await axios.get(`${baseUrl}/api/trackNames`)
-      const trackNames = result.data
+    const getStaticData = async () => {     
+      const { data: trackNames} = await axios.get(`${baseUrl}/api/trackNames`)
       const mp3s = await importMp3s(trackNames); 
       
       setMp3s(mp3s)
+
+      const { 
+        colors,
+        wikiEntryTypes,
+      } = await axios.get(`${baseUrl}/api/staticData`)
+ 
       setColors(colors)
       setWikiEntryTypes(wikiEntryTypes)
 

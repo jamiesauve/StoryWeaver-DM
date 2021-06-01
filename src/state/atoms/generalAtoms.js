@@ -12,11 +12,6 @@ export const activeLocationTypeAtom = atom({
   default: 'any',
 })
 
-export const ambiencesAtom = atom({
-  key: 'ambiencesAtom',
-  default: {},
-})
-
 export const areTabsContractedAtom = atom({
   key: 'areTabsContractedAtom',
   default: false,

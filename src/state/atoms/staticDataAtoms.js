@@ -12,12 +12,12 @@ export const colorsAtom = atom({
   default: {},
 })
 
-export const wikiEntryTypesAtom = atom({
-  key: 'wikiEntryTypes',
+export const mp3sAtom = atom({
+  key: 'mp3s',
   default: {},
 })
 
-export const mp3sAtom = atom({
-  key: 'mp3s',
+export const wikiEntryTypesAtom = atom({
+  key: 'wikiEntryTypes',
   default: {},
 })
