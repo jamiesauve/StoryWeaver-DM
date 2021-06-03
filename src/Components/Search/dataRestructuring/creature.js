@@ -61,7 +61,7 @@ export default (data) => {
     //   value: 4,
     // }
     proficiencies: _.map(data.proficiencies, proficiency => {
-      const [type, name] = proficiency.name.split(": ")
+      const [type, name] = proficiency.proficiency.name.split(": ")
 
       /// TODO: if type is "Saving Throw", convert name
 
