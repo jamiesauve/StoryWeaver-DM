@@ -46,7 +46,7 @@ export default {
     placeTags: [
       placeNames.gwimbledym,
     ],
-    titleColor: colors.darkGrey,
+    titleColor: colors.ashGrey,
     quirks: ['rubs his chin'],
     traits: ['deceitful', 'courteous', 'selfish'],
     storyInvolvement: [`Mister Grinkle stole Narista the Sylph's rock collection some cycles ago. It contained a chip of Golden Lapis. He offers to sell it to them for 'the right price'.`],

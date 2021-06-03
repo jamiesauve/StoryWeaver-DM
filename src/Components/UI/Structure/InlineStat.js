@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import colors from '../../../data/styles/colors'
-import sizes from '../../../data/styles/sizes'
+import theme from '../../../data/styles/theme'
 
 const This = styled.div`
   margin: ${props => props.margin || `none`};
@@ -10,10 +9,10 @@ const This = styled.div`
   display: flex;
   flex-direction: row;
   
-  font-size: ${sizes.small};
+  font-size: ${theme.smallTextSize};
   font-weight: ${props => props.fontWeight || `normal`};
   font-style: ${props => props.fontStyle || `normal`};
-  color: ${props => props.color || colors.darkGrey};
+  color: ${props => props.color || theme.darkGreyText};
 `
 
 const InlineStat = (props) => {

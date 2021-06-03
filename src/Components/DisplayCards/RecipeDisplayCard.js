@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
+import { useRecoilValue } from 'recoil'
 
 import EditableIngredients from '../Crafting/EditableIngredients'
 
@@ -11,21 +12,27 @@ import Heading from '../UI/Structure/Heading'
 import List from '../UI/Structure/List'
 import Row from '..//UI/Style/DisplayCard/Row'
 
-import colors from '../../data/styles/colors'
-import sizes from '../../data/styles/sizes'
+import theme from '../../data/styles/theme'
+
 import {
   getCreateRecipeData,
   getEditRecipeData,
   getStaticRecipeData,
 } from '../Crafting/recipeCreationStats'
 
+import {
+  colorsAtom,
+} from '../../state/atoms/staticDataAtoms'
+
 const This = styled.div`
   padding: 1px;
 
-  font-size: ${sizes.small};
+  font-size: ${theme.smallTextSize};
 `
 
 const RecipeDisplayCard = (props) => {
+  const colors = useRecoilValue(colorsAtom)
+
   const {
     data,
     isEditable,

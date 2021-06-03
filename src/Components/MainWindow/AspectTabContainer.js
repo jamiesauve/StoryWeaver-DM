@@ -42,7 +42,7 @@ const AspectTabContainer = (props) => {
   }
 
   const emptyTabOptions = [{
-    color: colors.darkGrey,
+    color: colors.darkGreyText,
     label: '[empty]', 
     value: 'empty', 
   }]
@@ -62,7 +62,7 @@ const AspectTabContainer = (props) => {
               <TabContainer 
                 activeTab={_.get(props.activeAspect, 'name', null)}
                 areTabsContracted={areTabsContracted}
-                borderColor={_.get(props.activeAspect, 'color', colors.darkGrey)}
+                borderColor={_.get(props.activeAspect, 'color', colors.darkGreyText)}
                 usesDragAndDrop={true}
                 tabs={!_.isEmpty(tabOptions) ?  tabOptions : emptyTabOptions}
                 setActiveTab={handleSetActiveTab}

@@ -2,7 +2,7 @@ import React, { createRef } from 'react'
 import styled from 'styled-components'
 
 import ToggleButtonGroup from './ToggleButtonGroup'
-import colors from '../../../data/styles/colors'
+import theme from '../../../data/styles/theme'
 
 const This = styled.div`
   margin: 5px 5px -8px 5px;
@@ -13,12 +13,12 @@ const TabContainer = (props) => {
 
   const toggleButtonStyles = {
     component: {
-      backgroundColor: colors.lightDarkBackground,
+      backgroundColor: theme.lightDarkBackground,
       hasBorder: true,
-      borderColor: props.borderColor || colors.darkGrey,
+      borderColor: props.borderColor || theme.darkGreyText,
     },
     option: {
-      textColor: colors.lightGrey,
+      textColor: theme.lightGreyText,
     },
     separator: {
       isVisible: false,

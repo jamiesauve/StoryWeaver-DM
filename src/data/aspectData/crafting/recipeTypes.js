@@ -47,7 +47,7 @@ export const recipeTypeColors = {
   item: colors.villageBrown,
   medecine: colors.battleRed,
   poison: colors.swampGreen,
-  other: colors.darkGrey,
+  other: colors.darkGreyText,
 }
 
 const mappedRecipeTypes = _.reduce(Object.entries(recipeTypes), (aggr, recipeGroup) => {

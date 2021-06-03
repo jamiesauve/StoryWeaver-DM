@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import _ from 'lodash'
 
 import colors from '../../../../data/styles/colors'
+import theme from '../../../../data/styles/theme'
 
 const This = styled.div`
   z-index: 100;
@@ -13,7 +14,7 @@ const This = styled.div`
 
   width: ${props => props.width}px;
 
-  background: ${colors.mediumBackground};
+  background: ${theme.mediumBackground};
   border-radius: 3px;
   border: 1px solid ${colors.mountainsTeal};
   box-shadow: 0 1px 10px ${colors.darkBackground};
@@ -33,7 +34,7 @@ const Cell = styled.div`
   width: ${props => props.width - 4}px; //border and margin on both sides
 
   background: ${props => props.colorValue};
-  border: 1px solid ${colors.mediumBackground};
+  border: 1px solid ${theme.mediumBackground};
 
   &:hover {
     border: 1px solid ${colors.winterWhite};

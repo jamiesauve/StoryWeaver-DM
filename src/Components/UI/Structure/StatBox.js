@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import colors from '../../../data/styles/colors'
-import sizes from '../../../data/styles/sizes'
+import theme from '../../../data/styles/theme'
 
 const This = styled.div`
   flex-grow: 1;
 
   margin: 2px;
-  border: 1px solid ${props => props.borderColor || colors.darkGrey};
+  border: 1px solid ${props => props.borderColor || theme.darkGreyText};
   border-radius: 5px;
   padding: 3px;
   
@@ -17,8 +16,8 @@ const This = styled.div`
 
   min-width: 30px;
 
-  background: ${props => props.backgroundColor || colors.darkBackground};
-  color: ${colors.lightGrey};
+  background: ${props => props.backgroundColor || theme.darkBackground};
+  color: ${theme.lightGreyText};
 `
 
 const StatBoxNumber = styled.div`
@@ -27,7 +26,7 @@ const StatBoxNumber = styled.div`
 `
 
 const StatBoxLabel = styled.div`
-  font-size: ${sizes.small};
+  font-size: ${theme.smallTextSize};
   text-align: center;
 `
 

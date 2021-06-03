@@ -1,13 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useRecoilValue } from 'recoil'
 
-import colors from '../../../data/styles/colors'
+import theme from '../../../data/styles/theme'
+
+import {
+  colorsAtom
+} from '../../../state/atoms/staticDataAtoms'
 
 const This = styled.div`
   margin-top: 10px;
   
   border-radius: ${props => props.isOpen ? `5px 5px 0 0` : `5px`};
-  box-shadow: 0 0 3px ${colors.darkGrey};
+  box-shadow: 0 0 3px ${theme.darkGreyText};
 
   align-items: center;
 `
@@ -18,7 +23,7 @@ const DrawerFace = styled.div`
   padding-top: 7px;
   background-color: ${props => props.titleColor};
 
-  color: ${props => props.titleColor === colors.winterWhite ? colors.darkGrey : `inherit`} // TODO: make this flip for all too-light colors, not just winterWhite
+  color: ${props => props.titleColor === props.colors.winterWhite ? theme.darkGreyText : `inherit`} // TODO: make this flip for all too-light colors, not just winterWhite
 `
 
 const DrawerThird = styled.div`
@@ -45,10 +50,12 @@ const DrawerBody = styled.div`
   flex-direction: column;
   align-items: stretch;
 
-  background-color: ${colors.mediumBackground};
+  background-color: ${theme.mediumBackground};
 `
 
 const Drawer =  props => {
+  const colors = useRecoilValue(colorsAtom)
+
   const DrawerContent = props.content
 
   const handleClickTitle = () => {
@@ -64,6 +71,7 @@ const Drawer =  props => {
     >
       <DrawerFace
         className="drawerFace"
+        colors={colors}
         titleColor={props.titleColor}
         onClick={handleClickTitle}
       >

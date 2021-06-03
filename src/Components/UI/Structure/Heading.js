@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-import sizes from '../../../data/styles/sizes'
+import theme from '../../../data/styles/theme'
 
 const Heading = styled.div`
   align-self: center;
 
   font-weight: bold;
-  font-size: ${sizes.small};
+  font-size: ${theme.smallTextSize};
 
   margin-bottom: 5px;
 `

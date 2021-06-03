@@ -11,10 +11,10 @@ import { useRecoilValue } from 'recoil'
 import {
   colorsAtom,
 } from '../../state/atoms/staticDataAtoms'
-import sizes from '../../data/styles/sizes'
+import theme from '../../data/styles/theme'
 
 const This = styled.div`
-font-size: ${sizes.small}
+font-size: ${theme.smallTextSize}
 `
 
 const Harvesting = (props) => {

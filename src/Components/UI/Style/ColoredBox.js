@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import colors from '../../../data/styles/colors'
+import theme from '../../../data/styles/theme'
 
 import shade from '../../../utils/shade'
 
@@ -9,7 +9,7 @@ const StyledBox = styled.div`
   flex-grow: 1;
 
   margin: 2px;
-  border: 1px solid ${props => props.color || colors.lightGrey};
+  border: 1px solid ${props => props.color || theme.lightGreyText};
   border-radius: 5px;
   padding: 3px;
   
@@ -18,8 +18,8 @@ const StyledBox = styled.div`
 
   min-width: 30px;
 
-  background: ${props => shade(props.color || colors.lightGrey, -70) || colors.darkBackground};
-  color: ${colors.mediumGrey};
+  background: ${props => shade(props.color || theme.lightGreyText, -70) || theme.darkBackground};
+  color: ${theme.mediumGreyText};
 `
 
 const ColoredBox = (props) => (

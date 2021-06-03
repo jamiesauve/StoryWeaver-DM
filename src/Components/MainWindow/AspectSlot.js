@@ -81,7 +81,7 @@ const AspectSlot = (props) => {
               <Pane
                 className="pane"
 
-                borderColor={_.get(activeAspect, 'color', colors.darkGrey)}
+                borderColor={_.get(activeAspect, 'color', colors.darkGreyText)}
                 height={`${aspectHeight}px`} 
                 isBorderTopVisible={false}
               >

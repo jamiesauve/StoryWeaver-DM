@@ -1,3 +1,4 @@
+// TODO: remove me - here for support until all of the data files get into the database
 export default {
   // moods
   battleRed: '#a01',
@@ -23,20 +24,8 @@ export default {
   swampGreen: '#575',
   villageBrown: '#a85',
   winterWhite: '#fff',
+  ashGrey: '#777',
 
   // special
   specialPink: "#f4f",
-
-  // text
-  lightGrey: "#ddd",
-  mediumGrey: "#bbb",
-  darkGrey: "#777",
-  darkText: "#333",
-
-  // backgrounds
-  darkBackground: "#222",
-  mediumBackground: "#333",
-  lightDarkBackground: "#444",
-  lightBackGround: "#fff",
-  lightBackGroundDimmed: "#eee",
 }

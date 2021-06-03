@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Select from 'react-select'
 
-import colors from '../../../data/styles/colors'
+import appTheme from '../../../data/styles/theme'
 
 import shade from '../../../utils/shade'
 
@@ -20,7 +20,7 @@ const SelectInput = (props) => {
       backgroundColor: `#333`,
       menu: (existingStyles => ({
         ...existingStyles,
-        color: styleType === "light" ? '#444': colors.lightGrey,
+        color: styleType === "light" ? '#444': appTheme.lightGreyText,
       })),
     }
 

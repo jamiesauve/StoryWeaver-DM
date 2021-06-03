@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 
-import sizes from '../../data/styles/sizes'
-
 import AddIcon from '../UI/Action/AddIcon'
 import FillInTheBlanksInput from '../UI/Action/FillInTheBlanksInput'
 import Heading from '../UI/Structure/Heading'

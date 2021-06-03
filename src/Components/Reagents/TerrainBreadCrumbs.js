@@ -8,7 +8,7 @@ import toCapitalCase from '../../utils/toCapitalCase'
 
 import StatBox from '../UI/Structure/StatBox'
 
-import colors from '../../data/styles/colors'
+import theme from '../../data/styles/theme'
 
 const This = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const TerrainBreadCrumbs = (props) => {
     <This>
      { _.map(presentTerrainTypes, presentTerrainType => {
         const terrainType = _.find(terrainTypes, {name: presentTerrainType})
-        const breadCrumbColor = terrainType ? terrainType.color : colors.lightGrey
+        const breadCrumbColor = terrainType ? terrainType.color : theme.lightGreyText
 
         return (
          <StatBox

@@ -26,7 +26,7 @@ const TerrainBreadCrumbs = (props) => {
     <This>
      { _.map(presentTerrainTypes, presentTerrainType => {
         const terrainType = _.find(terrainTypes, {name: presentTerrainType})
-        const breadCrumbColor = terrainType ? terrainType.color : colors.lightGrey
+        const breadCrumbColor = terrainType ? terrainType.color : colors.lightGreyText
 
         return (
          <StatBox

@@ -1,8 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useRecoilValue } from 'recoil'
 
-import colors from '../../data/styles/colors'
-import sizes from '../../data/styles/sizes'
+import theme from '../../data/styles/theme'
+
+import {
+  colorsAtom,
+} from '../../state/atoms/staticDataAtoms'
 
 const This = styled.div`
   margin-left: 10px;
@@ -10,18 +14,22 @@ const This = styled.div`
   display: flex;
   flex-direction: row;
   
-  font-size: ${sizes.small};
+  font-size: ${theme.smallTextSize};
   font-weight: bold;
-  color: ${colors.villageBrown};
+  color: ${props => props.colors.villageBrown};
 `
 
 const Weight = (props) => {
+  const colors = useRecoilValue(colorsAtom)
+
   const {
     data,
   } = props
 
   return (
-    <This>
+    <This
+      colors={colors}
+    >
       {data} lbs
     </This>
   )

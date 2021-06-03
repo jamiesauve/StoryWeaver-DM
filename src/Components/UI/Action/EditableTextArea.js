@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import colors from '../../../data/styles/colors'
-import sizes from '../../../data/styles/sizes'
+import theme from '../../../data/styles/theme'
 
 const EditableTextarea = styled.textarea`
   flex-grow: 1;
@@ -12,8 +11,8 @@ const EditableTextarea = styled.textarea`
   border: solid 1px rgba(255, 255, 255, 0.1);
   
   background: rgba(255, 255, 255, 0.1);
-  font-size: ${sizes.medium};
-  color: ${colors.lightGrey};
+  font-size: ${theme.mediumTextSize};
+  color: ${theme.lightGreyText};
 `
 
 export default EditableTextarea

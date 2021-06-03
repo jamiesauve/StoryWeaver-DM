@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import colors from '../../../data/styles/colors'
+import theme from '../../../data/styles/theme'
 
 import { useRecoilState } from 'recoil'
 import { currentWikiLinkAtom } from '../../../state/atoms/generalAtoms'
 
 const This = styled.span`
-  color: ${colors.freshwaterBlue};
+  color: ${theme.linkColor};
 
   &:hover {
     cursor: pointer;
-    color: ${colors.oceanBlue};
+    color: ${theme.linkColorOnHover};
   }
 `
 

@@ -55,7 +55,7 @@ export const reagentTypeColors = {
   creature: colors.battleRed,
   plant: colors.forestGreen,
   mineral: colors.mountainsTeal,
-  otherReagentType: colors.darkGrey,
+  otherReagentType: colors.darkGreyText,
 }
 
 const mappedReagentTypes = _.reduce(Object.entries(reagentTypes), (aggr, reagentGroup) => {

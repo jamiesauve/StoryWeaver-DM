@@ -5,7 +5,7 @@ import _ from 'lodash'
 import TextWithLinksActivated from '../Structure/TextWithLinksActivated'
 import Heading from '../Structure/Heading'
 
-import sizes from '../../../data/styles/sizes'
+import theme from '../../../data/styles/theme'
 
 const This = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ const Column = styled.div`
 `
 
 const ListItem = styled.div`
-  font-size: ${sizes.small};
+  font-size: ${theme.smallTextSize};
   text-align: ${props => props.textAlign || `center`};
   padding: 5px;
 `

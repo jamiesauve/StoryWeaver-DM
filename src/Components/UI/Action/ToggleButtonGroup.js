@@ -1,6 +1,6 @@
 import React, { Fragment, } from 'react'
 import styled from 'styled-components'
-import colors from '../../../data/styles/colors'
+import theme from '../../../data/styles/theme'
 
 import {Draggable } from 'react-beautiful-dnd'
 
@@ -13,7 +13,7 @@ const This = styled.div`
   flex-direction: row;
   align-items: normal;
 
-  background: ${props => props.backgroundColor || colors.lightBackGround};
+  background: ${props => props.backgroundColor || theme.lightBackground};
 
   border-radius: 3px;
   border: ${props => props.hasBorder ? `1px ${props.borderColor} solid` : `none`};
@@ -28,7 +28,7 @@ const OptionButton = styled.div`
   background: ${props => props.backgroundColor};
   
   text-align: center;
-  color: ${props => props.textColor || colors.darkText};
+  color: ${props => props.textColor || theme.darkText};
 
   ${
     props => props.isActiveOption
@@ -44,18 +44,18 @@ const OptionButton = styled.div`
         ${props.hasBorder 
           && `
             border-radius: 0 0 5px 5px;
-            border-bottom: 1px ${props.borderColor || colors.lightGrey} solid;
+            border-bottom: 1px ${props.borderColor || theme.lightGreyText} solid;
 
             background: ${shade(props.backgroundColor, -50)};
 
-            color: ${shade(props.textColor || colors.darkText, -40)};
+            color: ${shade(props.textColor || theme.darkText, -40)};
 
             &:not(:first-child) {
-              border-left: 1px${props.borderColor || colors.lightGrey} solid;
+              border-left: 1px${props.borderColor || theme.lightGreyText} solid;
             }
 
             &:not(:last-child) {
-              border-right: 1px${props.borderColor || colors.lightGrey} solid;
+              border-right: 1px${props.borderColor || theme.lightGreyText} solid;
             }
           `
         }
@@ -70,13 +70,13 @@ const Separator = styled.div`
   
   align-self: stretch;
 
-  background: ${props => props.borderColor || colors.lightGrey}
+  background: ${props => props.borderColor || theme.lightGreyText}
 `
 
 const ToggleButtonGroup = (props) => {
   const {
     component: componentStyles = {},
-    option: optionStlyes = {},
+    option: optionStyles = {},
     separator: separatorStyles = {},
   } = props.styles
 
@@ -105,7 +105,7 @@ const ToggleButtonGroup = (props) => {
               hasBorder={componentStyles.hasBorder}
               isActiveOption={props.activeOption === option.value}
               onClick={(e) => handleClickOption(e, option.value)}
-              textColor={optionStlyes.textColor}
+              textColor={optionStyles.textColor}
             >
               {option.label}
             </OptionButton>
@@ -117,7 +117,7 @@ const ToggleButtonGroup = (props) => {
             hasBorder={componentStyles.hasBorder}
             isActiveOption={props.activeOption === option.value}
             onClick={(e) => handleClickOption(e, option.value)}
-            textColor={optionStlyes.textColor}
+            textColor={optionStyles.textColor}
           >
             {option.label}
           </OptionButton>

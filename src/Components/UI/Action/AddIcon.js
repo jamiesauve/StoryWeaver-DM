@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import colors from '../../../data/styles/colors'
+import theme from '../../../data/styles/theme'
 
 const Icon = styled.div`
   align-self: center;
@@ -14,8 +14,8 @@ const Icon = styled.div`
   width: 15px;
   height: 15px;
   border-radius: 20px;
-  color: ${colors.coastBlue};
-  text-shadow: 2px 2px ${colors.darkBackground};
+  color: ${theme.addBackground};
+  text-shadow: 2px 2px ${theme.darkBackground};
 
   & > div {
     font-size: 30px;
