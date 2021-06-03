@@ -1,6 +1,8 @@
 // adapted from https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
 
-function shadeColor(colorWithHashTag, percentValue) {
+function shade(colorWithHashTag, percentValue) {
+  if (!colorWithHashTag) return null;
+  
   const color = colorWithHashTag.slice(1)
 
   // not sure why this part has to be a thing, and not going to put the time
@@ -46,4 +48,4 @@ function shadeColor(colorWithHashTag, percentValue) {
   return "#"+RR+GG+BB
 }
 
-export default shadeColor
+export default shade
