@@ -26,9 +26,9 @@ const ProfileDataInitializer = (props) => {
       const wikiData = await import(`../data/profiles/${currentProfile}/wiki`)
 
       setAmbiencesData(ambiencesData);
-      setPeopleData(peopleData);
+      setPeopleData(peopleData.default);
       setPlaces(places.default);
-      setWikiData(wikiData);
+      setWikiData(wikiData.default);
 
       setProfileDataHasLoaded(true);
     }

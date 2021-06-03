@@ -48,10 +48,9 @@ const StaticDataInitializer = (props) => {
       
       setMp3s(mp3s)
 
-      const { 
-        colors,
-        wikiEntryTypes,
-      } = await axios.get(`${baseUrl}/api/staticData`)
+      const { data: staticData } = await axios.get(`${baseUrl}/api/staticData`)
+ 
+      const { colors, wikiEntryTypes, } = staticData;
  
       setColors(colors)
       setWikiEntryTypes(wikiEntryTypes)
