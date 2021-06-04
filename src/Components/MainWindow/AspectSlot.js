@@ -22,25 +22,23 @@ import colors from '../../data/styles/colors'
 
 const This = styled.div``
 
+const AspectComponentVisibilityWrapper = styled.div`
+  ${props => props.isVisible 
+      ? ``
+      : `display: none;`
+  }
+`
+
 const AspectSlot = (props) => {
   const {
     aspects,
   } = props
   
   const [activeAspect, setActiveAspect] = useState(null)
-  // a component can't be rendered with a lower-case name, hence this variable
-  const [ActiveAspectComponent, setActiveAspectComponent] = useState(null)
 
   useEffect(() => {
     setActiveAspect(aspects[0])
-    setActiveAspectComponent(_.get(aspects, 'component', null))
   }, [aspects])
-
-  useEffect(() => {
-    (!_.isNull(activeAspect))
-    && setActiveAspectComponent(_.get(activeAspect, 'component', null))
-  }, [activeAspect])
-
 
   const activeLocation = useRecoilValue(activeLocationAtom)
   const activeLocationType = useRecoilValue(activeLocationTypeAtom)
@@ -86,12 +84,23 @@ const AspectSlot = (props) => {
                 isBorderTopVisible={false}
               >
                 {
-                  ActiveAspectComponent !== null
-                  && <ActiveAspectComponent 
-                    activeLocation={activeLocation}
-                    activeLocationType={activeLocationType}
-                    currentWikiLink={currentWikiLink}
-                  />
+                  _.map(aspects, aspect => {
+                    const AspectComponent = aspect.component();
+
+                    return (
+                      <AspectComponentVisibilityWrapper
+                        className="visibility-wrapper"
+                        key={ _.get(aspect, 'name')}
+                        isVisible={_.get(activeAspect, 'name', null) === _.get(aspect, 'name')}
+                      >
+                        <AspectComponent 
+                          activeLocation={activeLocation}
+                          activeLocationType={activeLocationType}
+                          currentWikiLink={currentWikiLink}
+                        />
+                      </AspectComponentVisibilityWrapper>
+                    )
+                  })
                 }
               </Pane> 
             </>
