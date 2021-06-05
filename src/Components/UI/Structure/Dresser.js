@@ -14,6 +14,7 @@ const This = styled.div`
 const Dresser = (props) => {
   const {
     drawerToOpen,
+    shouldKeepDrawersRendered = false,
   } = props
 
   const [ currentlyOpenDrawer, setCurrentlyOpenDrawer ] = useState(props.drawerToOpen)
@@ -87,6 +88,7 @@ const Dresser = (props) => {
           closeSelf={closeSelf}
           isOpen={areAllDrawersOpen ? true : currentlyOpenDrawer === drawer.title}
           key={drawer.title}
+          shouldKeepDrawersRendered={shouldKeepDrawersRendered}
 
           content={drawer.content}
           title={drawer.title}
@@ -105,6 +107,7 @@ const Dresser = (props) => {
  *  label {String}: title of the drawer
  *  headingColor {String}: background color of the drawer
  *  contents {Component}: what shows up when the drawer is open
+ *  shouldKeepDrawersRendered: bool
  * ]
  */
 

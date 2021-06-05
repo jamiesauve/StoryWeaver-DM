@@ -51,6 +51,11 @@ const DrawerBody = styled.div`
   align-items: stretch;
 
   background-color: ${theme.mediumBackground};
+
+  ${props => props.isHidden
+    ? `display: none;`
+    : `` 
+  }
 `
 
 const Drawer =  props => {
@@ -93,9 +98,13 @@ const Drawer =  props => {
       </DrawerFace>
 
       {
+        (
         props.isOpen
+          || props.shouldKeepDrawersRendered
+        )
         && <DrawerBody
           className="drawerBody"
+          isHidden={props.shouldKeepDrawersRendered && !props.isOpen}
         >
           <DrawerContent />
         </DrawerBody>
