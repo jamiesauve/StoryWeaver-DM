@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { RecoilRoot } from 'recoil'
 
+import RecoilStateWatcher from './utils/RecoilStateWatcher'
 import ProfileDataInitializer from './state/ProfileDataInitializer'
 import StaticDataInitializer from './state/StaticDataInitializer'
 
@@ -16,6 +17,10 @@ function App() {
       className="App"
     >
       <RecoilRoot>
+        <RecoilStateWatcher  
+          isLogging={true}
+          onlyLogTheseAtoms={["rolls"]}
+        />
         <StaticDataInitializer>
           <ProfileDataInitializer>
             <MainWindow />
