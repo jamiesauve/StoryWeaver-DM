@@ -20,4 +20,6 @@ export default {
   removeBackground: '#a01',
   linkColor: `#49d`,
   linkColorOnHover: `#17d`,
+  criticalSuccess: `#33d`,
+  criticalFailure: `#a01`,
 }

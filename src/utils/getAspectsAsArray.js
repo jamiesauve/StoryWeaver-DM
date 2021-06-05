@@ -1,7 +1,7 @@
 // Aspects
 import Ambiences from '../Containers/Ambiences'
 import Creatures from '../Containers/Creatures'
-import Gameplay from '../Containers/Gameplay'
+import Rolls from '../Containers/Rolls'
 import Items from '../Containers/Items'
 import Notes from '../Containers/Notes'
 import People from '../Containers/People'
@@ -61,12 +61,12 @@ const Aspects = [
     label: "Creatures",
   },
   {
-    component: () => Crafting,
-    color: colors.forestGreen,
+    component: () => Rolls,
+    color: colors.battleRed,
     defaultSlot: 3,
     defaultIndex: 0,
-    name: "crafting",
-    label: "Crafting",
+    name: "rolls",
+    label: "Rolls",
   },
   {
     component: () => Items,
@@ -76,14 +76,14 @@ const Aspects = [
     name: "items",
     label: "Items",
   },
-  // {
-  //   component: () => Gameplay,
-  //   color: colors.battleRed,
-  //   defaultSlot: 4,
-  //   defaultIndex: 0,
-  //   name: "gameplay",
-  //   label: "Gameplay",
-  // },
+  {
+    component: () => Crafting,
+    color: colors.forestGreen,
+    defaultSlot: 3,
+    defaultIndex: 2,
+    name: "crafting",
+    label: "Crafting",
+  },
 ]
 
 export default Aspects

@@ -17,16 +17,6 @@ export const areTabsContractedAtom = atom({
   default: false,
 })
 
-export const craftingAtom = atom({
-  key: 'craftingAtom',
-  default: {},
-})
-
-export const creaturesAtom = atom({
-  key: 'creaturesAtom',
-  default: {},
-})
-
 export const currentWikiLinkAtom = atom({
   key: 'curentWikiLink',
   default: {
@@ -35,7 +25,7 @@ export const currentWikiLinkAtom = atom({
   }
 })
 
-export const searchAtom = atom({
-  key: 'searchAtom',
-  default: {},
+export const rollsAtom = atom({
+  key: 'rolls',
+  default: [],
 })
