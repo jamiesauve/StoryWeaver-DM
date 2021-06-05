@@ -29,8 +29,10 @@ const Creatures = (props) => {
     ? _.filter(creatures, creature => _.includes(creature.terrain, activeLocation.name))
     : creatures
 
-  const filteredCreatureStrings = _.map(filteredCreatures, creature => (
-    <Creature>
+  const filteredCreatureStrings = _.map(filteredCreatures, (creature, index) => (
+    <Creature
+      key={index}
+    >
       {`${creature.label} (${creature.location})`}
     </Creature>
   ))
