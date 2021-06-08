@@ -19,7 +19,7 @@ const getColors = async () => {
         name,
         code
       FROM 
-        color;
+        main.color;
     `
 
     db.all(
@@ -43,12 +43,17 @@ const getWikiEntryTypes = async () => {
   return new Promise((resolve, reject) => {
     const sql = `
       SELECT 
-        main_type AS mainType,
-        sub_type AS subType
+        wegt.name AS mainType,
+        wet.name AS subType
       FROM 
-        wiki_entry_type;
-    `
+        main.wiki_entry_type AS wet
+      JOIN
+        main.wiki_entry_group_type AS wegt
+          ON
+            wet.wiki_entry_group_type_id = wegt.id
+    ;`
 
+    // TODO: rename the mainType/subType stuff across the app
     db.all(
       sql, 
       (error, rows) => {
