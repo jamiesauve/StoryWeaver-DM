@@ -1,14 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
-import { useRecoilValue } from 'recoil'
 
 import ColoredBox from '../UI/Style/ColoredBox'
 import List from '../UI/Structure/List'
 import ColorPicker from '../UI/Action/ColorPicker/ColorPicker'
 import EditableList from '../UI/Action/EditableList'
 import EditableInput from '../UI/Action/EditableInput'
-import SelectInput from '../UI/Action/SelectInput'
 
 import Heading from '../UI/Structure/Heading'
 
@@ -36,7 +34,7 @@ const PersonStatsSection = styled.div`
   padding: 5px;
 `
 
-const OccupationQuirksAndTraitsContainer = styled.div`
+const TraitsContainer = styled.div`
   flex-grow: 1;
   display: flex;
 
@@ -57,9 +55,12 @@ const PersonDisplayCard = (props) => {
   const description = person.description || []
   const titleColor = person.titleColor || colors.freshwaterBlue
   const {
+    connections,
+    fears,
     occupations,
     quirks,
     traits,
+    wants,
   } = person
 
   console.log('person', person)
@@ -71,7 +72,7 @@ const PersonDisplayCard = (props) => {
           justifyContent="flex-start"
           padding="0 0 5px 0"
         >
-          <OccupationQuirksAndTraitsContainer>
+          <TraitsContainer>
             <ColoredBox
               color={titleColor}
             >
@@ -101,7 +102,44 @@ const PersonDisplayCard = (props) => {
                 textAlign="left"
               />
             </ColoredBox>
-          </OccupationQuirksAndTraitsContainer>
+          </TraitsContainer>
+        </Row>
+
+        <Row
+          justifyContent="flex-start"
+          padding="0 0 5px 0"
+        >    
+          <TraitsContainer>
+            <ColoredBox
+              color={titleColor}
+            >
+              <List
+                heading="wants"
+                items={[wants]}
+                textAlign="left"
+              />
+            </ColoredBox>
+
+            <ColoredBox
+              color={titleColor}
+            >
+              <List
+                heading="fears"
+                items={[fears]}
+                textAlign="left"
+              />
+            </ColoredBox>
+
+            <ColoredBox
+              color={titleColor}
+            >
+              <List
+                heading="connections"
+                items={[connections]}
+                textAlign="left"
+              />
+            </ColoredBox>
+          </TraitsContainer>
 
         </Row>
 
