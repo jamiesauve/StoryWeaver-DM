@@ -47,7 +47,7 @@ const WikiEntryStatsSection = styled.div`
 const WikiEntryDisplayCard = (props) => {
   const {
     isEditable,
-    isInCreateMode,
+    // isInCreateMode,
     placeholders,
     wikiEntry,
   } = props

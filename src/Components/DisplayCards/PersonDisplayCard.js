@@ -48,7 +48,7 @@ const OccupationQuirksAndTraitsContainer = styled.div`
 const PersonDisplayCard = (props) => {
   const {
     isEditable,
-    isInCreateMode,
+    // isInCreateMode,
     placeholders,
     person,
   } = props

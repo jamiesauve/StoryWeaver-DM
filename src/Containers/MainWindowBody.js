@@ -22,7 +22,7 @@ flex-grow: 1;
 
 const MainWindowBody = (props) => {
   const [aspectSlots, setAspectSlots] = useState()
-  const [areTabsContracted, setAreTabsContracted] = useRecoilState(areTabsContractedAtom)
+  const [, setAreTabsContracted] = useRecoilState(areTabsContractedAtom)
   const [currentTabPositionsArray, setCurrentTabPositionsArray] = useState([])
 
   useEffect(() => {

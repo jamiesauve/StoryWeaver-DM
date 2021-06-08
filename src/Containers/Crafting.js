@@ -41,7 +41,7 @@ const Crafting = (props) => {
         if ( _.includes(reagent.terrain, props.activeLocation.name)) {
           return true
         } else if  (
-          _.isEmpty(reagent.terrain) && _.isEmpty(reagent.places)
+          (_.isEmpty(reagent.terrain) && _.isEmpty(reagent.places))
           || _.isEmpty(props.activeLocation)
         ) {
           return true

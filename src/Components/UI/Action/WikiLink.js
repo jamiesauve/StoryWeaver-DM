@@ -22,7 +22,7 @@ const WikiLink = props => {
     linkTarget,
   } = props
 
-  const [currentWikiLink, setCurrentWikiLink] = useRecoilState(currentWikiLinkAtom)
+  const [, setCurrentWikiLink] = useRecoilState(currentWikiLinkAtom)
 
   const handleClick = () => {
     setCurrentWikiLink({

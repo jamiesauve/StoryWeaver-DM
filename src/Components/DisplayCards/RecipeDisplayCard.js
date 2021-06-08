@@ -46,7 +46,7 @@ const RecipeDisplayCard = (props) => {
     ingredients,
     instructions,
     lore,
-    type,
+    // type,
   } = data
 
   const ingredientsList = _.map(ingredients, ingredient => (

@@ -1,7 +1,7 @@
-import colors from '../../../../styles/colors'
-import places from '../../places';
+// import colors from '../../../../styles/colors'
+// import places from '../../places';
 
-import wikiEntryTypes from '../wikiEntryTypes'
+// import wikiEntryTypes from '../wikiEntryTypes'
 
 export default {
   // "abundabar_kugo'ra": {

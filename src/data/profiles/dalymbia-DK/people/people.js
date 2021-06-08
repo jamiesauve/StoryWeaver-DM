@@ -1,9 +1,3 @@
-import colors from '../../../styles/colors'
-import { placeNames } from '../places'
-
-import races from './races'
-import occupations from './occupations'
-
 import {
   abundabarPeople,
   dragonFallsPeople,
