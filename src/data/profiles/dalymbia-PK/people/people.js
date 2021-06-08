@@ -1,9 +1,13 @@
 import {
-  gwimbledymPeople,
+  // gwimbledymPeople,
+  portMarunaPeople,
+  singHarborsPeople,
 } from './peopleGroups'
 
 const people = {
-  ...gwimbledymPeople,
+  // ...gwimbledymPeople,
+  ...portMarunaPeople,
+  ...singHarborsPeople,
 }
 
 export const peopleAsArray = Object.values(people) 
