@@ -7,6 +7,11 @@ import {
     default: {},
   })
 
+  export const itemsAtom = atom({
+    key: 'itemsAtom',
+    default: {},
+  })
+
   export const peopleAtom = atom({
     key: 'peopleAtom',
     default: {},

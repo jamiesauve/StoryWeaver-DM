@@ -3,7 +3,7 @@ import { placeNames } from '../../places'
 
 import races from '../races'
 import occupations from '../occupations'
-console.log({ occupations}, {placeNames})
+
 export default {
   'morgan_grinkle': {
     name: 'morgan_grinkle',

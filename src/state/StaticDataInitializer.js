@@ -9,6 +9,10 @@ import {
   wikiEntryTypesAtom,
 } from './atoms/staticDataAtoms'
 
+import {
+  itemsAtom,
+} from './atoms/aspectDataAtoms'
+
 const baseUrl = 'http://127.0.0.1:4204' // TODO: stick this in a .env file
 
 const importMp3 = async (trackName) => {
@@ -38,6 +42,7 @@ const importMp3s = async (trackNames) => {
 const StaticDataInitializer = (props) => {
   const [staticDataHasLoaded, setStaticDataHasLoaded] = useState(false)
   const [, setColors] = useRecoilState(colorsAtom)
+  const [, setItems] = useRecoilState(itemsAtom)
   const [, setMp3s] = useRecoilState(mp3sAtom)
   const [, setWikiEntryTypes] = useRecoilState(wikiEntryTypesAtom)
   
@@ -48,11 +53,14 @@ const StaticDataInitializer = (props) => {
       
       setMp3s(mp3s)
 
+      const { data: items } = await axios.get(`${baseUrl}/api/items`)
+
       const { data: staticData } = await axios.get(`${baseUrl}/api/staticData`)
  
       const { colors, wikiEntryTypes, } = staticData;
  
       setColors(colors)
+      setItems(items)
       setWikiEntryTypes(wikiEntryTypes)
 
       setStaticDataHasLoaded(true)

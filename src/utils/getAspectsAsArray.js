@@ -62,7 +62,7 @@ const Aspects = [
   },
   {
     component: () => Rolls,
-    color: colors.exoticPink,
+    color: colors.exploringTeal,
     defaultSlot: 3,
     defaultIndex: 0,
     name: "rolls",

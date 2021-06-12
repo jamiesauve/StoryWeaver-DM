@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
+import { useRecoilValue } from 'recoil'
 
 import Section from '../Components/UI/Structure/Section'
 
 import Dresser from '../Components/UI/Structure/Dresser'
 
+import ItemDisplayCard from '../Components/DisplayCards/ItemDisplayCard'
+
 import ScrollableContainer from '../Components/UI/Structure/ScrollableContainer'
 
-import ReagentDisplayCard from '../Components/DisplayCards/ReagentDisplayCard'
-
-import terrainTypes from '../data/generalData/terrainTypes'
-import reagents from '../data/aspectData/crafting/reagents'
+import {
+  itemsAtom,
+} from '../state/atoms/aspectDataAtoms'
 
 const This = styled.div`
   flex-grow: 1;
@@ -22,21 +24,19 @@ const This = styled.div`
   height: 100%;
 `
 
-const Items = (props) => {
-  // const reagentsByTerrain = _.filter(reagents, reagent => 
-  //   _.isEmpty(reagent.terrain)
-  //   ? true
-  //   : _.includes(reagent.terrain, props.activeLocation)
-  // )
+const Items = () => {
+  const items = useRecoilValue(itemsAtom)
 
-  // const drawers = reagentsByTerrain
-  // .map(reagent => ({
-  //   title: reagent.label,
-  //   titleColor: _.find(terrainTypes, {name: props.activeLocation}).color,
-  //   content: () => <ReagentDisplayCard
-  //     data={reagent}
-  //   />,
-  // }))
+  const drawers = useCallback(_.map(items, item => ({
+    key: item.label,
+    title: item.label,
+    titleColor: item.colorCode,
+    content: () => <ItemDisplayCard
+      item={item}
+    />,
+  })), [
+    items,
+  ])
 
   return (
     <This
@@ -48,12 +48,12 @@ const Items = (props) => {
         <ScrollableContainer
           className="scrollableContainer"
         >
-          {/* <Dresser 
+          <Dresser 
             className="dresser"
             drawers={drawers}
             hasToggleAllLink
             initiallyExpanded={false}
-          /> */}
+          />
         </ScrollableContainer>
       </Section>
     </This>
