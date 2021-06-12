@@ -1,11 +1,13 @@
 const _ = require('lodash')
 
+const itemController = require('./itemController')
 const staticDataController = require('./staticDataController')
 const trackNamesController = require('./trackNamesController')
 const wikiEntryController = require('./wikiEntryController')
 
 const databaseRouter = ({ body, url }) => {
   return Promise.all([
+    itemController({ body, url }),
     staticDataController({ body, url }),
     trackNamesController({ body, url }),
     wikiEntryController({ body, url }),
