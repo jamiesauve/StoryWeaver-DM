@@ -1,19 +1,10 @@
 const electron = require('electron');
 const app = electron.app;
-const ipcMain = electron.ipcMain;
 const BrowserWindow = electron.BrowserWindow;
 // const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
-const path = require('path');
 const isDev = require('electron-is-dev');
 
 process.env['APP_PATH'] = app.getAppPath();
-const directory = isDev ? process.cwd() : process.env.APP_PATH;
-
-const databaseApi = require(path.join(directory, './pseudoServer/api/controller/routes'))
-ipcMain.handle('dbRequest', async (event, request) => {
-  const response = await databaseApi(request)
-  return response
-})
 
 let mainWindow;
 
