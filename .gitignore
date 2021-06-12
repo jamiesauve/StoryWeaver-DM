@@ -30,3 +30,6 @@ yarn-error.log*
 
 # misc
 todo.txt
+
+#sqlite
+/server/database/story_weaver.db-journal

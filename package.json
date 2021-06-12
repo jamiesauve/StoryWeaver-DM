@@ -34,14 +34,14 @@
   "scripts": {
     "dev": "npm run dev-server & npm run ui",
     "dist": "electron-builder",
-    "dev-server": "nodemon ./pseudoServer/server.js",
+    "dev-server": "nodemon ./server/server.js",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "pack": "electron-builder --dir",
     "postinstall": "electron-builder install-app-deps",
     "start": "npm run server & npm run ui",
     "electron-rebuild": "electron-rebuild",
-    "server": "node ./pseudoServer/server.js",
+    "server": "node ./server/server.js",
     "ui": "concurrently \"PORT=4203 BROWSER=none react-scripts start\" \"wait-on http://localhost:4203 && electron .\" "
   },
   "eslintConfig": {
