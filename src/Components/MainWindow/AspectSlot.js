@@ -23,6 +23,12 @@ import colors from '../../data/styles/colors'
 const This = styled.div``
 
 const AspectComponentVisibilityWrapper = styled.div`
+  flex-grow: 1;
+  max-height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+
   ${props => props.isVisible 
       ? ``
       : `display: none;`
