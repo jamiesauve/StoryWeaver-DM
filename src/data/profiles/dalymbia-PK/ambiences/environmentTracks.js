@@ -569,4 +569,33 @@ export default [
       village,
     ],
   },
+  {
+    title: `Underwater`,
+    location: `Underwater`,
+    tags: [],
+    terrain: [
+      freshwater,
+      ocean,
+      coast,
+    ],
+  },
+  {
+    title: `Underwater Battle`,
+    location: `Underwater Battle`,
+    tags: [],
+    terrain: [
+      freshwater,
+      ocean,
+      coast,
+    ],
+  },
+  {
+    title: `Burning Village`,
+    location: `Burning Village`,
+    tags: [],
+    terrain: [
+      village,
+      city,
+    ],
+  },
 ]

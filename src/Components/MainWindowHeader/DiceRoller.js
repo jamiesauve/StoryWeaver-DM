@@ -10,6 +10,9 @@ import colors from '../../data/styles/colors'
 import theme from '../../data/styles/theme'
 
 import { rollsAtom } from '../../state/atoms/generalAtoms'
+import axios from 'axios'
+
+const ROLL_URL = `http://api.jamiesauve.com:4221`;
 
 const This = styled.div`
   display: flex;
@@ -77,25 +80,53 @@ const DiceRoller = () => {
     setNumberOfRollsToMake(inputAsNumber)
   } 
 
-  const handleDiceRollerChange = (e) => {
-    const input = sanitizeNumeric(e.target.value).trimLeft()
+  const handleDiceRollerChange = async (e) => {
+    let input = e.target.value.trimLeft()
 
     setDiceRollerInputValue(input)
 
-    const numberOfSpaces = input.split(" ").length
+    if (input.charAt(input.length - 1) === " ") {
+      input = input.trimRight();
 
-    if (numberOfSpaces === 4) {
       for(let a = 0; a < numberOfRollsToMake; a++) {
-        const roll = generateRoll(input.trim())
-        roll.index = rollCommandCount
-  
-        setRollsList(rollsList => [ 
-          ...rollsList, 
-          roll,
-        ])
+        try {
+          console.log({ input })
+          if (input.endsWith("adv") || input.endsWith("dis")) {
+            const command = input.substring(0, input.length - 3)
+            const suffix = input.substring(input.length -3, input.length)
 
-        setNumberRolled(roll.total)
-        setLastInput(roll.command)
+            input = `${command} ${suffix}`
+            console.log('spliced', { input })
+          }
+
+          const { data: result } = await axios({
+            method: `GET`,
+            url: `${ROLL_URL}/roll/${input}`,
+            headers: {
+              'Content-Type': 'application/json',
+              'x-client-app': `storyweaver-dm`,
+            },
+          })
+
+          const roll = {
+            bonus: result.bonus,
+            command: result.command,
+            index: rollCommandCount,
+            individualResults: result.individualResults,
+            individualResultsLabel: result.individualResultsLabel,
+            total: result.total,
+          }
+    
+          setRollsList(rollsList => [ 
+            ...rollsList, 
+            roll,
+          ])
+  
+          setNumberRolled(roll.total)
+          setLastInput(roll.command)
+        } catch (err) {
+          console.log(err)
+        }
       }
       
       setDiceRollerInputValue('')

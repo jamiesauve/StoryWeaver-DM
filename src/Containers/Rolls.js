@@ -59,21 +59,26 @@ const Total = styled.div`
   }
 `
 
-const IndividualResultsContainer = styled.div`
+const ResultsContainer = styled.div`
   width: 50%;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, 20px);
+  grid-template-columns: repeat(auto-fill, ${props => props.containsDoubledResults ? `45px` : `20px`});
   grid-gap: 5px;
 
   align-items: center;
   justify-items: center;
 `
 
-// TODO: add some visual thing so that showing crits isn't relying only on color
-const IndividualResult = styled.div`
+const Result = styled.div`
+  display: flex;
+  flex-direction: row;
   margin: 0 5px;
   border: 1px solid transparent;
+`
+
+// TODO: add some visual thing so that showing crits isn't relying only on color
+const IndividualResult = styled.div`
   font-weight: bold;
 
   ${props => props.isCriticalSuccess
@@ -93,27 +98,62 @@ const IndividualResult = styled.div`
 const Rolls = (props) => {
   const rolls = useRecoilValue(rollsAtom)
 
+  
   return (
     <This
     className="rolls"
     >
       <Section
         className="section"
-      >
+        >
         <ScrollableContainer
           className="scrollableContainer"
-        >
+          >
           <RollsContainer>
             {
               _.map(rolls, (roll, index) => {
-                const numbersRolled = roll.resultsOfRolls.map(roll => (
-                  <IndividualResult
-                    isCriticalSuccess={roll.isCriticalSuccess}
-                    isCriticalFailure={roll.isCriticalFailure}
-                  >
-                    {roll.diceRoll}
-                  </IndividualResult>
-                ))
+                const isDisOrAdv = (_.get(roll.individualResults, '[0].allDiceResults.length', 0) === 2);
+                
+                const numbersRolled = isDisOrAdv 
+                  ? roll.individualResultsLabel.map((rollLabels, index) => {
+                    return (
+                      <Result>
+                        (
+                        <IndividualResult
+                          className={`result-${index}`}
+                          key={index}
+                          isCriticalSuccess={rollLabels[0].includes("nat 20")}
+                          isCriticalFailure={rollLabels[0].includes("nat 1")}
+                        >
+                          {roll.individualResults[index].allDiceResults[0]}
+                        </IndividualResult>
+
+                        <span>, </span>
+
+                        <IndividualResult
+                          className={`result-${index}`}
+                          key={index}
+                          isCriticalSuccess={rollLabels[1].includes("nat 20")}
+                          isCriticalFailure={rollLabels[1].includes("nat 1")}
+                        >
+                          {roll.individualResults[index].allDiceResults[1]}
+                        </IndividualResult>
+                        )
+                      </Result>
+                    )
+                  })
+                  : roll.individualResultsLabel.map((rollLabels, index) => (
+                    <Result>
+                      <IndividualResult
+                        className={`result-${index}`}
+                        key={index}
+                        isCriticalSuccess={rollLabels[0].includes("nat 20")}
+                        isCriticalFailure={rollLabels[0].includes("nat 1")}
+                      >
+                        {roll.individualResults[index].total}
+                      </IndividualResult>
+                    </Result>
+                  ))
 
                 return (
                   <RollItem
@@ -124,9 +164,11 @@ const Rolls = (props) => {
                       {roll.command}:
                     </RollCommand> 
 
-                    <IndividualResultsContainer>
+                    <ResultsContainer
+                      containsDoubledResults={isDisOrAdv}
+                    >
                       {numbersRolled}
-                    </IndividualResultsContainer>
+                    </ResultsContainer>
 
                     {roll.bonus ? `+ ${roll.bonus} ` : ` `}
                     

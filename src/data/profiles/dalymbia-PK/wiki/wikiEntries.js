@@ -6,28 +6,30 @@ import wikiEntryTypes from './wikiEntryTypes'
 import {
   dragonFallsEntries,
   portMarunaEntries,
+  nepMooraEntries,
 } from './entryGroups'
 
 const wikiEntries = {
   ...dragonFallsEntries,
   ...portMarunaEntries,
+  ...nepMooraEntries,
   "superstitions_among_sailors": {
-      name: `superstitions_among_sailors`,
-      label: `Superstitions Among Sailors`,
-      placeTags: [
-        places.port_maruna,
-        places.sing_harbors,
-      ],
-      titleColor: colors.cavesPurple,
-      type: wikiEntryTypes.faction.guild,
-      paragraphs: [
-        `Sailors around Bulandra tend to hold to these things as bad luck:`,
-        `Starting a journey without pouring a bottle of wine into the sea to ask for safe passage. If a woman is on board, she should do it.`,
-        `Seeing a Mermian shift while in the water - Very bad luck`,
-        `Bringing a catch of fish ashore and not throwing the first one back`,
-        `Complaining about the weather within earshot of the sea`,
-      ]
-    },
+    name: `superstitions_among_sailors`,
+    label: `Superstitions Among Sailors`,
+    placeTags: [
+      places.port_maruna,
+      places.sing_harbors,
+    ],
+    titleColor: colors.cavesPurple,
+    type: wikiEntryTypes.faction.guild,
+    paragraphs: [
+      `Sailors around Bulandra tend to hold to these things as bad luck:`,
+      `Starting a journey without pouring a bottle of wine into the sea to ask for safe passage. If a woman is on board, she should do it.`,
+      `Seeing a Mermian shift while in the water - Very bad luck`,
+      `Bringing a catch of fish ashore and not throwing the first one back`,
+      `Complaining about the weather within earshot of the sea`,
+    ]
+  },
 }
 
 export const wikiEntriesAsArray = Object.values(wikiEntries) 

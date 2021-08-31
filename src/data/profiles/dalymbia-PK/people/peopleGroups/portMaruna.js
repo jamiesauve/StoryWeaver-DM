@@ -42,10 +42,9 @@ export default {
     occupations: [occupations.sailor],
     description: [
       `Captain Raff is a ship captain.`,
-      `Rezna suffers from lycanthropy; she is a weretiger. A few of the guards know of her disease, and every full moon she goes to the prison and is locked up safely until her transformation passes.`,
     ],
     wants: `Money, enjoys being a captain`,
     fears: `See ;;;Superstitions Among Sailors%%%Superstitions Among Sailors;;;`,
-    connections: `His ship, a caravel called Blacksail`,
+    connections: `He is grateful to the party for saving his ship and crew from escaped monsters that he was transporting.`,
   },
 };
